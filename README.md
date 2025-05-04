@@ -22,3 +22,22 @@ Xcode 控件库: `⌘ + ⇧ + L`
 App图标生成/1x2x3x图片生成网站: https://www.appicon.co/
 
 设计网站: https://www.canva.cn
+
+## 4-游戏App-摇骰子App
+
+storyboard 右上角的 adjust Editor Options（五条横线）可以展示对应的代码区
+
+按住 ctrl 点击控件并拖拽可以将控件与代码区进行连线
+
+* @IBOutlet: 代表着 storyboard 上的控件
+* @IBAction: 代表着控件上的事件
+* IB -> Interface Builder
+
+```
+可以通过右键 storyboard - Open As - Interface Builder - Storyboard 展示可视化界面 
+                               |- Source Code 展示 xml
+```
+```
+常见错误：连接问题
+*** Terminating app due to uncaught exception 'NSUnknownKeyException', reason: '[<Dice.ViewController 0x103b0c2a0> setValue:forUndefinedKey:]: this class is not key value coding-compliant for the key diceImageView.'
+```
