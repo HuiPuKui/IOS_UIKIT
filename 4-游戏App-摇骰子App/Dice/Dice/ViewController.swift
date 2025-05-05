@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let diceArray: [String] = ["dice1", "dice2", "dice3", "dice4", "dice5", "dice6"]
+    
     var index1: Int = 0
     var index2: Int = 0
     
@@ -19,17 +21,27 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        self.updateDiceImages()
+    }
+    
+    /**
+     * 摇晃手机结束的回调
+     */
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        self.updateDiceImages()
     }
 
     @IBAction func roll(_ sender: Any) {
+        self.updateDiceImages()
+    }
+    
+    func updateDiceImages() -> Void {
+        self.index1 = Int.random(in: 0...5)
+        self.index2 = Int.random(in: 0...5)
         
-        index1 = Int.random(in: 1...6)
-        index2 = Int.random(in: 1...6)
-        
-        diceImageView1.image = UIImage(named: "dice\(index1)")
-        diceImageView2.image = UIImage(named: "dice\(index2)")
-        
+        self.diceImageView1.image = UIImage(named: self.diceArray[self.index1])
+        self.diceImageView2.image = UIImage(named: self.diceArray[self.index2])
     }
     
 }
-
