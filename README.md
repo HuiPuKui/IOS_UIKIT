@@ -41,3 +41,5 @@ storyboard 右上角的 adjust Editor Options（五条横线）可以展示对�
 常见错误：连接问题
 *** Terminating app due to uncaught exception 'NSUnknownKeyException', reason: '[<Dice.ViewController 0x103b0c2a0> setValue:forUndefinedKey:]: this class is not key value coding-compliant for the key diceImageView.'
 ```
+
+## 5-Swift语言-入门
