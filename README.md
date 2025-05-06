@@ -43,3 +43,19 @@ storyboard 右上角的 adjust Editor Options（五条横线）可以展示对�
 ```
 
 ## 5-Swift语言-入门
+
+## 6-音乐App-木琴App
+可以通过 Tag 属性来区分 @IBAction 相同的不同控件
+
+```swift 
+import AVFoundation // 音视频功能包
+
+AVAudioPlayer(contentsOf: url) // 音视频播放器
+
+// swift 异常捕获
+do {
+    try AVAudioPlayer(contentsOf: url)
+} catch {
+    print(error)
+}
+```
