@@ -67,3 +67,9 @@ UI 控件对应的坐标为 UI 控件的左上角，原点为父视图的左上�
 
 * 约束不仅要定水平和垂直，还有宽高的约束也要定
 * 像 Label、Button 等本身有内容的控件，自带宽高约束
+
+苹果有推荐边距: Constrain to margins
+
+align 中 First Baselines 是文本对齐，比如 Button 和 Label 中文本的最下面对齐
+
+stack view 中的控件除了宽高约束，其它的都会自动消失
