@@ -73,3 +73,8 @@ UI 控件对应的坐标为 UI 控件的左上角，原点为父视图的左上�
 align 中 First Baselines 是文本对齐，比如 Button 和 Label 中文本的最下面对齐
 
 stack view 中的控件除了宽高约束，其它的都会自动消失
+
+显示当前位置所有控件: `shift + 右键`
+
+* Content Hugging Priority 抗拉伸优先级
+* Content Compression Resistance Priority 抗压缩优先级

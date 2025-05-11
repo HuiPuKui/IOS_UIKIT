@@ -163,11 +163,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="t6x-7V-Whk">
-                                <rect key="frame" x="20" y="406" width="362" height="62"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="t6x-7V-Whk">
+                                <rect key="frame" x="50" y="346.33333333333331" width="302" height="181.33333333333331"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mwz-G4-yg0">
-                                        <rect key="frame" x="0.0" y="0.0" width="114" height="62"/>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mwz-G4-yg0">
+                                        <rect key="frame" x="0.0" y="0.0" width="96" height="181.33333333333334"/>
                                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -180,7 +180,7 @@
                                         </buttonConfiguration>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MtZ-G8-XPZ">
-                                        <rect key="frame" x="124" y="0.0" width="114" height="62"/>
+                                        <rect key="frame" x="146" y="0.0" width="62.333333333333343" height="181.33333333333334"/>
                                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -193,7 +193,7 @@
                                         </buttonConfiguration>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ho1-M0-qnS">
-                                        <rect key="frame" x="248" y="0.0" width="114" height="62"/>
+                                        <rect key="frame" x="258.33333333333331" y="0.0" width="43.666666666666686" height="181.33333333333334"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="iOS开发工程师">
                                             <backgroundConfiguration key="background" cornerRadius="0.0">
@@ -208,12 +208,9 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Xf1-bB-8hc">
                                 <rect key="frame" x="20" y="212" width="362" height="38"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3IX-7j-904">
-                                        <rect key="frame" x="0.0" y="0.0" width="120" height="38"/>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3IX-7j-904">
+                                        <rect key="frame" x="0.0" y="0.0" width="96" height="38"/>
                                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="120" id="oIi-qw-O1K"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="iOS菜鸟">
@@ -225,7 +222,47 @@
                                         </buttonConfiguration>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cnu-WF-Gev">
-                                        <rect key="frame" x="130" y="0.0" width="232" height="38"/>
+                                        <rect key="frame" x="106" y="0.0" width="256" height="38"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="iOS开发工程师">
+                                            <backgroundConfiguration key="background" cornerRadius="0.0">
+                                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="SPi-3p-Mb3">
+                                <rect key="frame" x="10" y="628" width="382" height="62"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UBz-2G-CL0">
+                                        <rect key="frame" x="0.0" y="0.0" width="96" height="62"/>
+                                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="iOS菜鸟">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <buttonConfiguration key="configuration" style="plain" title="iOS菜鸟">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1iK-62-U5k">
+                                        <rect key="frame" x="106" y="0.0" width="96" height="62"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="iOS开发工程师">
+                                            <backgroundConfiguration key="background" cornerRadius="0.0">
+                                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ova-Ex-Cjx">
+                                        <rect key="frame" x="212" y="0.0" width="170" height="62"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="iOS开发工程师">
                                             <backgroundConfiguration key="background" cornerRadius="0.0">
@@ -241,12 +278,15 @@
                         <viewLayoutGuide key="safeArea" id="BIW-rp-zbb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="t6x-7V-Whk" secondAttribute="trailing" constant="20" id="4gV-hn-FEQ"/>
+                            <constraint firstAttribute="trailing" secondItem="t6x-7V-Whk" secondAttribute="trailing" constant="50" id="4gV-hn-FEQ"/>
                             <constraint firstItem="BIW-rp-zbb" firstAttribute="trailing" secondItem="Xf1-bB-8hc" secondAttribute="trailing" constant="20" id="AaU-jC-6M2"/>
                             <constraint firstItem="t6x-7V-Whk" firstAttribute="centerY" secondItem="WUx-na-lrR" secondAttribute="centerY" id="HYg-cw-bfG"/>
-                            <constraint firstItem="t6x-7V-Whk" firstAttribute="leading" secondItem="BIW-rp-zbb" secondAttribute="leading" constant="20" id="ZSx-h4-sWV"/>
+                            <constraint firstItem="t6x-7V-Whk" firstAttribute="leading" secondItem="BIW-rp-zbb" secondAttribute="leading" constant="50" id="ZSx-h4-sWV"/>
+                            <constraint firstItem="BIW-rp-zbb" firstAttribute="trailing" secondItem="SPi-3p-Mb3" secondAttribute="trailing" constant="10" id="aHE-Uv-LQ6"/>
                             <constraint firstItem="Xf1-bB-8hc" firstAttribute="leading" secondItem="BIW-rp-zbb" secondAttribute="leading" constant="20" id="ad5-oE-dhU"/>
                             <constraint firstItem="Xf1-bB-8hc" firstAttribute="top" secondItem="BIW-rp-zbb" secondAttribute="top" constant="150" id="bbj-wQ-za4"/>
+                            <constraint firstItem="SPi-3p-Mb3" firstAttribute="leading" secondItem="BIW-rp-zbb" secondAttribute="leading" constant="10" id="cVg-lA-yHQ"/>
+                            <constraint firstItem="BIW-rp-zbb" firstAttribute="bottom" secondItem="SPi-3p-Mb3" secondAttribute="bottom" constant="150" id="gGc-vJ-xbe"/>
                         </constraints>
                     </view>
                 </viewController>
