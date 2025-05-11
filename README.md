@@ -16,6 +16,8 @@ Xcode 停止项目: `⌘ + .`
 
 Xcode 控件库: `⌘ + ⇧ + L`
 
+Xcode 展开所有文件: `⌥ + 左键`
+
 ## 3-人生第一个App-赏月App
 取色网站: https://flatuicolors.com/
 
