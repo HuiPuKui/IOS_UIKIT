@@ -62,7 +62,7 @@ do {
 }
 ```
 
-## 自动布局AutoLayout
+## 7-自动布局AutoLayout
 iOS中，坐标原点 (0, 0) 在左上角，x 轴向右，y 轴向下
 
 UI 控件对应的坐标为 UI 控件的左上角，原点为父视图的左上角
@@ -80,3 +80,5 @@ stack view 中的控件除了宽高约束，其它的都会自动消失
 
 * Content Hugging Priority 抗拉伸优先级
 * Content Compression Resistance Priority 抗压缩优先级
+
+## 8-益智App-趣味问答App
