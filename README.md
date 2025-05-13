@@ -82,3 +82,20 @@ stack view 中的控件除了宽高约束，其它的都会自动消失
 * Content Compression Resistance Priority 抗压缩优先级
 
 ## 8-益智App-趣味问答App
+
+Alert
+```swift 
+let alert = UIAlertController(title: "My Alert", message: "This is an alert.", preferredStyle: .actionSheet)
+alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+    NSLog("The \"OK\" alert occured.")
+}))
+self.present(alert, animated: true, completion: nil)
+
+
+.alert 中间弹出
+.actionSheet 底部弹出
+
+.default 正常操作
+.cancel 取消操作
+.destructive 破坏性操作
+```
