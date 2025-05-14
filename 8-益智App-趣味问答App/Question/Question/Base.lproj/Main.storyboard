@@ -95,7 +95,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="progressLabel" destination="C5v-Xr-aIa" id="RKg-ne-N05"/>
                         <outlet property="questionLabel" destination="gfT-Ma-v16" id="T9z-Lg-SQB"/>
+                        <outlet property="scoreLabel" destination="jZQ-pW-bY0" id="MeL-lb-kz2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

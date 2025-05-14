@@ -12,8 +12,14 @@ import UIKit
 class ViewController: UIViewController {
     
     var currentQuestionIndex: Int = 0
+    
+    var score: Int = 0
 
     @IBOutlet weak var questionLabel: UILabel!
+    
+    @IBOutlet weak var scoreLabel: UILabel!
+    
+    @IBOutlet weak var progressLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,9 +28,21 @@ class ViewController: UIViewController {
     }
 
     @IBAction func answerPressed(_ sender: UIButton) {
-        if sender.tag == 1 {
+        self.checkAnswer(sender.tag)
+        
+        self.currentQuestionIndex += 1
+        
+        self.nextQuestion()
+        
+        self.progressLabel.text = "\(self.currentQuestionIndex + 1) / 13"
+    }
+    
+    func checkAnswer(_ tag: Int) -> Void {
+        if tag == 1 {
             if questions[self.currentQuestionIndex].answer {
                 print("回答正确")
+                self.score += 1
+                self.scoreLabel.text = "总得分: \(self.score)"
             } else {
                 print("回答错误")
             }
@@ -33,20 +51,30 @@ class ViewController: UIViewController {
                 print("回答错误")
             } else {
                 print("回答正确")
+                self.score += 1
+                self.scoreLabel.text = "总得分: \(self.score)"
             }
         }
-        
-        self.currentQuestionIndex += 1
-        
+    }
+    
+    func nextQuestion() -> Void {
         if self.currentQuestionIndex <= 12 {
             self.questionLabel.text = questions[self.currentQuestionIndex].text
         } else {
             self.currentQuestionIndex = 0 // reset
+            self.score = 0
             
+            // handler 和 completion 参数为闭包/回调函数，一般用在一怎么怎么就怎么怎么
             let alert = UIAlertController(title: "漂亮!", message: "您已经完成了所有问题, 要重新来一遍吗?", preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "再来一遍", style: UIAlertAction.Style.default, handler: { _ in
+            
+            // alert 下面的按钮
+            let action = UIAlertAction(title: "再来一遍", style: UIAlertAction.Style.default, handler: { action in
+                self.questionLabel.text = questions[0].text
                 
-            }))
+                self.scoreLabel.text = "总得分: \(self.score)"
+            })
+            
+            alert.addAction(action)
             self.present(alert, animated: true, completion: nil)
             
         }
