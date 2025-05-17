@@ -101,3 +101,6 @@ self.present(alert, animated: true, completion: nil)
 ```
 
 虽然 NSLayoutConstraint 的 multiplier 是只读的，但是可以使用 Constant 来计算大小.
+
+## 9-Swift语言-渐入佳境
+便利构造器: 关键字 `convenience`
