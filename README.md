@@ -99,3 +99,5 @@ self.present(alert, animated: true, completion: nil)
 .cancel 取消操作
 .destructive 破坏性操作
 ```
+
+虽然 NSLayoutConstraint 的 multiplier 是只读的，但是可以使用 Constant 来计算大小.

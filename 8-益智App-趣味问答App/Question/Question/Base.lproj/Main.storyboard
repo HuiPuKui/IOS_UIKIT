@@ -95,6 +95,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="progressBarViewWidth" destination="i3I-fv-SEU" id="RsA-29-2dJ"/>
                         <outlet property="progressLabel" destination="C5v-Xr-aIa" id="RKg-ne-N05"/>
                         <outlet property="questionLabel" destination="gfT-Ma-v16" id="T9z-Lg-SQB"/>
                         <outlet property="scoreLabel" destination="jZQ-pW-bY0" id="MeL-lb-kz2"/>
