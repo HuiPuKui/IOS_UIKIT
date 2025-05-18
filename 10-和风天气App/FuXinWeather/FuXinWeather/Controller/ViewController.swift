@@ -15,7 +15,12 @@ import SwiftyJSON
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
 
+    @IBOutlet weak var tempLabel: UILabel!
+    @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet weak var cityLabel: UILabel!
+    
     let locationManager: CLLocationManager = CLLocationManager()
+    let weather: Weather = Weather()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,8 +45,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         AF.request("https://ny2tumxw93.re.qweatherapi.com/v7/weather/now?location=\(lon),\(lat)&key=e6499bcc50c6463abe0f972b897e2822").responseJSON { response in
             if let data = response.value {
                 let weatherJson: JSON = JSON(data)
-                print(weatherJson["now", "temp"])
-                print(weatherJson["refer", "sources", 0])
+                
+                self.weather.temp = "\(weatherJson["now", "temp"].stringValue)˚"
+                self.weather.icon = "\(weatherJson["now", "icon"].stringValue)"
+                
+                self.tempLabel.text = self.weather.temp
+                self.iconImageView.image = UIImage(named: self.weather.icon)
             }
         }
     }

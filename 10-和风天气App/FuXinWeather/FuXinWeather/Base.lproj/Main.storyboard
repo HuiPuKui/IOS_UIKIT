@@ -58,6 +58,11 @@
                             <constraint firstItem="MSo-aV-cfD" firstAttribute="top" secondItem="1WO-Ji-KZ5" secondAttribute="bottom" constant="80" id="q5I-oh-W7l"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cityLabel" destination="8sf-rf-pef" id="fCp-rL-Bp4"/>
+                        <outlet property="iconImageView" destination="MSo-aV-cfD" id="f1w-jU-1DL"/>
+                        <outlet property="tempLabel" destination="1WO-Ji-KZ5" id="2NF-Bz-ZaQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -95,9 +100,6 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="5VL-l4-NmS" firstAttribute="centerX" secondItem="nin-PN-PMY" secondAttribute="centerX" id="1Eg-jz-BJC"/>
-                                </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="55" translatesAutoresizingMaskIntoConstraints="NO" id="VV4-8q-Xiv">
                                 <rect key="frame" x="78.666666666666671" y="176" width="235.66666666666663" height="137"/>
