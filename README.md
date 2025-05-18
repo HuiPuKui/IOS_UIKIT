@@ -125,3 +125,5 @@ func locationManager(_ manager: CLLocationManager, didFailWithError error: any E
     print(error)
 }
 ```
+
+一个 class 只能继承一个 class，但是可以遵循很多协议

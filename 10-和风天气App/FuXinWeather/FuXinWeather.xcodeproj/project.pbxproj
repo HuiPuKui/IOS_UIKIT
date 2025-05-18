@@ -6,8 +6,16 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		E8D1EEB96ACB74B4CEAB9916 /* Pods_FuXinWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EEE730753FBC2D78EB5A606 /* Pods_FuXinWeather.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		1EEE730753FBC2D78EB5A606 /* Pods_FuXinWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FuXinWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		323B80EE2DDA394000979C31 /* 字典.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "字典.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		325202732DD9CAD10011FA6D /* FuXinWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FuXinWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD67B23A59982586D3DF8390 /* Pods-FuXinWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FuXinWeather.debug.xcconfig"; path = "Target Support Files/Pods-FuXinWeather/Pods-FuXinWeather.debug.xcconfig"; sourceTree = "<group>"; };
+		CCA56CC69FD7EDA82710D544 /* Pods-FuXinWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FuXinWeather.release.xcconfig"; path = "Target Support Files/Pods-FuXinWeather/Pods-FuXinWeather.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -36,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8D1EEB96ACB74B4CEAB9916 /* Pods_FuXinWeather.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,8 +54,11 @@
 		3252026A2DD9CAD10011FA6D = {
 			isa = PBXGroup;
 			children = (
+				323B80EE2DDA394000979C31 /* 字典.playground */,
 				325202752DD9CAD10011FA6D /* FuXinWeather */,
 				325202742DD9CAD10011FA6D /* Products */,
+				E5706DD71288A73B3ECA117D /* Pods */,
+				E293C2746252DD39807689A5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +70,23 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		E293C2746252DD39807689A5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1EEE730753FBC2D78EB5A606 /* Pods_FuXinWeather.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E5706DD71288A73B3ECA117D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BD67B23A59982586D3DF8390 /* Pods-FuXinWeather.debug.xcconfig */,
+				CCA56CC69FD7EDA82710D544 /* Pods-FuXinWeather.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -65,9 +94,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 325202862DD9CAD20011FA6D /* Build configuration list for PBXNativeTarget "FuXinWeather" */;
 			buildPhases = (
+				B2635C45393E0B97B4D90D71 /* [CP] Check Pods Manifest.lock */,
 				3252026F2DD9CAD10011FA6D /* Sources */,
 				325202702DD9CAD10011FA6D /* Frameworks */,
 				325202712DD9CAD10011FA6D /* Resources */,
+				990AC260CFEA7350999C716F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -77,8 +108,6 @@
 				325202752DD9CAD10011FA6D /* FuXinWeather */,
 			);
 			name = FuXinWeather;
-			packageProductDependencies = (
-			);
 			productName = FuXinWeather;
 			productReference = 325202732DD9CAD10011FA6D /* FuXinWeather.app */;
 			productType = "com.apple.product-type.application";
@@ -127,6 +156,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		990AC260CFEA7350999C716F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FuXinWeather/Pods-FuXinWeather-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FuXinWeather/Pods-FuXinWeather-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FuXinWeather/Pods-FuXinWeather-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B2635C45393E0B97B4D90D71 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FuXinWeather-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3252026F2DD9CAD10011FA6D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -140,12 +211,14 @@
 /* Begin XCBuildConfiguration section */
 		325202872DD9CAD20011FA6D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD67B23A59982586D3DF8390 /* Pods-FuXinWeather.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NR39766BYK;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FuXinWeather/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "复昕天气";
@@ -155,6 +228,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -170,12 +244,14 @@
 		};
 		325202882DD9CAD20011FA6D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CCA56CC69FD7EDA82710D544 /* Pods-FuXinWeather.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NR39766BYK;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FuXinWeather/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "复昕天气";
@@ -185,6 +261,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

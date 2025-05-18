@@ -7,6 +7,8 @@
 
 import UIKit
 import CoreLocation
+import Alamofire
+import SwiftyJSON
 
 // delegate -- 代理/委托
 // protocol -- 协议（optional 可选实现）
@@ -30,7 +32,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
+        let lon: CLLocationDegrees = locations[0].coordinate.longitude // 经度
+        let lat: CLLocationDegrees = locations[0].coordinate.latitude // 纬度
+        print(lon)
+        print(lat)
+
+        AF.request("https://ny2tumxw93.re.qweatherapi.com/v7/weather/now?location=\(lon),\(lat)&key=e6499bcc50c6463abe0f972b897e2822").responseJSON { response in
+            if let data = response.value {
+                let weatherJson: JSON = JSON(data)
+                print(weatherJson["now", "temp"])
+                print(weatherJson["refer", "sources", 0])
+            }
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: any Error) {
