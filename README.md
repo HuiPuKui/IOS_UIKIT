@@ -104,3 +104,24 @@ self.present(alert, animated: true, completion: nil)
 
 ## 9-Swift语言-渐入佳境
 便利构造器: 关键字 `convenience`
+
+## 10-和风天气App
+SF Symbodls 网站链接: `https://developer.apple.com/sf-symbols/`
+
+获取位置
+```swift
+import CoreLocation
+
+let locationManager: CLLocationManager = CLLocationManager() // 需要使用 CLLocationManager
+
+// 需要设置代理 -- CLLocationManagerDelegate
+// 获取成功
+func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+}
+
+// 获取失败
+func locationManager(_ manager: CLLocationManager, didFailWithError error: any Error) {
+    print(error)
+}
+```
