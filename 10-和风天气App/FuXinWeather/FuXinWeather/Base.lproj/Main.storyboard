@@ -30,7 +30,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Ecv-Vi-mhR" kind="presentation" modalPresentationStyle="fullScreen" id="DAF-dY-GA8"/>
+                                    <segue destination="Ecv-Vi-mhR" kind="presentation" identifier="QueryViewControllerSegue" modalPresentationStyle="fullScreen" id="DAF-dY-GA8"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="100" translatesAutoresizingMaskIntoConstraints="NO" id="MSo-aV-cfD">
@@ -68,10 +68,10 @@
             </objects>
             <point key="canvasLocation" x="130.53435114503816" y="-27.464788732394368"/>
         </scene>
-        <!--View Controller-->
+        <!--Query View Controller-->
         <scene sceneID="XGf-Yw-EN5">
             <objects>
-                <viewController id="Ecv-Vi-mhR" sceneMemberID="viewController">
+                <viewController id="Ecv-Vi-mhR" customClass="QueryViewController" customModule="FuXinWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qht-Pt-Rd0">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -83,6 +83,9 @@
                                 <state key="normal" image="chevron.backward" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
                                 </state>
+                                <connections>
+                                    <action selector="back:" destination="Ecv-Vi-mhR" eventType="touchUpInside" id="IGR-mu-byR"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="nin-PN-PMY">
                                 <rect key="frame" x="112.00000000000001" y="80" width="169.33333333333337" height="36"/>
@@ -101,8 +104,8 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="55" translatesAutoresizingMaskIntoConstraints="NO" id="VV4-8q-Xiv">
-                                <rect key="frame" x="78.666666666666671" y="176" width="235.66666666666663" height="137"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="VV4-8q-Xiv">
+                                <rect key="frame" x="78.666666666666671" y="176" width="235.66666666666663" height="102"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入城市名" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="esA-TM-zlb">
                                         <rect key="frame" x="0.0" y="0.0" width="235.66666666666666" height="34"/>
@@ -110,12 +113,15 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JMC-Ed-5f3">
-                                        <rect key="frame" x="0.0" y="89" width="235.66666666666666" height="48"/>
+                                        <rect key="frame" x="0.0" y="54" width="235.66666666666666" height="48"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="查询天气">
                                             <color key="titleColor" systemColor="labelColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="query:" destination="Ecv-Vi-mhR" eventType="touchUpInside" id="RcY-BY-dYf"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -132,6 +138,10 @@
                             <constraint firstItem="nin-PN-PMY" firstAttribute="top" secondItem="UIQ-Md-WLS" secondAttribute="top" constant="80" id="oh4-Ze-v9h"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cityTextField" destination="esA-TM-zlb" id="VRx-yG-eCr"/>
+                        <outlet property="currentCityLabel" destination="t3N-N5-Kag" id="qpB-ae-IzX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="30u-CW-qDP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

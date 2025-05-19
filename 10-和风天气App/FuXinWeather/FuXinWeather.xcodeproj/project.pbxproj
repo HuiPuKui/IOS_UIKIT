@@ -14,6 +14,7 @@
 		1EEE730753FBC2D78EB5A606 /* Pods_FuXinWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FuXinWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		323B80EE2DDA394000979C31 /* 字典.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "字典.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		325202732DD9CAD10011FA6D /* FuXinWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FuXinWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		326BADFA2DDB916D00EFE2AA /* 类型转换.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "类型转换.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		BD67B23A59982586D3DF8390 /* Pods-FuXinWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FuXinWeather.debug.xcconfig"; path = "Target Support Files/Pods-FuXinWeather/Pods-FuXinWeather.debug.xcconfig"; sourceTree = "<group>"; };
 		CCA56CC69FD7EDA82710D544 /* Pods-FuXinWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FuXinWeather.release.xcconfig"; path = "Target Support Files/Pods-FuXinWeather/Pods-FuXinWeather.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -54,6 +55,7 @@
 		3252026A2DD9CAD10011FA6D = {
 			isa = PBXGroup;
 			children = (
+				326BADFA2DDB916D00EFE2AA /* 类型转换.playground */,
 				323B80EE2DDA394000979C31 /* 字典.playground */,
 				325202752DD9CAD10011FA6D /* FuXinWeather */,
 				325202742DD9CAD10011FA6D /* Products */,

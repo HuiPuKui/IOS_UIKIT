@@ -13,7 +13,7 @@ import SwiftyJSON
 // delegate -- 代理/委托
 // protocol -- 协议（optional 可选实现）
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate, QueryViewControllerDelegate {
 
     @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var iconImageView: UIImageView!
@@ -53,10 +53,49 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 self.iconImageView.image = UIImage(named: self.weather.icon)
             }
         }
+        
+        AF.request("https://ny2tumxw93.re.qweatherapi.com/geo/v2/city/lookup?location=\(lon),\(lat)&key=e6499bcc50c6463abe0f972b897e2822").responseJSON { response in
+            if let data = response.value {
+                let cityJSON: JSON = JSON(data)
+                // 数据
+                self.weather.city = cityJSON["location", 0, "name"].stringValue
+                // UI
+                self.cityLabel.text = self.weather.city
+            }
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: any Error) {
         print(error)
+        self.cityLabel.text = "获取位置失败"
+    }
+    
+    
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        
+        /*
+        if segue.identifier == "QueryViewControllerSegue" {
+            // 传值给下一个页面
+            let vc: QueryViewController = segue.destination as! QueryViewController
+            vc.currentCity = self.weather.city
+        }
+         */
+        
+        if let vc: QueryViewController = segue.destination as? QueryViewController {
+            vc.currentCity = self.weather.city
+            vc.delegate = self
+        }
+    }
+    
+    // MARK: - QueryViewControllerDelegate
+    
+    func didChangeCity(city: String) {
+        print(city)
     }
 }
 
