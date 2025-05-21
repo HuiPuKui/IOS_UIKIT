@@ -25,6 +25,13 @@ class QueryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // 弹出软键盘
+        self.cityTextField.becomeFirstResponder()
+        /*
+            // 收起软键盘
+            self.cityTextField.resignFirstResponder()
+         */
+        
         self.currentCityLabel.text = self.currentCity
     }
 
@@ -36,8 +43,11 @@ class QueryViewController: UIViewController {
     @IBAction func query(_ sender: Any) {
         // 消失
         self.dismiss(animated: true)
-
-        self.delegate?.didChangeCity(city: self.cityTextField.text!)
+        
+        // 删除空格判断是否为空
+        if !self.cityTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            self.delegate?.didChangeCity(city: self.cityTextField.text!)
+        }
     }
     
     /*

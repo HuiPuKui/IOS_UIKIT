@@ -127,3 +127,14 @@ func locationManager(_ manager: CLLocationManager, didFailWithError error: any E
 ```
 
 一个 class 只能继承一个 class，但是可以遵循很多协议
+
+如何让光标聚焦到 TextField:
+```swift 
+// 弹出软键盘
+self.cityTextField.becomeFirstResponder()
+
+// 收起软键盘
+self.cityTextField.resignFirstResponder()
+```
+
+扩展的关键字: `extension`
