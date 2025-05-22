@@ -8,9 +8,6 @@
 import UIKit
 import CoreLocation
 
-// delegate -- 代理/委托
-// protocol -- 协议（optional 可选实现）
-
 class ViewController: UIViewController {
 
     @IBOutlet weak var tempLabel: UILabel!

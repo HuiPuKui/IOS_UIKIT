@@ -7,6 +7,9 @@
 
 import UIKit
 
+// delegate -- 代理/委托
+// protocol -- 协议（optional 可选实现）
+
 protocol QueryViewControllerDelegate {
     
     func didChangeCity(city: String);
