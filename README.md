@@ -148,3 +148,7 @@ TableViewController
 TableView
 * Cell 有重用机制：上面滑走的 cell 会被弥补到最下面，避免重新渲染，可以大大提升性能
 * Cell 已经有标题、副标题、Image 等控件，可以直接赋值
+
+根据 MVC 原则，一定要先改数据，再根据数据修改视图
+
+如果做局部 TableView 的时候只需要设置 Data Source 和 Delegate 为 self，其余的就和 TableViewController 一样
