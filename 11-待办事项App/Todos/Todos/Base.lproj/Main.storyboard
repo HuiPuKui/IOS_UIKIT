@@ -68,7 +68,6 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="待办事项" id="4uY-2D-3CY">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus.circle.fill" catalog="system" id="HIf-Yd-ln4">
-                            <color key="tintColor" systemColor="systemOrangeColor"/>
                             <connections>
                                 <segue destination="ese-fz-740" kind="show" identifier="AddTodoID" id="jIE-kk-EOb"/>
                             </connections>
@@ -90,18 +89,21 @@
                             <tableViewSection id="ril-oI-Xof">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="aZq-Uf-BvI">
-                                        <rect key="frame" x="20" y="18" width="353" height="42"/>
+                                        <rect key="frame" x="20" y="18" width="353" height="42.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aZq-Uf-BvI" id="bUu-RQ-YPO">
-                                            <rect key="frame" x="0.0" y="0.0" width="353" height="42"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="353" height="42.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="iw7-QK-veO">
-                                                    <rect key="frame" x="5" y="3" width="343" height="36"/>
+                                                    <rect key="frame" x="5" y="3" width="343" height="36.666666666666664"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <color key="textColor" systemColor="labelColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="ese-fz-740" id="bKU-6G-Yhd"/>
+                                                    </connections>
                                                 </textView>
                                             </subviews>
                                             <constraints>
@@ -122,13 +124,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="添加待办事项" id="yzn-iD-PgQ">
                         <barButtonItem key="leftBarButtonItem" image="chevron.left.circle.fill" catalog="system" id="vd0-nl-ghD">
-                            <color key="tintColor" systemColor="systemOrangeColor"/>
                             <connections>
                                 <action selector="back:" destination="ese-fz-740" id="AIk-vr-CpK"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="checkmark.circle.fill" catalog="system" id="fU9-wJ-XqW">
-                            <color key="tintColor" systemColor="systemOrangeColor"/>
                             <connections>
                                 <action selector="done:" destination="ese-fz-740" id="11H-m4-Xos"/>
                             </connections>
@@ -150,6 +150,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="mLh-gU-llY">
                         <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" systemColor="systemOrangeColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

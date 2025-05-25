@@ -21,7 +21,9 @@ class TodoTableVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        // 聚焦
+        self.todoTextView.becomeFirstResponder()
+        
         self.navigationItem.leftBarButtonItem?.image = pointItem("chevron.left.circle.fill")
         self.navigationItem.rightBarButtonItem?.image = pointItem("checkmark.circle.fill")
     }
@@ -38,4 +40,20 @@ class TodoTableVC: UITableViewController {
         
         self.navigationController?.popViewController(animated: true)
     }
+}
+
+extension TodoTableVC: UITextViewDelegate {
+    
+    func textViewDidChange(_ textView: UITextView) {
+        // 让 tableview 重新布局（带动画），会根据 storyboard 上定的约束换行或减行
+        // 老版本写法
+//        self.tableView.beginUpdates()
+//        self.tableView.endUpdates()
+        
+        // 新版本写法 批量更新
+        self.tableView.performBatchUpdates {
+            
+        }
+    }
+    
 }

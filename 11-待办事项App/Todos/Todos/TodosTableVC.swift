@@ -134,7 +134,10 @@ class TodosTableVC: UITableViewController {
 extension TodosTableVC: TodoTableVCDelegate {
     
     func didAdd(name: String) {
-        print(name)
+        self.todos.append(Todo(name: name, checked: false))
+        
+        // 其实是把表格重新刷新了一下（只添加的部分）
+        self.tableView.insertRows(at: [IndexPath(row: self.todos.count - 1, section: 0)], with: UITableView.RowAnimation.automatic)
     }
     
 }
