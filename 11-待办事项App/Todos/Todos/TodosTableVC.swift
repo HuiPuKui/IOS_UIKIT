@@ -7,6 +7,9 @@
 
 import UIKit
 
+// present / dismiss
+// push / pop (压栈 / 出栈)
+
 class TodosTableVC: UITableViewController {
 
     var todos: [Todo] = [
@@ -25,6 +28,8 @@ class TodosTableVC: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        self.navigationItem.rightBarButtonItem?.image = pointItem("plus.circle.fill")
     }
 
     // MARK: - Table view data source
@@ -117,7 +122,19 @@ class TodosTableVC: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == kAddTodoID {
+            let vc: TodoTableVC = segue.destination as! TodoTableVC
+            vc.delegate = self
+        }
     }
     
+}
 
+extension TodosTableVC: TodoTableVCDelegate {
+    
+    func didAdd(name: String) {
+        print(name)
+    }
+    
 }
