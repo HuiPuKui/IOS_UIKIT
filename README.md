@@ -144,3 +144,7 @@ self.cityTextField.resignFirstResponder()
 TableViewController
 * 适合做整体页面都是 TableView 的情况
 * 勾选 is initial view controller 可以作为首页
+
+TableView
+* Cell 有重用机制：上面滑走的 cell 会被弥补到最下面，避免重新渲染，可以大大提升性能
+* Cell 已经有标题、副标题、Image 等控件，可以直接赋值

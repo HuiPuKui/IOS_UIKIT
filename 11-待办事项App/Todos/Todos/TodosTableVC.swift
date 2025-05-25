@@ -1,5 +1,5 @@
 //
-//  TodosVC.swift
+//  TodosTableVC.swift
 //  Todos
 //
 //  Created by 惠蒲葵 on 2025/5/23.
@@ -7,8 +7,16 @@
 
 import UIKit
 
-class TodosVC: UITableViewController {
+class TodosTableVC: UITableViewController {
 
+    var todos: [Todo] = [
+        Todo(name: "学习 Lebus 的《iOS基础版》课程", checked: false),
+        Todo(name: "学习 Lebus 的《iOS进阶版》课程", checked: false),
+        Todo(name: "学习 Lebus 的《iOS仿小红书实战项目》课程", checked: true),
+        Todo(name: "学习 Lebus 的《iOS推送》课程", checked: false),
+        Todo(name: "学习 Lebus 的《iOS-SwiftUI》课程", checked: false)
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,21 +32,42 @@ class TodosVC: UITableViewController {
     // 代表这个 table view 有几段
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     // 代表在每段里面有多少行
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.todos.count
     }
 
     // 当前这一行显示的内容
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: kTodoCellID, for: indexPath) as! TodoCell
+        let checkBoxBtn: UIButton = cell.checkBoxBtn!
+        let todoLabel: UILabel = cell.todoLabel!
+        let initSelected: Bool = self.todos[indexPath.row].checked
+        
+//        // 系统自带布局（虽然 storyboard 里面没有响应的 UI 控件，但仍旧可以这样使用）
+//        var contentConfiguration: UIListContentConfiguration = cell.defaultContentConfiguration()
+//        contentConfiguration.text = "昵称"
+//        contentConfiguration.secondaryText = "个性签名"
+//        contentConfiguration.image = UIImage(systemName: "star")
+//        cell.contentConfiguration = contentConfiguration
+        
+        
+        checkBoxBtn.isSelected = initSelected
+        // 设置按钮的点击事件
+        checkBoxBtn.addAction(UIAction(handler: { action in
+            self.todos[indexPath.row].checked.toggle()
+            let checked: Bool = self.todos[indexPath.row].checked
+            checkBoxBtn.isSelected = checked
+            todoLabel.textColor = checked ? UIColor.tertiaryLabel : UIColor.label
+        }), for: UIControl.Event.touchUpInside)
+        
+        todoLabel.text = self.todos[indexPath.row].name
+        todoLabel.textColor = initSelected ? UIColor.tertiaryLabel : UIColor.label
+        
         return cell
     }
     
