@@ -14,6 +14,8 @@ let kTodoCellID: String = "TodoCellID"
 
 let kAddTodoID: String = "AddTodoID"
 
+let kEditTodoID: String = "EditTodoID"
+
 func pointItem(_ iconName: String, _ pointSize: CGFloat = 22) -> UIImage? {
     let config = UIImage.SymbolConfiguration(pointSize: pointSize)
     return UIImage(systemName: iconName, withConfiguration: config)

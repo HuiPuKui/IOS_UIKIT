@@ -17,12 +17,15 @@ class TodoTableVC: UITableViewController {
 
     var delegate: TodoTableVCDelegate?
     
+    var name: String?
+    
     @IBOutlet weak var todoTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // 聚焦
         self.todoTextView.becomeFirstResponder()
+        self.todoTextView.text = name
         
         self.navigationItem.leftBarButtonItem?.image = pointItem("chevron.left.circle.fill")
         self.navigationItem.rightBarButtonItem?.image = pointItem("checkmark.circle.fill")

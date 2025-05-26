@@ -103,8 +103,10 @@ class TodosTableVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc: TodoTableVC = self.storyboard?.instantiateViewController(withIdentifier: kTodoTableVCID) as! TodoTableVC
-        self.navigationController?.pushViewController(vc, animated: true)
+        // 取消选择（做出点击后，灰色底色闪一下的效果）
+        self.tableView.deselectRow(at: indexPath, animated: true)
+//        let vc: TodoTableVC = self.storyboard?.instantiateViewController(withIdentifier: kTodoTableVCID) as! TodoTableVC
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
 
     /*
@@ -122,10 +124,16 @@ class TodosTableVC: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        
+        let vc: TodoTableVC = segue.destination as! TodoTableVC
         if segue.identifier == kAddTodoID {
-            let vc: TodoTableVC = segue.destination as! TodoTableVC
             vc.delegate = self
+        } else if segue.identifier == kEditTodoID {
+            let cell: TodoCell = sender as! TodoCell
+            // cell -> indexPath
+            let row: Int = self.tableView.indexPath(for: cell)!.row
+//            // indexPath -> cell
+//            self.tableView.cellForRow(at: IndexPath) as! TodoCell
+            vc.name = self.todos[row].name
         }
     }
     
