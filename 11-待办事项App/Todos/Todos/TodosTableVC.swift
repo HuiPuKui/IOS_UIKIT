@@ -29,9 +29,25 @@ class TodosTableVC: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.editButtonItem.title = nil
+        self.editButtonItem.image = pointItem("arrow.up.arrow.down.circle.fill")
+        self.navigationItem.leftBarButtonItem = self.editButtonItem
         
         self.navigationItem.rightBarButtonItem?.image = pointItem("plus.circle.fill")
+    }
+    
+    // 点击编辑按钮触发的方法
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        
+        // 二者只能存在一个
+        if self.isEditing {
+            self.editButtonItem.image = nil
+            self.editButtonItem.title = "完成"
+        } else {
+            self.editButtonItem.title = nil
+            self.editButtonItem.image = pointItem("arrow.up.arrow.down.circle.fill")
+        }
     }
     
     // MARK: - Navigation
