@@ -153,3 +153,12 @@ TableView
 根据 MVC 原则，一定要先改数据，再根据数据修改视图
 
 如果做局部 TableView 的时候只需要设置 Data Source 和 Delegate 为 self，其余的就和 TableViewController 一样
+
+给 按钮 添加点击事件 addTarget ，响应的函数前面要加上 `@objc` 关键字
+```swift
+checkBoxBtn.addTarget(self, action: #selector(toggleCheck), for: UIControl.Event.touchUpInside)
+        
+@objc func toggleCheck() -> Void {
+        
+}
+```

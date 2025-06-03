@@ -9,25 +9,27 @@ import UIKit
 
 extension TodosTableVC {
     
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // 取消选择（做出点击后，灰色底色闪一下的效果）
         self.tableView.deselectRow(at: indexPath, animated: true)
 //        let vc: TodoTableVC = self.storyboard?.instantiateViewController(withIdentifier: kTodoTableVCID) as! TodoTableVC
 //        self.navigationController?.pushViewController(vc, animated: true)
     }
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+    
+    // 左滑删除的文本
+    override func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return "点击以删除"
     }
-    */
+    
+    // 自定义编辑样式
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return self.isEditing ? UITableViewCell.EditingStyle.none : UITableViewCell.EditingStyle.delete
+    }
+    
+    // 编辑模式下是否需要缩进
+    override func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
     
 }
 

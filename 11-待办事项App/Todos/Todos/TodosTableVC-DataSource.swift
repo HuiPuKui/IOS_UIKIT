@@ -40,12 +40,17 @@ extension TodosTableVC {
         
         checkBoxBtn.isSelected = initSelected
         // 设置按钮的点击事件
-        checkBoxBtn.addAction(UIAction(handler: { action in
-            self.todos[indexPath.row].checked.toggle()
-            let checked: Bool = self.todos[indexPath.row].checked
-            checkBoxBtn.isSelected = checked
-            todoLabel.textColor = checked ? UIColor.tertiaryLabel : UIColor.label
-        }), for: UIControl.Event.touchUpInside)
+//        if !self.isEditing {
+//            checkBoxBtn.addAction(UIAction(handler: { action in
+//                self.todos[indexPath.row].checked.toggle()
+//                let checked: Bool = self.todos[indexPath.row].checked
+//                checkBoxBtn.isSelected = checked
+//                todoLabel.textColor = checked ? UIColor.tertiaryLabel : UIColor.label
+//            }), for: UIControl.Event.touchUpInside)
+//        }
+        
+        checkBoxBtn.tag = indexPath.row
+        checkBoxBtn.addTarget(self, action: #selector(toggleCheck), for: UIControl.Event.touchUpInside)
         
         todoLabel.text = self.todos[indexPath.row].name
         todoLabel.textColor = initSelected ? UIColor.tertiaryLabel : UIColor.label
@@ -53,30 +58,41 @@ extension TodosTableVC {
         return cell
     }
     
-    // 左滑删除的文本
-    override func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
-        return "点击以删除"
-    }
-    
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete { // 左滑删除
             self.todos.remove(at: indexPath.row)
 
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            // 根据最新数据更新视图
+            tableView.reloadData()
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
+    }
+    
+    // Override to support rearranging the table view.
+    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+        let todoToRemove: Todo = self.todos[fromIndexPath.row]
+        self.todos.remove(at: fromIndexPath.row)
+        self.todos.insert(todoToRemove, at: to.row)
+        
+        // 系统自动更新视图（存粹更新，不会调用 Data Source）
+        self.tableView.reloadData()
+    }
+    
+}
+
+// 监听函数
+extension TodosTableVC {
+    
+    @objc func toggleCheck(checkBoxBtn: UIButton) -> Void {
+        let row: Int = checkBoxBtn.tag
+        self.todos[row].checked.toggle()
+        let checked: Bool = self.todos[row].checked
+        checkBoxBtn.isSelected = checked
+        
+        let cell: TodoCell = self.tableView.cellForRow(at: IndexPath(row: row, section: 0)) as! TodoCell
+        cell.todoLabel.textColor = checked ? UIColor.tertiaryLabel : UIColor.label
     }
     
 }
