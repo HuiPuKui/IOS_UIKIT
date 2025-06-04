@@ -162,3 +162,18 @@ checkBoxBtn.addTarget(self, action: #selector(toggleCheck), for: UIControl.Event
         
 }
 ```
+
+## 12-本地存储
+UserDefaults
+* 存放于沙盒（SandBox）中，每个 App 都有自己的沙盒
+* `NSHomeDirectory()` 沙盒路径
+```swift
+UserDefaults.standard.set(value: Any?, forKey: String)
+UserDefaults.standard.data(forKey: String)
+```
+
+遵循 Encodable 协议的数据才能被编码
+
+遵循 Decodable 协议的数据才能被解码
+
+遵循 Codable 协议的数据才能被编码和解码
