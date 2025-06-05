@@ -32,6 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // MARK: - Core Data stack
 
+    // 闭包 - 多行代码执行后赋值给 persistentContainer
     lazy var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation
