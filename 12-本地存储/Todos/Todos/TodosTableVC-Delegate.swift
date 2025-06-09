@@ -36,9 +36,12 @@ extension TodosTableVC {
 extension TodosTableVC: TodoTableVCDelegate {
     
     func didAdd(name: String) {
-        self.todos.append(Todo(name: name, checked: false))
-        
-        self.saveData()
+//        self.todos.append(Todo(name: name, checked: false))    
+//        self.saveData()
+        let todo: Todo = Todo(context: context)
+        todo.name = name
+        todos.append(todo)
+        appDelegate.saveContext()
         
         // 其实是把表格重新刷新了一下（只添加的部分）
         self.tableView.insertRows(at: [IndexPath(row: self.todos.count - 1, section: 0)], with: UITableView.RowAnimation.automatic)
@@ -46,7 +49,8 @@ extension TodosTableVC: TodoTableVCDelegate {
     
     func didEdit(name: String) {
         self.todos[self.row].name = name
-        self.saveData()
+        appDelegate.saveContext()
+//        self.saveData()
 //        let indexPath: IndexPath = IndexPath(row: self.row, section: 0)
 //        let cell: TodoCell = self.tableView.cellForRow(at: indexPath) as! TodoCell
 //        cell.todoLabel.text = self.todos[self.row].name

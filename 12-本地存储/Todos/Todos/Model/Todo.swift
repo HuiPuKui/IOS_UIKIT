@@ -14,7 +14,7 @@ import Foundation
 //}
 
 // 结构体 - 值类型
-struct Todo: Codable {
-    var name: String
-    var checked: Bool
-}
+//struct Todo: Codable {
+//    var name: String
+//    var checked: Bool
+//}

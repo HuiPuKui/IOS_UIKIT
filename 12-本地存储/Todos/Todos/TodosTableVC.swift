@@ -13,11 +13,11 @@ import UIKit
 class TodosTableVC: UITableViewController {
 
     var todos: [Todo] = [
-        Todo(name: "学习 Lebus 的《iOS基础版》课程", checked: false),
-        Todo(name: "学习 Lebus 的《iOS进阶版》课程", checked: false),
-        Todo(name: "学习 Lebus 的《iOS仿小红书实战项目》课程", checked: true),
-        Todo(name: "学习 Lebus 的《iOS推送》课程", checked: false),
-        Todo(name: "学习 Lebus 的《iOS-SwiftUI》课程", checked: false)
+//        Todo(name: "学习 Lebus 的《iOS基础版》课程", checked: false),
+//        Todo(name: "学习 Lebus 的《iOS进阶版》课程", checked: false),
+//        Todo(name: "学习 Lebus 的《iOS仿小红书实战项目》课程", checked: true),
+//        Todo(name: "学习 Lebus 的《iOS推送》课程", checked: false),
+//        Todo(name: "学习 Lebus 的《iOS-SwiftUI》课程", checked: false)
     ]
     
     // 等价写法
@@ -37,14 +37,14 @@ class TodosTableVC: UITableViewController {
         self.navigationItem.leftBarButtonItem = self.editButtonItem
         
         self.navigationItem.rightBarButtonItem?.image = pointItem("plus.circle.fill")
-        
-        if let data: Data = UserDefaults.standard.data(forKey: kTodosKey) {
-            if let todos = try? JSONDecoder().decode([Todo].self, from: data) {
-                self.todos = todos
-            } else {
-                print("解码失败")
-            }
-        }
+
+//        if let data: Data = UserDefaults.standard.data(forKey: kTodosKey) {
+//            if let todos = try? JSONDecoder().decode([Todo].self, from: data) {
+//                self.todos = todos
+//            } else {
+//                print("解码失败")
+//            }
+//        }
     }
     
     // 点击编辑按钮触发的方法

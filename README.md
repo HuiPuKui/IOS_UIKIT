@@ -177,3 +177,17 @@ UserDefaults.standard.data(forKey: String)
 遵循 Decodable 协议的数据才能被解码
 
 遵循 Codable 协议的数据才能被编码和解码
+
+AppDelegate 管理 App 的生命周期
+
+Core Data 持久化数据存储: 连接代码和 sqlite 的桥梁
+```swift
+let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+let todo: Todo = Todo(context: context)
+todo.name = name
+todo.checked = false
+appDelegate.saveContext()
+```
+
+DB Browser for SQLite: `https://sqlitebrowser.org/dl/`

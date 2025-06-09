@@ -61,8 +61,10 @@ extension TodosTableVC {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete { // 左滑删除
+            context.delete(todos[indexPath.row])
             self.todos.remove(at: indexPath.row)
-            self.saveData()
+            appDelegate.saveContext()
+//            self.saveData()
             // 根据最新数据更新视图
             tableView.reloadData()
         } else if editingStyle == .insert {
@@ -75,22 +77,9 @@ extension TodosTableVC {
         let todoToRemove: Todo = self.todos[fromIndexPath.row]
         self.todos.remove(at: fromIndexPath.row)
         self.todos.insert(todoToRemove, at: to.row)
-        self.saveData()
+//        self.saveData()
         // 系统自动更新视图（存粹更新，不会调用 Data Source）
         self.tableView.reloadData()
-    }
-    
-}
-
-extension TodosTableVC {
-    
-    func saveData() -> Void {
-        do {
-            let data: Data = try JSONEncoder().encode(todos)
-            UserDefaults.standard.set(data, forKey: kTodosKey)
-        } catch {
-            print("编码错误: ", error)
-        }
     }
     
 }
@@ -101,7 +90,8 @@ extension TodosTableVC {
     @objc func toggleCheck(checkBoxBtn: UIButton) -> Void {
         let row: Int = checkBoxBtn.tag
         self.todos[row].checked.toggle()
-        self.saveData()
+        appDelegate.saveContext()
+//        self.saveData()
         
         let checked: Bool = self.todos[row].checked
         checkBoxBtn.isSelected = checked
