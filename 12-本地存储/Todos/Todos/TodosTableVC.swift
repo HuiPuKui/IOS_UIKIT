@@ -45,6 +45,14 @@ class TodosTableVC: UITableViewController {
 //                print("解码失败")
 //            }
 //        }
+        
+        let request = Todo.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: kOrderID, ascending: true)] // 根据 orderID 升序排列
+        if let todos = try? context.fetch(request) {
+            self.todos = todos
+        } else {
+            print("从 SQLite 里面获取数据失败")
+        }
     }
     
     // 点击编辑按钮触发的方法

@@ -21,6 +21,8 @@ let kEditTodoID: String = "EditTodoID"
 // userdefault key
 let kTodosKey = "TodosKey"
 
+let kOrderID = "orderID"
+
 func pointItem(_ iconName: String, _ pointSize: CGFloat = 22) -> UIImage? {
     let config = UIImage.SymbolConfiguration(pointSize: pointSize)
     return UIImage(systemName: iconName, withConfiguration: config)

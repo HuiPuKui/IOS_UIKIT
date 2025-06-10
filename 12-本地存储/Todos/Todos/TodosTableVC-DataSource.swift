@@ -26,6 +26,10 @@ extension TodosTableVC {
     // 当前这一行显示的内容
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: kTodoCellID, for: indexPath) as! TodoCell
+        
+        self.todos[indexPath.row].orderID = Int16(indexPath.row)
+        appDelegate.saveContext()
+        
         let checkBoxBtn: UIButton = cell.checkBoxBtn!
         let todoLabel: UILabel = cell.todoLabel!
         let initSelected: Bool = self.todos[indexPath.row].checked

@@ -188,6 +188,9 @@ let todo: Todo = Todo(context: context)
 todo.name = name
 todo.checked = false
 appDelegate.saveContext()
+
+// 获取数据
+let todos = try? context.fetch(Todo.fetchRequest())
 ```
 
 DB Browser for SQLite: `https://sqlitebrowser.org/dl/`
