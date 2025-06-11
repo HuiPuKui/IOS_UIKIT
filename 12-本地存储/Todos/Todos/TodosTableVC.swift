@@ -25,6 +25,22 @@ class TodosTableVC: UITableViewController {
     
     var row: Int = 0
     
+    override func viewWillAppear(_ animated: Bool) {
+        print("页面即将出现")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("页面已经出现")
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        print("页面即将消失")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        print("页面已经消失")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
