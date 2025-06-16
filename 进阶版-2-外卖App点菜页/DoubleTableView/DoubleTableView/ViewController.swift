@@ -38,3 +38,25 @@ class ViewController: UIViewController {
 
 }
 
+
+extension ViewController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return tableView == self.categoryTableView ? 1 : self.categories.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tableView == self.categoryTableView ? categories.count : menus[section].count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if tableView == self.categoryTableView {
+            let cell = tableView.dequeueReusableCell(withIdentifier: kCategoryCellID, for: indexPath)
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: kMenuCellID, for: indexPath)
+            return cell
+        }
+    }
+    
+}
