@@ -201,3 +201,12 @@ DB Browser for SQLite: `https://sqlitebrowser.org/dl/`
 ## 1-课程简介
 
 ## 2-外卖App点菜页
+```swift
+didSet: 传值的时候会触发
+
+var menu: Menu? {
+    didSet {
+        
+    }
+}
+```

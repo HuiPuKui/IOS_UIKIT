@@ -8,12 +8,12 @@
 import Foundation
 
 class Menu {
-    var imageName: String
+    var menuImageName: String
     var menuName: String
     var price: Double
     
-    init(imageName: String, menuName: String, price: Double) {
-        self.imageName = imageName
+    init(menuImageName: String, menuName: String, price: Double) {
+        self.menuImageName = menuImageName
         self.menuName = menuName
         self.price = price
     }

@@ -28,7 +28,7 @@ class ViewController: UIViewController {
         for category in categories {
             var menusPerCategory: [Menu] = []
             for i in 1...3 {
-                let menu: Menu = Menu(imageName: "food", menuName: "\(category) - 外卖菜品\(i)", price: Double(i))
+                let menu: Menu = Menu(menuImageName: "food", menuName: "\(category) - 外卖菜品\(i)", price: Double(i))
                 menusPerCategory.append(menu)
             }
             menus.append(menusPerCategory)
@@ -51,10 +51,12 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView == self.categoryTableView {
-            let cell = tableView.dequeueReusableCell(withIdentifier: kCategoryCellID, for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: kCategoryCellID, for: indexPath) as! CategoryCell
+            cell.categoryLabel.text = self.categories[indexPath.row]
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: kMenuCellID, for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: kMenuCellID, for: indexPath) as! MenuCell
+            cell.menu = self.menus[indexPath.section][indexPath.row]
             return cell
         }
     }
