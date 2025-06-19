@@ -9,6 +9,8 @@ import UIKit
 
 let kCategoryCellID: String = "CategoryCellID"
 let kMenuCellID: String = "MenuCellID"
+let kCategoryHeaderNibName = "CategoryHeader"
+let kCategoryHeaderID = "CategoryHeaderID"
 
 class ViewController: UIViewController {
 
@@ -20,6 +22,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.menuTableView.register(UINib(nibName: kCategoryHeaderNibName, bundle: nil), forHeaderFooterViewReuseIdentifier: kCategoryHeaderID)
         
         for i in 1...20 {
             categories.append("分类\(i)")
@@ -33,6 +37,8 @@ class ViewController: UIViewController {
             }
             menus.append(menusPerCategory)
         }
+        
+        self.categoryTableView.selectRow(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: UITableView.ScrollPosition.none)
     }
 
 
@@ -58,6 +64,32 @@ extension ViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: kMenuCellID, for: indexPath) as! MenuCell
             cell.menu = self.menus[indexPath.section][indexPath.row]
             return cell
+        }
+    }
+    
+}
+
+
+extension ViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if tableView == self.categoryTableView {
+            return nil
+        }
+        
+        let categoryHeader: CategoryHeader = tableView.dequeueReusableHeaderFooterView(withIdentifier: kCategoryHeaderID) as! CategoryHeader
+        categoryHeader.categoryNameLabel.text = self.categories[section]
+        return categoryHeader
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return tableView == self.categoryTableView ? 0 : 30
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if tableView == self.categoryTableView {
+            self.menuTableView.scrollToRow(at: IndexPath(row: 0, section: indexPath.row), at: UITableView.ScrollPosition.top, animated: true)
+            self.categoryTableView.scrollToRow(at: indexPath, at: UITableView.ScrollPosition.top, animated: true)
         }
     }
     

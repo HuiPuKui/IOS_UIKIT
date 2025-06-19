@@ -20,6 +20,9 @@ class CategoryCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+        self.contentView.backgroundColor = selected ? UIColor.systemBackground : UIColor.clear
+        self.categoryLabel.font = selected ? UIFont.boldSystemFont(ofSize: 15) : UIFont.systemFont(ofSize: 15)
+        self.categoryLabel.textColor = selected ? UIColor.label : UIColor.secondaryLabel
     }
 
 }
