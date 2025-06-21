@@ -20,6 +20,10 @@ class ViewController: UIViewController {
     var categories: [String] = []
     var menus: [[Menu]] = []
     
+    var menuTableViewGoDown: Bool = true
+    
+    var menuTableViewCurrentContentOffsetY: CGFloat = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,7 +44,6 @@ class ViewController: UIViewController {
         
         self.categoryTableView.selectRow(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: UITableView.ScrollPosition.none)
     }
-
 
 }
 
@@ -90,6 +93,29 @@ extension ViewController: UITableViewDelegate {
         if tableView == self.categoryTableView {
             self.menuTableView.scrollToRow(at: IndexPath(row: 0, section: indexPath.row), at: UITableView.ScrollPosition.top, animated: true)
             self.categoryTableView.scrollToRow(at: indexPath, at: UITableView.ScrollPosition.top, animated: true)
+        }
+    }
+    
+    // 判断向上还是向下
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let tableView: UITableView = scrollView as! UITableView
+        if tableView == self.menuTableView {
+            self.menuTableViewGoDown = self.menuTableViewCurrentContentOffsetY < tableView.contentOffset.y
+            self.menuTableViewCurrentContentOffsetY = tableView.contentOffset.y
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        // 是菜单 并且 向下 并且 拖拽或惯性减速
+        if tableView == self.menuTableView && !self.menuTableViewGoDown && (self.menuTableView.isDragging || self.menuTableView.isDecelerating) {
+            self.categoryTableView.selectRow(at: IndexPath(row: section, section: 0), animated: true, scrollPosition: UITableView.ScrollPosition.top)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didEndDisplayingHeaderView view: UIView, forSection section: Int) {
+        // 是菜单 并且 向上 并且 拖拽或惯性减速
+        if tableView == self.menuTableView && self.menuTableViewGoDown && (self.menuTableView.isDragging || self.menuTableView.isDecelerating) {
+            self.categoryTableView.selectRow(at: IndexPath(row: section + 1, section: 0), animated: true, scrollPosition: UITableView.ScrollPosition.top)
         }
     }
     
