@@ -210,3 +210,13 @@ var menu: Menu? {
     }
 }
 ```
+判断向上/下滚动
+```swift
+func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    let tableView: UITableView = scrollView as! UITableView
+    if tableView == self.menuTableView {
+        self.menuTableViewGoDown = self.menuTableViewCurrentContentOffsetY < tableView.contentOffset.y
+        self.menuTableViewCurrentContentOffsetY = tableView.contentOffset.y
+    }
+}
+```
