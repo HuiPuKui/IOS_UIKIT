@@ -220,3 +220,32 @@ func scrollViewDidScroll(_ scrollView: UIScrollView) {
     }
 }
 ```
+
+## 3-Swift语言进阶
+计算属性
+```swift
+struct Rect {
+    ...
+    var center: Point {
+        get {
+            ...
+        }
+        set(newCenter) {
+            ...
+        }
+    }
+}
+```
+属性观察者
+```swift
+class Product {
+    var price: Double = 0.0 {
+        willSet {
+            
+        }
+        didSet {
+            
+        }
+    }
+}
+```
