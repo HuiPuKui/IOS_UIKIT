@@ -59,7 +59,8 @@ print(square.originY)
 print(square.area)
  */
 
-
+// 存储属性用于 class, struct
+// 计算属性用于 class, struct, enum
 struct Point {
     var x: Double = 0.0
     var y: Double = 0.0
