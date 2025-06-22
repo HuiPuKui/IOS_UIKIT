@@ -262,3 +262,10 @@ struct User {
 
 // 总结: 如无重写需求，则统一使用static，性能更高
 ```
+访问权限
+
+* private: 只能在自己的作用域中使用，不可以跨文件
+* fileprivate: 可以在同一个文件中使用
+* internal: 默认权限，可以在同一个 Module 中使用
+* public: 可以在不同的 Module 中使用，public 的修饰内容在外部无法被继承或者重写
+* open: 可以在不同的 Module 中使用，open 的修饰内容在外部可以被继承或者重写
