@@ -269,3 +269,5 @@ struct User {
 * internal: 默认权限，可以在同一个 Module 中使用
 * public: 可以在不同的 Module 中使用，public 的修饰内容在外部无法被继承或者重写
 * open: 可以在不同的 Module 中使用，open 的修饰内容在外部可以被继承或者重写，只能用来修饰 class，和 class 中的属性和方法
+
+## 4-UICollectionView
