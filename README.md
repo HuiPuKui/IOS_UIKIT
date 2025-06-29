@@ -256,6 +256,7 @@ struct User {
     static let standard = User()
 }
 
+
 // 类型属性: 静态属性（static前缀）+ 类属性（class前缀）
 // static 虽然可以在类、结构体、或者枚举中使用，且可以修饰存储属性、计算属性和方法，非常通用，但它修饰的计算属性不能被重写
 // class 虽然只能在类中使用，却只顾被曝光修饰类中的计算属性和方法，但修饰的计算属性和方法可以被重写（如Bundle的main属性，UserDefault的standard属性）
@@ -271,3 +272,5 @@ struct User {
 * open: 可以在不同的 Module 中使用，open 的修饰内容在外部可以被继承或者重写，只能用来修饰 class，和 class 中的属性和方法
 
 ## 4-UICollectionView
+
+Using the Flow Layout 文档: `https://developer.apple.com/library/archive/documentation/WindowsViews/Conceptual/CollectionViewPGforIOS/UsingtheFlowLayout/UsingtheFlowLayout.html#//apple_ref/doc/uid/TP40012334-CH3-SW1`
