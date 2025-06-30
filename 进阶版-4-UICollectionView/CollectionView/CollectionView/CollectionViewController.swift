@@ -8,6 +8,9 @@
 import UIKit
 
 private let reuseIdentifier = "Cell"
+let sectionInset: UIEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+let itemSpacing: CGFloat = CGFloat(3)
+let itemsPerRow: Int = 3
 
 class CollectionViewController: UICollectionViewController {
 
@@ -92,23 +95,25 @@ extension CollectionViewController: UICollectionViewDelegateFlowLayout {
     
     // 设置 section 的边距（内边距），控制 section 四周的空白区域
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        return sectionInset
     }
     
     // 设置 item 之间（同一行内，水平相邻的 item）的最小间距
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 3
+        return itemSpacing
     }
     
     // 设置 item 行与行之间的间距（垂直方向的间隔）
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 3
+        return itemSpacing
     }
     
     // 指定某个 indexPath 的 cell 尺寸
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         // (总宽度 - 内边距 - 列间距 * (个数 - 1)) / 个数
-        let itemWidth = (collectionView.bounds.width - 20 - 3 * 2) / 3
+        let totalSectionInset: CGFloat = sectionInset.left * 2
+        let totalItemSpacing: CGFloat = itemSpacing * CGFloat(itemsPerRow - 1)
+        let itemWidth = (collectionView.bounds.width - totalSectionInset - totalItemSpacing) / CGFloat(itemsPerRow)
         return CGSize(width: itemWidth, height: itemWidth)
     }
     
