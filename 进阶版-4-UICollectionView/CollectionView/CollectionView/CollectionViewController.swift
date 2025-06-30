@@ -7,7 +7,8 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+private let reuseCellIdentifier = "Cell"
+private let reuseSectionHeaderIdentifier = "SectionHeader"
 let sectionInset: UIEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
 let itemSpacing: CGFloat = CGFloat(3)
 let itemsPerRow: Int = 3
@@ -50,7 +51,7 @@ class CollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: CollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CollectionViewCell
+        let cell: CollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseCellIdentifier, for: indexPath) as! CollectionViewCell
         cell.imageView.image = UIImage(named: "p\(indexPath.item + 1)")
     
         // Configure the cell
