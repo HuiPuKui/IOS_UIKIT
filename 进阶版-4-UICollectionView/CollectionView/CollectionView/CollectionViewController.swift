@@ -43,7 +43,7 @@ class CollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 4
+        return 9
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -86,4 +86,30 @@ class CollectionViewController: UICollectionViewController {
     }
     */
 
+}
+
+extension CollectionViewController: UICollectionViewDelegateFlowLayout {
+    
+    // 设置 section 的边距（内边距），控制 section 四周的空白区域
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+    }
+    
+    // 设置 item 之间（同一行内，水平相邻的 item）的最小间距
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 3
+    }
+    
+    // 设置 item 行与行之间的间距（垂直方向的间隔）
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 3
+    }
+    
+    // 指定某个 indexPath 的 cell 尺寸
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        // (总宽度 - 内边距 - 列间距 * (个数 - 1)) / 个数
+        let itemWidth = (collectionView.bounds.width - 20 - 3 * 2) / 3
+        return CGSize(width: itemWidth, height: itemWidth)
+    }
+    
 }
