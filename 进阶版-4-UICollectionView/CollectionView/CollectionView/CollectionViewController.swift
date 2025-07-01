@@ -67,13 +67,14 @@ class CollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        if kind == UICollectionView.elementKindSectionHeader {
-            let sectionHeader: SectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: reuseSectionHeaderIdentifier, for: indexPath) as! SectionHeader
-            sectionHeader.textLabel.text = self.sectionHeaderTexts[indexPath.section]
-            return sectionHeader
-        } else {
-//            return UICollectionReusableView()
-            fatalError("header 或者 footer 出问题了")
+        switch kind {
+            case UICollectionView.elementKindSectionHeader:
+                let sectionHeader: SectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: reuseSectionHeaderIdentifier, for: indexPath) as! SectionHeader
+                sectionHeader.textLabel.text = self.sectionHeaderTexts[indexPath.section]
+                return sectionHeader
+            default:
+                return UICollectionReusableView()
+//                fatalError("header 或者 footer 出问题了")
         }
     }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
+		32A0FCD12E1444B800FF3A3A /* Switch.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Switch.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		32CC7C342E0B0A69007F3941 /* CollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -45,6 +46,7 @@
 		32CC7C2B2E0B0A69007F3941 = {
 			isa = PBXGroup;
 			children = (
+				32A0FCD12E1444B800FF3A3A /* Switch.playground */,
 				32CC7C362E0B0A69007F3941 /* CollectionView */,
 				32CC7C352E0B0A69007F3941 /* Products */,
 			);
