@@ -11,9 +11,16 @@ private let reuseCellIdentifier = "Cell"
 private let reuseSectionHeaderIdentifier = "SectionHeader"
 let sectionInset: UIEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
 let itemSpacing: CGFloat = CGFloat(3)
-let itemsPerRow: Int = 3
+let itemsPerRow: Int = 2
 
 class CollectionViewController: UICollectionViewController {
+    
+    private let imageNames: [[String]] = [
+        ["p1", "p2", "p3", "p4"],
+        ["p5", "p6", "p7", "p8"]
+    ]
+    
+    private let sectionHeaderTexts: [String] = ["昨天拍的", "今天拍的"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,22 +48,33 @@ class CollectionViewController: UICollectionViewController {
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return self.sectionHeaderTexts.count
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 9
+        return self.imageNames[section].count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: CollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseCellIdentifier, for: indexPath) as! CollectionViewCell
-        cell.imageView.image = UIImage(named: "p\(indexPath.item + 1)")
+        cell.imageView.image = UIImage(named: self.imageNames[indexPath.section][indexPath.item])
     
         // Configure the cell
     
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == UICollectionView.elementKindSectionHeader {
+            let sectionHeader: SectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: reuseSectionHeaderIdentifier, for: indexPath) as! SectionHeader
+            sectionHeader.textLabel.text = self.sectionHeaderTexts[indexPath.section]
+            return sectionHeader
+        } else {
+//            return UICollectionReusableView()
+            fatalError("header 或者 footer 出问题了")
+        }
     }
 
     // MARK: UICollectionViewDelegate
