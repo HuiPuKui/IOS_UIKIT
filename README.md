@@ -274,3 +274,6 @@ struct User {
 ## 4-UICollectionView
 
 Using the Flow Layout 文档: `https://developer.apple.com/library/archive/documentation/WindowsViews/Conceptual/CollectionViewPGforIOS/UsingtheFlowLayout/UsingtheFlowLayout.html#//apple_ref/doc/uid/TP40012334-CH3-SW1`
+
+## 5-瀑布流布局
+* `AnyObject` 是Swift的一个特殊协议，用来表示所有引用类型的对象
