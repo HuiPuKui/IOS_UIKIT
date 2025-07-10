@@ -277,3 +277,4 @@ Using the Flow Layout 文档: `https://developer.apple.com/library/archive/docum
 
 ## 5-瀑布流布局
 * `AnyObject` 是Swift的一个特殊协议，用来表示所有引用类型的对象
+* 重写父类的属性都要写成计算属性
