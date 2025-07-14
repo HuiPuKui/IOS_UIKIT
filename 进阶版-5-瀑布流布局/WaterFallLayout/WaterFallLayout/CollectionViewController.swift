@@ -12,17 +12,23 @@ private let collectionViewContentInset = UIEdgeInsets(top: 10, left: 4, bottom: 
 
 class CollectionViewController: UICollectionViewController {
 
+    var itemWidth: CGFloat = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.collectionView.contentInset = collectionViewContentInset
         
-        let layout = self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        layout.minimumInteritemSpacing = collectionViewContentInset.left
-        layout.minimumLineSpacing = collectionViewContentInset.left
+//        let layout = self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+//        layout.minimumInteritemSpacing = collectionViewContentInset.left
+//        layout.minimumLineSpacing = collectionViewContentInset.left
+//        
+//        let itemWidth = (collectionView.bounds.width - collectionViewContentInset.left * (2 + 1)) / 2
+//        layout.itemSize = CGSize(width: itemWidth, height: itemWidth)
         
-        let itemWidth = (collectionView.bounds.width - collectionViewContentInset.left * (2 + 1)) / 2
-        layout.itemSize = CGSize(width: itemWidth, height: itemWidth)
+        let layout = self.collectionView.collectionViewLayout as! LebusWaterfallLayout
+        self.itemWidth = (self.collectionView.bounds.width - collectionViewContentInset.left - collectionViewContentInset.right - layout.columnSpacing * CGFloat(layout.columnCount - 1)) / CGFloat(layout.columnCount)
+        layout.delegate = self
     }
 
     // MARK: UICollectionViewDataSource
@@ -41,35 +47,16 @@ class CollectionViewController: UICollectionViewController {
         return cell
     }
 
-    // MARK: UICollectionViewDelegate
+}
 
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
+extension CollectionViewController: LebusWaterfallLayoutDelegate {
     
+    func collectionView(_ collectionView: UICollectionView, heightForItemAt indexPath: IndexPath) -> CGFloat {
+        let imageSize: CGSize = UIImage(named: "\(indexPath.item + 1)")!.size
+        let imageWidth: Double = imageSize.width
+        let imageHeight: Double = imageSize.height
+        let imageRatio: Double = imageHeight / imageWidth
+        return itemWidth * imageRatio + 36
     }
-    */
-
+    
 }
