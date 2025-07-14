@@ -52,7 +52,6 @@ class LebusWaterfallLayout: UICollectionViewLayout {
         
         var y: [CGFloat] = Array(repeating: 0, count: columnCount)
         
-        
         var column = 0
         
         for item in 0..<collectionView.numberOfItems(inSection: 0) {
