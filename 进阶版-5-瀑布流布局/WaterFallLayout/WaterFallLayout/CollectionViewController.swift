@@ -27,7 +27,9 @@ class CollectionViewController: UICollectionViewController {
 //        layout.itemSize = CGSize(width: itemWidth, height: itemWidth)
         
         let layout = self.collectionView.collectionViewLayout as! LebusWaterfallLayout
+        
         self.itemWidth = (self.collectionView.bounds.width - collectionViewContentInset.left - collectionViewContentInset.right - layout.columnSpacing * CGFloat(layout.columnCount - 1)) / CGFloat(layout.columnCount)
+        layout.columnCount = 3
         layout.delegate = self
     }
 

@@ -13,9 +13,9 @@ protocol LebusWaterfallLayoutDelegate: AnyObject {
 }
 
 class LebusWaterfallLayout: UICollectionViewLayout {
-    let columnCount: Int = 2
-    let columnSpacing: CGFloat = 4
-    let lineSpacing: CGFloat = 4
+    var columnCount: Int = 2
+    var columnSpacing: CGFloat = 4
+    var lineSpacing: CGFloat = 4
     
     weak var delegate: LebusWaterfallLayoutDelegate?
     
@@ -43,7 +43,7 @@ class LebusWaterfallLayout: UICollectionViewLayout {
             self.layoutAttributesArr.isEmpty
         else { return }
         
-        let itemWidth: CGFloat = (self.collectionViewContentWidth - self.columnSpacing) / 2
+        let itemWidth: CGFloat = (self.collectionViewContentWidth - self.columnSpacing * CGFloat(self.columnCount - 1)) / CGFloat(self.columnCount)
         
         var x: [CGFloat] = []
         for column in 0..<self.columnCount {
