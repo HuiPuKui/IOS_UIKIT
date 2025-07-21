@@ -278,3 +278,17 @@ Using the Flow Layout 文档: `https://developer.apple.com/library/archive/docum
 ## 5-瀑布流布局
 * `AnyObject` 是Swift的一个特殊协议，用来表示所有引用类型的对象
 * 重写父类的属性都要写成计算属性
+
+## 6-手势
+handling UIKit gestures: `https://developer.apple.com/documentation/uikit/handling-uikit-gestures`
+
+* 点击
+* 捏合
+* 旋转
+* 轻滑
+* 拖拽
+* 边缘拖拽
+* 长按
+* 自定义
+
+离散型手势、持续型手势
