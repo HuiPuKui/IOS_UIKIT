@@ -29,6 +29,9 @@ class ViewController: UIViewController {
         
         let pinch = UIPinchGestureRecognizer(target: self, action: #selector(handlePinch(pinch:)))
         self.pinchLabel.addGestureRecognizer(pinch)
+        
+        let rotation = UIRotationGestureRecognizer(target: self, action: #selector(handleRotation(rotation:)))
+        self.rotationLabel.addGestureRecognizer(rotation)
     }
 
     @IBAction func handleIBTap(IBTap: UITapGestureRecognizer) {
@@ -53,7 +56,18 @@ class ViewController: UIViewController {
     @objc func handlePinch(pinch: UIPinchGestureRecognizer) {
         if pinch.state == .began || pinch.state == .changed {
             self.pinchLabel.transform = self.pinchLabel.transform.scaledBy(x: pinch.scale, y: pinch.scale)
-            pinch.scale = 1
+            pinch.scale = 1.0
+            
+            print(pinch.velocity) // 缩放速度（放大为正，缩小为负） 单位：缩放比/秒
+        }
+    }
+    
+    @objc func handleRotation(rotation: UIRotationGestureRecognizer) {
+        if rotation.state == .began || rotation.state == .changed {
+            self.rotationLabel.transform = self.rotationLabel.transform.rotated(by: rotation.rotation)
+            rotation.rotation = 0.0
+            
+            print(rotation.velocity) // 旋转速度（顺时针为正，逆时针为负） 单位：弧度/秒
         }
     }
 }
