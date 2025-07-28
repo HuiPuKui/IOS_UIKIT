@@ -298,3 +298,12 @@ handling UIKit gestures: `https://developer.apple.com/documentation/uikit/handli
 矩阵的本质: `https://www.zhihu.com/question/22047061`
 
 * 3.1415926... 弧度 = 180度
+
+## 7-UIScrollView
+ScrollView下面有两个 Guide
+* Content Layout Guide 内容布局
+* Frame Layout Guide 相框布局
+
+frame / bounds 区别: 
+* frame 父视图的大小
+* bounds 自身视图的大小
