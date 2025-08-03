@@ -19,6 +19,9 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         self.scrollView.delegate = self
         self.scrollView.contentInsetAdjustmentBehavior = .never
         // 在这里获取 frame / bounds 是不准的
+        
+        self.scrollView.showsVerticalScrollIndicator = false
+        self.scrollView.showsHorizontalScrollIndicator = false
     }
     
     // 根据 约束布局之后 / 横竖屏切换之后 调用
