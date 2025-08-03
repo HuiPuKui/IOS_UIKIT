@@ -19,11 +19,11 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eF6-t8-c5o">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="p1" translatesAutoresizingMaskIntoConstraints="NO" id="63w-a9-qcZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="1440" height="900"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="p3" translatesAutoresizingMaskIntoConstraints="NO" id="63w-a9-qcZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="1448" height="6301"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="900" id="Y6X-lF-tIL"/>
-                                            <constraint firstAttribute="width" constant="1440" id="imx-J4-Feh"/>
+                                            <constraint firstAttribute="height" constant="6301" id="Y6X-lF-tIL"/>
+                                            <constraint firstAttribute="width" constant="1448" id="imx-J4-Feh"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
@@ -57,7 +57,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="p1" width="1440" height="900"/>
+        <image name="p3" width="1448" height="6301"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -40,15 +40,16 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         // 拖动滚动视图时键盘收起
         self.scrollView.keyboardDismissMode = .onDrag
         
+        // 如果 View 使用代码创建 默认是 true，如果是 storyboard 默认是 false
+        if self.imageView.frame.height < self.scrollView.frame.height {
+            self.imageView.translatesAutoresizingMaskIntoConstraints = true
+        }
+        
         // 设置最开始缩放比例为 最小，不能小于最小，不能大于最大
         self.scrollView.zoomScale = scaleFactor // 不带动画
 //        self.scrollView.setZoomScale(scaleFactor, animated: true) // 带动画
         
 //        self.scrollView.contentOffset = CGPoint(x: 100, y: 100)
-        
-        // 如果 View 使用代码创建 默认是 true，如果是 storyboard 默认是 false
-        self.imageView.translatesAutoresizingMaskIntoConstraints = true
-        
     }
 
     // 指定哪个视图可以被缩放（必须指定，否则内容视图无法被缩放）
@@ -58,8 +59,10 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     // 设置 ZoomScale 或用户对内容进行缩放时会调用
     func scrollViewDidZoom(_ scrollView: UIScrollView) {
-        let offsetY: CGFloat = (self.scrollView.frame.height - self.imageView.frame.height) / 2
-        self.imageView.center = CGPoint(x: self.imageView.frame.width / 2, y: self.imageView.frame.height / 2 + offsetY)
+        if self.imageView.frame.height < self.scrollView.frame.height {
+            let offsetY: CGFloat = (self.scrollView.frame.height - self.imageView.frame.height) / 2
+            self.imageView.center = CGPoint(x: self.imageView.frame.width / 2, y: self.imageView.frame.height / 2 + offsetY)
+        }
     }
 }
 
