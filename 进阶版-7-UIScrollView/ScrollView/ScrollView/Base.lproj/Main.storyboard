@@ -28,10 +28,10 @@
                                     </imageView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="63w-a9-qcZ" firstAttribute="top" secondItem="gHr-TV-PgC" secondAttribute="top" id="2b5-sT-43x"/>
-                                    <constraint firstItem="63w-a9-qcZ" firstAttribute="bottom" secondItem="gHr-TV-PgC" secondAttribute="bottom" id="3wM-TO-XZ4"/>
-                                    <constraint firstItem="63w-a9-qcZ" firstAttribute="trailing" secondItem="gHr-TV-PgC" secondAttribute="trailing" id="KtC-4a-pgB"/>
-                                    <constraint firstItem="63w-a9-qcZ" firstAttribute="leading" secondItem="gHr-TV-PgC" secondAttribute="leading" id="qWx-Ru-VbF"/>
+                                    <constraint firstItem="63w-a9-qcZ" firstAttribute="top" secondItem="gHr-TV-PgC" secondAttribute="top" priority="750" id="2b5-sT-43x"/>
+                                    <constraint firstItem="63w-a9-qcZ" firstAttribute="bottom" secondItem="gHr-TV-PgC" secondAttribute="bottom" priority="750" id="3wM-TO-XZ4"/>
+                                    <constraint firstItem="63w-a9-qcZ" firstAttribute="trailing" secondItem="gHr-TV-PgC" secondAttribute="trailing" priority="750" id="KtC-4a-pgB"/>
+                                    <constraint firstItem="63w-a9-qcZ" firstAttribute="leading" secondItem="gHr-TV-PgC" secondAttribute="leading" priority="750" id="qWx-Ru-VbF"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="gHr-TV-PgC"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="5hY-ko-Kak"/>

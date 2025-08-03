@@ -43,10 +43,20 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         // 设置最开始缩放比例为 最小，不能小于最小，不能大于最大
         self.scrollView.zoomScale = scaleFactor // 不带动画
 //        self.scrollView.setZoomScale(scaleFactor, animated: true) // 带动画
+        
+//        self.scrollView.contentOffset = CGPoint(x: 100, y: 100)
+        
+        // 如果 View 使用代码创建 默认是 true，如果是 storyboard 默认是 false
+        self.imageView.translatesAutoresizingMaskIntoConstraints = true
+        
     }
 
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         self.imageView
+    }
+    
+    func scrollViewDidZoom(_ scrollView: UIScrollView) {
+        self.imageView.center = self.scrollView.center
     }
 }
 
