@@ -17,7 +17,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         
         self.scrollView.delegate = self
-        
+        self.scrollView.contentInsetAdjustmentBehavior = .never
         // 在这里获取 frame / bounds 是不准的
     }
     
@@ -51,12 +51,15 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
     }
 
+    // 指定哪个视图可以被缩放（必须指定，否则内容视图无法被缩放）
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         self.imageView
     }
     
+    // 设置 ZoomScale 或用户对内容进行缩放时会调用
     func scrollViewDidZoom(_ scrollView: UIScrollView) {
-        self.imageView.center = self.scrollView.center
+        let offsetY: CGFloat = (self.scrollView.frame.height - self.imageView.frame.height) / 2
+        self.imageView.center = CGPoint(x: self.imageView.frame.width / 2, y: self.imageView.frame.height / 2 + offsetY)
     }
 }
 

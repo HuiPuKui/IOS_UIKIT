@@ -305,5 +305,5 @@ ScrollView下面有两个 Guide
 * Frame Layout Guide 相框布局
 
 frame / bounds 区别: 
-* frame 父视图的大小
-* bounds 自身视图的大小
+* frame 在父视图坐标体系中的位置和大小
+* bounds 在自身坐标体系中的位置和大小

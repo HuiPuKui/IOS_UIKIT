@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
+		328D1FA32E3FAEE000A1C20C /* frame、bounds和center.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "frame、bounds和center.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		32E51FE82E37C290009264AE /* ScrollView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -45,6 +46,7 @@
 		32E51FDF2E37C290009264AE = {
 			isa = PBXGroup;
 			children = (
+				328D1FA32E3FAEE000A1C20C /* frame、bounds和center.playground */,
 				32E51FEA2E37C290009264AE /* ScrollView */,
 				32E51FE92E37C290009264AE /* Products */,
 			);
