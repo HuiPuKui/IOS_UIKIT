@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GuidePage" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wa1-3I-ZcQ">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="10L-wm-Gci">
+                                        <rect key="frame" x="198" y="0.0" width="1179" height="852"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guide-1" translatesAutoresizingMaskIntoConstraints="NO" id="iPP-RW-PC1">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guide-2" translatesAutoresizingMaskIntoConstraints="NO" id="APR-in-npy">
+                                                <rect key="frame" x="393" y="0.0" width="393" height="852"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guide-3" translatesAutoresizingMaskIntoConstraints="NO" id="rUL-dX-jEa">
+                                                <rect key="frame" x="786" y="0.0" width="393" height="852"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="10L-wm-Gci" firstAttribute="leading" secondItem="aLG-or-BK9" secondAttribute="leading" id="0qo-Lw-KpR"/>
+                                    <constraint firstItem="10L-wm-Gci" firstAttribute="bottom" secondItem="aLG-or-BK9" secondAttribute="bottom" id="2d1-iu-Hq7"/>
+                                    <constraint firstItem="10L-wm-Gci" firstAttribute="top" secondItem="aLG-or-BK9" secondAttribute="top" id="S2I-iX-sSn"/>
+                                    <constraint firstItem="10L-wm-Gci" firstAttribute="trailing" secondItem="aLG-or-BK9" secondAttribute="trailing" id="VV6-XG-uOi"/>
+                                    <constraint firstItem="10L-wm-Gci" firstAttribute="width" secondItem="aLG-or-BK9" secondAttribute="width" id="q3B-wP-df5"/>
+                                    <constraint firstItem="10L-wm-Gci" firstAttribute="height" secondItem="aLG-or-BK9" secondAttribute="height" id="sAD-sQ-PCJ"/>
+                                    <constraint firstItem="iPP-RW-PC1" firstAttribute="width" secondItem="dzT-Fq-qOI" secondAttribute="width" id="tCg-ax-RQF"/>
+                                    <constraint firstItem="iPP-RW-PC1" firstAttribute="height" secondItem="dzT-Fq-qOI" secondAttribute="height" id="tch-DJ-oaJ"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="aLG-or-BK9"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="dzT-Fq-qOI"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="wa1-3I-ZcQ" secondAttribute="trailing" id="G4n-xS-jeq"/>
+                            <constraint firstAttribute="bottom" secondItem="wa1-3I-ZcQ" secondAttribute="bottom" id="exF-8W-L6J"/>
+                            <constraint firstItem="wa1-3I-ZcQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="qHY-ux-Lxs"/>
+                            <constraint firstItem="wa1-3I-ZcQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zkg-he-Uv5"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="20.610687022900763" y="4.9295774647887329"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="guide-1" width="1242" height="2208"/>
+        <image name="guide-2" width="1242" height="2208"/>
+        <image name="guide-3" width="1242" height="2208"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
