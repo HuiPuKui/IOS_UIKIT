@@ -312,3 +312,7 @@ frame / bounds 区别:
 还可以使用 pdf 图片，因为是矢量图，可以自动处理成 1x 2x 3x
 
 不好的地方是打包的容量会变大，如果很多的话推荐使用 png
+
+Page Control
+* Tint Color: 未选中时的颜色
+* Current Page: 被选中时的颜色
