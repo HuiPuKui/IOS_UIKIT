@@ -316,3 +316,35 @@ frame / bounds 区别:
 Page Control
 * Tint Color: 未选中时的颜色
 * Current Page: 被选中时的颜色
+
+## 9-TabBarController
+
+TabBarItem 中的图片需要明确指定大小的，大约 20 ～ 30，如果太大就会超出
+
+图片渲染模式：
+* Template Image: 颜色会随着父视图的改变而改变
+* Original Image: 颜色不会随着父视图的改变而改变
+
+在代码中调节 selectedImageTintColor 这个已经被废弃了，应该使用 tintColor
+```swift
+class TabBarController: UITabBarController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        self.tabBar.tintColor = .systemRed
+    }
+    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}
+```

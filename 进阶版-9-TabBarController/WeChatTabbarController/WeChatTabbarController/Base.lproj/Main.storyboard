@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gWh-ef-wM3">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--通讯录-->
+        <scene sceneID="PiQ-cF-Yr0">
+            <objects>
+                <viewController id="Ixf-LL-wMd" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FTl-OR-8lc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Djb-9R-bR0"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="通讯录" image="tabbar_contacts" selectedImage="tabbar_contactsHL" id="0rP-Up-JUd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dfe-8X-kFm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="760" y="108"/>
+        </scene>
+        <!--发现-->
+        <scene sceneID="456-LT-gpz">
+            <objects>
+                <viewController id="cEr-Rw-TLL" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b8L-mD-8ai">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="yWx-AM-qpf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="发现" image="tabbar_discover" selectedImage="tabbar_discoverHL" id="Hvm-wb-zXy"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c1G-WF-3EB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="760" y="756"/>
+        </scene>
+        <!--微信-->
+        <scene sceneID="tsX-ms-DOQ">
+            <objects>
+                <viewController id="HzT-sK-bc2" customClass="ViewController" customModule="WeChatTabbarController" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tPL-rR-QX1">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="vBW-DR-GyA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="微信" image="tabbar_mainframe" selectedImage="tabbar_mainframeHL" id="O4Y-uk-oTg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qrU-Cq-oJr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="761" y="-538"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="cTw-oZ-RfA">
+            <objects>
+                <tabBarController id="gWh-ef-wM3" customClass="TabBarController" customModule="WeChatTabbarController" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="L9o-Uy-vVr">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.02850000188" green="0.75666517020000001" blue="0.37493714690000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="HzT-sK-bc2" kind="relationship" relationship="viewControllers" id="UdQ-TO-4an"/>
+                        <segue destination="Ixf-LL-wMd" kind="relationship" relationship="viewControllers" id="ymP-ox-WBI"/>
+                        <segue destination="cEr-Rw-TLL" kind="relationship" relationship="viewControllers" id="0H8-6O-rJY"/>
+                        <segue destination="iYA-Ia-Iln" kind="relationship" relationship="viewControllers" id="mAN-Ub-46U"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ArD-1P-Okc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-352" y="-201"/>
+        </scene>
+        <!--我-->
+        <scene sceneID="MjD-19-AIf">
+            <objects>
+                <viewController id="iYA-Ia-Iln" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="O7T-Tb-8gW">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="8GY-YZ-KX7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="我" image="tabbar_contacts" selectedImage="tabbar_meHL" id="f8h-Pa-zvR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q1p-tr-T6N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="760" y="1408"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="tabbar_contacts" width="26" height="22.666666030883789"/>
+        <image name="tabbar_contactsHL" width="26" height="22.666666030883789"/>
+        <image name="tabbar_discover" width="22.666666030883789" height="22.666666030883789"/>
+        <image name="tabbar_discoverHL" width="22.666666030883789" height="22.666666030883789"/>
+        <image name="tabbar_mainframe" width="24.666666030883789" height="22.666666030883789"/>
+        <image name="tabbar_mainframeHL" width="24.666666030883789" height="22.666666030883789"/>
+        <image name="tabbar_meHL" width="22.666666030883789" height="22.666666030883789"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
