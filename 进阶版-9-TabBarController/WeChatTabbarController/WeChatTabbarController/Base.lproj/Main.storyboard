@@ -15,14 +15,42 @@
                     <view key="view" contentMode="scaleToFill" id="FTl-OR-8lc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AeM-D5-jlX">
+                                <rect key="frame" x="0.0" y="59" width="393" height="710"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="p2" translatesAutoresizingMaskIntoConstraints="NO" id="doh-GP-v7W">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="7559"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="7559" id="4sO-BD-UBh"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="doh-GP-v7W" firstAttribute="trailing" secondItem="U9P-gP-3ez" secondAttribute="trailing" id="Cne-Uv-wgf"/>
+                                    <constraint firstItem="doh-GP-v7W" firstAttribute="width" secondItem="1Z2-Mn-BdV" secondAttribute="width" id="SyG-k0-LlK"/>
+                                    <constraint firstItem="doh-GP-v7W" firstAttribute="leading" secondItem="U9P-gP-3ez" secondAttribute="leading" id="VBz-JQ-fZe"/>
+                                    <constraint firstItem="doh-GP-v7W" firstAttribute="top" secondItem="U9P-gP-3ez" secondAttribute="top" id="YjB-ti-A0w"/>
+                                    <constraint firstItem="doh-GP-v7W" firstAttribute="bottom" secondItem="U9P-gP-3ez" secondAttribute="bottom" id="gdV-rR-7r7"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="U9P-gP-3ez"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="1Z2-Mn-BdV"/>
+                            </scrollView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Djb-9R-bR0"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGrayColor"/>
+                        <constraints>
+                            <constraint firstItem="AeM-D5-jlX" firstAttribute="bottom" secondItem="Djb-9R-bR0" secondAttribute="bottom" id="2mp-nh-apm"/>
+                            <constraint firstItem="AeM-D5-jlX" firstAttribute="leading" secondItem="Djb-9R-bR0" secondAttribute="leading" id="9Ji-Kr-FuW"/>
+                            <constraint firstItem="AeM-D5-jlX" firstAttribute="trailing" secondItem="Djb-9R-bR0" secondAttribute="trailing" id="BRh-VG-x1x"/>
+                            <constraint firstItem="AeM-D5-jlX" firstAttribute="top" secondItem="Djb-9R-bR0" secondAttribute="top" id="h8I-0M-Pef"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="通讯录" image="tabbar_contacts" selectedImage="tabbar_contactsHL" id="0rP-Up-JUd"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dfe-8X-kFm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="760" y="108"/>
+            <point key="canvasLocation" x="759.5419847328244" y="107.74647887323944"/>
         </scene>
         <!--发现-->
         <scene sceneID="456-LT-gpz">
@@ -31,14 +59,40 @@
                     <view key="view" contentMode="scaleToFill" id="b8L-mD-8ai">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EqE-9L-tfD">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="p1" translatesAutoresizingMaskIntoConstraints="NO" id="xRg-O6-DgM">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="xRg-O6-DgM" firstAttribute="trailing" secondItem="o6A-kN-2Kx" secondAttribute="trailing" id="3Q8-Fa-32c"/>
+                                    <constraint firstItem="xRg-O6-DgM" firstAttribute="width" secondItem="gx4-xs-HGW" secondAttribute="width" id="4OI-jZ-ta2"/>
+                                    <constraint firstItem="xRg-O6-DgM" firstAttribute="leading" secondItem="o6A-kN-2Kx" secondAttribute="leading" id="c2i-NC-a0F"/>
+                                    <constraint firstItem="xRg-O6-DgM" firstAttribute="top" secondItem="o6A-kN-2Kx" secondAttribute="top" id="fxG-YS-gl4"/>
+                                    <constraint firstItem="xRg-O6-DgM" firstAttribute="bottom" secondItem="o6A-kN-2Kx" secondAttribute="bottom" id="k3X-X6-tqQ"/>
+                                    <constraint firstItem="xRg-O6-DgM" firstAttribute="height" secondItem="gx4-xs-HGW" secondAttribute="height" id="mTa-Ll-PMz"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="o6A-kN-2Kx"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="gx4-xs-HGW"/>
+                            </scrollView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="yWx-AM-qpf"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGrayColor"/>
+                        <constraints>
+                            <constraint firstItem="EqE-9L-tfD" firstAttribute="trailing" secondItem="yWx-AM-qpf" secondAttribute="trailing" id="3S6-gN-bUj"/>
+                            <constraint firstItem="EqE-9L-tfD" firstAttribute="leading" secondItem="yWx-AM-qpf" secondAttribute="leading" id="RcX-fr-GEY"/>
+                            <constraint firstItem="EqE-9L-tfD" firstAttribute="top" secondItem="b8L-mD-8ai" secondAttribute="top" id="lo6-9Z-rmT"/>
+                            <constraint firstItem="EqE-9L-tfD" firstAttribute="bottom" secondItem="yWx-AM-qpf" secondAttribute="bottom" id="pD2-fQ-XYo"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="发现" image="tabbar_discover" selectedImage="tabbar_discoverHL" id="Hvm-wb-zXy"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c1G-WF-3EB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="760" y="756"/>
+            <point key="canvasLocation" x="759.5419847328244" y="755.63380281690149"/>
         </scene>
         <!--微信-->
         <scene sceneID="tsX-ms-DOQ">
@@ -47,14 +101,25 @@
                     <view key="view" contentMode="scaleToFill" id="tPL-rR-QX1">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="p1" translatesAutoresizingMaskIntoConstraints="NO" id="Y1K-SP-x93">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vBW-DR-GyA"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGrayColor"/>
+                        <constraints>
+                            <constraint firstItem="Y1K-SP-x93" firstAttribute="trailing" secondItem="vBW-DR-GyA" secondAttribute="trailing" id="JIj-fP-bU5"/>
+                            <constraint firstItem="Y1K-SP-x93" firstAttribute="top" secondItem="tPL-rR-QX1" secondAttribute="top" id="TJr-OP-n3s"/>
+                            <constraint firstItem="Y1K-SP-x93" firstAttribute="leading" secondItem="vBW-DR-GyA" secondAttribute="leading" id="fg5-J5-afe"/>
+                            <constraint firstItem="Y1K-SP-x93" firstAttribute="bottom" secondItem="vBW-DR-GyA" secondAttribute="bottom" id="wui-3g-h4e"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="微信" image="tabbar_mainframe" selectedImage="tabbar_mainframeHL" id="O4Y-uk-oTg"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qrU-Cq-oJr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="761" y="-538"/>
+            <point key="canvasLocation" x="759.5419847328244" y="-538.02816901408448"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="cTw-oZ-RfA">
@@ -95,6 +160,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="p1" width="1587" height="2245"/>
+        <image name="p2" width="1587" height="7559"/>
         <image name="tabbar_contacts" width="26" height="22.666666030883789"/>
         <image name="tabbar_contactsHL" width="26" height="22.666666030883789"/>
         <image name="tabbar_discover" width="22.666666030883789" height="22.666666030883789"/>
@@ -104,6 +171,9 @@
         <image name="tabbar_meHL" width="22.666666030883789" height="22.666666030883789"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
