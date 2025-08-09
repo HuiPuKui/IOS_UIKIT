@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -38,7 +39,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Djb-9R-bR0"/>
-                        <color key="backgroundColor" systemColor="systemGrayColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="AeM-D5-jlX" firstAttribute="bottom" secondItem="Djb-9R-bR0" secondAttribute="bottom" id="2mp-nh-apm"/>
                             <constraint firstItem="AeM-D5-jlX" firstAttribute="leading" secondItem="Djb-9R-bR0" secondAttribute="leading" id="9Ji-Kr-FuW"/>
@@ -80,7 +81,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yWx-AM-qpf"/>
-                        <color key="backgroundColor" systemColor="systemGrayColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="EqE-9L-tfD" firstAttribute="trailing" secondItem="yWx-AM-qpf" secondAttribute="trailing" id="3S6-gN-bUj"/>
                             <constraint firstItem="EqE-9L-tfD" firstAttribute="leading" secondItem="yWx-AM-qpf" secondAttribute="leading" id="RcX-fr-GEY"/>
@@ -107,7 +108,7 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vBW-DR-GyA"/>
-                        <color key="backgroundColor" systemColor="systemGrayColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Y1K-SP-x93" firstAttribute="trailing" secondItem="vBW-DR-GyA" secondAttribute="trailing" id="JIj-fP-bU5"/>
                             <constraint firstItem="Y1K-SP-x93" firstAttribute="top" secondItem="tPL-rR-QX1" secondAttribute="top" id="TJr-OP-n3s"/>
@@ -129,7 +130,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="selectedImageTintColor" red="0.02850000188" green="0.75666517020000001" blue="0.37493714690000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" name="wechat_green"/>
                         <tabBarAppearance key="standardAppearance"/>
                         <tabBarAppearance key="scrollEdgeAppearance"/>
                     </tabBar>
@@ -212,11 +213,11 @@
         <image name="tabbar_mainframe" width="24.666666030883789" height="22.666666030883789"/>
         <image name="tabbar_mainframeHL" width="24.666666030883789" height="22.666666030883789"/>
         <image name="tabbar_meHL" width="22.666666030883789" height="22.666666030883789"/>
+        <namedColor name="wechat_green">
+            <color red="0.02850000188" green="0.75666517020000001" blue="0.37493714690000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGrayColor">
-            <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

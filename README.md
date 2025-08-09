@@ -355,3 +355,5 @@ class TabBarController: UITabBarController {
 * 子 VC 中是 Scroll View 时，Scroll View 和 Tab Bar 重叠的时候，会由透明变为毛玻璃，否则为透明
 
 Tab Bar Controller 中的 Tab Bar Item 会把 Safe Area 往上推
+
+Tab 最多放 5 个，如果超过了会变成 More
