@@ -61,10 +61,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EqE-9L-tfD">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="p1" translatesAutoresizingMaskIntoConstraints="NO" id="xRg-O6-DgM">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="666"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -84,7 +84,7 @@
                         <constraints>
                             <constraint firstItem="EqE-9L-tfD" firstAttribute="trailing" secondItem="yWx-AM-qpf" secondAttribute="trailing" id="3S6-gN-bUj"/>
                             <constraint firstItem="EqE-9L-tfD" firstAttribute="leading" secondItem="yWx-AM-qpf" secondAttribute="leading" id="RcX-fr-GEY"/>
-                            <constraint firstItem="EqE-9L-tfD" firstAttribute="top" secondItem="b8L-mD-8ai" secondAttribute="top" id="lo6-9Z-rmT"/>
+                            <constraint firstItem="EqE-9L-tfD" firstAttribute="top" secondItem="yWx-AM-qpf" secondAttribute="top" id="lo6-9Z-rmT"/>
                             <constraint firstItem="EqE-9L-tfD" firstAttribute="bottom" secondItem="yWx-AM-qpf" secondAttribute="bottom" id="pD2-fQ-XYo"/>
                         </constraints>
                     </view>
@@ -169,8 +169,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7aN-gt-LOR">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <navigationBarAppearance key="standardAppearance"/>
-                        <navigationBarAppearance key="scrollEdgeAppearance"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QHZ-3c-mND">
@@ -187,6 +185,7 @@
         <!--发现-->
         <scene sceneID="iZ1-7F-lje">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fYC-8x-An8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gar-rX-MBn" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="发现" image="tabbar_discover" selectedImage="tabbar_discoverHL" id="Hvm-wb-zXy"/>
                     <toolbarItems/>
@@ -199,7 +198,6 @@
                         <segue destination="cEr-Rw-TLL" kind="relationship" relationship="rootViewController" id="87f-su-K5C"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fYC-8x-An8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="759.5419847328244" y="755.63380281690149"/>
         </scene>
