@@ -26,10 +26,15 @@ struct Course: Codable {
     let id: Int
     let title: String
     let url: URL
-    let level: String
+    let level: Level
     let technology: Technology
     let service: [String]?
     let lessonCount: Int
+    
+    // 一定要原始值在前面，系统默认赋值的原始值和变量名一样
+    enum Level: String, Codable {
+        case 初级, 中级, 高级
+    }
     
     struct Technology: Codable {
         let lan: String
@@ -40,7 +45,7 @@ struct Course: Codable {
 
 do {
     let course: Course = try JSONDecoder().decode(Course.self, from: courseJSONData)
-    print(course.title)
+    print(course)
 } catch {
     print(error)
 }
