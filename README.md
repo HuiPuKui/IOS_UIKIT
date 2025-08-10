@@ -357,3 +357,16 @@ class TabBarController: UITabBarController {
 Tab Bar Controller 中的 Tab Bar Item 会把 Safe Area 往上推
 
 Tab 最多放 5 个，如果超过了会变成 More
+
+## 10-解析 JSON 数据
+
+遵循 Decodable 才能被解码
+
+可以自动遵循 Decodable 协议的类型
+```swift
+Int         Data
+String      Array
+Double      Dictionary
+Float       URL
+Bool        Date
+```
