@@ -14,7 +14,7 @@ let courseJSON = """
         "framework": "UIKit"
     },
     "service": ["终生保价", "永久更新"],
-    "lessonCount": 199
+    "lesson_count": 199
 }
 """
 
@@ -46,11 +46,18 @@ extension Course {
     enum CodingKeys: String, CodingKey {
         case id, title, level, technology, service, lessonCount
         case webURL = "url"
+        
+        // 方法一: 下划线转小驼峰
+//        case lessonCount = "lesson_count"
     }
 }
 
 do {
-    let course: Course = try JSONDecoder().decode(Course.self, from: courseJSONData)
+    // 方法二: 下划线转小驼峰
+    let decoder = JSONDecoder()
+    decoder.keyDecodingStrategy = .convertFromSnakeCase // 下划线命名法
+    
+    let course: Course = try decoder.decode(Course.self, from: courseJSONData)
     print(course)
 } catch {
     print(error)
