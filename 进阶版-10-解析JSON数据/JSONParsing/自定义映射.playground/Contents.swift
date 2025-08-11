@@ -29,6 +29,17 @@ struct Course: Codable {
     let service: [String]?
     let lessonCount: Int
     
+    // json 没有对应的属性(常量，默认值) - 方法一
+    let createTime1: Date = Date()
+    // json 没有对应的属性(变量，可选型) - 方法二
+    var createTime2: Date?
+    // json 没有对应的属性(CodingKeys 不写这个属性) - 方法三
+    var createTime3: Date = Date()
+    // json 没有对应的属性(计算属性) - 方法四
+    var createTime4: Date {
+        Date()
+    }
+    
     // 一定要原始值在前面，系统默认赋值的原始值和变量名一样
     enum Level: String, Codable {
         case 初级, 中级, 高级
@@ -47,13 +58,13 @@ extension Course {
         case id, title, level, technology, service, lessonCount
         case webURL = "url"
         
-        // 方法一: 下划线转小驼峰
-//        case lessonCount = "lesson_count"
+        // 下划线转小驼峰 - 方法一
+        // case lessonCount = "lesson_count"
     }
 }
 
 do {
-    // 方法二: 下划线转小驼峰
+    // 下划线转小驼峰 - 方法二
     let decoder = JSONDecoder()
     decoder.keyDecodingStrategy = .convertFromSnakeCase // 下划线命名法
     
