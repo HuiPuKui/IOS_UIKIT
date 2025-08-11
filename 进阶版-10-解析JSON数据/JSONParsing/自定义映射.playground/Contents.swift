@@ -73,3 +73,16 @@ do {
 } catch {
     print(error)
 }
+
+
+struct Todo: Codable {
+    var name: String
+    var checked: Bool
+}
+
+let todos: [Todo] = [Todo(name: "xx", checked: false)]
+
+let todosJSONData: Data = try! JSONEncoder().encode(todos)
+
+let decodedTodos: [Todo] = try! JSONDecoder().decode([Todo].self, from: todosJSONData)
+
