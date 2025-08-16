@@ -9,7 +9,7 @@ import Foundation
 
 struct Course: Codable {
     let title: String
-    let service: [String]?
+    let services: [String]
     let lessonCount: Int
     
     struct Technology: Codable {

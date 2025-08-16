@@ -9,7 +9,7 @@
             "editor": "Xcode",
             "framework": "UIKit"
         },
-        "service": ["终生保价", "永久更新"],
+        "services": ["终生保价", "永久更新"],
         "lesson_count": 199
     },
     {
@@ -22,7 +22,7 @@
             "editor": "Xcode",
             "framework": "UIKit"
         },
-        "service": ["终生保价", "永久更新"],
+        "services": ["终生保价", "永久更新"],
         "lesson_count": 220
     },
     {
@@ -35,7 +35,7 @@
             "editor": "Xcode",
             "framework": "SwiftUI"
         },
-        "service": ["终生保价", "永久更新"],
+        "services": ["终生保价", "永久更新"],
         "lesson_count": 155
     },
     {
@@ -48,7 +48,7 @@
             "editor": "Xcode",
             "framework": "UIKit"
         },
-        "service": ["终生保价", "不定期更新"],
+        "services": ["终生保价", "不定期更新"],
         "lesson_count": 59
     },
     {
@@ -61,7 +61,7 @@
             "editor": "Xcode",
             "framework": "UIKit"
         },
-        "service": ["终生保价", "永久更新"],
+        "services": ["终生保价", "永久更新"],
         "lesson_count": 465
     }
 ]

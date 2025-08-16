@@ -36,10 +36,12 @@ class TableViewCell: UITableViewCell {
         // 具体原因参考 addSubview 文档：一个 view 只能有一个父视图，比如当前这个 view 已经被添加进某个父视图中了，之后再想把这个 view 添加到别的（也可以是之前那个，如下）父视图中的话，那系统会先把这个 view 从之前的父视图中移除，然后添加到新的父视图中
         // 这里的 serviceBtn 数组，第一个 btn 元素被添加进 serviceBtnStackView，然后第二个 btn 元素的时候，又把这个 btn 添加进同样的父视图 stackView 中了，此时系统也会把 btn 从父视图中移除，然后再把 btn 添加进 stackView。（相当于原来盒子中有一个东西，我先拿出来，之后又放回去了）
         // 也就是说，不断的添加同一个子视图，最终只会添加一个子视图
-        let serviceBtnStackView: UIStackView = UIStackView(arrangedSubviews: [
-            self.serviceBtn,
-            self.serviceBtn
-        ])
+//        let serviceBtnStackView: UIStackView = UIStackView(arrangedSubviews: [
+//            self.serviceBtn,
+//            self.serviceBtn
+//        ])
+        
+        let serviceBtnStackView: UIStackView = UIStackView(arrangedSubviews: [])
         
         serviceBtnStackView.axis = .horizontal // 横向
         serviceBtnStackView.distribution = .fillProportionally // 等比例拉伸
@@ -80,6 +82,29 @@ class TableViewCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    var course: Course? {
+        didSet {
+            guard let course = self.course else { return }
+            
+            for service in course.services {
+                let btn = UIButton()
+                var config = UIButton.Configuration.tinted()
+                var attrTitle: AttributedString = AttributedString(service)
+                
+                attrTitle.font = .systemFont(ofSize: 15) // 字号
+                attrTitle.foregroundColor = UIColor(named: "btnTextColor") // 标题颜色
+                
+                config.attributedTitle = attrTitle
+                config.contentInsets = NSDirectionalEdgeInsets(top: 4, leading: 5, bottom: 4, trailing: 5)
+                config.background.backgroundColor = UIColor(named: "btnBgColor") // 背景颜色
+                
+                btn.configuration = config
+
+                self.serviceBtnStackView.addArrangedSubview(btn)
+            }
+        }
     }
     
 }
