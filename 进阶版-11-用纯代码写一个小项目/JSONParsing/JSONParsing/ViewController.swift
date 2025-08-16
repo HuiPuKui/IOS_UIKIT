@@ -39,12 +39,6 @@ class ViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: TableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
         
-        // 配置数据
-        var contentConfig = cell.defaultContentConfiguration()
-        contentConfig.text = courses[indexPath.row].title
-        
-        cell.contentConfiguration = contentConfig
-        
         return cell
     }
 

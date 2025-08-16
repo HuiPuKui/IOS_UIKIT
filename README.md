@@ -388,3 +388,18 @@ func loadData() {
     }
 }
 ````
+
+懒加载的属性必须定义成 var
+```swift
+// lazy: 只有使用到这个 UI 控件的时候才会调用这个代码
+private lazy var tableView: UITableView = {
+    let tableView: UITableView = UITableView()
+    
+    // 设置属性
+    tableView.translatesAutoresizingMaskIntoConstraints = false // 用约束来指定布局
+    tableView.dataSource = self
+    tableView.register(TableViewCell.self, forCellReuseIdentifier: "cell")
+    
+    return tableView
+}()
+```
