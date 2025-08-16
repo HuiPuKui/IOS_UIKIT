@@ -370,3 +370,21 @@ Double      Dictionary
 Float       URL
 Bool        Date
 ```
+
+## 11-用纯代码写一个小项目
+从文件中读取
+```swift
+func loadData() {
+    if let coursesJSONURL: URL = Bundle.main.url(forResource: "courses", withExtension: ".json") {
+        if let coursesJSONData: Data = try? Data(contentsOf: coursesJSONURL) {
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            ...
+        } else {
+            print("url 转 Data 失败")
+        }
+    } else {
+        print("从 courses.json 文件中取 url 失败，检查拼写等")
+    }
+}
+````
