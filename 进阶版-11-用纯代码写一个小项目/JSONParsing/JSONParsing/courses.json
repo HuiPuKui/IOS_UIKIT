@@ -9,7 +9,7 @@
             "editor": "Xcode",
             "framework": "UIKit"
         },
-        "services": ["终生保价", "永久更新"],
+        "services": ["终生保价", "永久更新", "课后辅导"],
         "lesson_count": 199
     },
     {

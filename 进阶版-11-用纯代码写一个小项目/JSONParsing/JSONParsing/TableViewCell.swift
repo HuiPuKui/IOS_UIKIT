@@ -13,10 +13,10 @@ class TableViewCell: UITableViewCell {
     private lazy var titleLabel: UILabel = {
         let titleLabel: UILabel = UILabel()
         titleLabel.font = .systemFont(ofSize: 22)
-        titleLabel.text = "iOS开发-基础版"
         return titleLabel
     }()
     
+    /*
     private lazy var serviceBtn: UIButton = {
         let serviceBtn: UIButton = UIButton()
         
@@ -30,6 +30,7 @@ class TableViewCell: UITableViewCell {
         
         return serviceBtn
     }()
+     */
     
     private lazy var serviceBtnStackView: UIStackView = {
         // 重复添加多个 serviceBtn，只会覆盖掉前面的，因 serviceBtn 是同一个视图（同一个内存地址）
@@ -69,7 +70,6 @@ class TableViewCell: UITableViewCell {
         let lessonCountLabel: UILabel = UILabel()
         lessonCountLabel.textColor = .secondaryLabel
         lessonCountLabel.font = .systemFont(ofSize: 15, weight: .medium)
-        lessonCountLabel.text = "199课时"
         return lessonCountLabel
     }()
 
@@ -88,6 +88,8 @@ class TableViewCell: UITableViewCell {
         didSet {
             guard let course = self.course else { return }
             
+            self.titleLabel.text = course.title
+            
             for service in course.services {
                 let btn = UIButton()
                 var config = UIButton.Configuration.tinted()
@@ -104,6 +106,8 @@ class TableViewCell: UITableViewCell {
 
                 self.serviceBtnStackView.addArrangedSubview(btn)
             }
+            
+            self.lessonCountLabel.text = "\(course.lessonCount)课时"
         }
     }
     
