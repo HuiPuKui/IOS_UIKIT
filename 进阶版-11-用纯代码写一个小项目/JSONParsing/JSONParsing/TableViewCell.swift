@@ -32,6 +32,10 @@ class TableViewCell: UITableViewCell {
     }()
     
     private lazy var serviceBtnStackView: UIStackView = {
+        // 重复添加多个 serviceBtn，只会覆盖掉前面的，因 serviceBtn 是同一个视图（同一个内存地址）
+        // 具体原因参考 addSubview 文档：一个 view 只能有一个父视图，比如当前这个 view 已经被添加进某个父视图中了，之后再想把这个 view 添加到别的（也可以是之前那个，如下）父视图中的话，那系统会先把这个 view 从之前的父视图中移除，然后添加到新的父视图中
+        // 这里的 serviceBtn 数组，第一个 btn 元素被添加进 serviceBtnStackView，然后第二个 btn 元素的时候，又把这个 btn 添加进同样的父视图 stackView 中了，此时系统也会把 btn 从父视图中移除，然后再把 btn 添加进 stackView。（相当于原来盒子中有一个东西，我先拿出来，之后又放回去了）
+        // 也就是说，不断的添加同一个子视图，最终只会添加一个子视图
         let serviceBtnStackView: UIStackView = UIStackView(arrangedSubviews: [
             self.serviceBtn,
             self.serviceBtn
