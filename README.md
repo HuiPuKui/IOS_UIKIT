@@ -403,3 +403,24 @@ private lazy var tableView: UITableView = {
     return tableView
 }()
 ```
+
+## 12-自定义转场动画
+Customizing the Transition Animations | 自定义转场动画官方讲解: `https://developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/CustomizingtheTransitionAnimations.html`
+
+View Controller Transitions | 自定义转场动画的一些协议: `https://developer.apple.com/documentation/uikit/view-controller-transitions`
+
+六个维度：
+* Modally 转场
+    
+    * Non-Interactive Transitions 非交互转场
+    * Interactive Transitions 交互转场
+
+* Navigation Controller
+
+    * Non-Interactive Transitions 非交互转场
+    * Interactive Transitions 交互转场
+
+* Tabbar Controller
+
+    * Non-Interactive Transitions 非交互转场
+    * Interactive Transitions 交互转场
