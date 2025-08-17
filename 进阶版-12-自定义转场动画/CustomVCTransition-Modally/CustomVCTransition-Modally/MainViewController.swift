@@ -16,7 +16,20 @@ class MainViewController: UIViewController {
 
     @IBAction func showDetail(_ sender: Any) {
         let detailVC: DetailViewController = self.storyboard!.instantiateViewController(withIdentifier: "DetailVC") as! DetailViewController
+        
+        detailVC.transitioningDelegate = self
         present(detailVC, animated: true, completion: nil)
     }
 }
 
+extension MainViewController: UIViewControllerTransitioningDelegate {
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> (any UIViewControllerAnimatedTransitioning)? {
+        
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> (any UIViewControllerAnimatedTransitioning)? {
+        return nil
+    }
+    
+}
