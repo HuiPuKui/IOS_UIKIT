@@ -18,6 +18,7 @@ class MainViewController: UIViewController {
         let detailVC: DetailViewController = self.storyboard!.instantiateViewController(withIdentifier: "DetailVC") as! DetailViewController
         
         detailVC.transitioningDelegate = self
+        detailVC.modalPresentationStyle = .fullScreen // 一定要加这个！！否则会因为非全屏展示方式导致卡住
         present(detailVC, animated: true, completion: nil)
     }
 }
@@ -25,7 +26,7 @@ class MainViewController: UIViewController {
 extension MainViewController: UIViewControllerTransitioningDelegate {
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> (any UIViewControllerAnimatedTransitioning)? {
-        
+        return PresentAnimator()
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> (any UIViewControllerAnimatedTransitioning)? {
