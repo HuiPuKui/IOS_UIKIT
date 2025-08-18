@@ -41,7 +41,7 @@ extension MainViewController: UINavigationControllerDelegate {
     func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: any UIViewControllerAnimatedTransitioning) -> (any UIViewControllerInteractiveTransitioning)? {
         guard
             let panInteraction = self.panInteraction,
-                panInteraction.isInteraction
+            panInteraction.isInteraction
         else {
             return nil
         }
