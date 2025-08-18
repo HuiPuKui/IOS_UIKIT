@@ -45,7 +45,7 @@ class PresentAnimator: NSObject, UIViewControllerAnimatedTransitioning {
             fromView.transform = .identity
             toView.transform = .identity
             // 告诉结束了，否则会卡住
-            transitionContext.completeTransition(true)
+            transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
         }
 
     }

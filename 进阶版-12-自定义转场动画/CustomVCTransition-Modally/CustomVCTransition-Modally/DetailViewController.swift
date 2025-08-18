@@ -19,7 +19,9 @@ class DetailViewController: UIViewController {
     }
     
     @objc func handleTap(tap: UITapGestureRecognizer) {
-        dismiss(animated: true, completion: nil)
+        if tap.state == .ended {
+            dismiss(animated: true, completion: nil)
+        }
     }
 
 }
