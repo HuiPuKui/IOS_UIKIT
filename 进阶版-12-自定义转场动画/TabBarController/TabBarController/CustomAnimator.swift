@@ -21,7 +21,30 @@ class CustomAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     }
     
     func animateTransition(using transitionContext: any UIViewControllerContextTransitioning) {
-        <#code#>
+        let containerView = transitionContext.containerView
+        
+        guard
+            let fromView = transitionContext.view(forKey: .from),
+            let toView = transitionContext.view(forKey: .to)
+        else {
+            return
+        }
+        
+        containerView.addSubview(toView)
+        
+        let offset = containerView.frame.width
+        toView.frame.origin.x = self.operation == .toRight ? offset : -offset
+        toView.alpha = 0
+        
+        UIView.animate(withDuration: transitionDuration(using: transitionContext)) {
+            fromView.frame.origin.x = self.operation == .toRight ? -offset : offset
+            fromView.alpha = 0
+            
+            toView.frame.origin.x = 0
+            toView.alpha = 1
+        } completion: { _ in
+            transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+        }
     }
 
 }
