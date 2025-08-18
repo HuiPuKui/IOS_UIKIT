@@ -12,10 +12,13 @@ enum Operation {
 }
 
 class TabBarController: UITabBarController {
+    
+    var customInteraction: CustomInteraction!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.customInteraction = CustomInteraction(tabBarVC: self)
         self.delegate = self
     }
 
@@ -32,7 +35,7 @@ extension TabBarController: UITabBarControllerDelegate {
     }
     
     func tabBarController(_ tabBarController: UITabBarController, interactionControllerFor animationController: any UIViewControllerAnimatedTransitioning) -> (any UIViewControllerInteractiveTransitioning)? {
-        return nil
+        return self.customInteraction.isInteractive ? self.customInteraction : nil
     }
     
 }
