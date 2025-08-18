@@ -11,7 +11,7 @@
         <!--iPadmini-->
         <scene sceneID="beT-q2-scf">
             <objects>
-                <viewController id="JgE-zu-4MC" sceneMemberID="viewController">
+                <viewController id="JgE-zu-4MC" customClass="SecondViewController" customModule="TabBarController" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9cS-mf-M7V">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,7 +38,7 @@
         <!--iPhone11-->
         <scene sceneID="tEw-BR-YqI">
             <objects>
-                <viewController id="jcx-ks-ZD2" sceneMemberID="viewController">
+                <viewController id="jcx-ks-ZD2" customClass="FirstViewController" customModule="TabBarController" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="T4T-aX-Elh">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -65,7 +65,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="3hr-cr-LtT">
             <objects>
-                <tabBarController id="q5N-eb-EzY" sceneMemberID="viewController">
+                <tabBarController id="q5N-eb-EzY" customClass="TabBarController" customModule="TabBarController" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ce3-sX-uT4">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
