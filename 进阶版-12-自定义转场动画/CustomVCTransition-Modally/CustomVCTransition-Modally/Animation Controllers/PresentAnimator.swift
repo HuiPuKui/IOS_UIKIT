@@ -34,17 +34,19 @@ class PresentAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         toView.alpha = 0
         toView.transform = CGAffineTransform(translationX: containerView.frame.width, y: 0)
         
-        UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
+        UIView.animate(withDuration: transitionDuration(using: transitionContext)) {
             // 透明并到左侧
             fromView.alpha = 0
             fromView.transform = CGAffineTransform(translationX: -containerView.frame.width, y: 0)
             // 不透明并回到本来的位置
             toView.alpha = 1
             toView.transform = .identity
-        }, completion: { _ in
+        } completion: { _ in
+            fromView.transform = .identity
+            toView.transform = .identity
             // 告诉结束了，否则会卡住
             transitionContext.completeTransition(true)
-        })
+        }
 
     }
 
