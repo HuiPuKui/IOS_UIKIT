@@ -9,12 +9,19 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+    var panInteraction: PanInteraction?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationController?.delegate = self
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let detailVC = segue.destination as? DetailViewController {
+            self.panInteraction = PanInteraction(detailVC: detailVC)
+        }
+    }
 
 }
 
@@ -32,7 +39,13 @@ extension MainViewController: UINavigationControllerDelegate {
     }
     
     func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: any UIViewControllerAnimatedTransitioning) -> (any UIViewControllerInteractiveTransitioning)? {
-        return nil
+        guard
+            let panInteraction = self.panInteraction,
+                panInteraction.isInteraction
+        else {
+            return nil
+        }
+        return panInteraction
     }
     
 }
