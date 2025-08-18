@@ -424,3 +424,5 @@ View Controller Transitions | 自定义转场动画的一些协议: `https://dev
 
     * Non-Interactive Transitions 非交互转场
     * Interactive Transitions 交互转场
+
+自定义转场机制：在动画完成之后会自动从 containerView 中把原来的 View 移除掉
