@@ -428,3 +428,11 @@ View Controller Transitions | 自定义转场动画的一些协议: `https://dev
 自定义转场机制：在动画完成之后会自动从 containerView 中把原来的 View 移除掉
 
 在动画里使用了 transform 属性，就一定要在完成时置空
+
+## 13-物联网核心-蓝牙开发
+Bluetooth: `https://developer.apple.com/bluetooth/`
+
+Core Bluetooth: `https://developer.apple.com/library/archive/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/AboutCoreBluetooth/Introduction.html`
+
+蓝牙模拟器: `LightBlue`
+
