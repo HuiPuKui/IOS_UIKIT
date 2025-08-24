@@ -87,7 +87,10 @@ extension ViewController: CBCentralManagerDelegate {
     
     // 连接断开
     func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: (any Error)?) {
-        central.connect(peripheral)
+        print("连接断开")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            central.connect(peripheral)
+        }
     }
     
 }
