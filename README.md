@@ -436,3 +436,12 @@ Core Bluetooth: `https://developer.apple.com/library/archive/documentation/Netwo
 
 蓝牙模拟器: `LightBlue`
 
+## 14-Container View
+* 用AVPlayerViewController创建一个简单播放器 | 官方文档: `https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/MediaPlaybackGuide/Contents/Resources/en.lproj/GettingStarted/GettingStarted.html`
+* 自定义Container View Controller - 官方文档: `https://developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/ImplementingaContainerViewController.html`
+* AVPlayer - AVFoundation | 官方文档: `https://developer.apple.com/documentation/avfoundation/avplayer`
+* AVPlayerViewController - AVKit | 官方文档: `https://developer.apple.com/documentation/avkit/avplayerviewcontroller`
+
+容器视图就是：View 里面放了个 Controller View
+
+`childVC.didMove(toParent: self)`意思是 —— 通知子控制器“你已经有了一个父控制器”。这样，UIKit 的生命周期事件（比如 viewWillAppear / viewDidAppear）才能正确传递到子控制器。
