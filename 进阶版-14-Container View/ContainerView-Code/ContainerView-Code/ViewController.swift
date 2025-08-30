@@ -59,6 +59,12 @@ class ViewController: UIViewController {
 //        self.playerVC.didMove(toParent: self)
 //        self.tableVC.didMove(toParent: self)
     }
+    
+    func removeContainerView(child: UIViewController) {
+        child.willMove(toParent: nil)
+        child.view.removeFromSuperview()
+        child.removeFromParent()
+    }
 
 }
 
