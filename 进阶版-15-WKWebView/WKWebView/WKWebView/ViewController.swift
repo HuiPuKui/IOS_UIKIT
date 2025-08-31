@@ -57,7 +57,8 @@ class ViewController: UIViewController {
     }
     
     func setSpinner() {
-        self.spinner = UIActivityIndicatorView(style: .whiteLarge)
+        self.spinner = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
+        self.spinner.color = .white
         self.spinner.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.8)
         self.spinner.layer.cornerRadius = 10
         self.webView.addSubview(self.spinner)
