@@ -17,17 +17,17 @@ class ViewController: UIViewController {
         
         let config = WKWebViewConfiguration()
         
-        let preferences = WKPreferences()
-        preferences.javaScriptEnabled = true
-        preferences.minimumFontSize = 0
-        config.preferences = preferences
-        
-        config.allowsAirPlayForMediaPlayback = true
-        config.allowsInlineMediaPlayback = false
-        config.allowsPictureInPictureMediaPlayback = true
-        
-        // 检测所有: 电话号码、地址等
-        config.dataDetectorTypes = [.all]
+//        let preferences = WKPreferences()
+//        preferences.javaScriptEnabled = true
+//        preferences.minimumFontSize = 0
+//        config.preferences = preferences
+//        
+//        config.allowsAirPlayForMediaPlayback = true
+//        config.allowsInlineMediaPlayback = false
+//        config.allowsPictureInPictureMediaPlayback = true
+//        
+//        // 检测所有: 电话号码、地址等
+//        config.dataDetectorTypes = [.all]
         
         self.webView = WKWebView(frame: .zero, configuration: config)
         self.webView.allowsBackForwardNavigationGestures = true
@@ -49,7 +49,7 @@ class ViewController: UIViewController {
 //        
 //        self.webView.backForwardList // 访问历史
         
-        self.webView.load(URLRequest(url: URL(string: "https://www.google.com")!))
+        self.webView.load(string: "https://www.google.com")
     }
 
 }
