@@ -11,6 +11,7 @@ import WebKit
 class ViewController: UIViewController {
 
     var webView: WKWebView!
+    var spinner: UIActivityIndicatorView!
     
     // 自定义根视图
     override func loadView() {
@@ -32,11 +33,13 @@ class ViewController: UIViewController {
         self.webView = WKWebView(frame: .zero, configuration: config)
         self.webView.allowsBackForwardNavigationGestures = true
         self.webView.uiDelegate = self
+        self.webView.navigationDelegate = self
         self.view = self.webView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setSpinner()
         
 //        self.webView.isLoading // 是否正在加载
 //        self.webView.reload() // 刷新
@@ -52,12 +55,56 @@ class ViewController: UIViewController {
         
         self.webView.load("https://www.google.com")
     }
+    
+    func setSpinner() {
+        self.spinner = UIActivityIndicatorView(style: .whiteLarge)
+        self.spinner.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.8)
+        self.spinner.layer.cornerRadius = 10
+        self.webView.addSubview(self.spinner)
+        
+        self.spinner.translatesAutoresizingMaskIntoConstraints = false
+        self.spinner.centerXAnchor.constraint(equalTo: self.webView.centerXAnchor).isActive = true
+        self.spinner.centerYAnchor.constraint(equalTo: self.webView.centerYAnchor).isActive = true
+        self.spinner.widthAnchor.constraint(equalToConstant: 80).isActive = true
+        self.spinner.heightAnchor.constraint(equalToConstant: 80).isActive = true
+    }
 
+}
+
+
+extension ViewController: WKNavigationDelegate {
+    
+    // 开始请求
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        print(#function)
+        self.spinner.startAnimating()
+    }
+    
+    // 服务器端开始返回内容
+    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+        print(#function)
+    }
+    
+    // 加载完毕
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        print(#function)
+        self.spinner.stopAnimating()
+        self.spinner.removeFromSuperview()
+    }
+    
+    // 加载失败
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: any Error) {
+        print(#function)
+        self.spinner.stopAnimating()
+        self.spinner.removeFromSuperview()
+    }
+    
 }
 
 extension ViewController: WKUIDelegate {
     
     // @escaping 逃逸: 外围函数执行完毕之后，这个函数并没有被释放
+    // [js]alert() 警告框
     func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping @MainActor () -> Void) {
         
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
@@ -68,6 +115,7 @@ extension ViewController: WKUIDelegate {
         present(alert, animated: true, completion: nil)
     }
     
+    // [js]confirm() 弹出框
     func webView(_ webView: WKWebView, runJavaScriptConfirmPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping @MainActor (Bool) -> Void) {
         
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
@@ -81,6 +129,7 @@ extension ViewController: WKUIDelegate {
         present(alert, animated: true, completion: nil)
     }
     
+    // [js]prompt() 输入框
     func webView(_ webView: WKWebView, runJavaScriptTextInputPanelWithPrompt prompt: String, defaultText: String?, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping @MainActor (String?) -> Void) {
         
         let alert = UIAlertController(title: nil, message: prompt, preferredStyle: .alert)
@@ -95,3 +144,4 @@ extension ViewController: WKUIDelegate {
     }
     
 }
+
