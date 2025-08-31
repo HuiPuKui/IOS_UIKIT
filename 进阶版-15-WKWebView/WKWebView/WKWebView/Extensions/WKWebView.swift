@@ -10,7 +10,7 @@ import WebKit
 
 extension WKWebView {
     
-    func load(string: String) {
+    func load(_ string: String) {
         if let url = URL(string: string) {
             load(URLRequest(url: url))
         }
