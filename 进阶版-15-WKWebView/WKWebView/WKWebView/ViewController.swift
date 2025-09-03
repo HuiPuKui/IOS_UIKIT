@@ -42,7 +42,11 @@ class ViewController: UIViewController {
         setSpinner()
         
         // 加载自己的 HTML 代码
-        handleHTMLString()
+//        handleHTMLString()
+        // 加载自己的文件
+//        handleHTMLFile()
+
+        
 //        self.webView.isLoading // 是否正在加载
 //        self.webView.reload() // 刷新
 //        self.webView.reloadFromOrigin() // 刷新(从源头)
@@ -55,7 +59,7 @@ class ViewController: UIViewController {
 //        
 //        self.webView.backForwardList // 访问历史
         
-//        self.webView.load("https://www.google.com")
+        self.webView.load("https://www.google.com")
     }
     
     func setSpinner() {
@@ -88,6 +92,18 @@ class ViewController: UIViewController {
         self.webView.loadHTMLString(html, baseURL: nil)
 //        self.webView.loadHTMLString(html, baseURL: Bundle.main.resourceURL) // 加载 Xcode 工程中的图片
     }
+    
+    func handleHTMLFile() {
+        let url = Bundle.main.url(forResource: "HomePage", withExtension: "html")!
+        print(url)
+        self.webView.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
+    }
+    
+    func handleJS() {
+        self.webView.evaluateJavaScript("document.body.offsetHeight") { (res, error) in
+            print(res ?? 0)
+        }
+    }
 
 }
 
@@ -117,12 +133,15 @@ extension ViewController: WKNavigationDelegate {
     // 是否接收响应
     func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping @MainActor (WKNavigationResponsePolicy) -> Void) {
         print(#function)
-        if
-            let httpResponse = navigationResponse.response as? HTTPURLResponse,
-            httpResponse.statusCode == 200 {
-            decisionHandler(.allow)
+        if let httpResponse = navigationResponse.response as? HTTPURLResponse {
+            if httpResponse.statusCode == 200 {
+                decisionHandler(.allow)
+            } else {
+                decisionHandler(.cancel)
+            }
         } else {
-            decisionHandler(.cancel)
+            // 本地文件 or 非 HTTP 响应 → 一律放行
+            decisionHandler(.allow)
         }
     }
     
@@ -136,6 +155,9 @@ extension ViewController: WKNavigationDelegate {
         print(#function)
         self.spinner.stopAnimating()
         self.spinner.removeFromSuperview()
+        
+        // 加载自己的 JS
+        handleJS()
     }
     
     // 加载失败
