@@ -75,10 +75,36 @@ class ViewController: UIViewController {
 
 extension ViewController: WKNavigationDelegate {
     
+    // 决定要不要加载
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping @MainActor (WKNavigationActionPolicy) -> Void) {
+        print(#function)
+        if let url = navigationAction.request.url {
+            if url.host == "www.google.com" { // 让谷歌旗下的全都从外部打开
+                UIApplication.shared.open(url)
+                decisionHandler(.cancel)
+                return
+            }
+        }
+        
+        decisionHandler(.allow)
+    }
+    
     // 开始请求
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
         print(#function)
         self.spinner.startAnimating()
+    }
+    
+    // 是否接收响应
+    func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping @MainActor (WKNavigationResponsePolicy) -> Void) {
+        print(#function)
+        if
+            let httpResponse = navigationResponse.response as? HTTPURLResponse,
+            httpResponse.statusCode == 200 {
+            decisionHandler(.allow)
+        } else {
+            decisionHandler(.cancel)
+        }
     }
     
     // 服务器端开始返回内容
