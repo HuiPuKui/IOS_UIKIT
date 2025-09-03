@@ -41,6 +41,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         setSpinner()
         
+        // 加载自己的 HTML 代码
+        handleHTMLString()
 //        self.webView.isLoading // 是否正在加载
 //        self.webView.reload() // 刷新
 //        self.webView.reloadFromOrigin() // 刷新(从源头)
@@ -53,7 +55,7 @@ class ViewController: UIViewController {
 //        
 //        self.webView.backForwardList // 访问历史
         
-        self.webView.load("https://www.google.com")
+//        self.webView.load("https://www.google.com")
     }
     
     func setSpinner() {
@@ -68,6 +70,23 @@ class ViewController: UIViewController {
         self.spinner.centerYAnchor.constraint(equalTo: self.webView.centerYAnchor).isActive = true
         self.spinner.widthAnchor.constraint(equalToConstant: 80).isActive = true
         self.spinner.heightAnchor.constraint(equalToConstant: 80).isActive = true
+    }
+    
+    func handleHTMLString() {
+        let html = """
+        <!DOCTYPE html>
+        <html>
+            <head>
+                <meta charset="UTF-8">
+                <title>Lebus</title>
+            </head>
+            <body>
+                <div style="text-align: center; font-size: 80px; margin-top: 350px">Lebus的iOS教程</div>
+            </body>
+        </html>
+        """
+        self.webView.loadHTMLString(html, baseURL: nil)
+//        self.webView.loadHTMLString(html, baseURL: Bundle.main.resourceURL) // 加载 Xcode 工程中的图片
     }
 
 }
