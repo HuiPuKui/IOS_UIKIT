@@ -17,6 +17,17 @@ class ViewController: UIViewController {
     override func loadView() {
         
         let config = WKWebViewConfiguration()
+        config.userContentController.add(self, name: "user")
+//        // web 发送方式
+//        <script type="text/javascript">
+//            function sendMessageToiOS() {
+//                var lebus = {
+//                    name: "lebus",
+//                    age: 20
+//                };
+//                window.webkit.messageHandlers.user.postMessage(lebus)
+//            }
+//        </script>
         
 //        let preferences = WKPreferences()
 //        preferences.javaScriptEnabled = true
@@ -60,6 +71,14 @@ class ViewController: UIViewController {
 //        self.webView.backForwardList // 访问历史
         
         self.webView.load("https://www.google.com")
+        
+        // 添加加载进度的观察者
+        self.webView.addObserver(
+            self,
+            forKeyPath: #keyPath(WKWebView.estimatedProgress),
+            options: .new,
+            context: nil
+        )
     }
     
     func setSpinner() {
@@ -104,9 +123,29 @@ class ViewController: UIViewController {
             print(res ?? 0)
         }
     }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == #keyPath(WKWebView.estimatedProgress) {
+            print(self.webView.estimatedProgress)
+        }
+    }
+    
+    deinit {
+        // 移除观察者
+        self.webView.removeObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress))
+    }
 
 }
 
+extension ViewController: WKScriptMessageHandler {
+    
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        if message.name == "user" {
+            print(message.body)
+        }
+    }
+    
+}
 
 extension ViewController: WKNavigationDelegate {
     
@@ -114,7 +153,7 @@ extension ViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping @MainActor (WKNavigationActionPolicy) -> Void) {
         print(#function)
         if let url = navigationAction.request.url {
-            if url.host == "www.google.com" { // 让谷歌旗下的全都从外部打开
+            if url.host == "www.google.comm" { // 让谷歌旗下的全都从外部打开
                 UIApplication.shared.open(url)
                 decisionHandler(.cancel)
                 return
