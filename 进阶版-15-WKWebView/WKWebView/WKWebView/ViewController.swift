@@ -130,6 +130,31 @@ class ViewController: UIViewController {
         }
     }
     
+    // 截图
+    func takeSnapShot() {
+        let config = WKSnapshotConfiguration()
+        config.rect = CGRect(x: 0, y: 0, width: 200, height: 200)
+        
+        self.webView.takeSnapshot(with: config) { (image, error) in
+            guard let image = image else { return }
+            print(image.size)
+            // 存储到用户相册等
+        }
+    }
+    
+    // 读取 cookie 的 value 和删除 cookie
+    func handleCookie() {
+        self.webView.configuration.websiteDataStore.httpCookieStore.getAllCookies { cookies in
+            for cookie in cookies {
+                if cookie.name == "auth" {
+                    self.webView.configuration.websiteDataStore.httpCookieStore.delete(cookie)
+                } else {
+                    print(cookie.value)
+                }
+            }
+        }
+    }
+    
     deinit {
         // 移除观察者
         self.webView.removeObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress))
@@ -153,7 +178,7 @@ extension ViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping @MainActor (WKNavigationActionPolicy) -> Void) {
         print(#function)
         if let url = navigationAction.request.url {
-            if url.host == "www.google.comm" { // 让谷歌旗下的全都从外部打开
+            if url.host == "www.google.com" { // 让谷歌旗下的全都从外部打开
                 UIApplication.shared.open(url)
                 decisionHandler(.cancel)
                 return
