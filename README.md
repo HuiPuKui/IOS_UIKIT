@@ -450,3 +450,17 @@ Core Bluetooth: `https://developer.apple.com/library/archive/documentation/Netwo
 WKWebView | 官方文档: `https://developer.apple.com/documentation/webkit/wkwebview`
 
 ## 16-git+github+版本控制
+
+`git add` 把工作区的修改（新增、修改、删除的文件）放到 暂存区
+
+`git commit -m ""` 把暂存区里的内容保存到 本地仓库
+
+`git acm ""` add & commit
+
+`git status` 查看当前仓库的状态
+
+`git log` 查看历史提交记录
+
+`git diff` 查看修改
+
+`git checkout 路径` 检出
