@@ -464,3 +464,5 @@ WKWebView | 官方文档: `https://developer.apple.com/documentation/webkit/wkwe
 `git diff` 查看修改
 
 `git checkout 路径` 检出
+
+`.gitignore` 忽略配置
