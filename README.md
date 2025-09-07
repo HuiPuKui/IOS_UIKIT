@@ -466,3 +466,9 @@ WKWebView | 官方文档: `https://developer.apple.com/documentation/webkit/wkwe
 `git checkout 路径` 检出
 
 `.gitignore` 忽略配置
+
+`fork` 复制到自己账号里了，不是本地
+
+## 17-应用内购买IAP
+
+需要开发者账号！！！
