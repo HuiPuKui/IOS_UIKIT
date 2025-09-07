@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import StoreKit
 
 class SoupController: UITableViewController {
+    
+    let productId = "app store connect 里的 ID"
     
     var soup = [
         "1.命为弱者借口，运乃强者谦词",
@@ -27,14 +30,17 @@ class SoupController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        SKPaymentQueue.default().add(self)
         
+        if isPayed() {
+            showAll()
+        }
     }
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.soup.count + 1
+        return isPayed() ? self.soup.count : self.soup.count + 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -46,22 +52,65 @@ class SoupController: UITableViewController {
             cell.accessoryType = .disclosureIndicator
         } else {
             cell.textLabel?.text = self.soup[indexPath.row]
-            cell.textLabel?.numberOfLines = 0
+            cell.textLabel?.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            cell.accessoryType = .none
         }
         
+        cell.textLabel?.numberOfLines = 0
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == self.soup.count {
             // 实现内购的方法
+            let pay = SKMutablePayment() // 拿推车准备购物
+            pay.productIdentifier = self.productId // 选择商品
+            SKPaymentQueue.default().add(pay) // 加购+去收银台排队买单
         }
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
 
     @IBAction func restore(_ sender: Any) {
-        
+        SKPaymentQueue.default().restoreCompletedTransactions()
+    }
+    
+}
+
+extension SoupController: SKPaymentTransactionObserver {
+    
+    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+        for transaction in transactions {
+            if transaction.transactionState == .purchased {
+                print("购买成功")
+                savePayed()
+                showAll()
+                SKPaymentQueue.default().finishTransaction(transaction)
+            } else if transaction.transactionState == .failed {
+                if let error = transaction.error {
+                    print("购买失败, 原因是: \(error.localizedDescription)")
+                }
+                SKPaymentQueue.default().finishTransaction(transaction)
+            } else if transaction.transactionState == .restored {
+                savePayed()
+                showAll()
+                SKPaymentQueue.default().finishTransaction(transaction)
+            }
+        }
+    }
+    
+    func savePayed() {
+        UserDefaults.standard.set(true, forKey: self.productId)
+    }
+    
+    func isPayed() -> Bool {
+        return UserDefaults.standard.bool(forKey: self.productId)
+    }
+    
+    func showAll() {
+        self.navigationItem.setRightBarButton(nil, animated: true)
+        self.soup.append(contentsOf: self.soupVIP)
+        self.tableView.reloadData()
     }
     
 }
