@@ -472,3 +472,21 @@ WKWebView | 官方文档: `https://developer.apple.com/documentation/webkit/wkwe
 ## 17-应用内购买IAP
 
 需要开发者账号！！！
+
+## 18-AI机器学习-CoreML2
+
+机器学习: `https://developer.apple.com/cn/machine-learning/`
+
+机器学习的分类:
+
+1. 有监督学习--准确，但费时间
+给机器一个对应关系（指着桌上的手机--告诉机器它叫手机） ---训练（给训练数据贴标签label）
+指着桌上的手机问机器它是什么 ---输入input
+告诉我们它是手机 ---输出output
+
+2. 无监督学习
+不给出对应关系，只是仍一堆东西给机器，机器最终只能辨别出哪些东西属于一类，哪些不是一类，仅此而已。
+
+3. 半监督学习
+
+4. 增强学习
