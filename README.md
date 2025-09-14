@@ -477,6 +477,17 @@ WKWebView | 官方文档: `https://developer.apple.com/documentation/webkit/wkwe
 
 机器学习: `https://developer.apple.com/cn/machine-learning/`
 
+coremltools: `https://apple.github.io/coremltools/`
+
+Model Zoo | 训练好的Caffe模型库: `https://github.com/BVLC/caffe/wiki/Model-Zoo`
+
+自制一个图像识别的mlmodel: `https://developer.apple.com/documentation/createml/creating-an-image-classifier-model`
+
+awesomedata大数据集: `https://github.com/awesomedata/awesome-public-datasets`
+
+Kaggle大数据集: `https://www.kaggle.com/datasets`
+
+
 机器学习的分类:
 
 1. 有监督学习--准确，但费时间
