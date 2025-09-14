@@ -487,6 +487,16 @@ awesomedata大数据集: `https://github.com/awesomedata/awesome-public-datasets
 
 Kaggle大数据集: `https://www.kaggle.com/datasets`
 
+中文情感分析语料库大全 - DataScience: `https://mlln.cn/2018/10/11/%E4%B8%AD%E6%96%87%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90%E8%AF%AD%E6%96%99%E5%BA%93%E5%A4%A7%E5%85%A8-%E5%B8%A6%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80/`
+
+自制自然语言处理的mlmodel | 官方文档: `https://developer.apple.com/documentation/createml/creating_a_text_classifier_model`
+
+awesomedata大数据集: `https://github.com/awesomedata/awesome-public-datasets`
+
+Google 表格 - 在线创建和编辑电子表格: `https://workspace.google.com/products/sheets/`
+
+Kaggle大数据集: `https://www.kaggle.com/datasets`
+
 
 机器学习的分类:
 
