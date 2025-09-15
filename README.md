@@ -511,3 +511,9 @@ Kaggle大数据集: `https://www.kaggle.com/datasets`
 3. 半监督学习
 
 4. 增强学习
+
+## 19-AI机器学习-CoreML3
+
+机器学习: `https://developer.apple.com/machine-learning/`
+
+Vision | Apple Developer Documentation: `https://developer.apple.com/documentation/vision`
