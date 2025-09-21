@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Scheme version="2.0" LastUpgradeVersion="1100">
+	<AnalyzeAction buildConfiguration="Debug" />
+	<ArchiveAction buildConfiguration="Release" revealArchiveInOrganizer="YES" />
+	<TestAction selectedDebuggerIdentifier="Xcode.DebuggerFoundation.Debugger.LLDB" codeCoverageEnabled="NO" buildConfiguration="Debug" shouldUseLaunchSchemeArgsEnv="YES" selectedLauncherIdentifier="Xcode.DebuggerFoundation.Launcher.LLDB">
+		<Testables />
+		<MacroExpansion>
+			<BuildableReference BuildableIdentifier="primary" BlueprintIdentifier="5FB8CB742272545200A964A1" BuildableName="FaceCaptureQuality_iOS.app" ReferencedContainer="container:FaceCaptureQuality_iOS.xcodeproj" BlueprintName="FaceCaptureQuality_iOS" />
+		</MacroExpansion>
+	</TestAction>
+	<ProfileAction savedToolIdentifier="" shouldUseLaunchSchemeArgsEnv="YES" useCustomWorkingDirectory="NO" buildConfiguration="Release" debugDocumentVersioning="YES">
+		<BuildableProductRunnable runnableDebuggingMode="0">
+			<BuildableReference ReferencedContainer="container:FaceCaptureQuality_iOS.xcodeproj" BuildableName="FaceCaptureQuality_iOS.app" BlueprintName="FaceCaptureQuality_iOS" BlueprintIdentifier="5FB8CB742272545200A964A1" BuildableIdentifier="primary" />
+		</BuildableProductRunnable>
+	</ProfileAction>
+	<BuildAction parallelizeBuildables="YES" buildImplicitDependencies="YES">
+		<BuildActionEntries>
+			<BuildActionEntry buildForRunning="YES" buildForAnalyzing="YES" buildForArchiving="YES" buildForTesting="YES" buildForProfiling="YES">
+				<BuildableReference ReferencedContainer="container:FaceCaptureQuality_iOS.xcodeproj" BuildableName="FaceCaptureQuality_iOS.app" BlueprintName="FaceCaptureQuality_iOS" BuildableIdentifier="primary" BlueprintIdentifier="5FB8CB742272545200A964A1" />
+			</BuildActionEntry>
+		</BuildActionEntries>
+	</BuildAction>
+	<LaunchAction ignoresPersistentStateOnLaunch="NO" debugDocumentVersioning="YES" allowLocationSimulation="YES" selectedLauncherIdentifier="Xcode.DebuggerFoundation.Launcher.LLDB" selectedDebuggerIdentifier="Xcode.DebuggerFoundation.Debugger.LLDB" useCustomWorkingDirectory="NO" launchStyle="0" debugServiceExtension="internal" buildConfiguration="Debug">
+		<BuildableProductRunnable runnableDebuggingMode="0">
+			<BuildableReference BuildableName="FaceCaptureQuality_iOS.app" BlueprintIdentifier="5FB8CB742272545200A964A1" BuildableIdentifier="primary" BlueprintName="FaceCaptureQuality_iOS" ReferencedContainer="container:FaceCaptureQuality_iOS.xcodeproj" />
+		</BuildableProductRunnable>
+	</LaunchAction>
+</Scheme>
