@@ -524,3 +524,4 @@ ARKit - Apple Developer: `https://developer.apple.com/cn/augmented-reality/arkit
 
 ARKit | 官方文档: `https://developer.apple.com/documentation/arkit`
 
+Solar Textures | 3D星球贴纸: `https://www.solarsystemscope.com/textures/`
