@@ -525,3 +525,13 @@ ARKit - Apple Developer: `https://developer.apple.com/cn/augmented-reality/arkit
 ARKit | 官方文档: `https://developer.apple.com/documentation/arkit`
 
 Solar Textures | 3D星球贴纸: `https://www.solarsystemscope.com/textures/`
+
+ARKit - 支持usdz文件: `https://developer.apple.com/cn/arkit/`
+
+blender.org - 制作3D模型工具（了解）: `https://www.blender.org/`
+
+SCNSceneSource - 支持dae文件: `https://developer.apple.com/documentation/scenekit/scnscenesource`
+
+TurboSquid - 现成的3D模型: `https://www.turbosquid.com/`
+
+.obj 转 usdz : `xcrun usdz_converter /path/to/xxx.obj /path/to/xxx.usdz`
