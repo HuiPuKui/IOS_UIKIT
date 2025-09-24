@@ -22,11 +22,19 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = true
         
+        let sphere = SCNSphere(radius: 0.2)
+        sphere.firstMaterial?.diffuse.contents = UIImage(named: "art.scnassets/8k_earth_nightmap.jpg")
+        
+        let node = SCNNode(geometry: sphere)
+        node.position = SCNVector3(0, 0, -0.5)
+        
+        self.sceneView.scene.rootNode.addChildNode(node)
+        
         // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/sphere.scn")!
+//        let scene = SCNScene(named: "art.scnassets/sphere.scn")!
         
         // Set the scene to the view
-        sceneView.scene = scene
+//        sceneView.scene = scene
     }
     
     override func viewWillAppear(_ animated: Bool) {
