@@ -22,6 +22,11 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = true
         
+        // debug 选项
+        sceneView.debugOptions = .showFeaturePoints // 特征点
+//        sceneView.debugOptions = [.showCameras, .showCreases]
+        
+        
 //        let sphere = SCNSphere(radius: 0.2)
 //        sphere.firstMaterial?.diffuse.contents = UIImage(named: "art.scnassets/8k_earth_nightmap.jpg")
 //        
@@ -31,10 +36,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 //        self.sceneView.scene.rootNode.addChildNode(node)
         
         // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/cup.scn")!
+//        let scene = SCNScene(named: "art.scnassets/cup.scn")!
         
         // Set the scene to the view
-        sceneView.scene = scene
+//        sceneView.scene = scene
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,6 +48,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Create a session configuration
         let configuration = ARWorldTrackingConfiguration()
 //        ARWorldTrackingConfiguration.isSupported // 用这个配置下面的 isSupported 来判断用户的 iOS 设置是否支持 AR 功能
+        // 平面检测
+        configuration.planeDetection = .horizontal
+//        configuration.planeDetection = [.horizontal, .vertical]
 
         // Run the view's session
         sceneView.session.run(configuration)
@@ -56,6 +64,20 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     }
 
     // MARK: - ARSCNViewDelegate
+    
+    func renderer(_ renderer: any SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+        if let planeAnchor = anchor as? ARPlaneAnchor {
+            let plane = SCNPlane(width: CGFloat(planeAnchor.planeExtent.width), height: CGFloat(planeAnchor.planeExtent.height))
+            guard let material = plane.firstMaterial else { return }
+            material.diffuse.contents = UIColor.yellow
+            
+            let planeNode = SCNNode(geometry: plane)
+            planeNode.simdPosition = planeAnchor.center
+            planeNode.eulerAngles.x = -.pi / 2
+            
+            node.addChildNode(planeNode)
+        }
+    }
     
 /*
     // Override to create and configure nodes for anchors added to the view's session.
