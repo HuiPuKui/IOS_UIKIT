@@ -535,3 +535,5 @@ SCNSceneSource - 支持dae文件: `https://developer.apple.com/documentation/sce
 TurboSquid - 现成的3D模型: `https://www.turbosquid.com/`
 
 .obj 转 usdz : `xcrun usdz_converter /path/to/xxx.obj /path/to/xxx.usdz`
+
+ARHitTestResult | 命中测试: `https://developer.apple.com/documentation/arkit/arhittestresult`

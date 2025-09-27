@@ -26,6 +26,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.debugOptions = .showFeaturePoints // 特征点
 //        sceneView.debugOptions = [.showCameras, .showCreases]
         
+        sceneView.autoenablesDefaultLighting = true // 打光
         
 //        let sphere = SCNSphere(radius: 0.2)
 //        sphere.firstMaterial?.diffuse.contents = UIImage(named: "art.scnassets/8k_earth_nightmap.jpg")
@@ -69,7 +70,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         if let planeAnchor = anchor as? ARPlaneAnchor {
             let plane = SCNPlane(width: CGFloat(planeAnchor.planeExtent.width), height: CGFloat(planeAnchor.planeExtent.height))
             guard let material = plane.firstMaterial else { return }
-            material.diffuse.contents = UIColor.yellow
+            material.diffuse.contents = UIColor.init(white: 1, alpha: 0.5)
             
             let planeNode = SCNNode(geometry: plane)
             planeNode.simdPosition = planeAnchor.center
@@ -77,6 +78,24 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             
             node.addChildNode(planeNode)
         }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let location = touches.first?.location(in: sceneView) else { return }
+        guard let query = sceneView.raycastQuery(
+            from: location,
+            allowing: .existingPlaneGeometry,
+            alignment: .any
+        ) else { return }
+
+        guard let result = sceneView.session.raycast(query).first else { return }
+        let position = result.worldTransform.columns.3
+        
+        guard let scene = SCNScene(named: "art.scnassets/teapot.scn") else { return }
+        guard let teapotNode = scene.rootNode.childNode(withName: "Teapot", recursively: true) else { return }
+        teapotNode.position = SCNVector3(x: position.x, y: position.y, z: position.z)
+        
+        self.sceneView.scene.rootNode.addChildNode(teapotNode)
     }
     
 /*
