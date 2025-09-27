@@ -537,3 +537,11 @@ TurboSquid - 现成的3D模型: `https://www.turbosquid.com/`
 .obj 转 usdz : `xcrun usdz_converter /path/to/xxx.obj /path/to/xxx.usdz`
 
 ARHitTestResult | 命中测试: `https://developer.apple.com/documentation/arkit/arhittestresult`
+
+3D Pokemon Models | 口袋妖怪3D模型: `https://roestudios.co.uk/project/3d-pokemon-models/`
+
+宝可梦列表 - 神奇宝贝百科: `https://wiki.52poke.com/zh-hans/%E5%AE%9D%E5%8F%AF%E6%A2%A6%E5%88%97%E8%A1%A8%EF%BC%88%E6%8C%89%E5%85%A8%E5%9B%BD%E5%9B%BE%E9%89%B4%E7%BC%96%E5%8F%B7%EF%BC%89`
+
+Detecting Images in an AR Experience | AR中的图片检测: `https://developer.apple.com/documentation/arkit/detecting_images_in_an_ar_experience`
+
+Print Proxy cards – 口袋妖怪卡片: `https://limitlesstcg.com/tools/proxies`
