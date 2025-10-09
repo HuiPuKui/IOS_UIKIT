@@ -545,3 +545,9 @@ ARHitTestResult | 命中测试: `https://developer.apple.com/documentation/arkit
 Detecting Images in an AR Experience | AR中的图片检测: `https://developer.apple.com/documentation/arkit/detecting_images_in_an_ar_experience`
 
 Print Proxy cards – 口袋妖怪卡片: `https://limitlesstcg.com/tools/proxies`
+
+## 21-AR新功能-ARKit3
+
+人物遮挡 | Apple Developer Documentation: `https://developer.apple.com/documentation/arkit/occluding_virtual_content_with_people`
+
+AR - Apple Developer: `https://developer.apple.com/augmented-reality/`
