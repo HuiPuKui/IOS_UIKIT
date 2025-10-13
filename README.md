@@ -553,3 +553,5 @@ Print Proxy cards – 口袋妖怪卡片: `https://limitlesstcg.com/tools/proxie
 AR - Apple Developer: `https://developer.apple.com/augmented-reality/`
 
 Loading Entities from a File | Apple Developer Documentation: `https://developer.apple.com/documentation/realitykit/loading-entities-from-a-file`
+
+Creating a Collaborative Session | Apple Developer Documentation: `https://developer.apple.com/documentation/arkit/creating-a-collaborative-session`
