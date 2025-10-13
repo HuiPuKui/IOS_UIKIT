@@ -167,7 +167,12 @@ extension ViewController: ARSessionDelegate{
                 messageLabel.displayMessage("和别的玩家联机成功", duration: 6.0)
                 
                 //将虚拟物体(彩色坐标球体)放置在别的玩家iPhone的位置上以显示别的玩家--实时更新位置和方向
-                let anchorEntity = AnchorEntity(anchor: participantAnchor)
+                let position = SIMD3<Float>(
+                    participantAnchor.transform.columns.3.x,
+                    participantAnchor.transform.columns.3.y,
+                    participantAnchor.transform.columns.3.z
+                )
+                let anchorEntity = AnchorEntity(world: position)
                 
                 let coordinateSystem = MeshResource.generateCoordinateSystemAxes()
                 anchorEntity.addChild(coordinateSystem)
@@ -184,7 +189,12 @@ extension ViewController: ARSessionDelegate{
             } else if anchor.name == "Anchor for object placement" {
                 
                 //当成功合并两个玩家的世界数据后，其中一玩家点击屏幕添加虚拟立方体的同时，立方体也同时加进了另一个玩家的现实环境中了
-                let anchorEntity = AnchorEntity(anchor: anchor)
+                let position = SIMD3<Float>(
+                    anchor.transform.columns.3.x,
+                    anchor.transform.columns.3.y,
+                    anchor.transform.columns.3.z
+                )
+                let anchorEntity = AnchorEntity(world: position)
                 
                 let boxLength: Float = 0.05
                 let color = anchor.sessionIdentifier?.toRandomColor() ?? .white
