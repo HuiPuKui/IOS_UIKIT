@@ -555,3 +555,15 @@ AR - Apple Developer: `https://developer.apple.com/augmented-reality/`
 Loading Entities from a File | Apple Developer Documentation: `https://developer.apple.com/documentation/realitykit/loading-entities-from-a-file`
 
 Creating a Collaborative Session | Apple Developer Documentation: `https://developer.apple.com/documentation/arkit/creating-a-collaborative-session`
+
+Creating 3D Content with Reality Composer | Apple Developer Documentation: `https://developer.apple.com/documentation/realitykit/creating-3d-content-with-reality-composer`
+
+Scanning and Detecting 3D Objects | Apple Developer Documentation: `https://developer.apple.com/documentation/arkit/scanning-and-detecting-3d-objects`
+
+Quick Look Gallery - Augmented Reality - Apple Developer: `https://developer.apple.com/augmented-reality/quick-look/`
+
+Previewing a Model with AR Quick Look | Apple Developer Documentation: `https://developer.apple.com/documentation/arkit/previewing-a-model-with-ar-quick-look`
+
+QuickLook | Apple Developer Documentation: `https://developer.apple.com/documentation/quicklook`
+
+Sketchfab - Publish & find 3D models online: `https://sketchfab.com/`
