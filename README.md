@@ -567,3 +567,12 @@ Previewing a Model with AR Quick Look | Apple Developer Documentation: `https://
 QuickLook | Apple Developer Documentation: `https://developer.apple.com/documentation/quicklook`
 
 Sketchfab - Publish & find 3D models online: `https://sketchfab.com/`
+
+# 系统学习 iOS 开发 - iOS+Swift5仿小红书实战
+## 1-仿小红书实战教程简介
+
+项目介绍、演示
+
+Lebus 的个人主页 - 文章 - 掘金: `https://juejin.cn/user/3421335917428990/posts`
+
+M1芯片的Mac在开发iOS项目时遇到的问题汇总（模拟器无法运行，Cocoapods错误等） - 掘金: `https://juejin.cn/post/7074968283367079972`
