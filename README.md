@@ -576,3 +576,13 @@ Sketchfab - Publish & find 3D models online: `https://sketchfab.com/`
 Lebus 的个人主页 - 文章 - 掘金: `https://juejin.cn/user/3421335917428990/posts`
 
 M1芯片的Mac在开发iOS项目时遇到的问题汇总（模拟器无法运行，Cocoapods错误等） - 掘金: `https://juejin.cn/post/7074968283367079972`
+
+## 2-版本控制
+
+Github: `https://github.com/`
+
+Git - Book: `https://git-scm.com/book/zh/v2`
+
+Git教程 - 廖雪峰的官方网站: `https://liaoxuefeng.com/books/git/introduction/index.html`
+
+Git - 安装命令行工具: `https://git-scm.com/install/mac`
