@@ -586,3 +586,15 @@ Git - Book: `https://git-scm.com/book/zh/v2`
 Git教程 - 廖雪峰的官方网站: `https://liaoxuefeng.com/books/git/introduction/index.html`
 
 Git - 安装命令行工具: `https://git-scm.com/install/mac`
+
+## 3-项目整体设计
+
+如何把 View Controller embed 进 Tab Bar Controller
+
+* 按住 Ctrl + 拖拽
+
+* 右侧选项拖拽
+
+* 全选 + 右下选项
+
+Bar 的高度是 44 point， Custom offset -16 文字居中
