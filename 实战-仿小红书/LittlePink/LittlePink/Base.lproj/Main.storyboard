@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--商城-->
         <scene sceneID="oAy-gS-Wa8">
             <objects>
                 <viewController id="b3o-eC-F2H" sceneMemberID="viewController">
@@ -19,13 +19,13 @@
                         <viewLayoutGuide key="safeArea" id="d0N-Rr-M3h"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="0h2-7f-RiT"/>
+                    <tabBarItem key="tabBarItem" title="商城" image="cart.fill" catalog="system" id="0h2-7f-RiT"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e8i-5r-DEW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1873" y="165"/>
         </scene>
-        <!--Item 1-->
+        <!--首页-->
         <scene sceneID="2Eh-ZS-mDt">
             <objects>
                 <viewController id="s4C-Dt-MUc" sceneMemberID="viewController">
@@ -35,7 +35,7 @@
                         <viewLayoutGuide key="safeArea" id="DHp-Vu-7zs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="zlp-oE-B0Y"/>
+                    <tabBarItem key="tabBarItem" title="首页" image="house.fill" catalog="system" id="zlp-oE-B0Y"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CyW-HA-yxJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -62,10 +62,9 @@
             </objects>
             <point key="canvasLocation" x="595" y="818"/>
         </scene>
-        <!--Item-->
+        <!--发布-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LittlePink" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
@@ -73,12 +72,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="EDH-Na-dos"/>
+                    <tabBarItem key="tabBarItem" title="发布" image="plus.rectangle.fill" catalog="system" id="EDH-Na-dos"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1873" y="819"/>
         </scene>
-        <!--Item-->
+        <!--消息-->
         <scene sceneID="mcn-aB-kps">
             <objects>
                 <viewController id="vNP-Rv-tnv" sceneMemberID="viewController">
@@ -88,13 +88,13 @@
                         <viewLayoutGuide key="safeArea" id="UKg-DR-DDd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="FJJ-Cd-SNf"/>
+                    <tabBarItem key="tabBarItem" title="消息" image="message.fill" catalog="system" id="FJJ-Cd-SNf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2K1-sL-Wty" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1873" y="1527"/>
         </scene>
-        <!--Item-->
+        <!--我-->
         <scene sceneID="Oc8-5y-H65">
             <objects>
                 <viewController id="U2k-Fm-u33" sceneMemberID="viewController">
@@ -104,7 +104,7 @@
                         <viewLayoutGuide key="safeArea" id="iOQ-IL-YtR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Pa7-j3-7uj"/>
+                    <tabBarItem key="tabBarItem" title="我" image="person.fill" catalog="system" id="Pa7-j3-7uj"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mu1-zi-4Zo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -112,6 +112,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cart.fill" catalog="system" width="128" height="102"/>
+        <image name="house.fill" catalog="system" width="128" height="104"/>
+        <image name="message.fill" catalog="system" width="128" height="114"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="plus.rectangle.fill" catalog="system" width="128" height="93"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

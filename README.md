@@ -589,7 +589,9 @@ Git - 安装命令行工具: `https://git-scm.com/install/mac`
 
 ## 3-项目整体设计
 
-如何把 View Controller embed 进 Tab Bar Controller
+SF Symbols - Apple Developer: `https://developer.apple.com/sf-symbols/`
+
+**如何把 View Controller embed 进 Tab Bar Controller**
 
 * 按住 Ctrl + 拖拽
 
@@ -598,3 +600,7 @@ Git - 安装命令行工具: `https://git-scm.com/install/mac`
 * 全选 + 右下选项
 
 Bar 的高度是 44 point， Custom offset -16 文字居中
+
+**如何改变 Tab Bar Item 的顺序**
+
+* 直接在 StoryBoard 拖拽即可
