@@ -591,6 +591,8 @@ Git - 安装命令行工具: `https://git-scm.com/install/mac`
 
 SF Symbols - Apple Developer: `https://developer.apple.com/sf-symbols/`
 
+iOS-Xcode-重构复杂的Storyboard--Storyboard Reference: `juejin.im/post/6844904126128750606`
+
 **如何把 View Controller embed 进 Tab Bar Controller**
 
 * 按住 Ctrl + 拖拽
