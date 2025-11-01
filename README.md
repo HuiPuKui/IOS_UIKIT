@@ -604,3 +604,5 @@ Bar 的高度是 44 point， Custom offset -16 文字居中
 **如何改变 Tab Bar Item 的顺序**
 
 * 直接在 StoryBoard 拖拽即可
+
+可以在 File Inspector 修改全局主题色: Global Tint （只会应用到控件上）
