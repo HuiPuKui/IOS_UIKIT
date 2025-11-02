@@ -573,25 +573,41 @@ Sketchfab - Publish & find 3D models online: `https://sketchfab.com/`
 
 项目介绍、演示
 
-Lebus 的个人主页 - 文章 - 掘金: `https://juejin.cn/user/3421335917428990/posts`
+**Lebus 的个人主页 - 文章 - 掘金:** `https://juejin.cn/user/3421335917428990/posts`
 
-M1芯片的Mac在开发iOS项目时遇到的问题汇总（模拟器无法运行，Cocoapods错误等） - 掘金: `https://juejin.cn/post/7074968283367079972`
+**M1芯片的Mac在开发iOS项目时遇到的问题汇总（模拟器无法运行，Cocoapods错误等） - 掘金:** `https://juejin.cn/post/7074968283367079972`
 
 ## 2-版本控制
 
-Github: `https://github.com/`
+**Github:** `https://github.com/`
 
-Git - Book: `https://git-scm.com/book/zh/v2`
+**Git - Book:** `https://git-scm.com/book/zh/v2`
 
-Git教程 - 廖雪峰的官方网站: `https://liaoxuefeng.com/books/git/introduction/index.html`
+**Git教程 - 廖雪峰的官方网站:** `https://liaoxuefeng.com/books/git/introduction/index.html`
 
-Git - 安装命令行工具: `https://git-scm.com/install/mac`
+**Git - 安装命令行工具:** `https://git-scm.com/install/mac`
 
 ## 3-项目整体设计
 
-SF Symbols - Apple Developer: `https://developer.apple.com/sf-symbols/`
+**SF Symbols - Apple Developer:** `https://developer.apple.com/sf-symbols/`
 
-iOS-Xcode-重构复杂的Storyboard--Storyboard Reference: `juejin.im/post/6844904126128750606`
+**iOS-Xcode-重构复杂的Storyboard--Storyboard Reference:** `juejin.im/post/6844904126128750606`
+
+**App Icon Generator:** `https://www.appicon.co/`
+
+**Canva可画--目前字体不收费透明背景收费-一年300:** `https://www.canva.cn/`
+
+**Figma - 由阿悦同学提供的设计网站:** `https://www.figma.com/`
+
+**Figma Mac App(需白名单或全局代理才能访问) - 由Licardo同学提供设计类Mac客户端:** `https://figmac.com/`
+
+**Fotor懒设计--基本都收费-有活动时三年300:** `https://www.fotor.com.cn/`
+
+**适配深色模式（色彩+图片等）:** `https://www.fivestars.blog/articles/ios-dark-mode-how-to/`
+
+**Dark Mode - Visual Design - iOS - Human Interface Guidelines - Apple Developer:** `https://developer.apple.com/design/human-interface-guidelines/dark-mode`
+
+**Supporting Dark Mode in Your Interface | Apple Developer Documentation:** `https://developer.apple.com/documentation/uikit/supporting-dark-mode-in-your-interface`
 
 **如何把 View Controller embed 进 Tab Bar Controller**
 
