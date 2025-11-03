@@ -626,3 +626,29 @@ Bar 的高度是 44 point， Custom offset -16 文字居中
 可以在 File Inspector 修改全局主题色: Global Tint （只会应用到控件上）
 
 在 `Info.plist` 中，可以通过设置 `Appearance` 的 `Value` 为 `Light/Dark`，强制设置为 浅色/深色 模式
+
+## 4-Cocoapods
+
+**用UIScrollView做启动翻页 | Medium:** `https://medium.com/@anitaa_1990/create-a-horizontal-paging-uiscrollview-with-uipagecontrol-swift-4-xcode-9-a3dddc845e92`
+
+**vsouza/awesome-ios- A curated list of awesome iOS ecosystem, including Objective-C and Swift Projects:** `https://github.com/vsouza/awesome-ios`
+
+**xmartlabs/XLPagerTabStrip- Android PagerTabStrip for iOS.:** `https://github.com/xmartlabs/XLPagerTabStrip`
+
+**iOS安装cocoapods时failed to build gem native extension cocoapods错误:** `https://juejin.cn/post/6898287392471318535/`
+
+**终端HTTP代理命令 - 掘金:** `https://juejin.cn/post/6990889009798971406`
+
+**苹果芯片M1的MacBook在pod install时的错误：ruby 2.6.3p62 [universal.arm64e-darwin20]:** `https://juejin.cn/post/6980640757199667208`
+
+**CocoaPods Guides - 总页面:** `https://guides.cocoapods.org/`
+
+**CocoaPods Guides - platform:** `https://guides.cocoapods.org/syntax/podfile.html#platform`
+
+**Swift中的#available和@available--iOS、macOS等向下兼容的解决方案:** `https://juejin.cn/post/6844904090762215437`
+
+**CocoaPods Guides - The Podfile（主要讲里面的版本号）:** `https://guides.cocoapods.org/using/the-podfile.html`
+
+**CocoaPods Guides - Using CocoaPods（主要讲里面的Podfile.lock）:** `https://guides.cocoapods.org/using/using-cocoapods.html`
+
+**CocoaPods Guides - pod install vs. pod update:** `https://guides.cocoapods.org/using/pod-install-vs-update.html`
