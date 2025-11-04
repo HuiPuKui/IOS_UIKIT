@@ -652,3 +652,11 @@ Bar 的高度是 44 point， Custom offset -16 文字居中
 **CocoaPods Guides - Using CocoaPods（主要讲里面的Podfile.lock）:** `https://guides.cocoapods.org/using/using-cocoapods.html`
 
 **CocoaPods Guides - pod install vs. pod update:** `https://guides.cocoapods.org/using/pod-install-vs-update.html`
+
+**pod 常用命令**
+
+* `pod install`: 安装包
+
+* `pod outdated`： 列出可更新列表
+
+* `pod update`： 更新，受 Podfile 限制
