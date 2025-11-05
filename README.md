@@ -660,3 +660,9 @@ Bar 的高度是 44 point， Custom offset -16 文字居中
 * `pod outdated`： 列出可更新列表
 
 * `pod update`： 更新，受 Podfile 限制
+
+## 5-横滑Tab布局
+
+**xmartlabs/XLPagerTabStrip- Android PagerTabStrip for iOS.:** `https://github.com/xmartlabs/XLPagerTabStrip`
+
+**浅析collectionView的item间距 - 简书:** `https://www.jianshu.com/p/1e12a2b8f53c`

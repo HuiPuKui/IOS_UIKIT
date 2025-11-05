@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D337FBA85D42D494B7707411 /* Pods_LittlePink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5AB181F304CC0360197482 /* Pods_LittlePink.framework */; };
+		4839548595077F525B7E347B /* Pods_LittlePink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2934B38F1ACAD735068B5220 /* Pods_LittlePink.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		102390425456FBAE99595FA3 /* Pods-LittlePink.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LittlePink.debug.xcconfig"; path = "Target Support Files/Pods-LittlePink/Pods-LittlePink.debug.xcconfig"; sourceTree = "<group>"; };
-		1D7B5EB0F3127CBD9B30AA32 /* Pods-LittlePink.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LittlePink.release.xcconfig"; path = "Target Support Files/Pods-LittlePink/Pods-LittlePink.release.xcconfig"; sourceTree = "<group>"; };
+		2934B38F1ACAD735068B5220 /* Pods_LittlePink.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LittlePink.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		326179C02EB5A3E6008F0087 /* LittlePink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LittlePink.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF5AB181F304CC0360197482 /* Pods_LittlePink.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LittlePink.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		34569038B45E57EF91B7F128 /* Pods-LittlePink.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LittlePink.debug.xcconfig"; path = "Target Support Files/Pods-LittlePink/Pods-LittlePink.debug.xcconfig"; sourceTree = "<group>"; };
+		3B6D714F56D1CD23B3A8ED0A /* Pods-LittlePink.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LittlePink.release.xcconfig"; path = "Target Support Files/Pods-LittlePink/Pods-LittlePink.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -43,7 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D337FBA85D42D494B7707411 /* Pods_LittlePink.framework in Frameworks */,
+				4839548595077F525B7E347B /* Pods_LittlePink.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,7 +56,7 @@
 				326179C22EB5A3E6008F0087 /* LittlePink */,
 				326179C12EB5A3E6008F0087 /* Products */,
 				4C99A82CC2FFA90D24DE7C7A /* Pods */,
-				C79F3D38A7FADA91CB7ECE88 /* Frameworks */,
+				AB68B43D4E8165BD4416B466 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,17 +71,16 @@
 		4C99A82CC2FFA90D24DE7C7A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				102390425456FBAE99595FA3 /* Pods-LittlePink.debug.xcconfig */,
-				1D7B5EB0F3127CBD9B30AA32 /* Pods-LittlePink.release.xcconfig */,
+				34569038B45E57EF91B7F128 /* Pods-LittlePink.debug.xcconfig */,
+				3B6D714F56D1CD23B3A8ED0A /* Pods-LittlePink.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		C79F3D38A7FADA91CB7ECE88 /* Frameworks */ = {
+		AB68B43D4E8165BD4416B466 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BF5AB181F304CC0360197482 /* Pods_LittlePink.framework */,
+				2934B38F1ACAD735068B5220 /* Pods_LittlePink.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -93,11 +92,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 326179D62EB5A3E7008F0087 /* Build configuration list for PBXNativeTarget "LittlePink" */;
 			buildPhases = (
-				FE5162F9B207B8A7415AB603 /* [CP] Check Pods Manifest.lock */,
+				8A6BE527C692DD2FF68A4701 /* [CP] Check Pods Manifest.lock */,
 				326179BC2EB5A3E6008F0087 /* Sources */,
 				326179BD2EB5A3E6008F0087 /* Frameworks */,
 				326179BE2EB5A3E6008F0087 /* Resources */,
-				D0E7324E4777E6FCA37DB2C4 /* [CP] Embed Pods Frameworks */,
+				69E4F5302386444EF89A4FD5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -156,7 +155,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		D0E7324E4777E6FCA37DB2C4 /* [CP] Embed Pods Frameworks */ = {
+		69E4F5302386444EF89A4FD5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -173,7 +172,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LittlePink/Pods-LittlePink-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FE5162F9B207B8A7415AB603 /* [CP] Check Pods Manifest.lock */ = {
+		8A6BE527C692DD2FF68A4701 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -210,13 +209,14 @@
 /* Begin XCBuildConfiguration section */
 		326179D72EB5A3E7008F0087 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 102390425456FBAE99595FA3 /* Pods-LittlePink.debug.xcconfig */;
+			baseConfigurationReference = 34569038B45E57EF91B7F128 /* Pods-LittlePink.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NR39766BYK;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LittlePink/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "小粉书";
@@ -245,13 +245,14 @@
 		};
 		326179D82EB5A3E7008F0087 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1D7B5EB0F3127CBD9B30AA32 /* Pods-LittlePink.release.xcconfig */;
+			baseConfigurationReference = 3B6D714F56D1CD23B3A8ED0A /* Pods-LittlePink.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NR39766BYK;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LittlePink/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "小粉书";
