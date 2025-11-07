@@ -7,6 +7,7 @@
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -62,7 +63,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Rg-hh-Hiv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1869" y="-1125"/>
+            <point key="canvasLocation" x="2572" y="-1810"/>
         </scene>
         <!--DiscoveryVC-->
         <scene sceneID="jzZ-tM-rxq">
@@ -112,6 +113,50 @@
             </objects>
             <point key="canvasLocation" x="2571.7557251908397" y="-1125.3521126760563"/>
         </scene>
+        <!--WaterfallVC-->
+        <scene sceneID="8nC-Og-T80">
+            <objects>
+                <collectionViewController storyboardIdentifier="WaterfallVCID" id="QfH-fa-hLM" customClass="WaterfallVC" customModule="LittlePink" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="R1o-me-i5v">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewLayout key="collectionViewLayout" id="8Yk-Yx-6aJ" customClass="CHTCollectionViewWaterfallLayout"/>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WaterfallCellID" id="0LO-Sz-OZ4" customClass="WaterfallCell" customModule="LittlePink" customModuleProvider="target">
+                                <rect key="frame" x="57.666666666666664" y="0.0" width="278" height="275"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="dV3-iz-23y">
+                                    <rect key="frame" x="0.0" y="0.0" width="278" height="275"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3ue-HB-YDK">
+                                            <rect key="frame" x="0.0" y="0.0" width="278" height="275"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="3ue-HB-YDK" firstAttribute="top" secondItem="dV3-iz-23y" secondAttribute="top" id="28p-ii-49f"/>
+                                        <constraint firstItem="3ue-HB-YDK" firstAttribute="leading" secondItem="dV3-iz-23y" secondAttribute="leading" id="Vnx-ZZ-XW0"/>
+                                        <constraint firstAttribute="trailing" secondItem="3ue-HB-YDK" secondAttribute="trailing" id="fo4-3M-h4k"/>
+                                        <constraint firstAttribute="bottom" secondItem="3ue-HB-YDK" secondAttribute="bottom" id="jbg-9C-aEE"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <size key="customSize" width="278" height="275"/>
+                                <connections>
+                                    <outlet property="imageView" destination="3ue-HB-YDK" id="6Md-YP-WLL"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="QfH-fa-hLM" id="S77-lq-Ic5"/>
+                            <outlet property="delegate" destination="QfH-fa-hLM" id="JWZ-oT-GTc"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mrt-qr-91b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3284.7328244274809" y="-1125.3521126760563"/>
+        </scene>
         <!--Near ByVC-->
         <scene sceneID="hDa-eW-xRn">
             <objects>
@@ -125,7 +170,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XkP-aj-4a3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3268" y="-1125"/>
+            <point key="canvasLocation" x="2572" y="-431"/>
         </scene>
         <!--首页-->
         <scene sceneID="2Eh-ZS-mDt">
@@ -175,7 +220,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CyW-HA-yxJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1872.5190839694656" y="-482.3943661971831"/>
+            <point key="canvasLocation" x="1873" y="-1125"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="vhc-cC-6e4">
