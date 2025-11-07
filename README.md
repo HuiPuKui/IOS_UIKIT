@@ -668,3 +668,6 @@ Bar 的高度是 44 point， Custom offset -16 文字居中
 **浅析collectionView的item间距 - 简书:** `https://www.jianshu.com/p/1e12a2b8f53c`
 
 ## 6-瀑布流布局
+
+**chiahsien/CHTCollectionViewWaterfallLayout- The waterfall (i.e., Pinterest-like) layout for UICollectionView.:** `https://github.com/chiahsien/CHTCollectionViewWaterfallLayout`
+
