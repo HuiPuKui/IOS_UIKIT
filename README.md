@@ -678,3 +678,11 @@ Bar 的高度是 44 point， Custom offset -16 文字居中
 **Flinesoft/BartyCrouch- Localization/I18n- Incrementally update/translate your Strings files from .swift, .h, .m(m), .storyboard or .xib files.:** `https://github.com/Flinesoft/BartyCrouch`
 
 **macOS 开发之 storyboard 或 xib 本地化 - 知乎:** `https://zhuanlan.zhihu.com/p/57117270`
+
+添加支持的语言和区域（目的: ）
+
+* 让某些系统空间或权限弹框自动本地化
+
+* 本地化操作的第一步
+
+`Project -- info -- Localizations -- Add -- Finish`
