@@ -1,21 +1,21 @@
 
-/* Class = "UITabBarItem"; title = "商城"; ObjectID = "0h2-7f-RiT"; */
+/* Class = "UITabBarItem"; title = "Shopping"; ObjectID = "0h2-7f-RiT"; */
 "0h2-7f-RiT.title" = "商城";
 
-/* Class = "UITabBarItem"; title = "发布"; ObjectID = "EDH-Na-dos"; */
+/* Class = "UITabBarItem"; title = "Post"; ObjectID = "EDH-Na-dos"; */
 "EDH-Na-dos.title" = "发布";
 
-/* Class = "UITabBarItem"; title = "消息"; ObjectID = "FJJ-Cd-SNf"; */
+/* Class = "UITabBarItem"; title = "Message"; ObjectID = "FJJ-Cd-SNf"; */
 "FJJ-Cd-SNf.title" = "消息";
 
 /* Class = "UILabel"; text = "关注的人的笔记页面"; ObjectID = "Ffb-Fu-hql"; */
 "Ffb-Fu-hql.text" = "关注的人的笔记页面";
 
-/* Class = "UITabBarItem"; title = "我"; ObjectID = "Pa7-j3-7uj"; */
+/* Class = "UITabBarItem"; title = "Me"; ObjectID = "Pa7-j3-7uj"; */
 "Pa7-j3-7uj.title" = "我";
 
 /* Class = "UILabel"; text = "(占位)"; ObjectID = "mze-0e-4rf"; */
 "mze-0e-4rf.text" = "(占位)";
 
-/* Class = "UITabBarItem"; title = "首页"; ObjectID = "zlp-oE-B0Y"; */
+/* Class = "UITabBarItem"; title = "Home"; ObjectID = "zlp-oE-B0Y"; */
 "zlp-oE-B0Y.title" = "首页";

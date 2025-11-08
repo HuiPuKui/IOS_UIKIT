@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MSc-ED-gtX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ec1-yn-onh">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--商城-->
+        <!--Shopping-->
         <scene sceneID="oAy-gS-Wa8">
             <objects>
                 <viewController id="b3o-eC-F2H" sceneMemberID="viewController">
@@ -21,7 +21,7 @@
                         <viewLayoutGuide key="safeArea" id="d0N-Rr-M3h"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="商城" image="cart.fill" catalog="system" id="0h2-7f-RiT"/>
+                    <tabBarItem key="tabBarItem" title="Shopping" image="cart.fill" catalog="system" id="0h2-7f-RiT"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e8i-5r-DEW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -92,7 +92,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ebs-Dj-tjf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4574.8091603053435" y="-1964.0845070422536"/>
+            <point key="canvasLocation" x="3430" y="-2554"/>
         </scene>
         <!--DiscoveryVC-->
         <scene sceneID="jzZ-tM-rxq">
@@ -202,7 +202,7 @@
             </objects>
             <point key="canvasLocation" x="2572" y="-431"/>
         </scene>
-        <!--首页-->
+        <!--Home-->
         <scene sceneID="2Eh-ZS-mDt">
             <objects>
                 <viewController id="s4C-Dt-MUc" customClass="HomeVC" customModule="LittlePink" customModuleProvider="target" sceneMemberID="viewController">
@@ -242,7 +242,7 @@
                             <constraint firstItem="Ka8-zG-GcA" firstAttribute="top" secondItem="DHp-Vu-7zs" secondAttribute="top" id="uu9-t0-aWe"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="首页" image="house.fill" catalog="system" id="zlp-oE-B0Y"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="zlp-oE-B0Y"/>
                     <connections>
                         <outlet property="buttonBarView" destination="Ka8-zG-GcA" id="AJP-tW-IsT"/>
                         <outlet property="containerView" destination="tJv-XA-3b2" id="0lq-i0-mFx"/>
@@ -273,7 +273,7 @@
             </objects>
             <point key="canvasLocation" x="595" y="818"/>
         </scene>
-        <!--发布-->
+        <!--Post-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
@@ -283,13 +283,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="发布" image="plus.rectangle.fill" catalog="system" id="EDH-Na-dos"/>
+                    <tabBarItem key="tabBarItem" title="Post" image="plus.rectangle.fill" catalog="system" id="EDH-Na-dos"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1873" y="819"/>
         </scene>
-        <!--消息-->
+        <!--Message-->
         <scene sceneID="mcn-aB-kps">
             <objects>
                 <viewController id="vNP-Rv-tnv" sceneMemberID="viewController">
@@ -299,13 +299,13 @@
                         <viewLayoutGuide key="safeArea" id="UKg-DR-DDd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="消息" image="message.fill" catalog="system" id="FJJ-Cd-SNf"/>
+                    <tabBarItem key="tabBarItem" title="Message" image="message.fill" catalog="system" id="FJJ-Cd-SNf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2K1-sL-Wty" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1873" y="1527"/>
         </scene>
-        <!--我-->
+        <!--Me-->
         <scene sceneID="Oc8-5y-H65">
             <objects>
                 <viewController id="U2k-Fm-u33" sceneMemberID="viewController">
@@ -315,7 +315,7 @@
                         <viewLayoutGuide key="safeArea" id="iOQ-IL-YtR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="我" image="person.fill" catalog="system" id="Pa7-j3-7uj"/>
+                    <tabBarItem key="tabBarItem" title="Me" image="person.fill" catalog="system" id="Pa7-j3-7uj"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mu1-zi-4Zo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -337,7 +337,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wfi-XW-crE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3718" y="-1964"/>
+            <point key="canvasLocation" x="2572" y="-2554"/>
         </scene>
     </scenes>
     <resources>
