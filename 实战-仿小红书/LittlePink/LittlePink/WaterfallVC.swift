@@ -7,8 +7,11 @@
 
 import UIKit
 import CHTCollectionViewWaterfallLayout
+import XLPagerTabStrip
 
 class WaterfallVC: UICollectionViewController {
+    
+    var channel = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +23,7 @@ class WaterfallVC: UICollectionViewController {
         layout.minimumColumnSpacing = kWaterfallPadding
         layout.minimumInteritemSpacing = kWaterfallPadding
         layout.sectionInset = UIEdgeInsets(
-            top: kWaterfallPadding,
+            top: 0,
             left: kWaterfallPadding,
             bottom: kWaterfallPadding,
             right: kWaterfallPadding
@@ -98,6 +101,16 @@ extension WaterfallVC: CHTCollectionViewDelegateWaterfallLayout {
     
     func collectionView(_ collectionView: UICollectionView!, layout collectionViewLayout: UICollectionViewLayout!, sizeForItemAt indexPath: IndexPath!) -> CGSize {
         return UIImage(named: "\(indexPath.item + 1)")!.size
+    }
+    
+}
+
+// MARK: - IndicatorInfoProvider
+
+extension WaterfallVC: IndicatorInfoProvider {
+    
+    func indicatorInfo(for pagerTabStripController: XLPagerTabStrip.PagerTabStripViewController) -> XLPagerTabStrip.IndicatorInfo {
+        return IndicatorInfo(title: self.channel)
     }
     
 }
