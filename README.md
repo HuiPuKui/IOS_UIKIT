@@ -671,3 +671,10 @@ Bar 的高度是 44 point， Custom offset -16 文字居中
 
 **chiahsien/CHTCollectionViewWaterfallLayout- The waterfall (i.e., Pinterest-like) layout for UICollectionView.:** `https://github.com/chiahsien/CHTCollectionViewWaterfallLayout`
 
+## 7-本地化和国际化
+
+**Localization - Apple Developer:** `https://developer.apple.com/localization/`
+
+**Flinesoft/BartyCrouch- Localization/I18n- Incrementally update/translate your Strings files from .swift, .h, .m(m), .storyboard or .xib files.:** `https://github.com/Flinesoft/BartyCrouch`
+
+**macOS 开发之 storyboard 或 xib 本地化 - 知乎:** `https://zhuanlan.zhihu.com/p/57117270`
