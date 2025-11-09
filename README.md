@@ -688,3 +688,7 @@ Bar 的高度是 44 point， Custom offset -16 文字居中
 `Project -- info -- Localizations -- Add -- Finish`
 
  命令行导出本地化文件: `genstrings -o zh-Hans.lproj path/*.swift`
+
+ App 名称本地化: 创建 InfoPlist.strings, 添加语言，设置 `CFBundleDisplayName = "xxx";`
+
+ 图片 本地化: 打开 Assets.scassets, 选择图片 -- `Show the Attributes Inspector` -- `Localization`

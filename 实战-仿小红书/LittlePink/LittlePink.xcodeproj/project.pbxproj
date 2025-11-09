@@ -57,9 +57,9 @@
 			children = (
 				32068EBA2EBEFCAD00A6991E /* README.md */,
 				326179C22EB5A3E6008F0087 /* LittlePink */,
-				326179C12EB5A3E6008F0087 /* Products */,
-				4C99A82CC2FFA90D24DE7C7A /* Pods */,
 				AB68B43D4E8165BD4416B466 /* Frameworks */,
+				4C99A82CC2FFA90D24DE7C7A /* Pods */,
+				326179C12EB5A3E6008F0087 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
