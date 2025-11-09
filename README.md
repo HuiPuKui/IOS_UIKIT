@@ -686,3 +686,5 @@ Bar 的高度是 44 point， Custom offset -16 文字居中
 * 本地化操作的第一步
 
 `Project -- info -- Localizations -- Add -- Finish`
+
+ 命令行导出本地化文件: `genstrings -o zh-Hans.lproj path/*.swift`

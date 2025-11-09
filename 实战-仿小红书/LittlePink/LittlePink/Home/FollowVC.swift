@@ -17,7 +17,7 @@ class FollowVC: UIViewController, IndicatorInfoProvider {
     }
     
     func indicatorInfo(for pagerTabStripController: XLPagerTabStrip.PagerTabStripViewController) -> XLPagerTabStrip.IndicatorInfo {
-        return IndicatorInfo(title: "关注")
+        return IndicatorInfo(title: NSLocalizedString("Follow", comment: "首页上方的关注标签"))
     }
 
 }
