@@ -225,6 +225,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LittlePink/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = LittlePink;
+				INFOPLIST_KEY_NSCameraUsageDescription = "打开后可拍摄照片和视频";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "打开后可录制视频声音";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "打开后可选择照片和视频";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -261,6 +264,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LittlePink/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = LittlePink;
+				INFOPLIST_KEY_NSCameraUsageDescription = "打开后可拍摄照片和视频";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "打开后可录制视频声音";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "打开后可选择照片和视频";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

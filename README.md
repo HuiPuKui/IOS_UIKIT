@@ -692,3 +692,11 @@ Bar 的高度是 44 point， Custom offset -16 文字居中
  App 名称本地化: 创建 InfoPlist.strings, 添加语言，设置 `CFBundleDisplayName = "xxx";`
 
  图片 本地化: 打开 Assets.scassets, 选择图片 -- `Show the Attributes Inspector` -- `Localization`
+
+ ## 8-选取照片和视频
+
+ **Yummypets/YPImagePicker- 📸 Instagram-like image picker & filters for iOS:** `https://github.com/Yummypets/YPImagePicker`
+
+ **申请访问照片的权限| Apple Developer Documentation:** `https://developer.apple.com/documentation/photokit/delivering-an-enhanced-privacy-experience-in-your-photos-app`
+
+ 
