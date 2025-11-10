@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import YPImagePicker
 
 class TabBarC: UITabBarController {
 
@@ -23,9 +24,20 @@ extension TabBarC: UITabBarControllerDelegate {
     // false - 自定义展示
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         
-        if let vc = viewController as? PostVC {
+        if viewController is PostVC {
             
+            let picker = YPImagePicker()
             
+            picker.didFinishPicking { [unowned picker] items, cancelled in
+                if let photo = items.singlePhoto {
+                    print(photo.fromCamera)
+                    print(photo.image)
+                    print(photo.originalImage)
+                }
+                picker.dismiss(animated: true, completion: nil)
+            }
+            
+            self.present(picker, animated: true, completion: nil)
             
             return false
         }
