@@ -7,6 +7,7 @@
 
 import UIKit
 import YPImagePicker
+import AVKit
 
 class TabBarC: UITabBarController {
 
@@ -26,6 +27,8 @@ extension TabBarC: UITabBarControllerDelegate {
         
         if viewController is PostVC {
             
+            // TODO: 判断是否登陆
+            
             var config = YPImagePickerConfiguration()
             
             // MARK: 通用配置
@@ -43,15 +46,37 @@ extension TabBarC: UITabBarControllerDelegate {
             config.preferredStatusBarStyle = UIStatusBarStyle.default
             config.maxCameraZoomFactor = 5.0
             
+            // MARK: 相册配置
+            config.library.onlySquare = false
+            config.library.isSquareByDefault = false
+            config.library.minWidthForItem = nil
+            config.library.mediaType = YPlibraryMediaType.photo
+            config.library.defaultMultipleSelection = true
+            config.library.maxNumberOfItems = kMaxPhotoCount
+            config.library.minNumberOfItems = kMinPhotoCount
+            config.library.numberOfItemsInRow = kNumberOfPhotosInRow
+            config.library.spacingBetweenItems = kSpacingBetweenPhotos
+            config.library.skipSelectionsGallery = false
+            config.library.preselectedItems = nil
             config.library.preSelectItemOnMultipleSelection = true
+            
+            // MARK: 视频配置
+            config.video.compression = AVAssetExportPresetHighestQuality
+            config.video.fileType = .mov
+            config.video.recordingTimeLimit = 60.0
+            config.video.libraryTimeLimit = 60.0
+            config.video.minimumTimeLimit = 3.0
+            config.video.trimmerMaxDuration = 60.0
+            config.video.trimmerMinDuration = 3.0
+            
+            // MARK: Gallery(多选完后的展示和编辑页面)-画廊
+            config.gallery.hidesRemoveButton = false
             
             let picker = YPImagePicker(configuration: config)
             
             picker.didFinishPicking { [unowned picker] items, cancelled in
-                if let photo = items.singlePhoto {
-                    print(photo.fromCamera)
-                    print(photo.image)
-                    print(photo.originalImage)
+                if cancelled {
+                    print("用户按了左上角的取消按钮")
                 }
                 picker.dismiss(animated: true, completion: nil)
             }
