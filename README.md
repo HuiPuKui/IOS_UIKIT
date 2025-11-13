@@ -699,4 +699,12 @@ Bar 的高度是 44 point， Custom offset -16 文字居中
 
  **申请访问照片的权限| Apple Developer Documentation:** `https://developer.apple.com/documentation/photokit/delivering-an-enhanced-privacy-experience-in-your-photos-app`
 
- 
+ ## 9-Swift高级
+
+ **闭包Closures - Swift官方文档:** `https://docs.swift.org/swift-book/documentation/the-swift-programming-language/closures/`
+
+ **閉包(Closures) | 彼得潘的 Swift iOS App 開發教室 | Medium:** `https://medium.com/%E5%BD%BC%E5%BE%97%E6%BD%98%E7%9A%84-swift-ios-app-%E9%96%8B%E7%99%BC%E6%95%99%E5%AE%A4/%E7%B0%A1%E6%98%93%E8%AA%AA%E6%98%8Eswift-4-closures-77351c3bf775`
+
+ **ARC和循环引用 - Swift官方文档:** `https://docs.swift.org/swift-book/documentation/the-swift-programming-language/automaticreferencecounting/`
+
+ **枚举 - Swift官方文档:** `https://docs.swift.org/swift-book/documentation/the-swift-programming-language/enumerations/`
