@@ -77,3 +77,37 @@ codingSwift(day: 40, appName: "天气") {
 let arr = [3, 5, 1, 2, 4]
 let sortedArr1 = arr.sorted { $0 < $1 }
 let sortedArr2 = arr.sorted(by: <)
+
+// MARK: - 闭包捕获
+
+func makeIncrementer(forIncrement amount: Int) -> () -> Int {
+    var runningTotal = 0
+    /*
+    func incrementer() -> Int {
+        runningTotal += amount
+        return runningTotal
+    }
+     */
+    let incrementer = { () -> Int in
+        runningTotal += amount
+        return runningTotal
+    }
+    return incrementer
+}
+
+let incrementByTen = makeIncrementer(forIncrement: 10)
+incrementByTen()
+incrementByTen()
+incrementByTen()
+
+let incrementBySeven = makeIncrementer(forIncrement: 7)
+incrementBySeven()
+incrementBySeven()
+incrementBySeven()
+
+// MARK: - 闭包时引用类型
+
+let alsoIncrementByTen = incrementByTen
+alsoIncrementByTen()
+
+incrementByTen()
