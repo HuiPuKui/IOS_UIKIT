@@ -52,8 +52,28 @@ func appName1() -> String {
 }
 codingSwift(day: 100, appName: appName1)
 
-// MARK: - 尾随闭包
+// MARK: - 简写方法1 -- 尾随闭包 Trailing Closure
 
 codingSwift(day: 130) { () -> String in
     return "机器学习"
 }
+
+// MARK: - 简写方法2 -- 根据上下文推断类型
+
+func codingSwift(day: Int, appName: String, res: (Int, String) -> String) {
+    print("学习 Swift \(day) 天了，\(res(1, "Alamofire"))，做成了 \(appName) App")
+}
+
+codingSwift(day: 40, appName: "天气") { takeDay, use in
+    return "花了 \(takeDay) 天，使用了 \(use) 技术"
+}
+
+codingSwift(day: 40, appName: "天气") {
+    "花了 \($0) 天，使用了 \($1) 技术"
+}
+
+// MARK: - 系统函数案例 -- sorted
+
+let arr = [3, 5, 1, 2, 4]
+let sortedArr1 = arr.sorted { $0 < $1 }
+let sortedArr2 = arr.sorted(by: <)
