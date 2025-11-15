@@ -111,3 +111,48 @@ let alsoIncrementByTen = incrementByTen
 alsoIncrementByTen()
 
 incrementByTen()
+
+// MARK: - 逃逸闭包 (@escaping)
+
+var completionHandlers = [() -> Void]()
+@MainActor func someFunctionWithEscapingClosure(completionHandler: @escaping () -> Void) {
+    completionHandlers.append(completionHandler)
+}
+
+func someFunctionWithNonescapingClosure(closure: () -> Void) {
+    closure()
+}
+
+class SomeClass {
+    var x = 10
+    @MainActor func doSomething() {
+        someFunctionWithEscapingClosure { self.x = 100 }
+        someFunctionWithNonescapingClosure { x = 200 }
+    }
+}
+
+let instance = SomeClass()
+instance.doSomething()
+print(instance.x)
+
+completionHandlers.first?()
+print(instance.x)
+
+// 实际应用
+class SomeVC {
+    
+    func getData(finished: @escaping @Sendable (String) -> ()) {
+        print("外层函数开始执行")
+        DispatchQueue.global().async {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                finished("我是数据")
+            }
+        }
+    }
+    
+}
+
+let someVC = SomeVC()
+someVC.getData { data in
+    print("逃逸闭包执行，拿到了耗时任务过来的数据 -- \(data)，可以做一些处理了")
+}
