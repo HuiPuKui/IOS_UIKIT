@@ -708,3 +708,9 @@ Bar 的高度是 44 point， Custom offset -16 文字居中
  **ARC和循环引用 - Swift官方文档:** `https://docs.swift.org/swift-book/documentation/the-swift-programming-language/automaticreferencecounting/`
 
  **枚举 - Swift官方文档:** `https://docs.swift.org/swift-book/documentation/the-swift-programming-language/enumerations/`
+
+ ## 10-CollectionView
+
+ **iOS13-Xcode11-UIScrollView的新功能-在storyboard上即可设置ContentSize-更高效的布局:** `https://juejin.cn/post/6844904133040979976`
+
+ **真机调试时iPhone解锁后Xcode仍出现“Unlock iPhone to Continue”弹框 的解决方案:** `https://juejin.cn/post/6844904012949487623`
