@@ -16,6 +16,7 @@ let kNoteEditVCID = "NoteEditVCID"
 
 // MARK: CellID
 let kWaterfallCellID = "WaterfallCellID"
+let kPhotoCellID = "PhotoCellID"
 
 // MARK: - 业务逻辑相关
 // 瀑布流

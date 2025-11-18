@@ -332,22 +332,45 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="90" id="AXZ-Ru-g5D"/>
                                                 </constraints>
-                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bNk-D4-vJN">
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bNk-D4-vJN">
                                                     <size key="itemSize" width="90" height="90"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="vRT-ts-mlf">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCellID" id="vRT-ts-mlf" customClass="PhotoCell" customModule="LittlePink" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="VBV-5R-UDd">
                                                             <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                                             <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="jdq-Cx-mU3">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                                                </imageView>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="jdq-Cx-mU3" secondAttribute="trailing" id="3eJ-Fj-dxb"/>
+                                                                <constraint firstAttribute="bottom" secondItem="jdq-Cx-mU3" secondAttribute="bottom" id="Obq-f8-ZWG"/>
+                                                                <constraint firstItem="jdq-Cx-mU3" firstAttribute="top" secondItem="VBV-5R-UDd" secondAttribute="top" id="PBL-h1-83s"/>
+                                                                <constraint firstItem="jdq-Cx-mU3" firstAttribute="leading" secondItem="VBV-5R-UDd" secondAttribute="leading" id="m7F-QG-tpf"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                                                    <real key="value" value="10"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </collectionViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="imageView" destination="jdq-Cx-mU3" id="FUb-ab-vae"/>
+                                                        </connections>
                                                     </collectionViewCell>
                                                 </cells>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="iri-dY-gWA" id="Wmn-Al-LYd"/>
+                                                    <outlet property="delegate" destination="iri-dY-gWA" id="ebw-1m-Ukr"/>
+                                                </connections>
                                             </collectionView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -379,6 +402,9 @@
                             <constraint firstAttribute="bottom" secondItem="0Fe-Nv-s8G" secondAttribute="bottom" id="xzr-TB-0qE"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="photoCollectionView" destination="Hrk-Ot-LuJ" id="Ss7-O9-1x2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BNP-J1-BUc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -436,6 +462,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="2" width="1080" height="1440"/>
         <image name="cart.fill" catalog="system" width="128" height="102"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="message.fill" catalog="system" width="128" height="114"/>
