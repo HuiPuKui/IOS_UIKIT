@@ -1,10 +1,14 @@
-//: A UIKit based Playground for presenting user interface
-  
-import UIKit
-import PlaygroundSupport
+//
+//  ViewController.swift
+//  UIKitTest
+//
+//  Created by 惠蒲葵 on 2025/11/19.
+//
 
-class MyViewController : UIViewController, UICollectionViewDataSource {
-    
+import UIKit
+
+class ViewController: UIViewController, UICollectionViewDataSource {
+
     private let photos = [UIImage(named: "1"), UIImage(named: "2")]
     
     private lazy var cv: UICollectionView = {
@@ -23,13 +27,11 @@ class MyViewController : UIViewController, UICollectionViewDataSource {
         return cv
     }()
     
-    override func loadView() {
-        let view = UIView()
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
         view.addSubview(cv)
         self.setUI()
-        
-        self.view = view
     }
     
     private func setUI() {
@@ -50,7 +52,7 @@ class MyViewController : UIViewController, UICollectionViewDataSource {
         
         return cell
     }
-    
+
 }
 
 class CVCell: UICollectionViewCell {
@@ -82,6 +84,3 @@ class CVCell: UICollectionViewCell {
     }
     
 }
-
-// Present the view controller in the Live View window
-PlaygroundPage.current.liveView = MyViewController()
