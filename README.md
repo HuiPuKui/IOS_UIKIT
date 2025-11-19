@@ -714,3 +714,7 @@ Bar 的高度是 44 point， Custom offset -16 文字居中
  **iOS13-Xcode11-UIScrollView的新功能-在storyboard上即可设置ContentSize-更高效的布局:** `https://juejin.cn/post/6844904133040979976`
 
  **真机调试时iPhone解锁后Xcode仍出现“Unlock iPhone to Continue”弹框 的解决方案:** `https://juejin.cn/post/6844904012949487623`
+
+ **给tableview的每个section添加Headers和Footers  | Apple官方文档:** `https://developer.apple.com/documentation/uikit/adding-headers-and-footers-to-table-sections`
+
+ **UICollectionView | Apple官方文档:** `https://developer.apple.com/documentation/uikit/uicollectionview`
