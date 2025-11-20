@@ -7,6 +7,7 @@
 
 import UIKit
 import YPImagePicker
+import MBProgressHUD
 
 class NoteEditVC: UIViewController {
 
