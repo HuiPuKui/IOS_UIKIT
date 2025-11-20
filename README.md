@@ -718,3 +718,9 @@ Bar 的高度是 44 point， Custom offset -16 文字居中
  **给tableview的每个section添加Headers和Footers  | Apple官方文档:** `https://developer.apple.com/documentation/uikit/adding-headers-and-footers-to-table-sections`
 
  **UICollectionView | Apple官方文档:** `https://developer.apple.com/documentation/uikit/uicollectionview`
+
+ **第三方透明指示器MBProgressHUD使用详解:** `https://www.hangge.com/blog/cache/detail_2031.html`
+
+ **Importing Objective-C into Swift | Apple官方文档:** `https://developer.apple.com/documentation/swift/imported_c_and_objective-c_apis/importing_objective-c_into_swift`
+
+ **jdg/MBProgressHUD - 加载进度框/提示框/指示器:** `https://github.com/jdg/MBProgressHUD`
