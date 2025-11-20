@@ -6,14 +6,17 @@
 //
 
 import UIKit
+import YPImagePicker
 
 class NoteEditVC: UIViewController {
 
-    let photos = [
-        UIImage(named: "1"), UIImage(named: "2")
-    ]
+    var photos: [UIImage] = []
     
     @IBOutlet weak var photoCollectionView: UICollectionView!
+    
+    var photoCount: Int {
+        return photos.count
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +29,7 @@ class NoteEditVC: UIViewController {
 extension NoteEditVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.photos.count
+        return self.photoCount
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -59,7 +62,40 @@ extension NoteEditVC: UICollectionViewDelegate {
 extension NoteEditVC {
     
     @objc private func addPhoto(sender: UIButton) {
-        print("addPhoto")
+        if self.photoCount < kMaxPhotoCount {
+            var config = YPImagePickerConfiguration()
+            
+            // MARK: 通用配置
+            config.albumName = Bundle.main.appName
+            config.screens = [.library]
+            
+            // MARK: 相册配置
+            config.library.defaultMultipleSelection = true
+            config.library.maxNumberOfItems = kMaxPhotoCount - self.photoCount
+            config.library.spacingBetweenItems = kSpacingBetweenPhotos
+            
+            // MARK: Gallery(多选完后的展示和编辑页面)-画廊
+            config.gallery.hidesRemoveButton = false
+            
+            let picker = YPImagePicker(configuration: config)
+            
+            picker.didFinishPicking { [unowned picker] items, _ in
+                
+                for item in items {
+                    if case let .photo(p: photo) = item {
+                        self.photos.append(photo.image)
+                    }
+                }
+                
+                self.photoCollectionView.reloadData()
+        
+                picker.dismiss(animated: true)
+            }
+            
+            self.present(picker, animated: true)
+        } else {
+            
+        }
     }
     
 }

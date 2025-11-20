@@ -44,7 +44,7 @@ extension TabBarC: UITabBarControllerDelegate {
             config.hidesCancelButton = false
             
             config.preferredStatusBarStyle = UIStatusBarStyle.default
-            config.maxCameraZoomFactor = 5.0
+            config.maxCameraZoomFactor = kMaxCameraZoomFactor
             
             // MARK: 相册配置
             config.library.onlySquare = false
@@ -78,10 +78,10 @@ extension TabBarC: UITabBarControllerDelegate {
                 if cancelled {
                     print("用户按了左上角的取消按钮")
                 }
-                picker.dismiss(animated: true, completion: nil)
+                picker.dismiss(animated: true)
             }
             
-            self.present(picker, animated: true, completion: nil)
+            self.present(picker, animated: true)
             
             return false
         }

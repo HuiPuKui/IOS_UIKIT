@@ -30,3 +30,4 @@ let kMaxPhotoCount = 9
 let kMinPhotoCount = 1
 let kNumberOfPhotosInRow = 4
 let kSpacingBetweenPhotos = 2.0
+let kMaxCameraZoomFactor = 5.0
