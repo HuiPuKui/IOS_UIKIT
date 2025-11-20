@@ -96,6 +96,8 @@ extension NoteEditVC {
             self.present(picker, animated: true)
         } else {
             
+            MBProgressHUD.showAdded(to: self.view, animated: true)
+            
         }
     }
     

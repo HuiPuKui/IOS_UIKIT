@@ -9,6 +9,15 @@ target 'LittlePink' do
   pod 'XLPagerTabStrip', '~> 9.0'
   pod 'CHTCollectionViewWaterfallLayout/ObjC'
   pod 'YPImagePicker'
-  pod 'MBProgressHUD', '~> 1.2.0'
+  pod 'MBProgressHUD', '~>1.2.0'
 
+end
+
+# 覆盖所有 Pod 的最低版本（重要）
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '14.1'
+    end
+  end
 end
