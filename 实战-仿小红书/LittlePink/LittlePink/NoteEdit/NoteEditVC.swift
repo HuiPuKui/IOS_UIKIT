@@ -7,7 +7,6 @@
 
 import UIKit
 import YPImagePicker
-import MBProgressHUD
 
 class NoteEditVC: UIViewController {
 
@@ -95,9 +94,7 @@ extension NoteEditVC {
             
             self.present(picker, animated: true)
         } else {
-            
-            MBProgressHUD.showAdded(to: self.view, animated: true)
-            
+            self.showTextHUD("最多只能选择\(kMaxPhotoCount)张照片哦")
         }
     }
     
