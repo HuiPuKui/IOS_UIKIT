@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVKit
 import YPImagePicker
 import SKPhotoBrowser
 
@@ -13,11 +14,13 @@ class NoteEditVC: UIViewController {
 
     var photos: [UIImage] = []
     
+    var videoURL: URL?
+    
     @IBOutlet weak var photoCollectionView: UICollectionView!
     
-    var photoCount: Int {
-        return photos.count
-    }
+    var photoCount: Int { return photos.count }
+    
+    var isVideo: Bool { self.videoURL != nil }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,19 +60,28 @@ extension NoteEditVC: UICollectionViewDataSource {
 extension NoteEditVC: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        var images: [SKPhoto] = []
-        
-        for photo in self.photos {
-            images.append(SKPhoto.photoWithImage(photo))
-        }
+        if self.isVideo {
+            let playerVC = AVPlayerViewController()
+            playerVC.player = AVPlayer(url: self.videoURL!)
+            
+            self.present(playerVC, animated: true) {
+                playerVC.player?.play()
+            }
+        } else {
+            var images: [SKPhoto] = []
+            
+            for photo in self.photos {
+                images.append(SKPhoto.photoWithImage(photo))
+            }
 
-        let browser = SKPhotoBrowser(photos: images, initialPageIndex: indexPath.item)
-        browser.delegate = self
-        
-        SKPhotoBrowserOptions.displayAction = false
-        SKPhotoBrowserOptions.displayDeleteButton = true
-        
-        self.present(browser, animated: true, completion: {})
+            let browser = SKPhotoBrowser(photos: images, initialPageIndex: indexPath.item)
+            browser.delegate = self
+            
+            SKPhotoBrowserOptions.displayAction = false
+            SKPhotoBrowserOptions.displayDeleteButton = true
+            
+            self.present(browser, animated: true, completion: {})
+        }
     }
     
 }
