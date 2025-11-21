@@ -7,6 +7,7 @@
 
 import UIKit
 import YPImagePicker
+import SKPhotoBrowser
 
 class NoteEditVC: UIViewController {
 
@@ -54,6 +55,35 @@ extension NoteEditVC: UICollectionViewDataSource {
 }
 
 extension NoteEditVC: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        var images: [SKPhoto] = []
+        
+        for photo in self.photos {
+            images.append(SKPhoto.photoWithImage(photo))
+        }
+
+        let browser = SKPhotoBrowser(photos: images, initialPageIndex: indexPath.item)
+        browser.delegate = self
+        
+        SKPhotoBrowserOptions.displayAction = false
+        SKPhotoBrowserOptions.displayDeleteButton = true
+        
+        self.present(browser, animated: true, completion: {})
+    }
+    
+}
+
+// MARK: - SKPhotoBrowserDelegate
+
+extension NoteEditVC: SKPhotoBrowserDelegate {
+    
+    func removePhoto(_ browser: SKPhotoBrowser, index: Int, reload: @escaping (() -> Void)) {
+        self.photos.remove(at: index)
+        
+        self.photoCollectionView.reloadData()
+        reload()
+    }
     
 }
 

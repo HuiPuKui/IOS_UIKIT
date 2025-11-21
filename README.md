@@ -724,3 +724,9 @@ Bar 的高度是 44 point， Custom offset -16 文字居中
  **Importing Objective-C into Swift | Apple官方文档:** `https://developer.apple.com/documentation/swift/imported_c_and_objective-c_apis/importing_objective-c_into_swift`
 
  **jdg/MBProgressHUD - 加载进度框/提示框/指示器:** `https://github.com/jdg/MBProgressHUD`
+
+ **suzuki-0000/SKPhotoBrowser- 图片浏览器:** `https://github.com/suzuki-0000/SKPhotoBrowser`
+
+ **AVPlayer和AVPlayerViewController的使用:** `https://www.hangge.com/blog/cache/detail_1107.html`
+
+ **Supporting Drag and Drop in Collection Views | Apple官方文档:** `https://developer.apple.com/documentation/uikit/supporting-drag-and-drop-in-collection-views`
