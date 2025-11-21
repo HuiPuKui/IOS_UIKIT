@@ -404,6 +404,8 @@
                                                 <connections>
                                                     <outlet property="dataSource" destination="iri-dY-gWA" id="Wmn-Al-LYd"/>
                                                     <outlet property="delegate" destination="iri-dY-gWA" id="ebw-1m-Ukr"/>
+                                                    <outlet property="dragDelegate" destination="iri-dY-gWA" id="RJW-ZF-gSH"/>
+                                                    <outlet property="dropDelegate" destination="iri-dY-gWA" id="ceG-48-AS9"/>
                                                 </connections>
                                             </collectionView>
                                         </subviews>
