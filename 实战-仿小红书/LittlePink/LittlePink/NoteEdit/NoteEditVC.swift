@@ -31,4 +31,12 @@ class NoteEditVC: UIViewController {
         self.photoCollectionView.dragInteractionEnabled = true
     }
 
+    @IBAction func TFEditBegin(_ sender: Any) {
+        self.titleCountLabel.isHidden = false
+    }
+    
+    @IBAction func TFEditEnd(_ sender: Any) {
+        self.titleCountLabel.isHidden = true
+    }
+    
 }
