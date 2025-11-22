@@ -25,7 +25,8 @@ class NoteEditVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        // 开启拖放交互
+        self.photoCollectionView.dragInteractionEnabled = true
     }
 
 }
