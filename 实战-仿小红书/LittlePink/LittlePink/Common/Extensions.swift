@@ -7,6 +7,14 @@
 
 import UIKit
 
+extension UITextField {
+    
+    var unwrappedText: String {
+        self.text ?? ""
+    }
+    
+}
+
 extension UIView {
     
     @IBInspectable

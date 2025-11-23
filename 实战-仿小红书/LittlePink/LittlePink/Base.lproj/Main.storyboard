@@ -423,6 +423,7 @@
                                                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                                         <connections>
                                                                             <action selector="TFEditBegin:" destination="iri-dY-gWA" eventType="editingDidBegin" id="Bp4-a4-kgt"/>
+                                                                            <action selector="TFEditChanged:" destination="iri-dY-gWA" eventType="editingChanged" id="rF2-9H-obI"/>
                                                                             <action selector="TFEditEnd:" destination="iri-dY-gWA" eventType="editingDidEnd" id="6ze-gp-P7A"/>
                                                                             <action selector="TFEndOnExit:" destination="iri-dY-gWA" eventType="editingDidEndOnExit" id="5ie-TV-RjY"/>
                                                                             <outlet property="delegate" destination="iri-dY-gWA" id="f0r-Ku-L5c"/>

@@ -31,3 +31,6 @@ let kMinPhotoCount = 1
 let kNumberOfPhotosInRow = 4
 let kSpacingBetweenPhotos = 2.0
 let kMaxCameraZoomFactor = 5.0
+
+// 笔记
+let kMaxNoteTitleCount = 20

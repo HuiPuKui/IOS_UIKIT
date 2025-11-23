@@ -45,6 +45,10 @@ class NoteEditVC: UIViewController {
         
     }
     
+    @IBAction func TFEditChanged(_ sender: Any) {
+        self.titleCountLabel.text = "\(kMaxNoteTitleCount - self.titleTextField.unwrappedText.count)"
+    }
+    
 }
 
 extension NoteEditVC: UITextFieldDelegate {
