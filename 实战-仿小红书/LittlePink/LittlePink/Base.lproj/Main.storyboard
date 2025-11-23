@@ -420,10 +420,12 @@
                                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="填写标题" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RCJ-GA-eok">
                                                                         <rect key="frame" x="0.0" y="0.0" width="361" height="21"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                                        <textInputTraits key="textInputTraits"/>
+                                                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                                         <connections>
                                                                             <action selector="TFEditBegin:" destination="iri-dY-gWA" eventType="editingDidBegin" id="Bp4-a4-kgt"/>
                                                                             <action selector="TFEditEnd:" destination="iri-dY-gWA" eventType="editingDidEnd" id="6ze-gp-P7A"/>
+                                                                            <action selector="TFEndOnExit:" destination="iri-dY-gWA" eventType="editingDidEndOnExit" id="5ie-TV-RjY"/>
+                                                                            <outlet property="delegate" destination="iri-dY-gWA" id="f0r-Ku-L5c"/>
                                                                         </connections>
                                                                     </textField>
                                                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJP-or-Pnf">

@@ -29,6 +29,7 @@ class NoteEditVC: UIViewController {
 
         // 开启拖放交互
         self.photoCollectionView.dragInteractionEnabled = true
+        self.hideKeyboardWithTappedAround()
     }
 
     @IBAction func TFEditBegin(_ sender: Any) {
@@ -38,5 +39,20 @@ class NoteEditVC: UIViewController {
     @IBAction func TFEditEnd(_ sender: Any) {
         self.titleCountLabel.isHidden = true
     }
+    
+    // 空方法就可以让软键盘消失
+    @IBAction func TFEndOnExit(_ sender: Any) {
+        
+    }
+    
+}
+
+extension NoteEditVC: UITextFieldDelegate {
+    
+//    // 收起软键盘
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        textField.resignFirstResponder()
+//        return true
+//    }
     
 }

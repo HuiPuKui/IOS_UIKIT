@@ -37,6 +37,16 @@ extension UIViewController {
         hud.hide(animated: true, afterDelay: 2)
     }
     
+    func hideKeyboardWithTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dissmissKeyboard))
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dissmissKeyboard() {
+        self.view.endEditing(true)
+    }
+    
 }
 
 extension Bundle {
