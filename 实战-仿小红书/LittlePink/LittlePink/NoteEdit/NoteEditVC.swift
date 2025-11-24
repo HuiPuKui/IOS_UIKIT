@@ -32,6 +32,11 @@ class NoteEditVC: UIViewController {
         
         self.hideKeyboardWithTappedAround()
         self.titleCountLabel.text = "\(kMaxNoteTitleCount)"
+        
+        // 去除 textView 文本边距(上下边距)
+        self.textView.textContainerInset = .zero
+        // 去除 textView 内容锁进(左右边距)
+        self.textView.textContainer.lineFragmentPadding = 0
     }
 
     @IBAction func TFEditBegin(_ sender: Any) {
