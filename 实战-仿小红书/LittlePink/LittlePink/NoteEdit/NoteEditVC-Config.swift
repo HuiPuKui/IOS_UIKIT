@@ -1,0 +1,31 @@
+//
+//  NoteEditVC-Config.swift
+//  LittlePink
+//
+//  Created by 惠蒲葵 on 2025/11/24.
+//
+
+import Foundation
+
+extension NoteEditVC {
+    
+    func config() {
+        // 开启拖放交互
+        self.photoCollectionView.dragInteractionEnabled = true
+        
+        self.hideKeyboardWithTappedAround()
+        self.titleCountLabel.text = "\(kMaxNoteTitleCount)"
+        
+        // 去除 textView 文本边距(上下边距)
+        let lineFragmentPadding = self.textView.textContainer.lineFragmentPadding
+        self.textView.textContainerInset = UIEdgeInsets(
+            top: 0,
+            left: -lineFragmentPadding,
+            bottom: 0,
+            right: -lineFragmentPadding
+        )
+        
+        self.textView.textContainer.lineFragmentPadding = 0
+    }
+    
+}

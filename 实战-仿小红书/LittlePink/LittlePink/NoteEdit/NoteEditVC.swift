@@ -27,16 +27,7 @@ class NoteEditVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // 开启拖放交互
-        self.photoCollectionView.dragInteractionEnabled = true
-        
-        self.hideKeyboardWithTappedAround()
-        self.titleCountLabel.text = "\(kMaxNoteTitleCount)"
-        
-        // 去除 textView 文本边距(上下边距)
-        self.textView.textContainerInset = .zero
-        // 去除 textView 内容锁进(左右边距)
-        self.textView.textContainer.lineFragmentPadding = 0
+        self.config()
     }
 
     @IBAction func TFEditBegin(_ sender: Any) {
