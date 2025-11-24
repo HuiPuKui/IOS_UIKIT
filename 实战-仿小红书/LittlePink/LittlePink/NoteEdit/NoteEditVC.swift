@@ -44,6 +44,23 @@ class NoteEditVC: UIViewController {
     }
     
     @IBAction func TFEditChanged(_ sender: Any) {
+        // 优化系统输入法拼音输入未完成时候计数问题
+        guard self.titleTextField.markedTextRange == nil else { return }
+        
+        if self.titleTextField.unwrappedText.count > kMaxNoteTitleCount {
+            self.titleTextField.text = String(self.titleTextField.unwrappedText.prefix(kMaxNoteTitleCount))
+            
+            self.showTextHUD("标题最多输入\(kMaxNoteTitleCount)字哦")
+            
+            DispatchQueue.main.async {
+                let end = self.titleTextField.endOfDocument
+                self.titleTextField.selectedTextRange = self.titleTextField.textRange(
+                    from: end,
+                    to: end
+                )
+            }
+        }
+        
         self.titleCountLabel.text = "\(kMaxNoteTitleCount - self.titleTextField.unwrappedText.count)"
     }
     
@@ -51,12 +68,15 @@ class NoteEditVC: UIViewController {
 
 extension NoteEditVC: UITextFieldDelegate {
     
-//    // 收起软键盘
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        textField.resignFirstResponder()
-//        return true
-//    }
+    /*
+     
+    // 收起软键盘
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
+    // 未处理中文输入计数问题
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         let isExceed = range.location >= kMaxNoteTitleCount || (textField.unwrappedText.count + string.count) > kMaxNoteTitleCount
@@ -67,5 +87,7 @@ extension NoteEditVC: UITextFieldDelegate {
         
         return !isExceed
     }
+     
+     */
     
 }
