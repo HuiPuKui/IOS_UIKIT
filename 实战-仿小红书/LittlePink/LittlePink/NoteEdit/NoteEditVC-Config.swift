@@ -24,8 +24,14 @@ extension NoteEditVC {
             bottom: 0,
             right: -lineFragmentPadding
         )
-        
         self.textView.textContainer.lineFragmentPadding = 0
+        
+        // 设置 textView 行间距
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 6
+        self.textView.typingAttributes = [
+            NSAttributedString.Key.paragraphStyle: paragraphStyle
+        ]
     }
     
 }
