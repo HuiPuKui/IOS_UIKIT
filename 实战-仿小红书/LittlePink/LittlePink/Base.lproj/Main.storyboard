@@ -419,6 +419,7 @@
                                                                 <subviews>
                                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="填写标题" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RCJ-GA-eok">
                                                                         <rect key="frame" x="0.0" y="0.0" width="361" height="21"/>
+                                                                        <color key="tintColor" name="main"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                         <textInputTraits key="textInputTraits" returnKeyType="done" smartInsertDeleteType="no"/>
                                                                         <connections>
@@ -452,6 +453,7 @@
                                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gD9-Ly-Ugz" customClass="KMPlaceholderTextView" customModule="KMPlaceholderTextView">
                                                                 <rect key="frame" x="0.0" y="0.0" width="361" height="130"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <color key="tintColor" name="main"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="130" id="Xby-jg-0a7"/>
                                                                 </constraints>

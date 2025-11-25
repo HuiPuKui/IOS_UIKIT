@@ -26,12 +26,18 @@ extension NoteEditVC {
         )
         self.textView.textContainer.lineFragmentPadding = 0
         
-        // 设置 textView 行间距
+        // 设置 textView 行间距、字体、颜色
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 6
-        self.textView.typingAttributes = [
-            NSAttributedString.Key.paragraphStyle: paragraphStyle
+        let typingAttributes: [NSAttributedString.Key: Any] = [
+            .paragraphStyle: paragraphStyle,
+            .font: UIFont.systemFont(ofSize: 14),
+            .foregroundColor: UIColor.secondaryLabel
         ]
+        self.textView.typingAttributes = typingAttributes
+        
+        // 修改光标颜色
+        self.textView.tintColorDidChange()
     }
     
 }
