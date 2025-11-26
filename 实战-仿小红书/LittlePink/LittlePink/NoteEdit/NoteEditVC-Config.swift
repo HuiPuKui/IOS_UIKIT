@@ -41,7 +41,23 @@ extension NoteEditVC {
         
         if let textViewIAView = Bundle.main.loadNibNamed("TextViewIAView", owner: nil, options: nil)?.first as? TextViewIAView {
             self.textView.inputAccessoryView = textViewIAView
+            
+            (self.textView.inputAccessoryView as! TextViewIAView).doneBtn.addTarget(
+                self,
+                action: #selector(resignTextView),
+                for: .touchUpInside
+            )
         }
+    }
+    
+}
+
+// MARK: - 监听
+
+extension NoteEditVC {
+        
+    @objc private func resignTextView() {
+        self.textView.resignFirstResponder()
     }
     
 }

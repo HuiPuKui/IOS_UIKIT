@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,29 +13,79 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TextViewIAView" customModule="LittlePink" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="409" height="44"/>
+            <rect key="frame" x="0.0" y="0.0" width="409" height="45"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMI-nn-Moe">
-                    <rect key="frame" x="353" y="13" width="50" height="18"/>
-                    <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
-                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" title="完成"/>
-                </button>
+                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gc5-M4-TnQ">
+                    <rect key="frame" x="284" y="1" width="109" height="44"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s8Y-f6-ep6">
+                            <rect key="frame" x="0.0" y="0.0" width="69" height="44"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1234" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Otm-hE-0F7">
+                                    <rect key="frame" x="0.0" y="0.0" width="32.333333333333336" height="44"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <color key="textColor" name="main"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VlR-NG-ecP">
+                                    <rect key="frame" x="32.333333333333314" y="0.0" width="36.666666666666657" height="44"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <color key="textColor" systemColor="tertiaryLabelColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMI-nn-Moe">
+                            <rect key="frame" x="69" y="0.0" width="40" height="44"/>
+                            <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="完成">
+                                <color key="titleColor" name="blue"/>
+                            </state>
+                        </button>
+                    </subviews>
+                </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tY6-Wf-bRA">
+                    <rect key="frame" x="0.0" y="0.0" width="409" height="1"/>
+                    <color key="backgroundColor" systemColor="quaternaryLabelColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="EX4-LG-C9T"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="gMI-nn-Moe" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="iBE-Bl-67Z"/>
-                <constraint firstAttribute="trailing" secondItem="gMI-nn-Moe" secondAttribute="trailing" constant="6" id="yWp-5d-DAb"/>
+                <constraint firstItem="tY6-Wf-bRA" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ACP-bb-6A6"/>
+                <constraint firstAttribute="bottom" secondItem="Gc5-M4-TnQ" secondAttribute="bottom" id="WBk-66-K5h"/>
+                <constraint firstItem="tY6-Wf-bRA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ao8-ag-DFy"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="tY6-Wf-bRA" secondAttribute="trailing" id="ggT-b0-4Ce"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Gc5-M4-TnQ" secondAttribute="trailing" constant="16" id="n0y-Ua-eNz"/>
+                <constraint firstItem="Gc5-M4-TnQ" firstAttribute="top" secondItem="tY6-Wf-bRA" secondAttribute="bottom" id="pyo-I0-mQV"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="148.85496183206106" y="-261.97183098591552"/>
+            <connections>
+                <outlet property="doneBtn" destination="gMI-nn-Moe" id="hSu-DB-ESL"/>
+            </connections>
+            <point key="canvasLocation" x="148.85496183206106" y="-262.32394366197184"/>
         </view>
     </objects>
     <resources>
+        <namedColor name="blue">
+            <color red="0.37647058823529411" green="0.52941176470588236" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="main">
+            <color red="0.92900002002716064" green="0.34099999070167542" blue="0.55699998140335083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="quaternaryLabelColor">
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.1764705882" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29803921570000003" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
