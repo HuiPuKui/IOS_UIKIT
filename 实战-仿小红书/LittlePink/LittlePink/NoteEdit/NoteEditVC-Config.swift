@@ -38,6 +38,10 @@ extension NoteEditVC {
         
         // 修改光标颜色
         self.textView.tintColorDidChange()
+        
+        if let textViewIAView = Bundle.main.loadNibNamed("TextViewIAView", owner: nil, options: nil)?.first as? TextViewIAView {
+            self.textView.inputAccessoryView = textViewIAView
+        }
     }
     
 }
