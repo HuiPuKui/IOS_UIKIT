@@ -466,6 +466,9 @@
                                                                         <color key="value" systemColor="placeholderTextColor"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="iri-dY-gWA" id="hez-zP-6ZV"/>
+                                                                </connections>
                                                             </textView>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EmS-2X-JKc">
                                                                 <rect key="frame" x="0.0" y="146" width="361" height="1"/>

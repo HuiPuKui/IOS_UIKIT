@@ -17,19 +17,19 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gc5-M4-TnQ">
-                    <rect key="frame" x="284" y="1" width="109" height="44"/>
+                    <rect key="frame" x="353" y="1" width="40" height="44"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s8Y-f6-ep6">
-                            <rect key="frame" x="0.0" y="0.0" width="69" height="44"/>
+                        <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s8Y-f6-ep6">
+                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1234" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Otm-hE-0F7">
-                                    <rect key="frame" x="0.0" y="0.0" width="32.333333333333336" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <color key="textColor" name="main"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VlR-NG-ecP">
-                                    <rect key="frame" x="32.333333333333314" y="0.0" width="36.666666666666657" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <color key="textColor" systemColor="tertiaryLabelColor"/>
                                     <nil key="highlightedColor"/>
@@ -37,7 +37,7 @@
                             </subviews>
                         </stackView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMI-nn-Moe">
-                            <rect key="frame" x="69" y="0.0" width="40" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="40" height="44"/>
                             <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" title="完成">
@@ -67,13 +67,16 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="doneBtn" destination="gMI-nn-Moe" id="hSu-DB-ESL"/>
+                <outlet property="maxTextCountLabel" destination="VlR-NG-ecP" id="6zT-gt-EeD"/>
+                <outlet property="textCountLabel" destination="Otm-hE-0F7" id="9M7-hg-Jd9"/>
+                <outlet property="textCountStackView" destination="s8Y-f6-ep6" id="qDG-T0-8cf"/>
             </connections>
             <point key="canvasLocation" x="148.85496183206106" y="-262.32394366197184"/>
         </view>
     </objects>
     <resources>
         <namedColor name="blue">
-            <color red="0.37647058823529411" green="0.52941176470588236" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.37599998712539673" green="0.52899998426437378" blue="0.77999997138977051" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="main">
             <color red="0.92900002002716064" green="0.34099999070167542" blue="0.55699998140335083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

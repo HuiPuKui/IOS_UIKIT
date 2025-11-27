@@ -34,3 +34,4 @@ let kMaxCameraZoomFactor = 5.0
 
 // 笔记
 let kMaxNoteTitleCount = 20
+let kMaxNoteTextCount = 1000

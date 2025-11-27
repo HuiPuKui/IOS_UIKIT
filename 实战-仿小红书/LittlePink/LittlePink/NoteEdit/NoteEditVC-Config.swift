@@ -42,11 +42,12 @@ extension NoteEditVC {
         if let textViewIAView = Bundle.main.loadNibNamed("TextViewIAView", owner: nil, options: nil)?.first as? TextViewIAView {
             self.textView.inputAccessoryView = textViewIAView
             
-            (self.textView.inputAccessoryView as! TextViewIAView).doneBtn.addTarget(
+            self.textViewIAView.doneBtn.addTarget(
                 self,
                 action: #selector(resignTextView),
                 for: .touchUpInside
             )
+            self.textViewIAView.maxTextCountLabel.text = "/\(kMaxNoteTextCount)"
         }
     }
     

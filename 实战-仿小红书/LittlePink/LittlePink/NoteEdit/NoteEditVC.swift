@@ -23,6 +23,7 @@ class NoteEditVC: UIViewController {
     
     var photoCount: Int { return photos.count }
     var isVideo: Bool { self.videoURL != nil }
+    var textViewIAView: TextViewIAView { return (self.textView.inputAccessoryView as! TextViewIAView) }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +63,16 @@ class NoteEditVC: UIViewController {
         }
         
         self.titleCountLabel.text = "\(kMaxNoteTitleCount - self.titleTextField.unwrappedText.count)"
+    }
+    
+}
+
+extension NoteEditVC: UITextViewDelegate {
+    
+    func textViewDidChange(_ textView: UITextView) {
+        // 解决计数问题
+        guard self.textView.markedTextRange == nil else { return }
+        self.textViewIAView.currentTextCount = textView.text.count
     }
     
 }

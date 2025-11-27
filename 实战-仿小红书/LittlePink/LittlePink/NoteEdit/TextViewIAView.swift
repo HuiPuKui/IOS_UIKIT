@@ -10,13 +10,22 @@ import UIKit
 class TextViewIAView: UIView {
 
     @IBOutlet weak var doneBtn: UIButton!
-    
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
+    @IBOutlet weak var textCountStackView: UIStackView!
+    @IBOutlet weak var textCountLabel: UILabel!
+    @IBOutlet weak var maxTextCountLabel: UILabel!
 
+    var currentTextCount = 0 {
+        didSet {
+            if self.currentTextCount <= kMaxNoteTextCount {
+                self.doneBtn.isHidden = false
+                self.textCountStackView.isHidden = true
+            } else {
+                self.doneBtn.isHidden = true
+                self.textCountStackView.isHidden = false
+                
+                self.textCountLabel.text = "\(self.currentTextCount)"
+            }
+        }
+    }
+    
 }
