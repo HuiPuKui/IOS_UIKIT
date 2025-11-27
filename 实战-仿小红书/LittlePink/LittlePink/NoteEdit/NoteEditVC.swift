@@ -65,6 +65,8 @@ class NoteEditVC: UIViewController {
         self.titleCountLabel.text = "\(kMaxNoteTitleCount - self.titleTextField.unwrappedText.count)"
     }
     
+    // TODO: (存草稿和发布笔记之前需判断当前用户输入的正文文本数量，看是否大于最大可输入数量)
+    
 }
 
 extension NoteEditVC: UITextViewDelegate {

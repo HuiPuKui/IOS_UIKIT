@@ -67,4 +67,14 @@ extension Bundle {
         }
     }
     
+    // static 能修饰 class/struct/enum 的计算属性、存储属性、类型方法；class 能修饰类的计算属性和类方法
+    // static 修饰的类方法不能继承；class 修饰的类方法可以继承
+    // 在 protocol 中要使用 static
+    static func loadView<T>(fromNib name: String, with type: T.Type) -> T {
+        if let view = Bundle.main.loadNibNamed(name, owner: nil, options: nil)?.first as? T {
+            return view
+        }
+        fatalError("加载 \(type) 类型的 view 失败")
+    }
+    
 }

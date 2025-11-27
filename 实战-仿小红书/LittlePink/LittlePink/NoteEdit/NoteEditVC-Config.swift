@@ -39,16 +39,13 @@ extension NoteEditVC {
         // 修改光标颜色
         self.textView.tintColorDidChange()
         
-        if let textViewIAView = Bundle.main.loadNibNamed("TextViewIAView", owner: nil, options: nil)?.first as? TextViewIAView {
-            self.textView.inputAccessoryView = textViewIAView
-            
-            self.textViewIAView.doneBtn.addTarget(
-                self,
-                action: #selector(resignTextView),
-                for: .touchUpInside
-            )
-            self.textViewIAView.maxTextCountLabel.text = "/\(kMaxNoteTextCount)"
-        }
+        self.textView.inputAccessoryView = Bundle.loadView(fromNib: "TextViewIAView", with: TextViewIAView.self)
+        self.textViewIAView.doneBtn.addTarget(
+            self,
+            action: #selector(resignTextView),
+            for: .touchUpInside
+        )
+        self.textViewIAView.maxTextCountLabel.text = "/\(kMaxNoteTextCount)"
     }
     
 }
