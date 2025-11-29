@@ -15,11 +15,18 @@ class NoteEditVC: UIViewController {
     var videoURL: URL?
 //    var videoURL: URL = Bundle.main.url(forResource: "testVideo", withExtension: ".mp4")!
     
+    var channel = ""
+    var subChannel = ""
+    
     @IBOutlet weak var photoCollectionView: UICollectionView!
     
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var titleCountLabel: UILabel!
     @IBOutlet weak var textView: UITextView!
+    
+    @IBOutlet weak var channelIcon: UIImageView!
+    @IBOutlet weak var channelLabel: UILabel!
+    @IBOutlet weak var channelPlaceholderLabel: UILabel!
     
     var photoCount: Int { return photos.count }
     var isVideo: Bool { self.videoURL != nil }
@@ -67,7 +74,15 @@ class NoteEditVC: UIViewController {
     
     // TODO: (存草稿和发布笔记之前需判断当前用户输入的正文文本数量，看是否大于最大可输入数量)
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let channelVC = segue.destination as? ChannelVC {
+            channelVC.PVDelegate = self
+        }
+    }
+    
 }
+
+// MARK: - UITextViewDelegate
 
 extension NoteEditVC: UITextViewDelegate {
     
@@ -78,6 +93,26 @@ extension NoteEditVC: UITextViewDelegate {
     }
     
 }
+
+// MARK: - ChannelVCDelegate
+
+extension NoteEditVC: ChannelVCDelegate {
+    
+    func updateChannel(channel: String, subChannel: String) {
+        // 数据部分
+        self.channel = channel
+        self.subChannel = subChannel
+        
+        // UI 部分
+        self.channelLabel.text = self.subChannel
+        self.channelIcon.tintColor = blueColor
+        self.channelLabel.textColor = blueColor
+        self.channelPlaceholderLabel.isHidden = true
+    }
+    
+}
+
+// MARK: - UITextFieldDelegate
 
 extension NoteEditVC: UITextFieldDelegate {
     
