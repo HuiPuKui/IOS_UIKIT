@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        self.config()
         return true
     }
 
@@ -77,5 +78,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+}
+
+extension AppDelegate {
+    
+    private func config() {
+        // 高德
+        AMapServices.shared().apiKey = "03dcda3dbeaadc4d5f33673f977dda69"
+        
+    }
+    
 }
 

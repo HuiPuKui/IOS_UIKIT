@@ -10,4 +10,7 @@
 
 #import "MBProgressHUD.h"
 
+#import <AMapFOundationKit/AMapFOundationKit.h>
+#import <AMapLocationKit/AMapLocationKit.h>
+
 #endif /* LittlePink_Bridging_Header_h */
