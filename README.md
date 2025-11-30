@@ -745,3 +745,28 @@ Bar 的高度是 44 point， Custom offset -16 文字居中
 
  ## 12-参与话题功能
  
+ ## 13-高德地图SDK
+
+ **高德开放平台 | 高德地图API:** `https://lbs.amap.com/`
+
+ **IDFA是什么 - 知乎:** `https://www.zhihu.com/question/38856446`
+
+ **该选择哪种位置权限 | Apple官方文档:** `https://developer.apple.com/documentation/corelocation/choosing_the_location_services_authorization_to_request`
+
+ **请求位置权限 | Apple官方文档:** `https://developer.apple.com/documentation/corelocation/requesting_authorization_for_location_services`
+
+ **什么是逆地理编码？ - 知乎:** `https://zhuanlan.zhihu.com/p/30887917`
+
+ **重要： SDK合规使用方案 | 高德地图API:** `https://lbs.amap.com/compliance-center/check-and-reference/sdkhgsy`
+
+ **M1的MacBook在集成了高德SDK后无法在模拟器上运行的解决方案:** `https://juejin.cn/post/6920218654013407246`
+
+ **POI和AOI - 知乎:** `https://zhuanlan.zhihu.com/p/111256406`
+
+ **requestWhenInUseAuthorization() | Apple官方文档:** `https://developer.apple.com/documentation/corelocation/cllocationmanager/1620562-requestwheninuseauthorization`
+
+ **高德海外LBS解决方案 | 高德地图API:** `https://lbs.amap.com/solution/abroad`
+
+ **CoderMJLee/MJRefresh- An easy way to use pull-to-refresh.:** `https://github.com/CoderMJLee/MJRefresh`
+
+ **Swift - MJRefresh库的使用详解1（配置，及库自带的下拉刷新组件） - 云+社区 - 腾讯云:** `https://cloud.tencent.com/developer/article/1330735`
