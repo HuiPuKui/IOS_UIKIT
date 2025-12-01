@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 extension NoteEditVC {
     
     func config() {
@@ -46,6 +47,23 @@ extension NoteEditVC {
             for: .touchUpInside
         )
         self.textViewIAView.maxTextCountLabel.text = "/\(kMaxNoteTextCount)"
+        
+        // MARK: - 请求定位权限
+        self.locationManager.requestWhenInUseAuthorization()
+        AMapLocationManager.updatePrivacyShow(
+            AMapPrivacyShowStatus.didShow,
+            privacyInfo: AMapPrivacyInfoStatus.didContain
+        )
+        AMapLocationManager.updatePrivacyAgree(
+            AMapPrivacyAgreeStatus.didAgree
+        )
+        AMapSearchAPI.updatePrivacyShow(
+            AMapPrivacyShowStatus.didShow,
+            privacyInfo: AMapPrivacyInfoStatus.didContain
+        )
+        AMapSearchAPI.updatePrivacyAgree(
+            AMapPrivacyAgreeStatus.didAgree
+        )
     }
     
 }

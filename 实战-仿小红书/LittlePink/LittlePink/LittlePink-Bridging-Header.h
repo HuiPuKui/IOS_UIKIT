@@ -12,5 +12,6 @@
 
 #import <AMapFOundationKit/AMapFOundationKit.h>
 #import <AMapLocationKit/AMapLocationKit.h>
+#import <AMapSearchKit/AMapSearchKit.h>
 
 #endif /* LittlePink_Bridging_Header_h */

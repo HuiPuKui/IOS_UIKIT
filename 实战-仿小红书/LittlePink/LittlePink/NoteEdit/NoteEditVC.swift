@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import AMapSearchKit
+import AMapLocationKit
 
 
 class NoteEditVC: UIViewController {
@@ -17,6 +19,8 @@ class NoteEditVC: UIViewController {
     
     var channel = ""
     var subChannel = ""
+    
+    let locationManager = CLLocationManager()
     
     @IBOutlet weak var photoCollectionView: UICollectionView!
     

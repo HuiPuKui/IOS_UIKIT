@@ -6,19 +6,19 @@
 //
 
 import UIKit
-import AMapLocationKit
 
 class POIVC: UIViewController {
 
+    private let locationManager = AMapLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let locationManager = AMapLocationManager()
-        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
-        locationManager.locationTimeout = 5
-        locationManager.reGeocodeTimeout = 5
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+        self.locationManager.locationTimeout = 5
+        self.locationManager.reGeocodeTimeout = 5
         
-        locationManager.requestLocation(withReGeocode: true, completionBlock: { [weak self] (location: CLLocation?, reGeocode: AMapLocationReGeocode?, error: Error?) in
+        self.locationManager.requestLocation(withReGeocode: true, completionBlock: { [weak self] (location: CLLocation?, reGeocode: AMapLocationReGeocode?, error: Error?) in
             
             if let error = error {
                 let error = error as NSError
@@ -39,9 +39,7 @@ class POIVC: UIViewController {
                     //没有错误：location有返回值，regeocode是否有返回值取决于是否进行逆地理操作，进行annotation的添加
                 }
             }
-            
-            guard let POIVC = self else { return }
-            
+
             if let location = location {
                 print("location:", location)
             }
@@ -65,17 +63,17 @@ class POIVC: UIViewController {
 
 }
 
-//extension POIVC: UITableViewDataSource {
-//    
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        0
-//    }
-//    
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        
-//    }
-//    
-//}
+extension POIVC: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+    
+}
 //
 //extension POIVC: UITableViewDelegate {
 //    
