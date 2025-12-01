@@ -10,6 +10,7 @@ import UIKit
 class POIVC: UIViewController {
 
     private let locationManager = AMapLocationManager()
+    private var pois = [["不显示位置", ""]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,13 +40,35 @@ class POIVC: UIViewController {
                     //没有错误：location有返回值，regeocode是否有返回值取决于是否进行逆地理操作，进行annotation的添加
                 }
             }
+            
+            guard let POIVC = self else { return }
 
             if let location = location {
                 print("location:", location)
             }
             
             if let reGeocode = reGeocode {
+                
                 print("reGeocode:", reGeocode)
+                
+                //几个常用场景的说明:
+                //1.直辖市的province和city是一样的
+                //2.偏远乡镇的street等小范围的东西都可能是nil
+                //3.用户在海上或海外,若未开通‘海外LBS服务’,则都返回nil
+                
+                guard
+                    let formattedAddress = reGeocode.formattedAddress,
+                    !formattedAddress.isEmpty
+                else {
+                    return
+                }
+                
+                let province = (reGeocode.province == reGeocode.city) ? "" : reGeocode.province!
+                let currentPOI = [
+                    reGeocode.poiName!,
+                    "\(province)\(reGeocode.city ?? "")\(reGeocode.district ?? "")\(reGeocode.street ?? "")\(reGeocode.number ?? "")"
+                ]
+                POIVC.pois.append(currentPOI)
             }
         })
     }
@@ -66,11 +89,12 @@ class POIVC: UIViewController {
 extension POIVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
+        self.pois.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: kPOICellID, for: indexPath)
+        return cell
     }
     
 }
