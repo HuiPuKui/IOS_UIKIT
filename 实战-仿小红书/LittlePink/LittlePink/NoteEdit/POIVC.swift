@@ -12,6 +12,8 @@ class POIVC: UIViewController {
     private let locationManager = AMapLocationManager()
     private var pois = [["不显示位置", ""]]
     
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -69,6 +71,10 @@ class POIVC: UIViewController {
                     "\(province)\(reGeocode.city ?? "")\(reGeocode.district ?? "")\(reGeocode.street ?? "")\(reGeocode.number ?? "")"
                 ]
                 POIVC.pois.append(currentPOI)
+                
+                DispatchQueue.main.async {
+                    POIVC.tableView.reloadData()
+                }
             }
         })
     }
@@ -93,7 +99,11 @@ extension POIVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: kPOICellID, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: kPOICellID, for: indexPath) as! POICell
+        
+        let poi = self.pois[indexPath.row]
+        cell.poi = poi
+        
         return cell
     }
     
