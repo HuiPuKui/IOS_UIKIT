@@ -21,7 +21,13 @@ class POIVC: UIViewController {
         self.locationManager.locationTimeout = 5
         self.locationManager.reGeocodeTimeout = 5
         
+        // MARK: - 定位
+        
+        self.showLoadHUD()
+        
         self.locationManager.requestLocation(withReGeocode: true, completionBlock: { [weak self] (location: CLLocation?, reGeocode: AMapLocationReGeocode?, error: Error?) in
+            
+            self?.hideLoadHUD()
             
             if let error = error {
                 let error = error as NSError

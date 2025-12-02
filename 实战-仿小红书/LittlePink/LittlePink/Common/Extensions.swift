@@ -35,6 +35,17 @@ extension UIViewController {
     
     // MARK: - 加载框 -- 手动隐藏
     
+    func showLoadHUD(_ title: String? = nil) {
+        let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+        hud.label.text = title
+    }
+    
+    func hideLoadHUD() {
+        DispatchQueue.main.async {
+            MBProgressHUD.hide(for: self.view, animated: true)
+        }
+    }
+    
     // MARK: - 提示框 -- 自动隐藏
     
     func showTextHUD(_ title: String, _ subTitle: String? = nil) {
