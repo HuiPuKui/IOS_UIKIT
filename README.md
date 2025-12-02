@@ -770,3 +770,11 @@ Bar 的高度是 44 point， Custom offset -16 文字居中
  **CoderMJLee/MJRefresh- An easy way to use pull-to-refresh.:** `https://github.com/CoderMJLee/MJRefresh`
 
  **Swift - MJRefresh库的使用详解1（配置，及库自带的下拉刷新组件） - 云+社区 - 腾讯云:** `https://cloud.tencent.com/developer/article/1330735`
+
+ **M芯片电脑加载高德地图后模拟器会遇到报错:**
+
+ ```
+the specified architecture 'arm64-*-*' is not compatible with 'x86_64-apple-ios14.1.0-simulator' in...
+
+解决方式: 模拟器换成 Rosetta 后缀
+ ```
