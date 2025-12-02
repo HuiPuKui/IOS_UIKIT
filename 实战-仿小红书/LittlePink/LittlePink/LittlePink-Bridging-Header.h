@@ -10,7 +10,7 @@
 
 #import "MBProgressHUD.h"
 
-#import <AMapFOundationKit/AMapFOundationKit.h>
+#import <AMapFoundationKit/AMapFoundationKit.h>
 #import <AMapLocationKit/AMapLocationKit.h>
 #import <AMapSearchKit/AMapSearchKit.h>
 
