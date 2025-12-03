@@ -11,21 +11,36 @@ class POIVC: UIViewController {
 
     lazy var locationManager = AMapLocationManager()
     lazy var mapSearch = AMapSearchAPI()
+    
+    // 搜索周边 POI 请求
     lazy var aroundSearchRequest: AMapPOIAroundSearchRequest = {
         let request = AMapPOIAroundSearchRequest()
         request.location = AMapGeoPoint.location(
             withLatitude: CGFloat(self.latitude),
             longitude: CGFloat(self.longitude)
         )
+        request.types = kPOITypes
+        request.showFieldsType = .all
         return request
     }()
     
-    var pois = [["不显示位置", ""]]
+    // 搜索关键字请求
+    lazy var keywordsSearchRequest: AMapPOIKeywordsSearchRequest = {
+        let request = AMapPOIKeywordsSearchRequest()
+        request.types = kPOITypes
+        request.showFieldsType = .all
+        return request
+    }()
+    
+    var pois = kPOIsInitArr
+    var aroundSearchedPOIs = kPOIsInitArr
     
     var latitude: Double = 0.0
     var longitude: Double = 0.0
+    var keywords: String = ""
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,25 +51,43 @@ class POIVC: UIViewController {
         
         self.mapSearch?.delegate = self
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
+
+extension POIVC: UISearchBarDelegate {
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.dismiss(animated: true)
+    }
+    
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            self.pois = self.aroundSearchedPOIs
+            self.tableView.reloadData()
+        }
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let searchText = searchBar.text, !searchText.isBlank else { return }
+        self.keywords = searchText
+        self.pois.removeAll()
+        self.showLoadHUD()
+        self.keywordsSearchRequest.keywords = self.keywords
+        self.mapSearch?.aMapPOIKeywordsSearch(self.keywordsSearchRequest)
+    }
+    
+}
+
+// MARK: - 所有搜索 POI 的回调 - AMapSearchDelegate
 
 extension POIVC: AMapSearchDelegate {
     
     func onPOISearchDone(_ request: AMapPOISearchBaseRequest!, response: AMapPOISearchResponse!) {
         
         self.hideLoadHUD()
+        
+        print(response.count)
         
         if response.count == 0 {
             return
@@ -70,6 +103,10 @@ extension POIVC: AMapSearchDelegate {
             ]
             
             self.pois.append(poi)
+            
+            if request is AMapPOIAroundSearchRequest {
+                self.aroundSearchedPOIs.append(poi)
+            }
         }
         
         self.tableView.reloadData()

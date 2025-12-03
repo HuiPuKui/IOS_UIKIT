@@ -16,8 +16,6 @@ extension POIVC {
         
         self.locationManager.requestLocation(withReGeocode: true, completionBlock: { [weak self] (location: CLLocation?, reGeocode: AMapLocationReGeocode?, error: Error?) in
             
-            
-            
             if let error = error {
                 let error = error as NSError
                 if error.code == AMapLocationErrorCode.locateFailed.rawValue {
@@ -72,7 +70,9 @@ extension POIVC {
                     reGeocode.poiName ?? kNoPOIPH,
                     "\(province.unwrappedText)\(reGeocode.city.unwrappedText)\(reGeocode.district.unwrappedText)\(reGeocode.street.unwrappedText)\(reGeocode.number.unwrappedText)"
                 ]
+                
                 POIVC.pois.append(currentPOI)
+                POIVC.aroundSearchedPOIs.append(currentPOI)
                 
                 DispatchQueue.main.async {
                     POIVC.tableView.reloadData()

@@ -660,13 +660,13 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="ULE-AS-CUu"/>
                                 </constraints>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
                                 <scopeButtonTitles>
                                     <string>Title</string>
                                     <string>Title</string>
                                 </scopeButtonTitles>
                                 <connections>
-                                    <outlet property="delegate" destination="oB3-Cc-CbK" id="jPr-0L-OV5"/>
+                                    <outlet property="delegate" destination="oB3-Cc-CbK" id="iED-2p-hci"/>
                                 </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="how-8V-Ewg">
@@ -738,6 +738,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="searchBar" destination="gU0-Yw-c0f" id="ghV-hX-ykZ"/>
                         <outlet property="tableView" destination="how-8V-Ewg" id="NWf-ss-wBH"/>
                     </connections>
                 </viewController>
