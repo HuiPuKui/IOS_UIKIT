@@ -53,19 +53,26 @@ class POIVC: UIViewController {
 extension POIVC: AMapSearchDelegate {
     
     func onPOISearchDone(_ request: AMapPOISearchBaseRequest!, response: AMapPOISearchResponse!) {
+        
+        self.hideLoadHUD()
+        
         if response.count == 0 {
             return
         }
         
         for poi in response.pois {
-            let province = (poi.province == poi.city) ? "" : poi.province!
-            let address = (poi.district == poi.address) ? "" : poi.address!
+            let province = (poi.province == poi.city) ? "" : poi.province
+            let address = (poi.district == poi.address) ? "" : poi.address
             
             let poi = [
-                poi.name,
-                "\(province)\(poi.city!)\(poi.district!)\(address)"
+                poi.name ?? kNoPOIPH,
+                "\(province.unwrappedText)\(poi.city.unwrappedText)\(poi.district.unwrappedText)\(address.unwrappedText)"
             ]
+            
+            self.pois.append(poi)
         }
+        
+        self.tableView.reloadData()
     }
     
 }

@@ -7,6 +7,12 @@
 
 import UIKit
 
+extension Optional where Wrapped == String {
+    
+    var unwrappedText: String { self ?? "" }
+    
+}
+
 extension UITextField {
     
     var unwrappedText: String {
