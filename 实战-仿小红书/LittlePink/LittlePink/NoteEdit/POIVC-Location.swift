@@ -46,7 +46,8 @@ extension POIVC {
                 POIVC.longitude = location.coordinate.longitude
                 
                 // MARK: 检索周边 POI
-                POIVC.mapSearch?.aMapPOIAroundSearch(POIVC.aroundSearchRequest)
+                POIVC.footer.setRefreshingTarget(POIVC, refreshingAction: #selector(POIVC.aroundSearchPullToRefresh))
+                POIVC.makeAroundSearch()
             }
             
             if let reGeocode = reGeocode {
@@ -79,6 +80,34 @@ extension POIVC {
                 }
             }
         })
+    }
+    
+}
+
+// MARK: - 一般函数
+
+extension POIVC {
+        
+    func makeAroundSearch(_ page: Int = 1) {
+        self.aroundSearchRequest.page = page
+        self.mapSearch?.aMapPOIAroundSearch(self.aroundSearchRequest)
+    }
+    
+}
+
+// MARK: - 监听
+
+extension POIVC {
+    
+    @objc private func aroundSearchPullToRefresh() {
+        self.currentAroundPage += 1
+        self.makeAroundSearch(self.currentAroundPage)
+        
+        if self.currentAroundPage == self.pagesCount {
+            self.footer.endRefreshingWithNoMoreData()
+        } else {
+            self.footer.endRefreshing()
+        }
     }
     
 }

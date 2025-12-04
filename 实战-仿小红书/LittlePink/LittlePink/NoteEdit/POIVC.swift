@@ -21,6 +21,7 @@ class POIVC: UIViewController {
         )
         request.types = kPOITypes
         request.showFieldsType = .all
+        request.offset = kPOIsOffset
         return request
     }()
     
@@ -29,8 +30,11 @@ class POIVC: UIViewController {
         let request = AMapPOIKeywordsSearchRequest()
         request.types = kPOITypes
         request.showFieldsType = .all
+        request.offset = kPOIsOffset
         return request
     }()
+    
+    lazy var footer: MJRefreshAutoNormalFooter = MJRefreshAutoNormalFooter()
     
     var pois = kPOIsInitArr
     var aroundSearchedPOIs = kPOIsInitArr
@@ -38,6 +42,8 @@ class POIVC: UIViewController {
     var latitude: Double = 0.0
     var longitude: Double = 0.0
     var keywords: String = ""
+    var currentAroundPage = 1
+    var pagesCount = 1
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -108,6 +114,8 @@ extension POIVC: AMapSearchDelegate {
                 self.aroundSearchedPOIs.append(poi)
             }
         }
+        
+        self.pagesCount = response.count / kPOIsOffset + 1
         
         self.tableView.reloadData()
     }

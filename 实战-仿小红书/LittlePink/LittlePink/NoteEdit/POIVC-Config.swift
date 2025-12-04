@@ -16,6 +16,9 @@ extension POIVC {
         self.locationManager.locationTimeout = 5
         self.locationManager.reGeocodeTimeout = 5
         
+        
+        self.tableView.mj_footer = self.footer
+        
     }
     
 }
