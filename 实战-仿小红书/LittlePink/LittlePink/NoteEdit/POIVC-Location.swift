@@ -100,11 +100,8 @@ extension POIVC {
 extension POIVC {
     
     @objc private func aroundSearchPullToRefresh() {
-        print(self.currentAroundPage)
         self.currentAroundPage += 1
         self.makeAroundSearch(self.currentAroundPage)
-        
-        
     }
     
 }
