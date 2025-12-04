@@ -43,7 +43,6 @@ class POIVC: UIViewController {
     var longitude: Double = 0.0
     var keywords: String = ""
     var currentAroundPage = 1
-    var pagesCount = 1
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -93,9 +92,8 @@ extension POIVC: AMapSearchDelegate {
         
         self.hideLoadHUD()
         
-        print(response.count)
-        
         if response.count == 0 {
+            self.footer.endRefreshingWithNoMoreData()
             return
         }
         
@@ -115,12 +113,14 @@ extension POIVC: AMapSearchDelegate {
             }
         }
         
-        self.pagesCount = response.count / kPOIsOffset + 1
+        self.footer.endRefreshing()
         
         self.tableView.reloadData()
     }
     
 }
+
+// MARK: - UITableViewDataSource
 
 extension POIVC: UITableViewDataSource {
     
@@ -138,7 +138,9 @@ extension POIVC: UITableViewDataSource {
     }
     
 }
-//
-//extension POIVC: UITableViewDelegate {
-//    
-//}
+
+// MARK: - UITableViewDelegate
+
+extension POIVC: UITableViewDelegate {
+    
+}

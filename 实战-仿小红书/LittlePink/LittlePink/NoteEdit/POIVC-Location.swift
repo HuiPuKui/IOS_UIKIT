@@ -100,14 +100,11 @@ extension POIVC {
 extension POIVC {
     
     @objc private func aroundSearchPullToRefresh() {
+        print(self.currentAroundPage)
         self.currentAroundPage += 1
         self.makeAroundSearch(self.currentAroundPage)
         
-        if self.currentAroundPage == self.pagesCount {
-            self.footer.endRefreshingWithNoMoreData()
-        } else {
-            self.footer.endRefreshing()
-        }
+        
     }
     
 }
