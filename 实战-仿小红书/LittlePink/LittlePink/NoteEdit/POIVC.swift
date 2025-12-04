@@ -43,6 +43,7 @@ class POIVC: UIViewController {
     var longitude: Double = 0.0
     var keywords: String = ""
     var currentAroundPage = 1
+    var currentKeywordsPage = 1
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -53,71 +54,8 @@ class POIVC: UIViewController {
         self.config()
         
         self.requestLocation()
-        
-        self.mapSearch?.delegate = self
     }
 
-}
-
-extension POIVC: UISearchBarDelegate {
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        self.dismiss(animated: true)
-    }
-    
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchText.isEmpty {
-            self.pois = self.aroundSearchedPOIs
-            self.tableView.reloadData()
-        }
-    }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let searchText = searchBar.text, !searchText.isBlank else { return }
-        self.keywords = searchText
-        self.pois.removeAll()
-        self.showLoadHUD()
-        self.keywordsSearchRequest.keywords = self.keywords
-        self.mapSearch?.aMapPOIKeywordsSearch(self.keywordsSearchRequest)
-    }
-    
-}
-
-// MARK: - 所有搜索 POI 的回调 - AMapSearchDelegate
-
-extension POIVC: AMapSearchDelegate {
-    
-    func onPOISearchDone(_ request: AMapPOISearchBaseRequest!, response: AMapPOISearchResponse!) {
-        
-        self.hideLoadHUD()
-        
-        if response.count == 0 {
-            self.footer.endRefreshingWithNoMoreData()
-            return
-        }
-        
-        for poi in response.pois {
-            let province = (poi.province == poi.city) ? "" : poi.province
-            let address = (poi.district == poi.address) ? "" : poi.address
-            
-            let poi = [
-                poi.name ?? kNoPOIPH,
-                "\(province.unwrappedText)\(poi.city.unwrappedText)\(poi.district.unwrappedText)\(address.unwrappedText)"
-            ]
-            
-            self.pois.append(poi)
-            
-            if request is AMapPOIAroundSearchRequest {
-                self.aroundSearchedPOIs.append(poi)
-            }
-        }
-        
-        self.footer.endRefreshing()
-        
-        self.tableView.reloadData()
-    }
-    
 }
 
 // MARK: - UITableViewDataSource
