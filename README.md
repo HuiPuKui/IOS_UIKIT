@@ -773,8 +773,15 @@ Bar 的高度是 44 point， Custom offset -16 文字居中
 
  **M芯片电脑加载高德地图后模拟器会遇到报错:**
 
- ```
+ ```swift
 the specified architecture 'arm64-*-*' is not compatible with 'x86_64-apple-ios14.1.0-simulator' in...
 
 解决方式: 模拟器换成 Rosetta 后缀
+ ```
+
+ **查找 searchBar 中 cancelButton 的方法**
+ ```swift
+if let cancelButton = self.searchBar.value(forKey: "cancelButton") as? UIButton {
+    cancelButton .isEnabled = true
+}
  ```

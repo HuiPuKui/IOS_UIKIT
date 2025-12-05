@@ -18,6 +18,10 @@ extension POIVC {
         self.mapSearch?.delegate = self
         
         self.tableView.mj_footer = self.footer
+        
+        if let cancelButton = self.searchBar.value(forKey: "cancelButton") as? UIButton {
+            cancelButton .isEnabled = true
+        }
     }
     
 }
