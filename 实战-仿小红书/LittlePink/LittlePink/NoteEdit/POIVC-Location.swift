@@ -46,7 +46,7 @@ extension POIVC {
                 POIVC.longitude = location.coordinate.longitude
                 
                 // MARK: 检索周边 POI
-                POIVC.footer.setRefreshingTarget(POIVC, refreshingAction: #selector(POIVC.aroundSearchPullToRefresh))
+                POIVC.setAroundSearchFooter()
                 POIVC.makeAroundSearch()
             }
             
@@ -91,6 +91,11 @@ extension POIVC {
     private func makeAroundSearch(_ page: Int = 1) {
         self.aroundSearchRequest.page = page
         self.mapSearch?.aMapPOIAroundSearch(self.aroundSearchRequest)
+    }
+    
+    func setAroundSearchFooter() {
+        self.footer.resetNoMoreData()
+        self.footer.setRefreshingTarget(self, refreshingAction: #selector(aroundSearchPullToRefresh))
     }
     
 }

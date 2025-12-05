@@ -13,10 +13,10 @@ extension POIVC: UISearchBarDelegate {
         self.dismiss(animated: true)
     }
     
-    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty {
             self.pois = self.aroundSearchedPOIs
+            self.setAroundSearchFooter()
             self.tableView.reloadData()
         }
     }
@@ -24,9 +24,11 @@ extension POIVC: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let searchText = searchBar.text, !searchText.isBlank else { return }
         self.keywords = searchText
-        self.pois.removeAll()
         
-        self.footer.setRefreshingTarget(self, refreshingAction: #selector(keywordsSearchPullToRefresh))
+        self.pois.removeAll()
+        self.currentKeywordsPage = 1
+        
+        self.setKeywordsSearchFooter()
         
         self.showLoadHUD()
         self.makeKeywordsSearch(self.keywords)
@@ -76,6 +78,11 @@ extension POIVC {
         self.keywordsSearchRequest.keywords = keywords
         self.keywordsSearchRequest.page = page
         self.mapSearch?.aMapPOIKeywordsSearch(self.keywordsSearchRequest)
+    }
+    
+    private func setKeywordsSearchFooter() {
+        self.footer.resetNoMoreData()
+        self.footer.setRefreshingTarget(self, refreshingAction: #selector(keywordsSearchPullToRefresh))
     }
     
 }
