@@ -16,3 +16,11 @@ protocol ChannelVCDelegate {
     func updateChannel(channel: String, subChannel: String)
     
 }
+
+protocol POIVCDelegate {
+    
+    /// 用户从选择地址页面返回编辑笔记页面传值用
+    /// - Parameter poiName: 传回来的 poiName
+    func updatePOIName(_ poiName: String)
+    
+}

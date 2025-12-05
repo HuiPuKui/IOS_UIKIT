@@ -628,6 +628,8 @@
                         <outlet property="channelLabel" destination="lpu-JI-4ZH" id="4jG-fc-FPb"/>
                         <outlet property="channelPlaceholderLabel" destination="Ts9-YK-iaC" id="LFu-xf-tiP"/>
                         <outlet property="photoCollectionView" destination="Hrk-Ot-LuJ" id="Ss7-O9-1x2"/>
+                        <outlet property="poiNameIcon" destination="B0P-6B-sKD" id="G2t-nF-xvG"/>
+                        <outlet property="poiNameLabel" destination="IjS-jw-qUP" id="mHI-V2-nQ3"/>
                         <outlet property="textView" destination="gD9-Ly-Ugz" id="B0M-W5-VW7"/>
                         <outlet property="titleCountLabel" destination="DJP-or-Pnf" id="gT5-MB-Rgy"/>
                         <outlet property="titleTextField" destination="RCJ-GA-eok" id="sBx-zN-i6k"/>
@@ -673,7 +675,7 @@
                                 <rect key="frame" x="0.0" y="69" width="393" height="783"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="POICellID" id="Mjj-qY-iKm" customClass="POICell" customModule="LittlePink" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="POICellID" id="Mjj-qY-iKm" customClass="POICell" customModule="LittlePink" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mjj-qY-iKm" id="I66-EW-Sin">
@@ -703,6 +705,7 @@
                                                 <constraint firstItem="SCe-pA-bja" firstAttribute="leading" secondItem="I66-EW-Sin" secondAttribute="leadingMargin" id="iZN-1H-IGT"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="tintColor" name="main"/>
                                         <connections>
                                             <outlet property="addressLabel" destination="gYr-dF-XRq" id="imM-8T-YF6"/>
                                             <outlet property="nameLabel" destination="5Wl-CW-Fgl" id="C3Y-g3-uHl"/>

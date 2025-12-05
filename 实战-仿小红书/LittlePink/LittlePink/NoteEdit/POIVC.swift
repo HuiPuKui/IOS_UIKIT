@@ -8,6 +8,8 @@
 import UIKit
 
 class POIVC: UIViewController {
+    
+    var delegate: POIVCDelegate?
 
     lazy var locationManager = AMapLocationManager()
     lazy var mapSearch = AMapSearchAPI()
@@ -80,5 +82,14 @@ extension POIVC: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 
 extension POIVC: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)!
+        cell.accessoryType = .checkmark
+        
+        self.delegate?.updatePOIName(self.pois[indexPath.row][0])
+        
+        dismiss(animated: true)
+    }
     
 }
