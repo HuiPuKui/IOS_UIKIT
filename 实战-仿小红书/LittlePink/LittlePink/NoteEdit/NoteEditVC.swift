@@ -87,6 +87,7 @@ class NoteEditVC: UIViewController {
             channelVC.PVDelegate = self
         } else if let poiVC = segue.destination as? POIVC {
             poiVC.delegate = self
+            poiVC.poiName = self.poiName
         }
     }
     
@@ -127,13 +128,23 @@ extension NoteEditVC: ChannelVCDelegate {
 extension NoteEditVC: POIVCDelegate {
     
     func updatePOIName(_ poiName: String) {
-        // 数据部分
-        self.poiName = poiName
-        
-        // UI 部分
-        self.poiNameIcon.tintColor = blueColor
-        self.poiNameLabel.text = self.poiName
-        self.poiNameLabel.textColor = blueColor
+        if poiName == kPOIsInitArr[0][0] {
+            // 数据部分
+            self.poiName = ""
+            
+            // UI 部分
+            self.poiNameIcon.tintColor = .label
+            self.poiNameLabel.text = "添加地点"
+            self.poiNameLabel.textColor = .label
+        } else {
+            // 数据部分
+            self.poiName = poiName
+            
+            // UI 部分
+            self.poiNameIcon.tintColor = blueColor
+            self.poiNameLabel.text = self.poiName
+            self.poiNameLabel.textColor = blueColor
+        }
     }
     
 }

@@ -10,6 +10,7 @@ import UIKit
 class POIVC: UIViewController {
     
     var delegate: POIVCDelegate?
+    var poiName = ""
 
     lazy var locationManager = AMapLocationManager()
     lazy var mapSearch = AMapSearchAPI()
@@ -73,6 +74,10 @@ extension POIVC: UITableViewDataSource {
         
         let poi = self.pois[indexPath.row]
         cell.poi = poi
+        
+        if poi[0] == self.poiName {
+            cell.accessoryType = .checkmark
+        }
         
         return cell
     }
