@@ -613,12 +613,51 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="2cx-tF-twO"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="dUL-Ey-pLR"/>
                             </scrollView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="jUw-oE-EI3">
+                                <rect key="frame" x="16" y="774" width="361" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOR-To-Suo">
+                                        <rect key="frame" x="0.0" y="0.0" width="65" height="44"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="存草稿">
+                                            <color key="titleColor" systemColor="secondaryLabelColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveDraftNote:" destination="iri-dY-gWA" eventType="touchUpInside" id="yoR-Pz-bBN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K7g-hj-xlm">
+                                        <rect key="frame" x="81" y="0.0" width="280" height="44"/>
+                                        <color key="backgroundColor" name="main"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="发布笔记">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                                <real key="value" value="22"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="postNote:" destination="iri-dY-gWA" eventType="touchUpInside" id="Vzh-cf-G7p"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="xFu-c5-iiI"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PTh-Ie-DMf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="0Fe-Nv-s8G" firstAttribute="leading" secondItem="PTh-Ie-DMf" secondAttribute="leading" id="Etf-bp-boQ"/>
+                            <constraint firstItem="PTh-Ie-DMf" firstAttribute="bottom" secondItem="jUw-oE-EI3" secondAttribute="bottom" id="Rb8-3h-sXy"/>
                             <constraint firstItem="0Fe-Nv-s8G" firstAttribute="trailing" secondItem="PTh-Ie-DMf" secondAttribute="trailing" id="Tuc-pp-oVT"/>
+                            <constraint firstItem="jUw-oE-EI3" firstAttribute="leading" secondItem="PTh-Ie-DMf" secondAttribute="leading" constant="16" id="eiY-cX-P4v"/>
+                            <constraint firstItem="PTh-Ie-DMf" firstAttribute="trailing" secondItem="jUw-oE-EI3" secondAttribute="trailing" constant="16" id="f6M-Pj-ctX"/>
                             <constraint firstItem="0Fe-Nv-s8G" firstAttribute="top" secondItem="PTh-Ie-DMf" secondAttribute="top" id="wZz-Qd-56N"/>
                             <constraint firstAttribute="bottom" secondItem="0Fe-Nv-s8G" secondAttribute="bottom" id="xzr-TB-0qE"/>
                         </constraints>

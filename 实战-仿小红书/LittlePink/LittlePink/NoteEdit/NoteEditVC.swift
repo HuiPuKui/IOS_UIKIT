@@ -82,6 +82,14 @@ class NoteEditVC: UIViewController {
     
     // TODO: (存草稿和发布笔记之前需判断当前用户输入的正文文本数量，看是否大于最大可输入数量)
     
+    @IBAction func saveDraftNote(_ sender: Any) {
+        
+    }
+    
+    @IBAction func postNote(_ sender: Any) {
+        
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let channelVC = segue.destination as? ChannelVC {
             channelVC.PVDelegate = self
