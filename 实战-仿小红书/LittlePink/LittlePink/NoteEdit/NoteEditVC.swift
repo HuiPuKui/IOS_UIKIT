@@ -83,7 +83,9 @@ class NoteEditVC: UIViewController {
     // TODO: (存草稿和发布笔记之前需判断当前用户输入的正文文本数量，看是否大于最大可输入数量)
     
     @IBAction func saveDraftNote(_ sender: Any) {
-        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let draftNote = DraftNote(context: context)
     }
     
     @IBAction func postNote(_ sender: Any) {
