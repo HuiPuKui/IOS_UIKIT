@@ -785,3 +785,21 @@ if let cancelButton = self.searchBar.value(forKey: "cancelButton") as? UIButton 
     cancelButton .isEnabled = true
 }
  ```
+
+ ## 14-本地存储CoreData
+
+ **CoreData中以KVC方式的CRUD(仅参考)  | Medium:** `https://medium.com/@aliakhtar_16369/mastering-in-coredata-part-3-coding-crud-in-core-data-b7a278436c3`
+
+ **NSHomeDirectory() | Apple官方文档:** `https://developer.apple.com/documentation/foundation/1413045-nshomedirectory`
+
+ **NSSearchPathForDirectoriesInDomains(_-_-_-) | Apple官方文档:** `https://developer.apple.com/documentation/foundation/nssearchpathfordirectoriesindomains(_:_:_:)`
+
+ **urls(for-in-) | Apple官方文档:** `https://developer.apple.com/documentation/foundation/filemanager/urls(for:in:)`
+
+ **DB Browser for SQLite - 需开启白名单或全局代理:** `https://sqlitebrowser.org/dl/`
+
+ **轻量迁移 | Apple官方文档:** `https://developer.apple.com/documentation/coredata/migrating-your-data-model-automatically`
+
+ **Date转化为String-DateFormatter:** `https://juejin.cn/post/6844903841855438862`
+
+ **GitHub - MatthewYork/DateTools- Dates and times made easy in iOS:** `https://github.com/MatthewYork/DateTools`
