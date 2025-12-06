@@ -27,6 +27,22 @@ extension UITextField {
         self.text ?? ""
     }
     
+    var exactText: String {
+        self.unwrappedText.isBlank ? "" : unwrappedText
+    }
+    
+}
+
+extension UITextView {
+    
+    var unwrappedText: String {
+        self.text ?? ""
+    }
+    
+    var exactText: String {
+        self.unwrappedText.isBlank ? "" : unwrappedText
+    }
+    
 }
 
 extension UIView {

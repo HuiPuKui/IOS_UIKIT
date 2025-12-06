@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="23605" systemVersion="24C101" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="DraftNote" representedClassName="DraftNote" syncable="YES" codeGenerationType="class">
-        <attribute name="channel" optional="YES" attributeType="String"/>
-        <attribute name="poiName" optional="YES" attributeType="String"/>
-        <attribute name="subChannel" optional="YES" attributeType="String"/>
-        <attribute name="text" optional="YES" attributeType="String"/>
+        <attribute name="channel" attributeType="String" defaultValueString=""/>
+        <attribute name="poiName" attributeType="String" defaultValueString=""/>
+        <attribute name="subChannel" attributeType="String" defaultValueString=""/>
+        <attribute name="text" attributeType="String" defaultValueString=""/>
         <attribute name="title" attributeType="String" defaultValueString=""/>
         <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
