@@ -15,7 +15,7 @@ class NoteEditVC: UIViewController {
     var photos: [UIImage] = []
     
     var videoURL: URL?
-//    var videoURL: URL = Bundle.main.url(forResource: "testVideo", withExtension: ".mp4")!
+//    var videoURL: URL? = Bundle.main.url(forResource: "TV", withExtension: ".mp4")!
     
     var channel = ""
     var subChannel = ""
@@ -91,6 +91,22 @@ class NoteEditVC: UIViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let draftNote = DraftNote(context: context)
+        
+        if isVideo {
+            draftNote.video = try? Data(contentsOf: self.videoURL!)
+        }
+        
+        // 封面图片
+        draftNote.coverPhoto = self.photos[0].jpeg(.high)
+        
+        // 所有图片
+        var photos: [Data] = []
+        for photo in self.photos {
+            if let pngData = photo.pngData() {
+                photos.append(pngData)
+            }
+        }
+        draftNote.photos = try? JSONEncoder().encode(photos)
         
         draftNote.title = self.titleTextField.exactText
         draftNote.text = self.textView.exactText
