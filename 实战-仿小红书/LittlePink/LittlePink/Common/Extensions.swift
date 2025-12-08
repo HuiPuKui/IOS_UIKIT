@@ -23,6 +23,16 @@ extension Optional where Wrapped == String {
 
 extension UIImage {
     
+    // 便利构造器必须调用同一个类中定义的其它初始化方法
+    // 便利构造器在最后必须调用一个指定构造器
+    convenience init?(_ data: Data?) {
+        if let unwrappedData = data {
+            self.init(data: unwrappedData)
+        } else {
+            return nil
+        }
+    }
+    
     enum JPEGQuality: CGFloat {
         case lowest = 0
         case low = 0.25

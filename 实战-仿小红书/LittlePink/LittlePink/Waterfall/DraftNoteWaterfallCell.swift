@@ -19,6 +19,8 @@ class DraftNoteWaterfallCell: UICollectionViewCell {
         didSet {
             guard let draftNote = self.draftNote else { return }
             
+            self.imageView.image = UIImage(draftNote.coverPhoto)
+            
             let title = draftNote.title!
             self.titleLabel.text = title.isEmpty ? "无题" : title
             
