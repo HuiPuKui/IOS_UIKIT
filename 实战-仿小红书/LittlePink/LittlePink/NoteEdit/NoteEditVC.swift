@@ -108,6 +108,7 @@ class NoteEditVC: UIViewController {
         }
         draftNote.photos = try? JSONEncoder().encode(photos)
         
+        draftNote.isVideo = self.isVideo
         draftNote.title = self.titleTextField.exactText
         draftNote.text = self.textView.exactText
         draftNote.channel = self.channel

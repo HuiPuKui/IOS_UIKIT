@@ -12,6 +12,8 @@ import XLPagerTabStrip
 class WaterfallVC: UICollectionViewController {
     
     var channel = ""
+    
+    var isMyDraft = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,11 +57,24 @@ class WaterfallVC: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kWaterfallCellID, for: indexPath) as! WaterfallCell
-    
-        cell.imageView.image = UIImage(named: "\(indexPath.item + 1)")
-    
-        return cell
+ 
+        if self.isMyDraft {
+            let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: kDraftNoteWaterfallCellID,
+                for: indexPath
+            ) as! DraftNoteWaterfallCell
+            
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: kWaterfallCellID,
+                for: indexPath
+            ) as! WaterfallCell
+            
+            cell.imageView.image = UIImage(named: "\(indexPath.item + 1)")
+            return cell
+        }
+        
     }
 
     // MARK: UICollectionViewDelegate

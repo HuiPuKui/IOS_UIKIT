@@ -15,4 +15,15 @@ class DraftNoteWaterfallCell: UICollectionViewCell {
     @IBOutlet weak var deleteBtn: UIButton!
     @IBOutlet weak var isVideoImageView: UIImageView!
     
+    var draftNote: DraftNote? {
+        didSet {
+            guard let draftNote = self.draftNote else { return }
+            
+            let title = draftNote.title!
+            self.titleLabel.text = title.isEmpty ? "无题" : title
+            
+            self.isVideoImageView.isHidden = !draftNote.isVideo
+        }
+    }
+    
 }
