@@ -21,6 +21,7 @@ let kPhotoCellID = "PhotoCellID"
 let kPhotoFooterID = "PhotoFooterID"
 let kSubChannelCellID = "SubChannelCellID"
 let kPOICellID = "POICellID"
+let kDraftNoteWaterfallCellID = "DraftNoteWaterfallCellID"
 
 // MARK: - 资源文件相关
 let mainColor = UIColor(named: "main")!
