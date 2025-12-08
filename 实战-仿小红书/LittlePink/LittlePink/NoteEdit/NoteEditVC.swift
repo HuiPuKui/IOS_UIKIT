@@ -44,6 +44,8 @@ class NoteEditVC: UIViewController {
         super.viewDidLoad()
 
         self.config()
+        
+        print(NSHomeDirectory())
     }
 
     @IBAction func TFEditBegin(_ sender: Any) {
