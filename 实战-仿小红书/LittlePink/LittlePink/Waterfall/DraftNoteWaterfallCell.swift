@@ -19,12 +19,16 @@ class DraftNoteWaterfallCell: UICollectionViewCell {
         didSet {
             guard let draftNote = self.draftNote else { return }
             
-            self.imageView.image = UIImage(draftNote.coverPhoto)
+            self.imageView.image = UIImage(draftNote.coverPhoto) ?? imagePH
             
             let title = draftNote.title!
             self.titleLabel.text = title.isEmpty ? "无题" : title
             
+            self.dateLabel.text = draftNote.updatedAt?.formattedDate
+            
             self.isVideoImageView.isHidden = !draftNote.isVideo
+            
+            
         }
     }
     

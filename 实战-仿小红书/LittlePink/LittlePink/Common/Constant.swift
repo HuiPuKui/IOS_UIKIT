@@ -26,6 +26,7 @@ let kDraftNoteWaterfallCellID = "DraftNoteWaterfallCellID"
 // MARK: - 资源文件相关
 let mainColor = UIColor(named: "main")!
 let blueColor = UIColor(named: "blue")!
+let imagePH = UIImage(named: "imagePH")!
 
 // MARK: - 业务逻辑相关
 // 瀑布流

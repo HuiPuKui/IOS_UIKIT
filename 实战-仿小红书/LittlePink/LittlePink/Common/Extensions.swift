@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import DateToolsSwift
 
 extension String {
     
@@ -18,6 +19,35 @@ extension String {
 extension Optional where Wrapped == String {
     
     var unwrappedText: String { self ?? "" }
+    
+}
+
+extension Date {
+    
+    // 本项目 5 种时间表示方式:
+    // 1. 刚刚/5分钟前; 2.今天21:10; 3.昨天21:10; 4.09-15; 5.2019-09-15
+    var formattedDate: String {
+        let currentYear = Date().year
+        
+        if self.year == currentYear { // 今年
+            
+            if self.isToday {
+                if self.minutesAgo > 10 {
+                    return "今天 \(self.format(with: "HH-mm"))"
+                } else {
+                    return self.timeAgoSinceNow
+                }
+            } else if self.isYesterday {
+                return "昨天 \(self.format(with: "HH-mm"))"
+            } else {
+                return self.format(with: "MM-dd")
+            }
+        } else if self.year < currentYear { // 去年或更早
+            return self.format(with: "yyyy-MM-dd")
+        } else {
+            return "明年或更远,目前项目暂不会用到"
+        }
+    }
     
 }
 

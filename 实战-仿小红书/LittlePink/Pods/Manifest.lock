@@ -5,6 +5,7 @@ PODS:
   - AMapSearch (9.7.4):
     - AMapFoundation (>= 1.8.0)
   - CHTCollectionViewWaterfallLayout/ObjC (0.9.10)
+  - DateToolsSwift (5.0.0)
   - KMPlaceholderTextView (1.4.0)
   - MBProgressHUD (1.2.0)
   - MJRefresh (3.7.9)
@@ -20,6 +21,7 @@ DEPENDENCIES:
   - AMapLocation
   - AMapSearch
   - CHTCollectionViewWaterfallLayout/ObjC
+  - DateToolsSwift
   - KMPlaceholderTextView (~> 1.4.0)
   - MBProgressHUD (~> 1.2.0)
   - MJRefresh
@@ -33,6 +35,7 @@ SPEC REPOS:
     - AMapLocation
     - AMapSearch
     - CHTCollectionViewWaterfallLayout
+    - DateToolsSwift
     - KMPlaceholderTextView
     - MBProgressHUD
     - MJRefresh
@@ -47,6 +50,7 @@ SPEC CHECKSUMS:
   AMapLocation: 8c46dbe995333ad6cae147d54a7307a577020be0
   AMapSearch: a30e89212f55a867ac951ce71f800313cd54ad0a
   CHTCollectionViewWaterfallLayout: b989a459788d7657ac010e03bc0f7eedca95a420
+  DateToolsSwift: 4207ada6ad615d8dc076323d27037c94916dbfa6
   KMPlaceholderTextView: 2206c3df39979e9396e2d96fa9f427a8951121b0
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MJRefresh: ff9e531227924c84ce459338414550a05d2aea78
@@ -56,6 +60,6 @@ SPEC CHECKSUMS:
   XLPagerTabStrip: 27f3bfe23c53b4251c6481b06b1c289458a3fc1d
   YPImagePicker: afc81b3cffab05a6e7261c5daf80dc31b4e917b4
 
-PODFILE CHECKSUM: bb5edc2a1276017a906462c640a671b2bc440cd8
+PODFILE CHECKSUM: 671d4b8e540e05c204026a80c2ba4f2f975e040b
 
 COCOAPODS: 1.16.2
