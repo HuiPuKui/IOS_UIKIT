@@ -30,7 +30,6 @@ extension Date {
         let currentYear = Date().year
         
         if self.year == currentYear { // 今年
-            
             if self.isToday {
                 if self.minutesAgo > 10 {
                     return "今天 \(self.format(with: "HH:mm"))"
