@@ -33,12 +33,12 @@ extension Date {
             
             if self.isToday {
                 if self.minutesAgo > 10 {
-                    return "今天 \(self.format(with: "HH-mm"))"
+                    return "今天 \(self.format(with: "HH:mm"))"
                 } else {
                     return self.timeAgoSinceNow
                 }
             } else if self.isYesterday {
-                return "昨天 \(self.format(with: "HH-mm"))"
+                return "昨天 \(self.format(with: "HH:mm"))"
             } else {
                 return self.format(with: "MM-dd")
             }

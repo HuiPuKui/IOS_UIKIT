@@ -90,8 +90,6 @@ class NoteEditVC: UIViewController {
             return
         }
         
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
         let draftNote = DraftNote(context: context)
         
         if isVideo {

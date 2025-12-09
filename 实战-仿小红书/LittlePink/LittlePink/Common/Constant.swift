@@ -28,6 +28,10 @@ let mainColor = UIColor(named: "main")!
 let blueColor = UIColor(named: "blue")!
 let imagePH = UIImage(named: "imagePH")!
 
+// MARK: - CoreData
+let appDelegate = UIApplication.shared.delegate as! AppDelegate
+let context = appDelegate.persistentContainer.viewContext
+
 // MARK: - 业务逻辑相关
 // 瀑布流
 let kWaterfallPadding: CGFloat = 4
