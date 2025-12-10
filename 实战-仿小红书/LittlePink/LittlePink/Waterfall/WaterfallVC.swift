@@ -73,37 +73,6 @@ class WaterfallVC: UICollectionViewController {
         
     }
 
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
-
 }
 
 // MARK: - CHTCollectionViewDelegateWaterfallLayout
@@ -111,7 +80,22 @@ class WaterfallVC: UICollectionViewController {
 extension WaterfallVC: CHTCollectionViewDelegateWaterfallLayout {
     
     func collectionView(_ collectionView: UICollectionView!, layout collectionViewLayout: UICollectionViewLayout!, sizeForItemAt indexPath: IndexPath!) -> CGSize {
-        return UIImage(named: "\(indexPath.item + 1)")!.size
+        
+        let cellW = (screenRect.width - kWaterfallPadding * 3) / 2
+        var cellH: CGFloat = 0
+        
+        if self.isMyDraft {
+            let draftNote = self.draftNotes[indexPath.item]
+            let imageSize = UIImage(draftNote.coverPhoto)?.size ?? imagePH.size
+            let imageH = imageSize.height
+            let imageW = imageSize.width
+            let imageRatio = imageH / imageW
+            cellH = cellW * imageRatio + kDraftNoteWaterfallCellBottomViewH
+        } else {
+            cellH = UIImage(named: "\(indexPath.item + 1)")!.size.height
+        }
+        
+        return CGSize(width: cellW, height: cellH)
     }
     
 }

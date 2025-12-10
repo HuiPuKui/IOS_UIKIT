@@ -32,9 +32,13 @@ let imagePH = UIImage(named: "imagePH")!
 let appDelegate = UIApplication.shared.delegate as! AppDelegate
 let context = appDelegate.persistentContainer.viewContext
 
+// MARK: - UI 布局
+let screenRect = UIScreen.main.bounds
+
 // MARK: - 业务逻辑相关
 // 瀑布流
 let kWaterfallPadding: CGFloat = 4
+let kDraftNoteWaterfallCellBottomViewH: CGFloat = 84
 
 let kChannels = ["推荐", "旅行", "娱乐", "才艺", "美妆", "白富美", "美食", "萌宠"]
 
