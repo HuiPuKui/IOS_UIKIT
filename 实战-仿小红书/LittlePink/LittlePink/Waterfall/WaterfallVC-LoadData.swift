@@ -27,6 +27,9 @@ extension WaterfallVC {
         let sortDescriptor1 = NSSortDescriptor(key: "updatedAt", ascending: false) 
         request.sortDescriptors = [sortDescriptor1]
         
+        request.returnsObjectsAsFaults = true
+        request.propertiesToFetch = ["coverPhoto", "title", "updatedAt", "isVideo"]
+        
         let draftNotes = try! context.fetch(request)
         self.draftNotes = draftNotes
     }
