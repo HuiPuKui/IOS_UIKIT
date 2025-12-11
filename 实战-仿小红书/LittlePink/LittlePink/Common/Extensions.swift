@@ -175,3 +175,31 @@ extension Bundle {
     }
     
 }
+
+extension FileManager {
+    
+    func save(_ data: Data?, to dirName: String, as fileName: String) -> URL {
+        guard let data = data else { fatalError("要写入本地的 data 为 nil") }
+        
+        // "file:///xx/xx/tmp/dirName"
+        let dirURL = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(dirName, isDirectory: true)
+        
+        if !self.fileExists(atPath: dirURL.path) {
+            guard let _ = try? self.createDirectory(at: dirURL, withIntermediateDirectories: true) else {
+                fatalError("创建文件夹失败")
+            }
+        }
+        
+        // "file:///xx/xx/tmp/dirName/fileName"
+        let fileURL = dirURL.appendingPathComponent(fileName)
+        
+        if !self.fileExists(atPath: fileURL.path) {
+            guard let _ = try? data.write(to: fileURL) else {
+                fatalError("写入/保存文件失败")
+            }
+        }
+        
+        return fileURL
+    }
+    
+}
