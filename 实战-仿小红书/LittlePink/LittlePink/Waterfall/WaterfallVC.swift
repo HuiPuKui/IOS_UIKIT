@@ -34,45 +34,6 @@ class WaterfallVC: UICollectionViewController {
     }
     */
 
-    // MARK: UICollectionViewDataSource
-
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-
-
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        if self.isMyDraft {
-            return self.draftNotes.count
-        } else {
-            return 13
-        }
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
- 
-        if self.isMyDraft {
-            let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: kDraftNoteWaterfallCellID,
-                for: indexPath
-            ) as! DraftNoteWaterfallCell
-            cell.draftNote = self.draftNotes[indexPath.item]
-            
-            return cell
-        } else {
-            let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: kWaterfallCellID,
-                for: indexPath
-            ) as! WaterfallCell
-            
-            cell.imageView.image = UIImage(named: "\(indexPath.item + 1)")
-            return cell
-        }
-        
-    }
-
 }
 
 // MARK: - CHTCollectionViewDelegateWaterfallLayout

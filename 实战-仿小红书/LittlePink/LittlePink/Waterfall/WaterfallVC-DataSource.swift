@@ -1,0 +1,94 @@
+//
+//  WaterfallVC-DataSource.swift
+//  LittlePink
+//
+//  Created by 惠蒲葵 on 2025/12/11.
+//
+
+import Foundation
+
+extension WaterfallVC {
+    
+    // MARK: UICollectionViewDataSource
+
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+
+
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of items
+        if self.isMyDraft {
+            return self.draftNotes.count
+        } else {
+            return 13
+        }
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+ 
+        if self.isMyDraft {
+            let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: kDraftNoteWaterfallCellID,
+                for: indexPath
+            ) as! DraftNoteWaterfallCell
+            cell.draftNote = self.draftNotes[indexPath.item]
+            cell.deleteBtn.tag = indexPath.item
+            cell.deleteBtn.addTarget(self, action: #selector(showAlert), for: .touchUpInside)
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: kWaterfallCellID,
+                for: indexPath
+            ) as! WaterfallCell
+            
+            cell.imageView.image = UIImage(named: "\(indexPath.item + 1)")
+            return cell
+        }
+        
+    }
+
+}
+
+// MARK: - 一般函数
+
+extension WaterfallVC {
+    
+    private func deleteDraftNote(_ index: Int) {
+        let draftNote = self.draftNotes[index]
+        
+        // 数据
+        context.delete(draftNote)
+        appDelegate.saveContext()
+        
+        self.draftNotes.remove(at: index)
+        
+        // UI
+        self.collectionView.performBatchUpdates {
+            self.collectionView.deleteItems(at: [IndexPath(item: index, section: 0)])
+        }
+    }
+    
+}
+
+// MARK: - 监听
+
+extension WaterfallVC {
+    
+    @objc private func showAlert(_ sender: UIButton) {
+        let index = sender.tag
+        
+        let alert = UIAlertController(title: "提示", message: "确认删除该草稿吗?", preferredStyle: .alert)
+        let action1 = UIAlertAction(title: "取消", style: .cancel)
+        let action2 = UIAlertAction(title: "确认", style: .destructive) { _ in
+            self.deleteDraftNote(index)
+        }
+        
+        alert.addAction(action1)
+        alert.addAction(action2)
+        
+        self.present(alert, animated: true)
+    }
+    
+}
