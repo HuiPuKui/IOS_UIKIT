@@ -13,6 +13,7 @@ import AMapLocationKit
 class NoteEditVC: UIViewController {
     
     var draftNote: DraftNote?
+    var updateDraftNoteFinished: (() -> ())?
 
     var photos: [UIImage] = []
     

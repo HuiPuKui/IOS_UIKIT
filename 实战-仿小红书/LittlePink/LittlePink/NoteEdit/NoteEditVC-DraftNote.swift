@@ -28,6 +28,8 @@ extension NoteEditVC {
         }
             
         self.handleOthers(draftNote)
+        self.updateDraftNoteFinished?()
+        self.navigationController?.popViewController(animated: true)
     }
     
 }
