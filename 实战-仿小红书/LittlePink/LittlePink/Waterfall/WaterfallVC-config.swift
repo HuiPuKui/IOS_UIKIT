@@ -33,6 +33,10 @@ extension WaterfallVC {
 //                right: kWaterfallPadding
 //            )
 //        }
+        
+        if self.isMyDraft {
+            self.navigationItem.title = "本地草稿"
+        }
     }
     
 }

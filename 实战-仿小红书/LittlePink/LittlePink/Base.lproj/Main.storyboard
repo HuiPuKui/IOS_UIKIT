@@ -66,10 +66,10 @@
             </objects>
             <point key="canvasLocation" x="2572" y="-1810"/>
         </scene>
-        <!--View Controller-->
+        <!--MeVC-->
         <scene sceneID="QJI-EK-p9h">
             <objects>
-                <viewController id="49w-8e-5g3" sceneMemberID="viewController">
+                <viewController id="49w-8e-5g3" customClass="MeVC" customModule="LittlePink" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tiA-1B-Gpq">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
