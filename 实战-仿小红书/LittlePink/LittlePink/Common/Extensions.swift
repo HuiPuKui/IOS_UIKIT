@@ -178,15 +178,19 @@ extension Bundle {
 
 extension FileManager {
     
-    func save(_ data: Data?, to dirName: String, as fileName: String) -> URL {
-        guard let data = data else { fatalError("要写入本地的 data 为 nil") }
+    func save(_ data: Data?, to dirName: String, as fileName: String) -> URL? {
+        guard let data = data else {
+            print("要写入本地的 data 为 nil")
+            return nil
+        }
         
         // "file:///xx/xx/tmp/dirName"
         let dirURL = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(dirName, isDirectory: true)
         
         if !self.fileExists(atPath: dirURL.path) {
             guard let _ = try? self.createDirectory(at: dirURL, withIntermediateDirectories: true) else {
-                fatalError("创建文件夹失败")
+                print("创建文件夹失败")
+                return nil
             }
         }
         
@@ -195,7 +199,8 @@ extension FileManager {
         
         if !self.fileExists(atPath: fileURL.path) {
             guard let _ = try? data.write(to: fileURL) else {
-                fatalError("写入/保存文件失败")
+                print("写入/保存文件失败")
+                return nil
             }
         }
         

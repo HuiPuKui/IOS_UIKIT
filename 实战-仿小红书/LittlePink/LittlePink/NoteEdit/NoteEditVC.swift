@@ -11,6 +11,8 @@ import AMapLocationKit
 
 
 class NoteEditVC: UIViewController {
+    
+    var draftNote: DraftNote?
 
     var photos: [UIImage] = []
     
@@ -44,8 +46,7 @@ class NoteEditVC: UIViewController {
         super.viewDidLoad()
 
         self.config()
-        
-        print(NSHomeDirectory())
+        self.setUI()
     }
 
     @IBAction func TFEditBegin(_ sender: Any) {
@@ -62,64 +63,26 @@ class NoteEditVC: UIViewController {
     }
     
     @IBAction func TFEditChanged(_ sender: Any) {
-        // 优化系统输入法拼音输入未完成时候计数问题
-        guard self.titleTextField.markedTextRange == nil else { return }
-        
-        if self.titleTextField.unwrappedText.count > kMaxNoteTitleCount {
-            self.titleTextField.text = String(self.titleTextField.unwrappedText.prefix(kMaxNoteTitleCount))
-            
-            self.showTextHUD("标题最多输入\(kMaxNoteTitleCount)字哦")
-            
-            DispatchQueue.main.async {
-                let end = self.titleTextField.endOfDocument
-                self.titleTextField.selectedTextRange = self.titleTextField.textRange(
-                    from: end,
-                    to: end
-                )
-            }
-        }
-        
-        self.titleCountLabel.text = "\(kMaxNoteTitleCount - self.titleTextField.unwrappedText.count)"
+        self.handleTFEditChanged()
     }
     
     // TODO: (存草稿和发布笔记之前需判断当前用户输入的正文文本数量，看是否大于最大可输入数量)
     
     @IBAction func saveDraftNote(_ sender: Any) {
-        guard self.textViewIAView.currentTextCount <= kMaxNoteTextCount else {
-            showTextHUD("正文最多输入\(kMaxNoteTextCount)字哦")
-            return
+            
+        self.validateNote()
+        
+        if let draftNote = self.draftNote {
+            self.updateDraftNote(draftNote)
+        } else {
+            self.createDraftNote()
         }
         
-        let draftNote = DraftNote(context: context)
-        
-        if isVideo {
-            draftNote.video = try? Data(contentsOf: self.videoURL!)
-        }
-        
-        // 封面图片
-        draftNote.coverPhoto = self.photos[0].jpeg(.high)
-        
-        // 所有图片
-        var photos: [Data] = []
-        for photo in self.photos {
-            if let pngData = photo.pngData() {
-                photos.append(pngData)
-            }
-        }
-        draftNote.photos = try? JSONEncoder().encode(photos)
-        
-        draftNote.isVideo = self.isVideo
-        draftNote.title = self.titleTextField.exactText
-        draftNote.text = self.textView.exactText
-        draftNote.channel = self.channel
-        draftNote.subChannel = self.subChannel
-        draftNote.poiName = self.poiName
-        draftNote.updatedAt = Date()
-        
-        appDelegate.saveContext()
     }
     
     @IBAction func postNote(_ sender: Any) {
+        
+        self.validateNote()
         
     }
     
@@ -157,10 +120,7 @@ extension NoteEditVC: ChannelVCDelegate {
         self.subChannel = subChannel
         
         // UI 部分
-        self.channelIcon.tintColor = blueColor
-        self.channelLabel.text = self.subChannel
-        self.channelLabel.textColor = blueColor
-        self.channelPlaceholderLabel.isHidden = true
+        self.updateChannelUI()
     }
     
 }
@@ -170,23 +130,15 @@ extension NoteEditVC: ChannelVCDelegate {
 extension NoteEditVC: POIVCDelegate {
     
     func updatePOIName(_ poiName: String) {
+        // 数据部分
         if poiName == kPOIsInitArr[0][0] {
-            // 数据部分
             self.poiName = ""
-            
-            // UI 部分
-            self.poiNameIcon.tintColor = .label
-            self.poiNameLabel.text = "添加地点"
-            self.poiNameLabel.textColor = .label
         } else {
-            // 数据部分
             self.poiName = poiName
-            
-            // UI 部分
-            self.poiNameIcon.tintColor = blueColor
-            self.poiNameLabel.text = self.poiName
-            self.poiNameLabel.textColor = blueColor
         }
+        
+        // UI 部分
+        self.updatePOINameUI()
     }
     
 }

@@ -78,6 +78,16 @@ extension TabBarC: UITabBarControllerDelegate {
                 if cancelled {
                     print("用户按了左上角的取消按钮")
                 }
+                
+                for item in items {
+                    switch item {
+                    case let .photo(p: photo):
+                        print(photo)
+                    case .video(v: let video):
+                        print(video)
+                    }
+                }
+                
                 picker.dismiss(animated: true)
             }
             

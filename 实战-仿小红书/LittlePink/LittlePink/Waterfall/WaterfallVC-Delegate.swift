@@ -21,7 +21,15 @@ extension WaterfallVC {
                     return UIImage($0) ?? imagePH
                 }
                 
-                drateNote.video
+                let videoURL = FileManager.default.save(drateNote.video, to: "video", as: "\(UUID().uuidString).mp4")
+
+                let vc = self.storyboard!.instantiateViewController(identifier: kNoteEditVCID) as! NoteEditVC
+                vc.draftNote = drateNote
+                vc.photos = photos
+                vc.videoURL = videoURL
+                
+                self.navigationController?.pushViewController(vc, animated: true)
+                
             } else {
                 self.showTextHUD("加载草稿失败")
             }

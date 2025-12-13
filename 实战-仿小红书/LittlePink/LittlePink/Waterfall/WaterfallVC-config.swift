@@ -25,14 +25,14 @@ extension WaterfallVC {
         )
         layout.itemRenderDirection = .shortestFirst
         
-        if isMyDraft {
-            layout.sectionInset = UIEdgeInsets(
-                top: 44,
-                left: kWaterfallPadding,
-                bottom: kWaterfallPadding,
-                right: kWaterfallPadding
-            )
-        }
+//        if isMyDraft {
+//            layout.sectionInset = UIEdgeInsets(
+//                top: 44,
+//                left: kWaterfallPadding,
+//                bottom: kWaterfallPadding,
+//                right: kWaterfallPadding
+//            )
+//        }
     }
     
 }
