@@ -77,6 +77,8 @@ extension POIVC: UITableViewDataSource {
         
         if poi[0] == self.poiName {
             cell.accessoryType = .checkmark
+        } else {
+            cell.accessoryType = .none
         }
         
         return cell
