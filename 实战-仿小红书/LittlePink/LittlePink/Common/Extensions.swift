@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 import DateToolsSwift
 
 extension String {
@@ -45,6 +46,25 @@ extension Date {
             return self.format(with: "yyyy-MM-dd")
         } else {
             return "明年或更远,目前项目暂不会用到"
+        }
+    }
+    
+}
+
+extension URL {
+    
+    var thumbnail: UIImage {
+        let asset = AVAsset(url: self)
+        let assetImgGenerate = AVAssetImageGenerator(asset: asset)
+        assetImgGenerate.appliesPreferredTrackTransform = true
+        
+        let time = CMTimeMakeWithSeconds(1.0, preferredTimescale: 600)
+        do {
+            let img = try assetImgGenerate.copyCGImage(at: time, actualTime: nil)
+            let thumbnail = UIImage(cgImage: img)
+            return thumbnail
+        } catch {
+            return imagePH
         }
     }
     
@@ -134,8 +154,12 @@ extension UIViewController {
     
     // MARK: - 提示框 -- 自动隐藏
     
-    func showTextHUD(_ title: String, _ subTitle: String? = nil) {
-        let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+    func showTextHUD(_ title: String, _ inCurrentView: Bool = true, _ subTitle: String? = nil) {
+        var viewToShow = self.view!
+        if !inCurrentView {
+            viewToShow = UIApplication.shared.windows.last!
+        }
+        let hud = MBProgressHUD.showAdded(to: viewToShow, animated: true)
         hud.mode = .text // 不指定的话显示菊花和下面配置的文本
         hud.label.text = title
         hud.detailsLabel.text = subTitle

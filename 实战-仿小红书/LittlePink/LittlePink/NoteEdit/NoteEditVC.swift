@@ -71,7 +71,7 @@ class NoteEditVC: UIViewController {
     
     @IBAction func saveDraftNote(_ sender: Any) {
             
-        self.validateNote()
+        guard self.isvVlidateNote() else { return }
         
         if let draftNote = self.draftNote {
             self.updateDraftNote(draftNote)
@@ -83,7 +83,7 @@ class NoteEditVC: UIViewController {
     
     @IBAction func postNote(_ sender: Any) {
         
-        self.validateNote()
+        guard self.isvVlidateNote() else { return }
         
     }
     

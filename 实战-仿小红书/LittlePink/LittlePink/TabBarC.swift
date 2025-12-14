@@ -46,6 +46,8 @@ extension TabBarC: UITabBarControllerDelegate {
             config.preferredStatusBarStyle = UIStatusBarStyle.default
             config.maxCameraZoomFactor = kMaxCameraZoomFactor
             
+            config.showsVideoTrimmer = false
+            
             // MARK: 相册配置
             config.library.onlySquare = false
             config.library.isSquareByDefault = false
@@ -85,12 +87,12 @@ extension TabBarC: UITabBarControllerDelegate {
                     for item in items {
                         switch item {
                         case let .photo(p: photo):
-                            print(photo)
                             photos.append(photo.image)
-                        case .video(v: let video):
-                            print(video)
-                            photos.append(video.thumbnail)
-                            videoURL = video.url
+                        case .video:
+                            let url = URL(fileURLWithPath: "recordedVideoRAW.mov", relativeTo: FileManager.default.temporaryDirectory)
+                            
+                            photos.append(url.thumbnail)
+                            videoURL = url
                         }
                     }
                     

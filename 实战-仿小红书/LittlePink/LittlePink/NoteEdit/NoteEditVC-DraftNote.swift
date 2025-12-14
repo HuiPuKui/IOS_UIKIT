@@ -23,7 +23,7 @@ extension NoteEditVC {
             self.handleOthers(draftNote)
             
             DispatchQueue.main.async {
-                self.showTextHUD("保存草稿成功")
+                self.showTextHUD("保存草稿成功", false)
             }
         }
         

@@ -42,7 +42,7 @@ extension WaterfallVC: CHTCollectionViewDelegateWaterfallLayout {
     
     func collectionView(_ collectionView: UICollectionView!, layout collectionViewLayout: UICollectionViewLayout!, sizeForItemAt indexPath: IndexPath!) -> CGSize {
         
-        let cellW = (screenRect.width - kWaterfallPadding * 3) / 2
+        var cellW = (screenRect.width - kWaterfallPadding * 3) / 2
         var cellH: CGFloat = 0
         
         if self.isMyDraft {
@@ -53,6 +53,7 @@ extension WaterfallVC: CHTCollectionViewDelegateWaterfallLayout {
             let imageRatio = imageH / imageW
             cellH = cellW * imageRatio + kDraftNoteWaterfallCellBottomViewH
         } else {
+            cellW = UIImage(named: "\(indexPath.item + 1)")!.size.width
             cellH = UIImage(named: "\(indexPath.item + 1)")!.size.height
         }
         

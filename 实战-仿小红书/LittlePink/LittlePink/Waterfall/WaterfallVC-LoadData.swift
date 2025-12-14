@@ -30,7 +30,10 @@ extension WaterfallVC {
         request.returnsObjectsAsFaults = true
         request.propertiesToFetch = ["coverPhoto", "title", "updatedAt", "isVideo"]
         
-        self.showLoadHUD()
+        DispatchQueue.main.async {
+            self.showLoadHUD()
+        }
+        
         backgroundContext.perform {
             if let draftNotes = try? backgroundContext.fetch(request) {
                 self.draftNotes = draftNotes
@@ -40,7 +43,9 @@ extension WaterfallVC {
                 }
             }
             
-            self.hideLoadHUD()
+            DispatchQueue.main.async {
+                self.hideLoadHUD()
+            }
         }
     }
     
