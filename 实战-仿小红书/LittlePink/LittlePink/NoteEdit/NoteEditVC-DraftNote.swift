@@ -10,25 +10,39 @@ import Foundation
 extension NoteEditVC {
     
     func createDraftNote() {
-        let draftNote = DraftNote(context: context)
-        
-        if isVideo {
-            draftNote.video = try? Data(contentsOf: self.videoURL!)
+        backgroundContext.perform {
+            let draftNote = DraftNote(context: backgroundContext)
+            
+            if self.isVideo {
+                draftNote.video = try? Data(contentsOf: self.videoURL!)
+            }
+            
+            self.handlePhotos(draftNote)
+            
+            draftNote.isVideo = self.isVideo
+            self.handleOthers(draftNote)
+            
+            DispatchQueue.main.async {
+                self.showTextHUD("保存草稿成功")
+            }
         }
         
-        self.handlePhotos(draftNote)
-        
-        draftNote.isVideo = self.isVideo
-        self.handleOthers(draftNote)
+        dismiss(animated: true)
     }
     
     func updateDraftNote(_ draftNote: DraftNote) {
-        if !self.isVideo {
-            self.handlePhotos(draftNote)
-        }
+        backgroundContext.perform {
+            if !self.isVideo {
+                self.handlePhotos(draftNote)
+            }
+                
+            self.handleOthers(draftNote)
             
-        self.handleOthers(draftNote)
-        self.updateDraftNoteFinished?()
+            DispatchQueue.main.async {
+                self.updateDraftNoteFinished?()
+            }
+        }
+        
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -51,14 +65,18 @@ extension NoteEditVC {
     }
     
     private func handleOthers(_ draftNote: DraftNote) {
-        draftNote.title = self.titleTextField.exactText
-        draftNote.text = self.textView.exactText
+        
+        DispatchQueue.main.async {
+            draftNote.title = self.titleTextField.exactText
+            draftNote.text = self.textView.exactText
+        }
+        
         draftNote.channel = self.channel
         draftNote.subChannel = self.subChannel
         draftNote.poiName = self.poiName
         draftNote.updatedAt = Date()
         
-        appDelegate.saveContext()
+        appDelegate.saveBackgroundContext()
     }
     
 }

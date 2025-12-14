@@ -30,7 +30,9 @@ let imagePH = UIImage(named: "imagePH")!
 
 // MARK: - CoreData
 let appDelegate = UIApplication.shared.delegate as! AppDelegate
-let context = appDelegate.persistentContainer.viewContext
+let persistentContainer = appDelegate.persistentContainer
+let context = persistentContainer.viewContext
+let backgroundContext = persistentContainer.newBackgroundContext()
 
 // MARK: - UI 布局
 let screenRect = UIScreen.main.bounds
