@@ -803,3 +803,19 @@ if let cancelButton = self.searchBar.value(forKey: "cancelButton") as? UIButton 
  **Date转化为String-DateFormatter:** `https://juejin.cn/post/6844903841855438862`
 
  **GitHub - MatthewYork/DateTools- Dates and times made easy in iOS:** `https://github.com/MatthewYork/DateTools`
+
+ ## 15-本机号码一键登录
+
+ **一键登录了解一下？:** `https://juejin.cn/post/6844903877733515277`
+
+ **极光认证 - 极光文档:** `https://docs.jiguang.cn/jverification/guideline/intro`
+
+ **开发助手简介 - 支付宝开放平台:** `https://opendocs.alipay.com/open/291/introduce`
+
+ **理解公钥与私钥 | 神奕的博客:** `https://songlee24.github.io/2015/05/03/public-key-and-private-key/`
+
+ **在线RSA加密解密,RSA2加密解密(SHA256WithRSA)-BeJSON.com:** `https://www.bejson.com/enc/rsa/`
+
+ **REST 架构该怎么生动地理解？ - 知乎:** `https://www.zhihu.com/question/27785028`
+
+ **GitHub - Alamofire/Alamofire- Elegant HTTP Networking in Swift:** `https://github.com/Alamofire/Alamofire`
