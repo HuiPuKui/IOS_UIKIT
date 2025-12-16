@@ -1,0 +1,5 @@
+${PODS_ROOT}/Target Support Files/JVerification/JVerification-xcframeworks.sh
+${PODS_ROOT}/JVerification/EAccountApiSDK.xcframework
+${PODS_ROOT}/JVerification/jverification-ios-3.4.4.xcframework
+${PODS_ROOT}/JVerification/OAuth.xcframework
+${PODS_ROOT}/JVerification/TYRZUISDK.xcframework

@@ -10,7 +10,14 @@ import Foundation
 extension LoginVC {
     
     @objc func localLogin() {
-        
+        let config = JVAuthConfig()
+        config.appKey = kJAppKey
+        config.authBlock = { _ in
+            if JVERIFICATIONService.isSetupClient() {
+                
+            }
+        }
+        JVERIFICATIONService.setup(with: config)
     }
     
 }

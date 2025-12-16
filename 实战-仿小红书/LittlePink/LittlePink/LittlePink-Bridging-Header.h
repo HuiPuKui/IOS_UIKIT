@@ -10,6 +10,7 @@
 
 #import "MBProgressHUD.h"
 #import "MJRefresh.h"
+#import "JVERIFICATIONService.h"
 
 #import <AMapFoundationKit/AMapFoundationKit.h>
 #import <AMapLocationKit/AMapLocationKit.h>
