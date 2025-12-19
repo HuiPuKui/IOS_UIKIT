@@ -14,6 +14,7 @@ let kNearByVCID = "NearByVCID"
 let kWaterfallVCID = "WaterfallVCID"
 let kNoteEditVCID = "NoteEditVCID"
 let kChannelTableVCID = "ChannelTableVCID"
+let kLoginNaviID = "LoginNaviID"
 
 // MARK: Cell相关ID
 let kWaterfallCellID = "WaterfallCellID"

@@ -27,10 +27,12 @@ extension UIViewController {
                         self.presentLocalLoginVC()
                     } else {
                         print("预取号失败，错误码: \(String(describing: result["code"]))，错误描述: \(String(describing: result["content"]))")
+                        self.presentCodeLoginVC()
                     }
                 }
             } else {
                 self.hideLoadHUD()
+                self.presentCodeLoginVC()
                 print("初始化一键登录失败")
             }
         }
@@ -44,6 +46,7 @@ extension UIViewController {
                 // 一键登录成功
                 JVERIFICATIONService.clearPreLoginCache()
             } else {
+                self.otherLogin()
                 print("一键登录失败")
             }
         }) { (type, content) in
@@ -58,13 +61,28 @@ extension UIViewController {
 extension UIViewController {
     
     @objc private func otherLogin() {
-        
+        JVERIFICATIONService.dismissLoginController(animated: true, completion: {
+            self.presentCodeLoginVC()
+        })
     }
     
     @objc private func dismissLocalLoginVC() {
         JVERIFICATIONService.dismissLoginController(animated: true, completion: {
             
         })
+    }
+    
+}
+
+// MARK: - 一般函数
+
+extension UIViewController {
+    
+    private func presentCodeLoginVC() {
+        let mainSB = UIStoryboard(name: "Main", bundle: nil)
+        let loginNaviC = mainSB.instantiateViewController(identifier: kLoginNaviID)
+        loginNaviC.modalPresentationStyle = .fullScreen
+        self.present(loginNaviC, animated: true)
     }
     
 }
