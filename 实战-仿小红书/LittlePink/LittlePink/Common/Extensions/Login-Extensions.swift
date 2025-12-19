@@ -42,7 +42,7 @@ extension UIViewController {
     // MARK: - 弹出一键登录授权页 + 用户点击登录后
     private func presentLocalLoginVC() {
         JVERIFICATIONService.getAuthorizationWith(self, hide: true, animated: true, timeout: 5 * 1000, completion: { (result) in
-            if let token = result["loginToken"] {
+            if let loginToken = result["loginToken"] {
                 // 一键登录成功
                 JVERIFICATIONService.clearPreLoginCache()
             } else {
