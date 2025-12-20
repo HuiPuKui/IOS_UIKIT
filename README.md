@@ -819,3 +819,15 @@ if let cancelButton = self.searchBar.value(forKey: "cancelButton") as? UIButton 
  **REST 架构该怎么生动地理解？ - 知乎:** `https://www.zhihu.com/question/27785028`
 
  **GitHub - Alamofire/Alamofire- Elegant HTTP Networking in Swift:** `https://github.com/Alamofire/Alamofire`
+
+ ## 16-支付宝登录
+
+ **视觉资源下载 - 支付宝开放平台:** `https://opendocs.alipay.com/open/54/103284`
+
+ **整合各类第三方登录的服务商-友盟:** `https://www.umeng.com/u-verify?spm=a213m0.13887608.0.0.3cb275efO6YUQR&acm=lb-zebra-577134-7502775.1003.4.6889757&scm=1003.4.lb-zebra-577134-7502775.OTHER_15820732724753_6889757`
+
+ **整合各类第三方登录的服务商-ShareSDK:** `https://mob.com/mobService/sharesdk`
+
+ **支付宝开放平台:** `https://open.alipay.com/`
+
+ **URL Schemes 使用详解 - 少数派:** `https://sspai.com/post/31500`
