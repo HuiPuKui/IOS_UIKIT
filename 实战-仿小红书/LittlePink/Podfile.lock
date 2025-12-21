@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.10.2)
+  - AlipaySDK-iOS (15.8.30)
   - AMapFoundation (1.8.2)
   - AMapLocation (2.11.0):
     - AMapFoundation (>= 1.8.0)
@@ -23,6 +24,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
+  - AlipaySDK-iOS
   - AMapLocation
   - AMapSearch
   - CHTCollectionViewWaterfallLayout/ObjC
@@ -38,6 +40,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - AlipaySDK-iOS
     - AMapFoundation
     - AMapLocation
     - AMapSearch
@@ -56,6 +59,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 7193b3b92c74a07f85569e1a6c4f4237291e7496
+  AlipaySDK-iOS: 913a1df564c64798903e71cf3d63141d9e1904d2
   AMapFoundation: 9885c48fc3a78fdfb84a0299a2293e56ea3c9fec
   AMapLocation: 8c46dbe995333ad6cae147d54a7307a577020be0
   AMapSearch: a30e89212f55a867ac951ce71f800313cd54ad0a
@@ -72,6 +76,6 @@ SPEC CHECKSUMS:
   XLPagerTabStrip: 27f3bfe23c53b4251c6481b06b1c289458a3fc1d
   YPImagePicker: afc81b3cffab05a6e7261c5daf80dc31b4e917b4
 
-PODFILE CHECKSUM: 20d6333a0014a672063e3c9c3384d64373c1194e
+PODFILE CHECKSUM: a9c1505469925c5f3d8d62b7e5151b127cce3aa5
 
 COCOAPODS: 1.16.2
