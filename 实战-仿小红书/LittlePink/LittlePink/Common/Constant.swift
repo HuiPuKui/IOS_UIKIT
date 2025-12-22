@@ -77,3 +77,9 @@ let kPOIsOffset = 20
 
 // 极光
 let kJAppKey = "bae0208e3c6af1ab8eaa9a32"
+
+// 支付宝
+let kAliPayAppID = "2021002125697028"
+let kAliPayPID = "2088002401295380"
+let kAlipayPrivateKey = "支付宝后台上传的公钥对应的私钥"
+let kAppScheme = "LittlePink"

@@ -1080,7 +1080,7 @@
                                 </subviews>
                             </stackView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pcB-8g-F1r">
-                                <rect key="frame" x="16" y="336" width="361" height="20"/>
+                                <rect key="frame" x="16" y="335.66666666666669" width="361" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="8ot-Hk-Qie"/>
                                 </constraints>
@@ -1407,6 +1407,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="0MR-gf-Ljw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="n2Z-bR-dVH" firstAttribute="centerY" secondItem="PYr-gy-8M4" secondAttribute="centerY" id="5xW-EM-x5c"/>
@@ -1445,12 +1446,16 @@
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="AlipayLogo"/>
+                                                <connections>
+                                                    <action selector="signInWithAlipay:" destination="M0H-Mb-KmW" eventType="touchUpInside" id="Yeh-XD-o6H"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Euj-C1-nR9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="tfV-bv-cWQ" firstAttribute="leading" secondItem="8oe-im-70F" secondAttribute="leading" id="DHp-Cq-w9e"/>

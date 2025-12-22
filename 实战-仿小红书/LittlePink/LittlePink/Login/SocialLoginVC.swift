@@ -15,7 +15,10 @@ class SocialLoginVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func signInWithAlipay(_ sender: Any) {
+        self.signInWithAlipay()
+    }
+    
     /*
     // MARK: - Navigation
 
