@@ -831,3 +831,13 @@ if let cancelButton = self.searchBar.value(forKey: "cancelButton") as? UIButton 
  **支付宝开放平台:** `https://open.alipay.com/`
 
  **URL Schemes 使用详解 - 少数派:** `https://sspai.com/post/31500`
+
+ ## 17-苹果登录
+
+ **Apple Design Resources - Apple官方文档 - 注意图片有内间距:** `https://developer.apple.com/design/resources/`
+
+ **Sign in with Apple - Apple官方文档:** `https://developer.apple.com/sign-in-with-apple/`
+
+ **Authentication Services | Apple官方文档:** `https://developer.apple.com/documentation/authenticationservices`
+
+ **JSON Web Tokens - jwt.io:** `https://www.jwt.io/`
