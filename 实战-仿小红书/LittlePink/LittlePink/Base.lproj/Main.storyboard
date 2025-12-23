@@ -1436,8 +1436,8 @@
                                         <color key="textColor" systemColor="secondaryLabelColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fLd-IN-aeo">
-                                        <rect key="frame" x="158.66666666666666" y="44" width="44" height="44"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="55" translatesAutoresizingMaskIntoConstraints="NO" id="fLd-IN-aeo">
+                                        <rect key="frame" x="109" y="44" width="143" height="44"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9d-dF-6ji">
                                                 <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
@@ -1448,6 +1448,17 @@
                                                 <state key="normal" image="AlipayLogo"/>
                                                 <connections>
                                                     <action selector="signInWithAlipay:" destination="M0H-Mb-KmW" eventType="touchUpInside" id="Yeh-XD-o6H"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q3m-Jf-Ap8">
+                                                <rect key="frame" x="99" y="0.0" width="44" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="44" id="KJC-Np-NGP"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="AppleLogo"/>
+                                                <connections>
+                                                    <action selector="signInWithApple:" destination="M0H-Mb-KmW" eventType="touchUpInside" id="baM-7d-txk"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1477,6 +1488,7 @@
     <resources>
         <image name="2" width="1080" height="1440"/>
         <image name="AlipayLogo" width="421" height="421"/>
+        <image name="AppleLogo" width="44" height="44"/>
         <image name="cart.fill" catalog="system" width="128" height="102"/>
         <image name="chevron.right" catalog="system" width="97" height="128"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
