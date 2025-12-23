@@ -50,32 +50,108 @@ extension SocialLoginVC {
                     let suffix = subRes[equalEndIndex...]
                     
                     if subRes.hasPrefix("auth_code") {
-                        var parameters = [
-                            "timestamp": Date().format(with: "yyyy-MM-dd HH:mm:ss"),
-                            "method": "alipay.system.oauth.token",
-                            "app_id": kAliPayAppID,
-                            "sign_type": "RSA2",
-                            "version": "1.0",
-                            "charset": "utf-8",
-                            "grant_type": "authorization_code",
-                            "code": String(suffix)
-                        ]
-                        
-                        // 拼接为表单形式
-                        let urlParameters = parameters.map { "\($0)=\($1)" }.sorted().joined(separator: "&")
-                        guard
-                            let signer = APRSASigner(privateKey: kAlipayPrivateKey),
-                            let signedStr = signer.sign(urlParameters, withRSA2: true)
-                        else { return }
-                        
-                        parameters["sign"] = signedStr.removingPercentEncoding ?? signedStr
-                        
-                        AF.request("https://openapi.alipay.com/gateway.do", parameters: parameters).responseJSON { res in
-                            
-                        }
+                        self.getToken(String(suffix))
                     }
                 }
             }
         }
     }
+}
+
+extension SocialLoginVC {
+    
+    private func getToken(_ authCode: String) {
+        let parameters = [
+            "timestamp": Date().format(with: "yyyy-MM-dd HH:mm:ss"),
+            "method": "alipay.system.oauth.token",
+            "app_id": kAliPayAppID,
+            "sign_type": "RSA2",
+            "version": "1.0",
+            "charset": "utf-8",
+            "grant_type": "authorization_code",
+            "code": String(authCode)
+        ]
+        
+        AF.request(
+            "https://openapi.alipay.com/gateway.do",
+            parameters: self.signedParameters(parameters)
+        ).responseDecodable(
+            of: TokenResponse.self
+        ) { response in
+            if let tokenResponse = response.value {
+                let accessToken = tokenResponse.alipay_system_oauth_token_respnse.access_token
+                self.getInfo(accessToken)
+            }
+        }
+    }
+    
+    private func getInfo(_ accessToken: String) {
+        let parameters = [
+            "timestamp": Date().format(with: "yyyy-MM-dd HH:mm:ss"),
+            "method": "alipay.user.info.share",
+            "app_id": kAliPayAppID,
+            "sign_type": "RSA2",
+            "version": "1.0",
+            "charset": "utf-8",
+            "code": accessToken
+        ]
+        
+        AF.request(
+            "https://openapi.alipay.com/gateway.do",
+            parameters: self.signedParameters(parameters)
+        ).responseDecodable(
+            of: InfoShareResponse.self
+        ) { response in
+            if let infoShareResponse = response.value {
+                let info = infoShareResponse.alipay_user_info_share_response
+                print(info.nick_name, info.avatar, info.gender)
+                print(info.province, info.city)
+            }
+        }
+    }
+    
+}
+
+extension SocialLoginVC {
+    
+    private func signedParameters(_ parameters: [String: String]) -> [String: String] {
+        var signedParameters = parameters
+        
+        // 拼接为表单形式
+        let urlParameters = parameters.map { "\($0)=\($1)" }.sorted().joined(separator: "&")
+        guard
+            let signer = APRSASigner(privateKey: kAlipayPrivateKey),
+            let signedStr = signer.sign(urlParameters, withRSA2: true)
+        else {
+            fatalError("加签失败")
+        }
+        
+        signedParameters["sign"] = signedStr.removingPercentEncoding ?? signedStr
+        return signedParameters
+    }
+    
+}
+
+extension SocialLoginVC {
+    
+    struct TokenResponse: Decodable {
+        let alipay_system_oauth_token_respnse: TokenResponseInfo
+        
+        struct TokenResponseInfo: Decodable {
+            let access_token: String
+        }
+    }
+    
+    struct InfoShareResponse: Decodable {
+        let alipay_user_info_share_response: InfoShareResponseInfo
+        
+        struct InfoShareResponseInfo: Decodable {
+            let avatar: String
+            let nick_name: String
+            let gender: String
+            let province: String
+            let city: String
+        }
+    }
+    
 }
