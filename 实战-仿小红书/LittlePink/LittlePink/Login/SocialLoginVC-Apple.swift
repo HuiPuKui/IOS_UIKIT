@@ -43,7 +43,9 @@ extension SocialLoginVC: ASAuthorizationControllerDelegate {
             print(String(decoding: authorizationCode, as: UTF8.self))
             
         case let passwordCredential as ASPasswordCredential:
-            print(passwordCredential)
+            let _ = passwordCredential.user
+            let _ = passwordCredential.password
+            
         default:
             break
         }
@@ -59,6 +61,28 @@ extension SocialLoginVC: ASAuthorizationControllerPresentationContextProviding {
     
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
         return self.view.window!
+    }
+    
+}
+
+extension SocialLoginVC {
+    
+    func checkSignInWithAppleState(with userID: String) {
+        let appleIDProvider = ASAuthorizationAppleIDProvider()
+        appleIDProvider.getCredentialState(forUserID: userID) { (credentialState, error) in
+            switch credentialState {
+            case .authorized:
+                print("用户已登录, 展示登录后的 UI 页面")
+            case .revoked:
+                print("用户已从设置里面退出登录或用其他的 AppleID 进行登录了")
+            case .notFound:
+                print("无此用户")
+            case .transferred:
+                print("Apple ID 凭据被“迁移/转移”")
+            @unknown default:
+                break
+            }
+        }
     }
     
 }
