@@ -87,3 +87,8 @@ let kAliPayAppID = "2021002125697028"
 let kAliPayPID = "2088002401295380"
 let kAlipayPrivateKey = "支付宝后台上传的公钥对应的私钥"
 let kAppScheme = "LittlePink"
+
+// LeanCloud
+let kLCAppID = "1Vm29vO6ghufiv5tLwcPJ2Bv-gzGzoHsz"
+let kLCAppKey = "Y2x0cYI7xX9snaAKVxDc7c0F"
+let kLCServerURL = "https://1vm29vo6.lc-cn-n1-shared.com"

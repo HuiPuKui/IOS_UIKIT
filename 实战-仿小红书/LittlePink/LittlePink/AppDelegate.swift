@@ -7,11 +7,10 @@
 
 import UIKit
 import CoreData
+import LeanCloud
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -99,6 +98,18 @@ extension AppDelegate {
         
         // UI
         UINavigationBar.appearance().tintColor = .label
+        
+        // 初始化 LeanCloud
+        LCApplication.logLevel = .off
+        do {
+            try LCApplication.default.set(
+                id: kLCAppID,
+                key: kLCAppKey,
+                serverURL: kLCServerURL
+            )
+        } catch {
+            print(error)
+        }
     }
     
 }
