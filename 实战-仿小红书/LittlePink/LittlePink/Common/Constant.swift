@@ -29,6 +29,10 @@ let mainColor = UIColor(named: "main")!
 let blueColor = UIColor(named: "blue")!
 let imagePH = UIImage(named: "imagePH")!
 
+// MARK: - UserDefaults 的 Key
+let kNameFromAppleID = "nameFromAppleID"
+let kEmailFromAppleID = "emailFromAppleID"
+
 // MARK: - CoreData
 let appDelegate = UIApplication.shared.delegate as! AppDelegate
 let persistentContainer = appDelegate.persistentContainer

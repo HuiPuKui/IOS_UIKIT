@@ -14,12 +14,34 @@ extension SocialLoginVC: ASAuthorizationControllerDelegate {
         case let appleIDCredential as ASAuthorizationAppleIDCredential:
             let userID = appleIDCredential.user
             
-            print(appleIDCredential.fullName?.familyName)
-            print(appleIDCredential.fullName?.givenName)
-            print(appleIDCredential.email)
+            var name = ""
+            if appleIDCredential.fullName?.familyName != nil || appleIDCredential.fullName?.givenName != nil {
+                let familyName = appleIDCredential.fullName?.familyName ?? ""
+                let givenName = appleIDCredential.fullName?.givenName ?? ""
+                name = "\(familyName)\(givenName)"
+                
+                UserDefaults.standard.setValue(name, forKey: kNameFromAppleID)
+            } else {
+                name = UserDefaults.standard.string(forKey: kNameFromAppleID) ?? ""
+            }
             
-            print(String(decoding: appleIDCredential.identityToken!, as: UTF8.self))
-            print(String(decoding: appleIDCredential.authorizationCode!, as: UTF8.self))
+            var email = ""
+            if let unwrappedEmail = appleIDCredential.email {
+                email = unwrappedEmail
+                
+                UserDefaults.standard.setValue(email, forKey: kEmailFromAppleID)
+            } else {
+                email = UserDefaults.standard.string(forKey: kEmailFromAppleID) ?? ""
+            }
+            
+            guard
+                let identityToken = appleIDCredential.identityToken,
+                let authorizationCode = appleIDCredential.authorizationCode
+            else { return }
+            
+            print(String(decoding: identityToken, as: UTF8.self))
+            print(String(decoding: authorizationCode, as: UTF8.self))
+            
         case let passwordCredential as ASPasswordCredential:
             print(passwordCredential)
         default:
