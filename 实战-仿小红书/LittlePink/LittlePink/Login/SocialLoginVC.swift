@@ -14,16 +14,6 @@ class SocialLoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        do {
-            let testObject = LCObject(className: "TestObject")
-            try testObject.set("words", value: "Hello world!")
-            let result = testObject.save()
-            if let error = result.error {
-                print(error)
-            }
-        } catch {
-            print(error)
-        }
     }
     
     @IBAction func signInWithAlipay(_ sender: Any) {
