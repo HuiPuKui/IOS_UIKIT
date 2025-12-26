@@ -70,6 +70,20 @@ extension URL {
     
 }
 
+extension UIButton {
+    
+    func setToEnabled() {
+        self.isEnabled = true
+        self.backgroundColor = mainColor
+    }
+    
+    func setToDisabled() {
+        self.isEnabled = false
+        self.backgroundColor = mainLightColor
+    }
+    
+}
+
 extension UIImage {
     
     // 便利构造器必须调用它直接父类的制定构造器方法

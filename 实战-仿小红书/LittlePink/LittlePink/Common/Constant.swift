@@ -26,6 +26,7 @@ let kDraftNoteWaterfallCellID = "DraftNoteWaterfallCellID"
 
 // MARK: - 资源文件相关
 let mainColor = UIColor(named: "main")!
+let mainLightColor = UIColor(named: "main-light")!
 let blueColor = UIColor(named: "blue")!
 let imagePH = UIImage(named: "imagePH")!
 
