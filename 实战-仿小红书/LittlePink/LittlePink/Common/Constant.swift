@@ -93,3 +93,6 @@ let kAppScheme = "LittlePink"
 let kLCAppID = "1Vm29vO6ghufiv5tLwcPJ2Bv-gzGzoHsz"
 let kLCAppKey = "Y2x0cYI7xX9snaAKVxDc7c0F"
 let kLCServerURL = "https://1vm29vo6.lc-cn-n1-shared.com"
+
+// 正则表达式
+let kPhoneRegEx = "^1\\d{10}$"

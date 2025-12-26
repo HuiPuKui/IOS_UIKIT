@@ -10,12 +10,13 @@ import UIKit
 class CodeLoginVC: UIViewController {
 
     @IBOutlet weak var phoneNumTF: UITextField!
-    
     @IBOutlet weak var authCodeTF: UITextField!
-    
     @IBOutlet weak var getAuthCodeBtn: UIButton!
-    
     @IBOutlet weak var loginBtn: UIButton!
+    
+    private var phoneNumStr: String {
+        return self.phoneNumTF.unwrappedText
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,10 @@ class CodeLoginVC: UIViewController {
     
     @IBAction func dismiss(_ sender: Any) {
         self.dismiss(animated: true)
+    }
+    
+    @IBAction func TFEditingChanged(_ sender: Any) {
+        self.getAuthCodeBtn.isHidden = !self.phoneNumStr.isPhoneNumber
     }
     
     @IBAction func getAuthCode(_ sender: Any) {
