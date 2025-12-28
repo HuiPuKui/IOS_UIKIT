@@ -49,3 +49,18 @@ class CodeLoginVC: UIViewController {
     }
 
 }
+
+extension CodeLoginVC: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let limit = textField == self.phoneNumTF ? 11 : 6
+        let isExceed = range.location >= limit || (textField.unwrappedText.count + string.count) > limit
+        
+        if isExceed {
+            self.showTextHUD("最多只能输入\(limit)位哦")
+        }
+        
+        return !isExceed
+    }
+    
+}

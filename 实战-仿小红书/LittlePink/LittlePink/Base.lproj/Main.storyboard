@@ -1044,6 +1044,7 @@
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="tel"/>
                                                 <connections>
                                                     <action selector="TFEditingChanged:" destination="9T4-e0-ntS" eventType="editingChanged" id="00F-dW-nwK"/>
+                                                    <outlet property="delegate" destination="9T4-e0-ntS" id="mEu-tE-Pd6"/>
                                                 </connections>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="avK-fO-U8c">
