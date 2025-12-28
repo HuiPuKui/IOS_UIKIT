@@ -96,3 +96,4 @@ let kLCServerURL = "https://1vm29vo6.lc-cn-n1-shared.com"
 
 // 正则表达式
 let kPhoneRegEx = "^1\\d{10}$"
+let kAuthCodeRegEx = "^\\d{6}$"

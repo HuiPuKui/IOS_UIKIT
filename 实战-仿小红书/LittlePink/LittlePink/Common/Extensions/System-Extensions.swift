@@ -19,6 +19,10 @@ extension String {
         return Int(self) != nil && NSRegularExpression(kPhoneRegEx).matches(self)
     }
     
+    var isAuthCode: Bool {
+        return Int(self) != nil && NSRegularExpression(kAuthCodeRegEx).matches(self)
+    }
+    
 }
 
 extension NSRegularExpression {

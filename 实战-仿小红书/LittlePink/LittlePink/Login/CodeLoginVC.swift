@@ -7,15 +7,25 @@
 
 import UIKit
 
+private let totalTime = 60
+
 class CodeLoginVC: UIViewController {
 
+    private var timeRemain = totalTime
+    
     @IBOutlet weak var phoneNumTF: UITextField!
     @IBOutlet weak var authCodeTF: UITextField!
     @IBOutlet weak var getAuthCodeBtn: UIButton!
     @IBOutlet weak var loginBtn: UIButton!
     
+    lazy private var timer = Timer()
+    
     private var phoneNumStr: String {
         return self.phoneNumTF.unwrappedText
+    }
+    
+    private var authCodeStr: String {
+        return self.authCodeTF.unwrappedText
     }
     
     override func viewDidLoad() {
@@ -36,15 +46,33 @@ class CodeLoginVC: UIViewController {
         self.dismiss(animated: true)
     }
     
-    @IBAction func TFEditingChanged(_ sender: Any) {
-        self.getAuthCodeBtn.isHidden = !self.phoneNumStr.isPhoneNumber
+    @IBAction func TFEditingChanged(_ sender: UITextField) {
+        if sender == self.phoneNumTF {
+            self.getAuthCodeBtn.isHidden = !self.phoneNumStr.isPhoneNumber && self.getAuthCodeBtn.isEnabled
+        }
+        
+        if self.phoneNumStr.isPhoneNumber && self.authCodeStr.isAuthCode {
+            self.loginBtn.setToEnabled()
+        } else {
+            self.loginBtn.setToDisabled()
+        }
     }
     
     @IBAction func getAuthCode(_ sender: Any) {
+        self.getAuthCodeBtn.isEnabled = false
+        self.setAuthCodeBtnDisabledText()
+        self.authCodeTF.becomeFirstResponder()
         
+        self.timer = Timer.scheduledTimer(
+            timeInterval: 1,
+            target: self,
+            selector: #selector(changeAuthCodeBtnText),
+            userInfo: nil,
+            repeats: true
+        )
     }
     
-    @IBAction func login(_ sender: Any) {
+    @IBAction func login(_ sender: UIButton) {
         
     }
 
@@ -61,6 +89,44 @@ extension CodeLoginVC: UITextFieldDelegate {
         }
         
         return !isExceed
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == self.phoneNumTF {
+            self.authCodeTF.becomeFirstResponder()
+        } else {
+            if self.loginBtn.isEnabled {
+                self.login(self.loginBtn)
+            }
+        }
+        
+        return true
+    }
+    
+}
+
+extension CodeLoginVC {
+    
+    @objc func changeAuthCodeBtnText() {
+        self.timeRemain -= 1
+        self.setAuthCodeBtnDisabledText()
+        
+        if self.timeRemain <= 0 {
+            self.timer.invalidate()
+            self.timeRemain = totalTime
+            self.getAuthCodeBtn.isEnabled = true
+            self.getAuthCodeBtn.setTitle("发送验证码", for: .normal)
+            
+            self.getAuthCodeBtn.isHidden = !phoneNumStr.isPhoneNumber // 如果用户输入的手机号不是合法手机号就再次隐藏掉
+        }
+    }
+    
+}
+
+extension CodeLoginVC {
+    
+    private func setAuthCodeBtnDisabledText() {
+        self.getAuthCodeBtn.setTitle("重新发送(\(self.timeRemain)s)", for: .disabled)
     }
     
 }
