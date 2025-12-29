@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LeanCloud
 
 private let totalTime = 60
 
@@ -70,6 +71,22 @@ class CodeLoginVC: UIViewController {
             userInfo: nil,
             repeats: true
         )
+        
+        let varibles: LCDictionary = [
+            "name": LCString("小粉书"),
+            "ttl": LCNumber(5)
+        ]
+        
+        LCSMSClient.requestShortMessage(
+            mobilePhoneNumber: self.phoneNumStr,
+            templateName: "login",
+            signatureName: "小粉书",
+            variables: varibles
+        ) { result in
+            if case let .failure(error: error) = result{
+                print(error.reason ?? "短信验证码未知错误")
+            }
+        }
     }
     
     @IBAction func login(_ sender: UIButton) {
