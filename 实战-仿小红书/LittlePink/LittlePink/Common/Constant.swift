@@ -89,11 +89,17 @@ let kAliPayPID = "2088002401295380"
 let kAlipayPrivateKey = "支付宝后台上传的公钥对应的私钥"
 let kAppScheme = "LittlePink"
 
-// LeanCloud
-let kLCAppID = "1Vm29vO6ghufiv5tLwcPJ2Bv-gzGzoHsz"
-let kLCAppKey = "Y2x0cYI7xX9snaAKVxDc7c0F"
-let kLCServerURL = "https://1vm29vo6.lc-cn-n1-shared.com"
 
 // 正则表达式
 let kPhoneRegEx = "^1\\d{10}$"
 let kAuthCodeRegEx = "^\\d{6}$"
+
+// MARK: - LeanCloud
+// 配置相关
+let kLCAppID = "1Vm29vO6ghufiv5tLwcPJ2Bv-gzGzoHsz"
+let kLCAppKey = "Y2x0cYI7xX9snaAKVxDc7c0F"
+let kLCServerURL = "https://1vm29vo6.lc-cn-n1-shared.com"
+
+// User 表
+let kNickNameCol = "nickName"
+let kAvatarCol = "avatar"

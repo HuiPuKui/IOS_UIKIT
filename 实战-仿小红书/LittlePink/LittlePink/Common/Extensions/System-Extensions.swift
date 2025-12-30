@@ -23,6 +23,11 @@ extension String {
         return Int(self) != nil && NSRegularExpression(kAuthCodeRegEx).matches(self)
     }
     
+    static func randomString(_ length: Int) -> String {
+        let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        return String((0..<length).map { _ in letters.randomElement()! })
+    }
+    
 }
 
 extension NSRegularExpression {

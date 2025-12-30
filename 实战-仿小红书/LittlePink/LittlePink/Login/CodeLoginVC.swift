@@ -90,7 +90,67 @@ class CodeLoginVC: UIViewController {
     }
     
     @IBAction func login(_ sender: UIButton) {
+        self.view.endEditing(true)
         
+        self.showLoadHUD()
+        
+        LCUser.signUpOrLogIn(mobilePhoneNumber: self.phoneNumStr, verificationCode: self.authCodeStr) { result in
+            self.hideLoadHUD()
+            
+            switch result {
+            case let .success(object: user):
+                let randomNickName = "小粉薯\(String.randomString(6))"
+                let randomAvatar = UIImage(named: "avatarPH\(Int.random(in: 1...4))")!
+                
+                if let avatarData = randomAvatar.pngData() {
+                    let avatarFile = LCFile(payload: .data(data: avatarData))
+                    avatarFile.mimeType = "image/jpeg"
+                    
+                    avatarFile.save { result in
+                        switch result {
+                        case .success:
+                            if let value = avatarFile.objectId?.value {
+                                print("文件保存完成。objectId: \(value)")
+                                
+                                do {
+                                    try user.set(kAvatarCol, value: avatarFile)
+                                    user.save { result in
+                                        switch result {
+                                        case .success:
+                                            print("文件已关联")
+                                        case .failure(error: let error):
+                                            print("保存表的数据失败: \(error)")
+                                        }
+                                    }
+                                } catch {
+                                    print("给 User 表的字段赋值失效: \(error)")
+                                }
+                            }
+                        case .failure(error: let error):
+                            print("保存文件进云端失败: \(error)")
+                        }
+                    }
+                }
+                
+                do {
+                    try user.set(kNickNameCol, value: randomNickName)
+                } catch {
+                    print("给 User 表的字段赋值失效: \(error)")
+                    return
+                }
+                
+                user.save { result in
+                    if case .success = result {
+                        
+                    }
+                }
+                
+            case let .failure(error: error):
+                DispatchQueue.main.async {
+                    self.showTextHUD("登录失败", true, error.reason)
+                }
+            }
+        }
     }
 
 }
