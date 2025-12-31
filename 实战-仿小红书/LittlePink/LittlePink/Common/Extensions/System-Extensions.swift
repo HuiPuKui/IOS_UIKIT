@@ -210,6 +210,15 @@ extension UIViewController {
         hud.hide(animated: true, afterDelay: 2)
     }
     
+    // 用于在本 vc 调用，让他显示到别的 vc （如父 vc） 里去
+    func showTextHUD(_ title: String, in view: UIView, _ subTitle: String? = nil) {
+        let hud = MBProgressHUD.showAdded(to: view, animated: true)
+        hud.mode = .text // 不指定的话显示菊花和下面配置的文本
+        hud.label.text = title
+        hud.detailsLabel.text = subTitle
+        hud.hide(animated: true, afterDelay: 2)
+    }
+    
     func hideKeyboardWithTappedAround() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(dissmissKeyboard))
         tap.cancelsTouchesInView = false

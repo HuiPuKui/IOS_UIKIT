@@ -103,3 +103,5 @@ let kLCServerURL = "https://1vm29vo6.lc-cn-n1-shared.com"
 // User 表
 let kNickNameCol = "nickName"
 let kAvatarCol = "avatar"
+let kGenderCol = "gender"
+let kIntroCol = "intro"
