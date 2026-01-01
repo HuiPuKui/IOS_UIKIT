@@ -14,6 +14,8 @@ extension UIViewController {
         if let _ = user.get(kNickNameCol) {
             self.dismissAndShowMeVC()
         } else {
+            let group = DispatchGroup()
+            
             // 首次登录（即注册）
             let randomAvatar = UIImage(named: "avatarPH\(Int.random(in: 1...4))")!
             
@@ -21,7 +23,7 @@ extension UIViewController {
                 let avatarFile = LCFile(payload: .data(data: avatarData))
                 avatarFile.mimeType = "image/jpeg"
                 
-                avatarFile.save(to: user, as: kAvatarCol)
+                avatarFile.save(to: user, as: kAvatarCol, group: group)
             }
             
             do {
@@ -35,25 +37,28 @@ extension UIViewController {
                 return
             }
             
-            user.save { result in
-                if case .success = result {
-                    
-                }
+            group.enter()
+            user.save { _ in
+                group.leave()
             }
             
-            self.dismissAndShowMeVC()
+            group.notify(queue: .main) {
+                self.dismissAndShowMeVC()
+            }
         }
     }
     
     func dismissAndShowMeVC() {
-        
-        let mainSB = UIStoryboard(name: "Main", bundle: nil)
-        let meVC = mainSB.instantiateViewController(identifier: kMeVCID)
-        
-        loginAndMeParentVC.removeChildren()
-        loginAndMeParentVC.add(child: meVC)
-        
-        self.dismiss(animated: true)
+        self.hideLoadHUD()
+        DispatchQueue.main.async {
+            let mainSB = UIStoryboard(name: "Main", bundle: nil)
+            let meVC = mainSB.instantiateViewController(identifier: kMeVCID)
+            
+            loginAndMeParentVC.removeChildren()
+            loginAndMeParentVC.add(child: meVC)
+            
+            self.dismiss(animated: true)
+        }
     }
     
 }
