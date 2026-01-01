@@ -12,7 +12,7 @@ extension UIViewController {
     
     func configAfterLogin(_ user: LCUser, _ nickName: String, _ email: String = "") {
         if let _ = user.get(kNickNameCol) {
-            
+            self.dismissAndShowMeVC()
         } else {
             // 首次登录（即注册）
             let randomAvatar = UIImage(named: "avatarPH\(Int.random(in: 1...4))")!
@@ -40,7 +40,20 @@ extension UIViewController {
                     
                 }
             }
+            
+            self.dismissAndShowMeVC()
         }
+    }
+    
+    func dismissAndShowMeVC() {
+        
+        let mainSB = UIStoryboard(name: "Main", bundle: nil)
+        let meVC = mainSB.instantiateViewController(identifier: kMeVCID)
+        
+        loginAndMeParentVC.removeChildren()
+        loginAndMeParentVC.add(child: meVC)
+        
+        self.dismiss(animated: true)
     }
     
 }

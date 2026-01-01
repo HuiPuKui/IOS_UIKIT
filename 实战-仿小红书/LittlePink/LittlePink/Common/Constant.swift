@@ -15,6 +15,8 @@ let kWaterfallVCID = "WaterfallVCID"
 let kNoteEditVCID = "NoteEditVCID"
 let kChannelTableVCID = "ChannelTableVCID"
 let kLoginNaviID = "LoginNaviID"
+let kLoginVCID = "LoginVCID"
+let kMeVCID = "MeVCID"
 
 // MARK: Cell相关ID
 let kWaterfallCellID = "WaterfallCellID"

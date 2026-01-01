@@ -849,3 +849,9 @@ if let cancelButton = self.searchBar.value(forKey: "cancelButton") as? UIButton 
  **正则表达式 – 教程 | 菜鸟教程:** `https://www.runoob.com/regexp/regexp-tutorial.html`
 
  **TinyPNG – 压缩PNG图片的同时保留透明度:** `https://tinify.cn/`
+
+ ## 19-登录和退出登录
+
+ **前端应该知道的web登录 - 知乎:** `https://zhuanlan.zhihu.com/p/62336927`
+
+ **#if和#endif — Swift 官方文档:** `https://docs.swift.org/swift-book/documentation/the-swift-programming-language/statements/`

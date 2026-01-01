@@ -229,6 +229,27 @@ extension UIViewController {
         self.view.endEditing(true)
     }
     
+    func add(child vc: UIViewController) {
+        self.addChild(vc)
+        vc.view.frame = view.bounds
+        self.view.addSubview(vc.view)
+        vc.didMove(toParent: self)
+    }
+    
+    func remove(child vc: UIViewController) {
+        vc.willMove(toParent: nil)
+        vc.view.removeFromSuperview()
+        vc.removeFromParent()
+    }
+    
+    func removeChildren() {
+        if !self.children.isEmpty {
+            for vc in self.children {
+                self.remove(child: vc)
+            }
+        }
+    }
+    
 }
 
 extension Bundle {
