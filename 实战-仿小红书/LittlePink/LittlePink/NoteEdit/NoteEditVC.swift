@@ -8,6 +8,7 @@
 import UIKit
 import AMapSearchKit
 import AMapLocationKit
+import LeanCloud
 
 
 class NoteEditVC: UIViewController {
@@ -84,6 +85,42 @@ class NoteEditVC: UIViewController {
     @IBAction func postNote(_ sender: Any) {
         
         guard self.isvVlidateNote() else { return }
+        
+        do {
+            let noteGroup = DispatchGroup()
+            
+            let note = LCObject(className: kNoteTable)
+            
+            if let videoURL = self.videoURL {
+                let video = LCFile(payload: .fileURL(fileURL: videoURL))
+                video.save(to: note, as: kVideoCol, group: noteGroup)
+            }
+            
+            if let coverPhotoData = photos[0].jpeg(.high) {
+                let coverPhoto = LCFile(payload: .data(data: coverPhotoData))
+                coverPhoto.mimeType = "image/jpeg"
+                coverPhoto.save(to: note, as: kCoverPhotoCol, group: noteGroup)
+            }
+            
+            try note.set(kTitleCol, value: self.titleTextField.exactText)
+            try note.set(kTextCol, value: self.textView.exactText)
+            try note.set(kChannelCol, value: self.channel.isEmpty ? "推荐" : self.channel)
+            try note.set(kSubChannelCol, value: self.subChannel)
+            try note.set(kPOINameCol, value: self.poiName)
+            
+            noteGroup.enter()
+            note.save { res in
+                print("存储一般数据成功/失败")
+                noteGroup.leave()
+            }
+            
+            noteGroup.notify(queue: .main) {
+                
+            }
+            
+        } catch {
+            print("存笔记进云端失败: \(error)")
+        }
         
     }
     

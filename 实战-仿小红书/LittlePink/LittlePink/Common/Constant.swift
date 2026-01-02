@@ -102,11 +102,31 @@ let kLCAppID = "1Vm29vO6ghufiv5tLwcPJ2Bv-gzGzoHsz"
 let kLCAppKey = "Y2x0cYI7xX9snaAKVxDc7c0F"
 let kLCServerURL = "https://1vm29vo6.lc-cn-n1-shared.com"
 
+// 表
+let kNoteTable = "Note"
+
 // User 表
 let kNickNameCol = "nickName"
 let kAvatarCol = "avatar"
 let kGenderCol = "gender"
 let kIntroCol = "intro"
+
+//Note表
+let kCoverPhotoCol = "coverPhoto"
+let kCoverPhotoRatioCol = "coverPhotoRatio"
+let kPhotosCol = "photos"
+let kVideoCol = "video"
+let kTitleCol = "title"
+let kTextCol = "text"
+let kChannelCol = "channel"
+let kSubChannelCol = "subChannel"
+let kPOINameCol = "poiName"
+let kIsVideoCol = "isVideo"
+let kLikeCountCol = "likeCount"
+let kFavCountCol = "favCount"
+let kCommentCountCol = "commentCount"
+let kAuthorCol = "author"
+let kHasEditCol = "hasEdit"
 
 // MARK: - 全局函数
 func largeIcon(_ iconName: String, with color: UIColor = .label) -> UIImage {
