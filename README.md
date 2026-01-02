@@ -855,3 +855,9 @@ if let cancelButton = self.searchBar.value(forKey: "cancelButton") as? UIButton 
  **前端应该知道的web登录 - 知乎:** `https://zhuanlan.zhihu.com/p/62336927`
 
  **#if和#endif — Swift 官方文档:** `https://docs.swift.org/swift-book/documentation/the-swift-programming-language/statements/`
+
+ ## 20-发布笔记至云端
+
+ **Orderella/PopupDialog- A simple, customizable popup dialog for iOS written in Swift. Replaces UIAlertController alert style.:** `https://github.com/Orderella/PopupDialog`
+
+ **huri000/SwiftEntryKit- SwiftEntryKit is a presentation library for iOS. It can be used to easily display overlays within your iOS apps.:** `https://github.com/huri000/SwiftEntryKit`
