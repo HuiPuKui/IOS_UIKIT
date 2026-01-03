@@ -23,7 +23,7 @@ extension LCFile {
                         table.save { result in
                             switch result {
                             case .success:
-//                                print("文件已关联")
+//                                print("文件已关联/文件已存入\(record)字段")
                                 break 
                             case .failure(error: let error):
                                 print("保存表的数据失败: \(error)")
