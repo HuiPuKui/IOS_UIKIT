@@ -274,6 +274,132 @@
             </objects>
             <point key="canvasLocation" x="4211.4503816793895" y="-1125.3521126760563"/>
         </scene>
+        <!--Note DetailVC-->
+        <scene sceneID="xvn-De-e7B">
+            <objects>
+                <viewController id="I5p-1X-Jhl" customClass="NoteDetailVC" customModule="LittlePink" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lVV-lB-5Bz">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r7b-XN-ZEa">
+                                <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3Gr-84-Jr8">
+                                        <rect key="frame" x="8" y="6" width="377" height="32"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cMD-gk-r3L">
+                                                <rect key="frame" x="0.0" y="0.0" width="135.66666666666666" height="32"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OwZ-xl-Eni">
+                                                        <rect key="frame" x="0.0" y="0.0" width="31.666666666666668" height="32"/>
+                                                        <color key="tintColor" systemColor="labelColor"/>
+                                                        <inset key="contentEdgeInsets" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal">
+                                                            <imageReference key="image" image="chevron.left" catalog="system" symbolScale="large"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHQ-kF-d0R">
+                                                        <rect key="frame" x="39.666666666666664" y="0.0" width="31.999999999999993" height="32"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="32" id="1FN-NC-LSZ"/>
+                                                            <constraint firstAttribute="width" constant="32" id="V8a-uP-Gd2"/>
+                                                        </constraints>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" image="avatarPH1"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                                                <real key="value" value="16"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Odz-Sv-KUz">
+                                                        <rect key="frame" x="79.666666666666671" y="0.0" width="56.000000000000014" height="32"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="作者昵称">
+                                                            <color key="titleColor" systemColor="labelColor"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="dLW-0a-6kP">
+                                                <rect key="frame" x="276" y="4" width="101" height="24"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="txn-dd-4Wv">
+                                                        <rect key="frame" x="0.0" y="0.0" width="54" height="24"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="24" id="2t7-9w-VYi"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        <inset key="contentEdgeInsets" minX="14" minY="0.0" maxX="14" maxY="0.0"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="关注">
+                                                            <color key="titleColor" name="main"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                                                <real key="value" value="12"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcj-qI-2Yg">
+                                                        <rect key="frame" x="66" y="0.0" width="35" height="24"/>
+                                                        <color key="tintColor" systemColor="labelColor"/>
+                                                        <inset key="contentEdgeInsets" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" image="square.and.arrow.up" catalog="system"/>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="3Gr-84-Jr8" secondAttribute="trailing" constant="8" id="KJE-BU-NhW"/>
+                                    <constraint firstAttribute="height" constant="44" id="MuO-Yd-Wc4"/>
+                                    <constraint firstItem="3Gr-84-Jr8" firstAttribute="centerY" secondItem="r7b-XN-ZEa" secondAttribute="centerY" id="Y08-wY-gl2"/>
+                                    <constraint firstItem="3Gr-84-Jr8" firstAttribute="leading" secondItem="r7b-XN-ZEa" secondAttribute="leading" constant="8" id="pbi-Tg-Z9w"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fXg-SF-URt">
+                                <rect key="frame" x="0.0" y="103" width="393" height="671"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="byn-QM-wks">
+                                <rect key="frame" x="0.0" y="774" width="393" height="44"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="tQZ-WP-hOr"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="c7i-gf-chJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="byn-QM-wks" firstAttribute="top" secondItem="fXg-SF-URt" secondAttribute="bottom" id="BSe-eL-ZDS"/>
+                            <constraint firstItem="byn-QM-wks" firstAttribute="leading" secondItem="c7i-gf-chJ" secondAttribute="leading" id="FSn-i9-MMj"/>
+                            <constraint firstItem="r7b-XN-ZEa" firstAttribute="top" secondItem="c7i-gf-chJ" secondAttribute="top" id="IOv-tF-rZs"/>
+                            <constraint firstItem="r7b-XN-ZEa" firstAttribute="leading" secondItem="c7i-gf-chJ" secondAttribute="leading" id="L5P-xw-iNJ"/>
+                            <constraint firstItem="c7i-gf-chJ" firstAttribute="trailing" secondItem="fXg-SF-URt" secondAttribute="trailing" id="Mcl-LL-Qvo"/>
+                            <constraint firstItem="fXg-SF-URt" firstAttribute="top" secondItem="r7b-XN-ZEa" secondAttribute="bottom" id="Nzo-dJ-LBR"/>
+                            <constraint firstItem="c7i-gf-chJ" firstAttribute="trailing" secondItem="byn-QM-wks" secondAttribute="trailing" id="db8-56-n5n"/>
+                            <constraint firstItem="fXg-SF-URt" firstAttribute="leading" secondItem="c7i-gf-chJ" secondAttribute="leading" id="eeD-M5-BVo"/>
+                            <constraint firstItem="byn-QM-wks" firstAttribute="bottom" secondItem="c7i-gf-chJ" secondAttribute="bottom" id="jmy-4X-G1j"/>
+                            <constraint firstItem="r7b-XN-ZEa" firstAttribute="trailing" secondItem="c7i-gf-chJ" secondAttribute="trailing" id="lfK-Dl-DeX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="authorAvatarBtn" destination="ZHQ-kF-d0R" id="ScM-fj-HUC"/>
+                        <outlet property="authorNickNameBtn" destination="Odz-Sv-KUz" id="tNA-E3-gqM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lv6-PC-yD0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5177.8625954198469" y="-1125.3521126760563"/>
+        </scene>
         <!--Near ByVC-->
         <scene sceneID="hDa-eW-xRn">
             <objects>
@@ -1557,6 +1683,7 @@
         <image name="2" width="1080" height="1440"/>
         <image name="AlipayLogo" width="421" height="421"/>
         <image name="AppleLogo" width="44" height="44"/>
+        <image name="avatarPH1" width="500" height="500"/>
         <image name="cart.fill" catalog="system" width="128" height="102"/>
         <image name="chevron.left" catalog="system" width="97" height="128"/>
         <image name="chevron.right" catalog="system" width="97" height="128"/>
@@ -1568,6 +1695,7 @@
         <image name="play.circle" catalog="system" width="128" height="123"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="plus.rectangle.fill" catalog="system" width="128" height="93"/>
+        <image name="square.and.arrow.up" catalog="system" width="110" height="128"/>
         <image name="trash" catalog="system" width="117" height="128"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="main">
