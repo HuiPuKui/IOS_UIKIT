@@ -861,3 +861,11 @@ if let cancelButton = self.searchBar.value(forKey: "cancelButton") as? UIButton 
  **Orderella/PopupDialog- A simple, customizable popup dialog for iOS written in Swift. Replaces UIAlertController alert style.:** `https://github.com/Orderella/PopupDialog`
 
  **huri000/SwiftEntryKit- SwiftEntryKit is a presentation library for iOS. It can be used to easily display overlays within your iOS apps.:** `https://github.com/huri000/SwiftEntryKit`
+
+ ## 21-笔记详情页UI
+
+ **Adding Headers and Footers to Table Sections | Apple Developer Documentation:** `https://developer.apple.com/documentation/uikit/adding-headers-and-footers-to-table-sections`
+
+ **janselv/fave-button- FaveButton is an iOS cute animated like button written in Swift.:** `https://github.com/janselv/fave-button`
+
+ **zvonicek/ImageSlideshow- Swift image slideshow with circular scrolling, timer and full screen viewer:** `https://github.com/zvonicek/ImageSlideshow`
