@@ -10,13 +10,14 @@ import UIKit
 class NoteDetailVC: UIViewController {
 
     @IBOutlet weak var authorAvatarBtn: UIButton!
-    
     @IBOutlet weak var authorNickNameBtn: UIButton!
+    @IBOutlet weak var followBtn: UIButton!
+    @IBOutlet weak var shareBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.setUI()
     }
     
 
