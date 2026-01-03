@@ -9,7 +9,6 @@ import UIKit
 import LeanCloud
 
 
-
 class MeVC: UIViewController {
 
     override func viewDidLoad() {
@@ -18,7 +17,6 @@ class MeVC: UIViewController {
         // 去掉返回按钮文字
         self.navigationItem.backButtonDisplayMode = .minimal
     }
-    
 
     @IBAction func logoutTest(_ sender: Any) {
         LCUser.logOut()
@@ -29,5 +27,10 @@ class MeVC: UIViewController {
         loginAndMeParentVC.add(child: loginVC)
     }
 
-
+    @IBAction func showDraftNotes(_ sender: Any) {
+        let navi = self.storyboard!.instantiateViewController(identifier: kDraftNotesNaviID)
+        navi.modalPresentationStyle = .fullScreen
+        self.present(navi, animated: true)
+    }
+    
 }

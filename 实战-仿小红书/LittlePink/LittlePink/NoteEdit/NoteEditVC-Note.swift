@@ -80,10 +80,29 @@ extension NoteEditVC {
                 self.showTextHUD("发布笔记成功", false)
             }
             
-            self.dismiss(animated: true)
+            if draftNote != nil {
+                self.navigationController?.popViewController(animated: true)
+            } else {
+                self.dismiss(animated: true)
+            }
             
         } catch {
             print("字段赋值失败: \(error)")
+        }
+    }
+    
+    func postDraftNote(_ draftNote: DraftNote) {
+        self.createNote()
+        
+        backgroundContext.perform {
+            // 数据
+            backgroundContext.delete(draftNote)
+            appDelegate.saveBackgroundContext()
+
+            // UI
+            DispatchQueue.main.async {
+                self.postDraftNoteFinished?()
+            }
         }
     }
     

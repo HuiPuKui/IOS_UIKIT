@@ -9,7 +9,7 @@ import Foundation
 
 extension NoteEditVC {
     
-    func isvVlidateNote() -> Bool {
+    func isValidateNote() -> Bool {
         guard !self.photos.isEmpty else {
             showTextHUD("至少需要传一张图片哦")
             return false

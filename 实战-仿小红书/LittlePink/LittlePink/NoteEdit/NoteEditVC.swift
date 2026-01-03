@@ -14,6 +14,7 @@ class NoteEditVC: UIViewController {
     
     var draftNote: DraftNote?
     var updateDraftNoteFinished: (() -> ())?
+    var postDraftNoteFinished: (() -> ())?
 
     var photos: [UIImage] = []
     
@@ -71,7 +72,7 @@ class NoteEditVC: UIViewController {
     
     @IBAction func saveDraftNote(_ sender: Any) {
             
-        guard self.isvVlidateNote() else { return }
+        guard self.isValidateNote() else { return }
         
         if let draftNote = self.draftNote {
             self.updateDraftNote(draftNote)
@@ -83,9 +84,13 @@ class NoteEditVC: UIViewController {
     
     @IBAction func postNote(_ sender: Any) {
         
-        guard self.isvVlidateNote() else { return }
+        guard self.isValidateNote() else { return }
         
-        self.createNote()
+        if let draftNote = self.draftNote {
+            self.postDraftNote(draftNote)
+        } else {
+            self.createNote()
+        }
         
     }
     

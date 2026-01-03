@@ -17,6 +17,7 @@ let kChannelTableVCID = "ChannelTableVCID"
 let kLoginNaviID = "LoginNaviID"
 let kLoginVCID = "LoginVCID"
 let kMeVCID = "MeVCID"
+let kDraftNotesNaviID = "DraftNotesNaviID"
 
 // MARK: Cell相关ID
 let kWaterfallCellID = "WaterfallCellID"
