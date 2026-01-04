@@ -21,6 +21,7 @@ target 'LittlePink' do
   pod 'AlipaySDK-iOS'
   pod 'LeanCloud'
   pod 'PopupDialog', '~> 1.1'
+  pod 'FaveButton'
 
 end
 
