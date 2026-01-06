@@ -68,6 +68,9 @@ extension NoteEditVC {
             try note.set(kChannelCol, value: self.channel.isEmpty ? "推荐" : self.channel)
             try note.set(kSubChannelCol, value: self.subChannel)
             try note.set(kPOINameCol, value: self.poiName)
+            try note.set(kLikeCountCol, value: 0)
+            try note.set(kFavCountCol, value: 0)
+            try note.set(kCommentCountCol, value: 0)
             
             noteGroup.enter()
             note.save { res in

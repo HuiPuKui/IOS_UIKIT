@@ -231,7 +231,11 @@
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="304" height="317"/>
                                 <connections>
+                                    <outlet property="avatarImageView" destination="Ztn-ob-ma7" id="hda-N7-RhJ"/>
                                     <outlet property="imageView" destination="3ue-HB-YDK" id="6Md-YP-WLL"/>
+                                    <outlet property="likeBtn" destination="4mH-Zc-ayW" id="OTJ-vn-IaW"/>
+                                    <outlet property="nickNameLabel" destination="3Cf-uz-3py" id="jr8-TC-0WV"/>
+                                    <outlet property="titleLabel" destination="IVt-Zi-erd" id="4Bp-FZ-PSQ"/>
                                 </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="DraftNoteWaterfallCellID" id="Bzc-Mo-15Z" customClass="DraftNoteWaterfallCell" customModule="LittlePink" customModuleProvider="target">

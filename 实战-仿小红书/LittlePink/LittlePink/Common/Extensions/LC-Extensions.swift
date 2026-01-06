@@ -42,3 +42,23 @@ extension LCFile {
     }
     
 }
+
+extension LCObject {
+    
+    func getExactStringVal(_ col: String) -> String {
+        return self.get(col)?.stringValue ?? ""
+    }
+    
+    func getExactIntVal(_ col: String) -> Int {
+        return self.get(col)?.intValue ?? 0
+    }
+    
+    func getExactDoubleVal(_ col: String) -> Double {
+        return self.get(col)?.doubleValue ?? 1
+    }
+    
+    func getExactBoolVal(_ col: String) -> Bool {
+        return self.get(col)?.boolValue ?? true
+    }
+    
+}

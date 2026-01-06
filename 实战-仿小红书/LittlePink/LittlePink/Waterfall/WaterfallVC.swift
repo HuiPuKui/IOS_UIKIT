@@ -8,13 +8,18 @@
 import UIKit
 import CHTCollectionViewWaterfallLayout
 import XLPagerTabStrip
+import LeanCloud
 
 class WaterfallVC: UICollectionViewController {
     
     var channel = ""
+    
+    // 草稿页相关数据
+    var isMyDraft = false
     var draftNotes: [DraftNote] = []
     
-    var isMyDraft = true
+    // 首页相关数据
+    var notes: [LCObject] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()

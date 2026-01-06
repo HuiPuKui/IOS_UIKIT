@@ -42,8 +42,7 @@ extension WaterfallVC {
                 withReuseIdentifier: kWaterfallCellID,
                 for: indexPath
             ) as! WaterfallCell
-            
-            cell.imageView.image = UIImage(named: "\(indexPath.item + 1)")
+            cell.note = self.notes[indexPath.item]
             return cell
         }
         
