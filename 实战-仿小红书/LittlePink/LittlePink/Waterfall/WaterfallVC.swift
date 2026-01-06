@@ -26,6 +26,7 @@ class WaterfallVC: UICollectionViewController {
 
         self.config()
         
+        self.getNotes()
         self.getDraftNotes()
     }
 

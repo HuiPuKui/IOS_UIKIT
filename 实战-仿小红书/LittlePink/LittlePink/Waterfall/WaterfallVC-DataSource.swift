@@ -22,7 +22,7 @@ extension WaterfallVC {
         if self.isMyDraft {
             return self.draftNotes.count
         } else {
-            return 13
+            return self.notes.count
         }
     }
 

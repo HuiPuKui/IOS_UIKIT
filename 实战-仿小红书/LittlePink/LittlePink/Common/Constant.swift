@@ -97,6 +97,9 @@ let kAppScheme = "LittlePink"
 let kPhoneRegEx = "^1\\d{10}$"
 let kAuthCodeRegEx = "^\\d{6}$"
 
+// 云端
+let kNotesOffset = 10
+
 // MARK: - LeanCloud
 // 配置相关
 let kLCAppID = "1Vm29vO6ghufiv5tLwcPJ2Bv-gzGzoHsz"

@@ -7,6 +7,7 @@
 
 import CoreData
 import Foundation
+import LeanCloud
 
 extension WaterfallVC {
     
@@ -45,6 +46,20 @@ extension WaterfallVC {
             
             DispatchQueue.main.async {
                 self.hideLoadHUD()
+            }
+        }
+    }
+    
+    func getNotes() {
+        let query = LCQuery(className: kNoteTable)
+        
+        query.whereKey(kChannelCol, .equalTo(self.channel))
+        query.limit = kNotesOffset
+        
+        query.find { result in
+            if case let .success(objects: notes) = result {
+                self.notes = notes
+                self.collectionView.reloadData()
             }
         }
     }
