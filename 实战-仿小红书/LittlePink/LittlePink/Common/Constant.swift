@@ -49,7 +49,7 @@ let screenRect = UIScreen.main.bounds
 // MARK: - 业务逻辑相关
 // 瀑布流
 let kWaterfallPadding: CGFloat = 4
-let kDraftNoteWaterfallCellBottomViewH: CGFloat = 84
+let kDraftNoteWaterfallCellBottomViewH: CGFloat = 68
 
 let kChannels = ["推荐", "旅行", "娱乐", "才艺", "美妆", "白富美", "美食", "萌宠"]
 
