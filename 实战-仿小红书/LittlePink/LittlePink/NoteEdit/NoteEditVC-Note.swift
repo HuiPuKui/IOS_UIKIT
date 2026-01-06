@@ -63,6 +63,9 @@ extension NoteEditVC {
                 }
             }
             
+            let coverPhotoSize = self.photos[0].size
+            let coverPhotoRatio = Double(coverPhotoSize.height / coverPhotoSize.width)
+            try note.set(kCoverPhotoRatioCol, value: coverPhotoRatio)
             try note.set(kTitleCol, value: self.titleTextField.exactText)
             try note.set(kTextCol, value: self.textView.exactText)
             try note.set(kChannelCol, value: self.channel.isEmpty ? "推荐" : self.channel)

@@ -21,7 +21,6 @@ class WaterfallCell: UICollectionViewCell {
             guard let note = self.note else { return }
             
             self.titleLabel.text = note.getExactStringVal(kTitleCol)
-            self.nickNameLabel.text = note.getExactStringVal(kNickNameCol)
             self.likeBtn.setTitle("\(note.getExactIntVal(kLikeCountCol))", for: .normal)
             
             // TODO: 点赞功能 + 判断是否已点赞

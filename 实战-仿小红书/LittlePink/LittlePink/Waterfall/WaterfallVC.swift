@@ -53,8 +53,9 @@ extension WaterfallVC: CHTCollectionViewDelegateWaterfallLayout {
             let imageRatio = imageH / imageW
             cellH = cellW * imageRatio + kDraftNoteWaterfallCellBottomViewH
         } else {
-            cellW = UIImage(named: "\(indexPath.item + 1)")!.size.width
-            cellH = UIImage(named: "\(indexPath.item + 1)")!.size.height
+            let note = self.notes[indexPath.item]
+            let coverPhotoRatio = CGFloat(note.getExactDoubleVal(kCoverPhotoRatioCol))
+            cellH = cellW * coverPhotoRatio + kWaterfallCellBottomViewH
         }
         
         return CGSize(width: cellW, height: cellH)

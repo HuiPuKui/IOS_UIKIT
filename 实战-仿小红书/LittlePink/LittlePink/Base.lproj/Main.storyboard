@@ -219,6 +219,7 @@
                                             </subviews>
                                         </stackView>
                                     </subviews>
+                                    <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstItem="3ue-HB-YDK" firstAttribute="top" secondItem="dV3-iz-23y" secondAttribute="top" id="28p-ii-49f"/>
                                         <constraint firstAttribute="trailing" secondItem="cc4-TD-cEv" secondAttribute="trailing" constant="10" id="2XF-Ys-xLE"/>
@@ -228,6 +229,11 @@
                                         <constraint firstItem="3ue-HB-YDK" firstAttribute="leading" secondItem="dV3-iz-23y" secondAttribute="leading" id="Vnx-ZZ-XW0"/>
                                         <constraint firstAttribute="trailing" secondItem="3ue-HB-YDK" secondAttribute="trailing" id="fo4-3M-h4k"/>
                                     </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                            <real key="value" value="5"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="304" height="317"/>
                                 <connections>
@@ -289,6 +295,7 @@
                                             </constraints>
                                         </imageView>
                                     </subviews>
+                                    <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstItem="o6K-vI-zyh" firstAttribute="top" secondItem="QJe-oY-Opo" secondAttribute="top" id="7Zm-ye-m4s"/>
                                         <constraint firstAttribute="trailing" secondItem="u5i-yY-UI0" secondAttribute="trailing" constant="16" id="aKY-Za-okv"/>
