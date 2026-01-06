@@ -869,3 +869,9 @@ if let cancelButton = self.searchBar.value(forKey: "cancelButton") as? UIButton 
  **janselv/fave-button- FaveButton is an iOS cute animated like button written in Swift.:** `https://github.com/janselv/fave-button`
 
  **zvonicek/ImageSlideshow- Swift image slideshow with circular scrolling, timer and full screen viewer:** `https://github.com/zvonicek/ImageSlideshow`
+
+ ## 22-从云端取出笔记
+
+ **GitHub - onevcat/Kingfisher- A lightweight, pure-Swift library for downloading and caching images from the web.:** `https://github.com/onevcat/Kingfisher`
+
+ **Kingfisher的基本使用 - 简书:** `https://www.jianshu.com/p/e025cec4197a`
