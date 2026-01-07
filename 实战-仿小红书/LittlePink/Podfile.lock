@@ -19,6 +19,7 @@ PODS:
   - JCore (5.2.2)
   - JVerification (3.4.4):
     - JCore (>= 2.1.6)
+  - Kingfisher (6.3.1)
   - KMPlaceholderTextView (1.4.0)
   - LeanCloud (17.11.0):
     - LeanCloud/RTM (= 17.11.0)
@@ -51,6 +52,7 @@ DEPENDENCIES:
   - FaveButton
   - ImageSlideshow (~> 1.9.0)
   - JVerification
+  - Kingfisher (~> 6.0)
   - KMPlaceholderTextView (~> 1.4.0)
   - LeanCloud
   - MBProgressHUD (~> 1.2.0)
@@ -75,6 +77,7 @@ SPEC REPOS:
     - ImageSlideshow
     - JCore
     - JVerification
+    - Kingfisher
     - KMPlaceholderTextView
     - LeanCloud
     - MBProgressHUD
@@ -101,6 +104,7 @@ SPEC CHECKSUMS:
   ImageSlideshow: be305b54eaf2b2cfc7a7141c7c734605d44dc07d
   JCore: 310b8390501532c38c3baf43d1ebb16d782032af
   JVerification: 1195915369583b270d3bbb6d7c586c390be3ff09
+  Kingfisher: 016c8b653a35add51dd34a3aba36b580041acc74
   KMPlaceholderTextView: 2206c3df39979e9396e2d96fa9f427a8951121b0
   LeanCloud: 808532530fae85682b1747bf248bb3dc64a37f13
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
@@ -113,6 +117,6 @@ SPEC CHECKSUMS:
   XLPagerTabStrip: 27f3bfe23c53b4251c6481b06b1c289458a3fc1d
   YPImagePicker: afc81b3cffab05a6e7261c5daf80dc31b4e917b4
 
-PODFILE CHECKSUM: f107eb41be4ec8d1bb14b85bc5eec64832d82f66
+PODFILE CHECKSUM: 0013e2d9c4cc7a00de13cb062e76433efc518c43
 
 COCOAPODS: 1.16.2

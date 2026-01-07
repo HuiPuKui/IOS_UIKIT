@@ -7,6 +7,7 @@
 
 import UIKit
 import LeanCloud
+import Kingfisher
 
 class WaterfallCell: UICollectionViewCell {
     
@@ -24,8 +25,10 @@ class WaterfallCell: UICollectionViewCell {
             else { return }
             
             let coverPhotoURL = note.getImageURL(from: kCoverPhotoCol, .coverPhoto)
+            self.imageView.kf.setImage(with: coverPhotoURL, options: [.transition(.fade(0.2))])
             
             let avatarURL = author.getImageURL(from: kAvatarCol, .avatar)
+            self.avatarImageView.kf.setImage(with: avatarURL)
             
             self.titleLabel.text = note.getExactStringVal(kTitleCol)
             self.likeBtn.setTitle("\(note.getExactIntVal(kLikeCountCol))", for: .normal)
