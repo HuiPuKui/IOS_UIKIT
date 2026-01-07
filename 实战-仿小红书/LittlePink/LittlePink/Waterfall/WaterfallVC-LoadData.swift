@@ -54,6 +54,8 @@ extension WaterfallVC {
         let query = LCQuery(className: kNoteTable)
         
         query.whereKey(kChannelCol, .equalTo(self.channel))
+        query.whereKey(kAuthorCol, .included)
+        query.whereKey(kUpdatedAtCol, .descending)
         query.limit = kNotesOffset
         
         query.find { result in

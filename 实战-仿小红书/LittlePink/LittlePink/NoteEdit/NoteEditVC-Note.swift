@@ -75,6 +75,9 @@ extension NoteEditVC {
             try note.set(kFavCountCol, value: 0)
             try note.set(kCommentCountCol, value: 0)
             
+            // 笔记的作者
+            try note.set(kAuthorCol, value: LCApplication.default.currentUser)
+            
             noteGroup.enter()
             note.save { res in
 //                print("存储一般数据成功/失败")

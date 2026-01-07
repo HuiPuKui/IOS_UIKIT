@@ -61,4 +61,24 @@ extension LCObject {
         return self.get(col)?.boolValue ?? true
     }
     
+    enum imageType {
+        case avatar
+        case coverPhoto
+    }
+    
+    func getImageURL(from col: String, _ type: imageType) -> URL {
+        if let file = self.get(col) as? LCFile,
+           let path = file.url?.stringValue,
+           let url = URL(string: path) {
+            return url
+        } else {
+            switch type {
+            case .avatar:
+                return Bundle.main.url(forResource: "avatarPH", withExtension: ".jpeg")!
+            case .coverPhoto:
+                return Bundle.main.url(forResource: "imagePH", withExtension: ".png")!
+            }
+        }
+    }
+    
 }

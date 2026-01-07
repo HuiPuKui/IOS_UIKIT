@@ -107,6 +107,10 @@ let kLCAppID = "1Vm29vO6ghufiv5tLwcPJ2Bv-gzGzoHsz"
 let kLCAppKey = "Y2x0cYI7xX9snaAKVxDc7c0F"
 let kLCServerURL = "https://1vm29vo6.lc-cn-n1-shared.com"
 
+// 通用字段
+let kCreatedAtCol = "createdAt"
+let kUpdatedAtCol = "updatedAt"
+
 // 表
 let kNoteTable = "Note"
 

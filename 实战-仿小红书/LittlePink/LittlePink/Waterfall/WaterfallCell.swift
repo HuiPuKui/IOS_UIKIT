@@ -18,7 +18,14 @@ class WaterfallCell: UICollectionViewCell {
     
     var note: LCObject? {
         didSet {
-            guard let note = self.note else { return }
+            guard
+                let note = self.note,
+                let author = note.get(kAuthorCol) as? LCUser
+            else { return }
+            
+            let coverPhotoURL = note.getImageURL(from: kCoverPhotoCol, .coverPhoto)
+            
+            let avatarURL = author.getImageURL(from: kAvatarCol, .avatar)
             
             self.titleLabel.text = note.getExactStringVal(kTitleCol)
             self.likeBtn.setTitle("\(note.getExactIntVal(kLikeCountCol))", for: .normal)
