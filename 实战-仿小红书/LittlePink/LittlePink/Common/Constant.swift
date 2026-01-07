@@ -18,6 +18,7 @@ let kLoginNaviID = "LoginNaviID"
 let kLoginVCID = "LoginVCID"
 let kMeVCID = "MeVCID"
 let kDraftNotesNaviID = "DraftNotesNaviID"
+let kNoteDetailVCID = "NoteDetailVCID"
 
 // MARK: Cell相关ID
 let kWaterfallCellID = "WaterfallCellID"

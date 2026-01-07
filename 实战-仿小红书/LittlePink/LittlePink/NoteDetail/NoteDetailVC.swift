@@ -7,9 +7,12 @@
 
 import UIKit
 import ImageSlideshow
+import LeanCloud
 
 class NoteDetailVC: UIViewController {
 
+    let note: LCObject
+    
     @IBOutlet weak var authorAvatarBtn: UIButton!
     @IBOutlet weak var authorNickNameBtn: UIButton!
     @IBOutlet weak var followBtn: UIButton!
@@ -18,6 +21,15 @@ class NoteDetailVC: UIViewController {
     @IBOutlet weak var tableHeaderView: UIView!
     @IBOutlet weak var imageSlideshow: ImageSlideshow!
     @IBOutlet weak var imageSlideShowHeight: NSLayoutConstraint!
+    
+    init?(coder: NSCoder, note: LCObject) {
+        self.note = note
+        super.init(coder: coder)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("必须传一些参数进来以构造本对象，不能单纯的用 storyboard!.instantiateViewController 构造本对象")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

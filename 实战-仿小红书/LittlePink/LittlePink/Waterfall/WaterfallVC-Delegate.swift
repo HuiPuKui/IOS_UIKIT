@@ -42,6 +42,14 @@ extension WaterfallVC {
                
         } else {
             
+            // 依赖注入(Dependency Injection)
+            let detailVC = self.storyboard!.instantiateViewController(identifier: kNoteDetailVCID) { coder in
+                return NoteDetailVC(coder: coder, note: self.notes[indexPath.item])
+            }
+            
+            detailVC.modalPresentationStyle = .fullScreen
+            self.present(detailVC, animated: true)
+            
         }
     }
     

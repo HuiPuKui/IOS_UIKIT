@@ -345,7 +345,7 @@
         <!--Note DetailVC-->
         <scene sceneID="xvn-De-e7B">
             <objects>
-                <viewController id="I5p-1X-Jhl" customClass="NoteDetailVC" customModule="LittlePink" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NoteDetailVCID" id="I5p-1X-Jhl" customClass="NoteDetailVC" customModule="LittlePink" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lVV-lB-5Bz">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
