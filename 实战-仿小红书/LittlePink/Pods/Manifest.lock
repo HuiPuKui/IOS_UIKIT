@@ -16,6 +16,9 @@ PODS:
   - ImageSlideshow (1.9.2):
     - ImageSlideshow/Core (= 1.9.2)
   - ImageSlideshow/Core (1.9.2)
+  - ImageSlideshow/Kingfisher (1.9.2):
+    - ImageSlideshow/Core
+    - Kingfisher (> 3.0)
   - JCore (5.2.2)
   - JVerification (3.4.4):
     - JCore (>= 2.1.6)
@@ -51,6 +54,7 @@ DEPENDENCIES:
   - DateToolsSwift
   - FaveButton
   - ImageSlideshow (~> 1.9.0)
+  - ImageSlideshow/Kingfisher
   - JVerification
   - Kingfisher (~> 6.0)
   - KMPlaceholderTextView (~> 1.4.0)
@@ -117,6 +121,6 @@ SPEC CHECKSUMS:
   XLPagerTabStrip: 27f3bfe23c53b4251c6481b06b1c289458a3fc1d
   YPImagePicker: afc81b3cffab05a6e7261c5daf80dc31b4e917b4
 
-PODFILE CHECKSUM: 0013e2d9c4cc7a00de13cb062e76433efc518c43
+PODFILE CHECKSUM: 145eff2efc8611238420c56f85514b7cdc91bc55
 
 COCOAPODS: 1.16.2

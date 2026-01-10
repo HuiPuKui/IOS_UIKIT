@@ -448,7 +448,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我是正文" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJF-Kk-tVV">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我是正文" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJF-Kk-tVV">
                                                     <rect key="frame" x="0.0" y="34" width="55.666666666666664" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" systemColor="secondaryLabelColor"/>
@@ -497,7 +497,7 @@
                                                             <color key="textColor" systemColor="secondaryLabelColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="423" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EP2-vj-Cum">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="328" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EP2-vj-Cum">
                                                             <rect key="frame" x="15.999999999999998" y="0.0" width="24.333333333333329" height="15.666666666666666"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <color key="textColor" systemColor="secondaryLabelColor"/>
@@ -698,11 +698,23 @@
                     <connections>
                         <outlet property="authorAvatarBtn" destination="ZHQ-kF-d0R" id="ScM-fj-HUC"/>
                         <outlet property="authorNickNameBtn" destination="Odz-Sv-KUz" id="tNA-E3-gqM"/>
+                        <outlet property="avatarImageView" destination="BjF-dh-Pi4" id="xCF-aF-bCv"/>
+                        <outlet property="channelBtn" destination="mDF-DO-FmR" id="azY-7v-kWy"/>
+                        <outlet property="commentCountBtn" destination="z5g-3K-xih" id="eo7-p8-K7w"/>
+                        <outlet property="commentCountLabel" destination="EP2-vj-Cum" id="MEf-r7-YV5"/>
+                        <outlet property="dateLabel" destination="T5o-8d-mcv" id="Yz0-Hy-8nz"/>
+                        <outlet property="favBtn" destination="eFI-Up-qjg" id="WDI-uM-7HV"/>
+                        <outlet property="favCountLabel" destination="gFy-cT-yns" id="4Pe-zT-Uyj"/>
                         <outlet property="followBtn" destination="txn-dd-4Wv" id="b2g-YP-QZn"/>
                         <outlet property="imageSlideShowHeight" destination="KRh-9G-Ss6" id="3aE-hR-ZEw"/>
                         <outlet property="imageSlideshow" destination="LQy-nd-ilK" id="k2e-PC-aAR"/>
+                        <outlet property="likeBtn" destination="r2p-Rc-Sxc" id="10a-uH-cSv"/>
+                        <outlet property="likeCountLabel" destination="M9C-ce-lof" id="UNe-nS-umh"/>
                         <outlet property="shareBtn" destination="hcj-qI-2Yg" id="fV1-GA-8Hl"/>
                         <outlet property="tableHeaderView" destination="FLT-ve-YXQ" id="dqu-gD-dxf"/>
+                        <outlet property="tableView" destination="fXg-SF-URt" id="JZq-rr-13W"/>
+                        <outlet property="textLabel" destination="wJF-Kk-tVV" id="k50-hw-XON"/>
+                        <outlet property="titleLabel" destination="udM-AM-TO4" id="WOL-xH-poQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lv6-PC-yD0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1998,8 +2010,8 @@
         <image name="cart.fill" catalog="system" width="128" height="102"/>
         <image name="chevron.left" catalog="system" width="97" height="128"/>
         <image name="chevron.right" catalog="system" width="97" height="128"/>
-        <image name="heart" catalog="system" width="128" height="107"/>
         <image name="heart" width="128" height="128"/>
+        <image name="heart" catalog="system" width="128" height="107"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="message.fill" catalog="system" width="128" height="114"/>
         <image name="number.circle.fill" catalog="system" width="128" height="123"/>
@@ -2023,28 +2035,28 @@
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="placeholderTextColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29803921570000003" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="quaternaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.17647058823529413" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.1764705882" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="secondarySystemBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29803921570000003" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

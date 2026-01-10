@@ -34,7 +34,7 @@ extension NoteEditVC {
             let photoGroup = DispatchGroup()
             var photoPaths: [Int: String] = [:]
             for (index, eachPhoto) in self.photos.enumerated() {
-                if let eachPhotoData = eachPhoto.pngData() {
+                if let eachPhotoData = eachPhoto.jpeg(.high) {
                     let photo = LCFile(payload: .data(data: eachPhotoData))
                     photoGroup.enter()
                     photo.save { res in

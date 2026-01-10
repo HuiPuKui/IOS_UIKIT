@@ -8,6 +8,7 @@
 import UIKit
 import ImageSlideshow
 import LeanCloud
+import FaveButton
 
 class NoteDetailVC: UIViewController {
 
@@ -21,6 +22,45 @@ class NoteDetailVC: UIViewController {
     @IBOutlet weak var tableHeaderView: UIView!
     @IBOutlet weak var imageSlideshow: ImageSlideshow!
     @IBOutlet weak var imageSlideShowHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    @IBOutlet weak var textLabel: UILabel!
+    @IBOutlet weak var channelBtn: UIButton!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var commentCountLabel: UILabel!
+    @IBOutlet weak var avatarImageView: UIImageView!
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var likeBtn: FaveButton!
+    @IBOutlet weak var likeCountLabel: UILabel!
+    @IBOutlet weak var favBtn: FaveButton!
+    @IBOutlet weak var favCountLabel: UILabel!
+    @IBOutlet weak var commentCountBtn: UIButton!
+    
+    var likeCount = 0 {
+        didSet {
+            self.likeCountLabel.text = self.likeCount == 0 ? "点赞" : self.likeCount.formattedStr
+        }
+    }
+    
+    var favCount = 0 {
+        didSet {
+            self.favCountLabel.text = self.favCount == 0 ? "收藏" : self.favCount.formattedStr
+        }
+    }
+    
+    var commentCount = 0 {
+        didSet {
+            self.commentCountLabel.text = "\(self.commentCount)"
+            self.commentCountBtn.setTitle(self.commentCount == 0 ? "评论" : self.commentCount.formattedStr, for: .normal)
+        }
+    }
+    
+    var author: LCUser? {
+        return self.note.get(kAuthorCol) as? LCUser
+    }
     
     init?(coder: NSCoder, note: LCObject) {
         self.note = note
@@ -36,14 +76,14 @@ class NoteDetailVC: UIViewController {
 
         self.config()
         
-        self.imageSlideshow.setImageInputs([
-            ImageSource(image: UIImage(named: "1")!),
-            ImageSource(image: UIImage(named: "2")!),
-            ImageSource(image: UIImage(named: "3")!)
-        ])
-        
-        let imageSize = UIImage(named: "1")!.size
-        self.imageSlideShowHeight.constant = (imageSize.height / imageSize.width) * screenRect.width
+//        self.imageSlideshow.setImageInputs([
+//            ImageSource(image: UIImage(named: "1")!),
+//            ImageSource(image: UIImage(named: "2")!),
+//            ImageSource(image: UIImage(named: "3")!)
+//        ])
+//        
+//        let imageSize = UIImage(named: "1")!.size
+//        self.imageSlideShowHeight.constant = (imageSize.height / imageSize.width) * screenRect.width
         
         self.setUI()
     }
