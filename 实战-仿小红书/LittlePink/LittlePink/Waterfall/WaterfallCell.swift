@@ -17,6 +17,16 @@ class WaterfallCell: UICollectionViewCell {
     @IBOutlet weak var nickNameLabel: UILabel!
     @IBOutlet weak var likeBtn: UIButton!
     
+    var likeCount = 0 {
+        didSet {
+            self.likeBtn.setTitle(self.likeCount.formattedStr, for: .normal)
+        }
+    }
+    
+    var isLike: Bool {
+        return self.likeBtn.isSelected
+    }
+    
     var note: LCObject? {
         didSet {
             guard
@@ -34,6 +44,44 @@ class WaterfallCell: UICollectionViewCell {
             self.likeBtn.setTitle("\(note.getExactIntVal(kLikeCountCol))", for: .normal)
             
             // TODO: 点赞功能 + 判断是否已点赞
+        }
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        let icon = UIImage(systemName: "heart.fill")?.withTintColor(mainColor, renderingMode: .alwaysOriginal)
+        self.likeBtn.setImage(icon, for: .selected)
+    }
+    
+    @IBAction func like(_ sender: Any) {
+        if let user = LCApplication.default.currentUser {
+            self.likeBtn.isSelected.toggle()
+            self.isLike ? (self.likeCount += 1) : (self.likeCount -= 1)
+            
+            guard let note = self.note else { return }
+            if self.isLike {
+                let userLike = LCObject(className: kUserLikeTable)
+                try? userLike.set(kUserCol, value: user)
+                try? userLike.set(kNoteCol, value: self.note)
+                userLike.save { _ in }
+                
+                try? note.increase(kLikeCountCol)
+            } else {
+                let query = LCQuery(className: kUserLikeTable)
+                query.whereKey(kUserCol, .equalTo(user))
+                query.whereKey(kNoteCol, .equalTo(note))
+                query.getFirst { res in
+                    if case let .success(object: userLike) = res {
+                        userLike.delete { _ in }
+                    }
+                }
+                
+                try? note.set(kLikeCountCol, value: self.likeCount)
+                note.save { _ in }
+            }
+        } else {
+            showGlobalTextHUD("请先登录哦")
         }
     }
     

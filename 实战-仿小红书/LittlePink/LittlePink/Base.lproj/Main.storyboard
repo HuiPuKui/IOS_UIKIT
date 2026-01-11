@@ -211,6 +211,9 @@
                                                                     <state key="normal" title="423" image="heart" catalog="system">
                                                                         <color key="titleColor" systemColor="secondaryLabelColor"/>
                                                                     </state>
+                                                                    <connections>
+                                                                        <action selector="like:" destination="0LO-Sz-OZ4" eventType="touchUpInside" id="lTc-qY-uaO"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                         </stackView>
@@ -367,6 +370,9 @@
                                                         <state key="normal">
                                                             <imageReference key="image" image="chevron.left" catalog="system" symbolScale="large"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="back:" destination="I5p-1X-Jhl" eventType="touchUpInside" id="sAO-js-9Hp"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHQ-kF-d0R">
                                                         <rect key="frame" x="39.666666666666664" y="0.0" width="31.999999999999993" height="32"/>
@@ -592,6 +598,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="36" id="C10-nO-rds"/>
                                                 </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="说点什么" image="pencil.and.outline" catalog="system"/>
                                                 <userDefinedRuntimeAttributes>
@@ -619,6 +626,9 @@
                                                                         <color key="value" name="main"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="like:" destination="I5p-1X-Jhl" eventType="touchUpInside" id="s90-s6-pFi"/>
+                                                                </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2.8万" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M9C-ce-lof">
                                                                 <rect key="frame" x="34" y="0.0" width="36.333333333333343" height="36"/>
@@ -644,6 +654,9 @@
                                                                         <color key="value" systemColor="systemYellowColor"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="fav:" destination="I5p-1X-Jhl" eventType="touchUpInside" id="Yf4-w4-RRH"/>
+                                                                </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="收藏" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFy-cT-yns">
                                                                 <rect key="frame" x="33.999999999999972" y="0.0" width="28" height="36"/>
@@ -2035,28 +2048,28 @@
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="placeholderTextColor">
-            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29803921570000003" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="quaternaryLabelColor">
-            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.1764705882" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.17647058823529413" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="secondaryLabelColor">
-            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="secondarySystemBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiaryLabelColor">
-            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29803921570000003" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

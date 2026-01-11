@@ -114,6 +114,7 @@ let kUpdatedAtCol = "updatedAt"
 
 // 表
 let kNoteTable = "Note"
+let kUserLikeTable = "userLike"
 
 // User 表
 let kNickNameCol = "nickName"
@@ -138,9 +139,21 @@ let kCommentCountCol = "commentCount"
 let kAuthorCol = "author"
 let kHasEditCol = "hasEdit"
 
+// UserLike 表
+let kUserCol = "user"
+let kNoteCol = "note"
+
 // MARK: - 全局函数
 func largeIcon(_ iconName: String, with color: UIColor = .label) -> UIImage {
     let config = UIImage.SymbolConfiguration(scale: .large)
     let icon = UIImage(systemName: iconName, withConfiguration: config)!
     return icon.withTintColor(color)
+}
+
+func showGlobalTextHUD(_ title: String) {
+    let window = UIApplication.shared.windows.last!
+    let hud = MBProgressHUD.showAdded(to: window, animated: true)
+    hud.mode = .text
+    hud.label.text = title
+    hud.hide(animated: true, afterDelay: 2)
 }
