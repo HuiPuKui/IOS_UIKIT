@@ -23,6 +23,8 @@ class WaterfallCell: UICollectionViewCell {
         }
     }
     
+    var currentLikedCount = 0
+    
     var isLike: Bool {
         return self.likeBtn.isSelected
     }
@@ -41,9 +43,23 @@ class WaterfallCell: UICollectionViewCell {
             self.avatarImageView.kf.setImage(with: avatarURL)
             
             self.titleLabel.text = note.getExactStringVal(kTitleCol)
+            self.likeCount = note.getExactIntVal(kLikeCountCol)
+            self.currentLikedCount = self.likeCount
             self.likeBtn.setTitle("\(note.getExactIntVal(kLikeCountCol))", for: .normal)
             
-            // TODO: 点赞功能 + 判断是否已点赞
+            // 判断是否已点赞
+            if let user = LCApplication.default.currentUser {
+                let query = LCQuery(className: kUserLikeTable)
+                query.whereKey(kUserCol, .equalTo(user))
+                query.whereKey(kNoteCol, .equalTo(note))
+                query.getFirst { res in
+                    if case .success = res {
+                        DispatchQueue.main.async {
+                            self.likeBtn.isSelected = true
+                        }
+                    }
+                }
+            }
         }
     }
     
@@ -55,11 +71,35 @@ class WaterfallCell: UICollectionViewCell {
     }
     
     @IBAction func like(_ sender: Any) {
-        if let user = LCApplication.default.currentUser {
+        if let _ = LCApplication.default.currentUser {
             self.likeBtn.isSelected.toggle()
             self.isLike ? (self.likeCount += 1) : (self.likeCount -= 1)
             
+            NSObject.cancelPreviousPerformRequests(
+                withTarget: self,
+                selector: #selector(likeBtnTappedWhenLogin),
+                object: nil
+            )
+            perform(#selector(likeBtnTappedWhenLogin), with: nil, afterDelay: 1)
+        } else {
+            showGlobalTextHUD("请先登录哦")
+        }
+    }
+    
+}
+
+extension WaterfallCell {
+    
+    @objc func likeBtnTappedWhenLogin() {
+        
+        if self.likeCount != self.currentLikedCount {
             guard let note = self.note else { return }
+            
+            let user = LCApplication.default.currentUser!
+            
+            let offset = self.isLike ? 1 : -1
+            self.currentLikedCount += offset
+            
             if self.isLike {
                 let userLike = LCObject(className: kUserLikeTable)
                 try? userLike.set(kUserCol, value: user)
@@ -80,8 +120,6 @@ class WaterfallCell: UICollectionViewCell {
                 try? note.set(kLikeCountCol, value: self.likeCount)
                 note.save { _ in }
             }
-        } else {
-            showGlobalTextHUD("请先登录哦")
         }
     }
     

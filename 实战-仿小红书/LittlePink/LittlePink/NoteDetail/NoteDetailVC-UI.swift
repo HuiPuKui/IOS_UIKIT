@@ -16,6 +16,7 @@ extension NoteDetailVC {
         self.followBtn.layer.borderColor = mainColor.cgColor
         
         self.showNote()
+        self.showLike()
     }
     
     private func showNote() {
@@ -66,6 +67,10 @@ extension NoteDetailVC {
         self.likeCount = note.getExactIntVal(kLikeCountCol)
         self.favCount = note.getExactIntVal(kFavCountCol)
         self.commentCount = note.getExactIntVal(kCommentCountCol)
+    }
+    
+    private func showLike() {
+        self.likeBtn.setSelected(selected: self.isLikeFromWaterfallCell, animated: false)
     }
     
 }

@@ -47,6 +47,9 @@ extension WaterfallVC {
                 return NoteDetailVC(coder: coder, note: self.notes[indexPath.item])
             }
             
+            if let cell = collectionView.cellForItem(at: indexPath) as? WaterfallCell {
+                detailVC.isLikeFromWaterfallCell = cell.isLike
+            }
             detailVC.modalPresentationStyle = .fullScreen
             self.present(detailVC, animated: true)
             
