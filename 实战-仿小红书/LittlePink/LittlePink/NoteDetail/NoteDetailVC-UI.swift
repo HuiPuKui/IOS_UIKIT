@@ -15,6 +15,11 @@ extension NoteDetailVC {
         self.followBtn.layer.borderWidth = 1
         self.followBtn.layer.borderColor = mainColor.cgColor
         
+        if self.isReadMyNote {
+            self.followBtn.isHidden = true
+            self.shareOrMoreBtn.setImage(UIImage(systemName: "ellipsis"), for: .normal)
+        }
+        
         self.showNote()
         self.showLike()
     }

@@ -729,7 +729,7 @@
                         <outlet property="imageSlideshow" destination="LQy-nd-ilK" id="k2e-PC-aAR"/>
                         <outlet property="likeBtn" destination="r2p-Rc-Sxc" id="10a-uH-cSv"/>
                         <outlet property="likeCountLabel" destination="M9C-ce-lof" id="UNe-nS-umh"/>
-                        <outlet property="shareBtn" destination="hcj-qI-2Yg" id="fV1-GA-8Hl"/>
+                        <outlet property="shareOrMoreBtn" destination="hcj-qI-2Yg" id="dB6-35-AeG"/>
                         <outlet property="tableHeaderView" destination="FLT-ve-YXQ" id="dqu-gD-dxf"/>
                         <outlet property="tableView" destination="fXg-SF-URt" id="JZq-rr-13W"/>
                         <outlet property="textLabel" destination="wJF-Kk-tVV" id="k50-hw-XON"/>

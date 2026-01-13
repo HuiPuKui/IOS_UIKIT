@@ -18,7 +18,7 @@ class NoteDetailVC: UIViewController {
     @IBOutlet weak var authorAvatarBtn: UIButton!
     @IBOutlet weak var authorNickNameBtn: UIButton!
     @IBOutlet weak var followBtn: UIButton!
-    @IBOutlet weak var shareBtn: UIButton!
+    @IBOutlet weak var shareOrMoreBtn: UIButton!
     
     @IBOutlet weak var tableHeaderView: UIView!
     @IBOutlet weak var imageSlideshow: ImageSlideshow!
@@ -71,6 +71,16 @@ class NoteDetailVC: UIViewController {
     
     var isFav: Bool {
         return self.favBtn.isSelected
+    }
+    
+    var isReadMyNote: Bool {
+        if let user = LCApplication.default.currentUser,
+           let author = self.author,
+           user == author {
+            return true
+        } else {
+            return false
+        }
     }
     
     init?(coder: NSCoder, note: LCObject) {
