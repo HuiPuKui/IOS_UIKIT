@@ -45,12 +45,14 @@ class NoteDetailVC: UIViewController {
             self.likeCountLabel.text = self.likeCount == 0 ? "点赞" : self.likeCount.formattedStr
         }
     }
+    var currentLikeCount = 0
     
     var favCount = 0 {
         didSet {
             self.favCountLabel.text = self.favCount == 0 ? "收藏" : self.favCount.formattedStr
         }
     }
+    var currentFavCount = 0
     
     var commentCount = 0 {
         didSet {
@@ -65,6 +67,10 @@ class NoteDetailVC: UIViewController {
     
     var isLike: Bool {
         return self.likeBtn.isSelected
+    }
+    
+    var isFav: Bool {
+        return self.favBtn.isSelected
     }
     
     init?(coder: NSCoder, note: LCObject) {

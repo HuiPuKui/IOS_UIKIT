@@ -115,6 +115,7 @@ let kUpdatedAtCol = "updatedAt"
 // 表
 let kNoteTable = "Note"
 let kUserLikeTable = "userLike"
+let kUserFavTable = "userFav"
 
 // User 表
 let kNickNameCol = "nickName"

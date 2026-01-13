@@ -594,7 +594,7 @@
                                         <rect key="frame" x="16" y="4.6666666666666288" width="361" height="36"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gxo-eb-zcY" customClass="BigButton" customModule="LittlePink" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="154" height="36"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="153" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="36" id="C10-nO-rds"/>
                                                 </constraints>
@@ -608,7 +608,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="KO7-Gm-dFz">
-                                                <rect key="frame" x="162" y="0.0" width="136.33333333333337" height="36"/>
+                                                <rect key="frame" x="161" y="0.0" width="137.33333333333337" height="36"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="-2" translatesAutoresizingMaskIntoConstraints="NO" id="u7M-K4-fZv">
                                                         <rect key="frame" x="0.0" y="0.0" width="70.333333333333329" height="36"/>
@@ -637,9 +637,12 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="63" id="UpD-yk-Vvs"/>
+                                                        </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="-2" translatesAutoresizingMaskIntoConstraints="NO" id="gQm-AC-mBZ">
-                                                        <rect key="frame" x="74.333333333333343" y="0.0" width="62" height="36"/>
+                                                        <rect key="frame" x="74.333333333333343" y="0.0" width="63" height="36"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eFI-Up-qjg" customClass="FaveButton" customModule="FaveButton">
                                                                 <rect key="frame" x="0.0" y="0.0" width="36" height="36"/>
@@ -659,12 +662,15 @@
                                                                 </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="收藏" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFy-cT-yns">
-                                                                <rect key="frame" x="33.999999999999972" y="0.0" width="28" height="36"/>
+                                                                <rect key="frame" x="33.999999999999972" y="0.0" width="29" height="36"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="63" id="0vD-jr-ofk"/>
+                                                        </constraints>
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
@@ -2023,8 +2029,8 @@
         <image name="cart.fill" catalog="system" width="128" height="102"/>
         <image name="chevron.left" catalog="system" width="97" height="128"/>
         <image name="chevron.right" catalog="system" width="97" height="128"/>
-        <image name="heart" width="128" height="128"/>
         <image name="heart" catalog="system" width="128" height="107"/>
+        <image name="heart" width="128" height="128"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="message.fill" catalog="system" width="128" height="114"/>
         <image name="number.circle.fill" catalog="system" width="128" height="123"/>

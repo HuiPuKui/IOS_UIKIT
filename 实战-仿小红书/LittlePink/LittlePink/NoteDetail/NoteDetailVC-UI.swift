@@ -65,7 +65,9 @@ extension NoteDetailVC {
         }
         
         self.likeCount = note.getExactIntVal(kLikeCountCol)
+        self.currentLikeCount = self.likeCount
         self.favCount = note.getExactIntVal(kFavCountCol)
+        self.currentFavCount = self.favCount
         self.commentCount = note.getExactIntVal(kCommentCountCol)
     }
     
