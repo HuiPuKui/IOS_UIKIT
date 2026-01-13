@@ -123,6 +123,10 @@ class NoteDetailVC: UIViewController {
         self.dismiss(animated: true)
     }
     
+    @IBAction func shareOrMore(_ sender: Any) {
+        self.shareOrMore()
+    }
+    
     @IBAction func like(_ sender: Any) {
         self.like()
     }

@@ -424,6 +424,9 @@
                                                         <inset key="contentEdgeInsets" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" image="square.and.arrow.up" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="shareOrMore:" destination="I5p-1X-Jhl" eventType="touchUpInside" id="AIh-5b-DQY"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
