@@ -25,6 +25,14 @@ extension NoteDetailVC {
             }
             photos.append(contentsOf: otherPhotos)
         }
+        
+        let vc = self.storyboard!.instantiateViewController(identifier: kNoteEditVCID) as! NoteEditVC
+        vc.note = self.note
+        vc.photos = photos
+        vc.videoURL = nil // 此处省略视频
+        
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
     }
     
 }

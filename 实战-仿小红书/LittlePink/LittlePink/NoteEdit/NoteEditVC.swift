@@ -8,13 +8,15 @@
 import UIKit
 import AMapSearchKit
 import AMapLocationKit
-
+import LeanCloud
 
 class NoteEditVC: UIViewController {
     
     var draftNote: DraftNote?
     var updateDraftNoteFinished: (() -> ())?
     var postDraftNoteFinished: (() -> ())?
+    
+    var note: LCObject?
 
     var photos: [UIImage] = []
     
@@ -86,9 +88,11 @@ class NoteEditVC: UIViewController {
         
         guard self.isValidateNote() else { return }
         
-        if let draftNote = self.draftNote {
+        if let draftNote = self.draftNote { // 发布草稿笔记
             self.postDraftNote(draftNote)
-        } else {
+        } else if let note = self.note { // 更新笔记
+            self.updateNote(note)
+        } else { // 发布新笔记
             self.createNote()
         }
         

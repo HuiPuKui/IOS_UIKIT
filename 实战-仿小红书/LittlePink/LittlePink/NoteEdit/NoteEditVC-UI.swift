@@ -13,6 +13,7 @@ extension NoteEditVC {
     func setUI() {
         addPopup()
         setDraftNoteEditUI()
+        setNoteEditUI()
     }
     
 }
@@ -39,6 +40,28 @@ extension NoteEditVC {
         }
     }
     
+    private func setNoteEditUI() {
+        if let note = self.note {
+            self.titleTextField.text = note.getExactStringVal(kTitleCol)
+            self.textView.text = note.getExactStringVal(kTextCol)
+            self.channel = note.getExactStringVal(kChannelCol)
+            self.subChannel = note.getExactStringVal(kSubChannelCol)
+            self.poiName = note.getExactStringVal(kPOINameCol)
+            
+            if !self.subChannel.isEmpty {
+                self.updateChannelUI()
+            }
+            
+            if !self.poiName.isEmpty {
+                self.updatePOINameUI()
+            }
+        }
+    }
+    
+}
+
+extension NoteEditVC {
+    
     func updateChannelUI() {
         self.channelIcon.tintColor = blueColor
         self.channelLabel.text = self.subChannel
@@ -57,6 +80,7 @@ extension NoteEditVC {
             self.poiNameLabel.textColor = blueColor
         }
     }
+    
 }
 
 extension NoteEditVC {
