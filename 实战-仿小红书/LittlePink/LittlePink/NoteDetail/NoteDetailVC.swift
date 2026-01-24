@@ -14,6 +14,7 @@ class NoteDetailVC: UIViewController {
 
     let note: LCObject
     var isLikeFromWaterfallCell = false
+    var delNoteFinished: (() -> ())?
     
     @IBOutlet weak var authorAvatarBtn: UIButton!
     @IBOutlet weak var authorNickNameBtn: UIButton!

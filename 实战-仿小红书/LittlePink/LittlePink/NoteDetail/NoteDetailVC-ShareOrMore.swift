@@ -22,7 +22,7 @@ extension NoteDetailVC {
             }
             
             let editAction = UIAlertAction(title: "编辑", style: .default) { _ in
-                
+                self.editNote()
             }
             
             let delAction = UIAlertAction(title: "删除", style: .destructive) { _ in

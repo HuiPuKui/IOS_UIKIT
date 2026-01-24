@@ -11,19 +11,15 @@ import LeanCloud
 extension NoteDetailVC {
     
     func delNote() {
-        let alert = UIAlertController(title: "提示", message: "确认删除此笔记", preferredStyle: .alert)
-        let action1 = UIAlertAction(title: "取消", style: .cancel)
-        let action2 = UIAlertAction(title: "确认", style: .default) { _ in
+        self.showDelAction(from: "笔记") { _ in
             // 数据
             self.delLCNote()
             
             // UI
-            
+            self.dismiss(animated: true) {
+                self.delNoteFinished?()
+            }
         }
-        
-        alert.addAction(action1)
-        alert.addAction(action2)
-        self.present(alert, animated: true)
     }
     
     private func delLCNote() {
