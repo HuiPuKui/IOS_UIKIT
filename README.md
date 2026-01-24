@@ -881,3 +881,17 @@ if let cancelButton = self.searchBar.value(forKey: "cancelButton") as? UIButton 
  **给老婆讲懂数据库系列之原子性Atomicity – Mars的笔记 – Software Developer@PingCAP:** `https://marsishandsome.github.io/2019/04/%E7%BB%99%E8%80%81%E5%A9%86%E8%AE%B2%E6%87%82%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E5%88%97%E4%B9%8B%E5%8E%9F%E5%AD%90%E6%80%A7Atomicity`
 
  ## 24-笔记的删除和编辑
+
+ ## 25-笔记的评论
+
+ **GitHub - KennethTsang/GrowingTextView- An UITextView in Swift. Support auto growing, placeholder and length limit.:** `https://github.com/KennethTsang/GrowingTextView`
+
+ **iOS13-Swift5-UIScrollView中的keyboard适配-如何在弹出软键盘时把view向上移动键盘的高度:** `https://juejin.cn/post/6844904134093570056`
+
+ **Adding Headers and Footers to Table Sections | 苹果官方文档:** `https://developer.apple.com/documentation/uikit/adding-headers-and-footers-to-table-sections`
+
+ **estimatedSectionHeaderHeight | 苹果官方文档:** `https://developer.apple.com/documentation/uikit/uitableview/estimatedsectionheaderheight`
+
+ **iOS13-Swift5富文本NSAttributedString和NSMutableAttributedString的使用:** `https://juejin.cn/post/6844904196358012936/`
+
+ **Swift - UIPasteboard剪贴板的使用详解（复制、粘贴文字和图片）:** `https://www.hangge.com/blog/cache/detail_1085.html`
