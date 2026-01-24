@@ -31,6 +31,16 @@ extension NoteDetailVC {
         vc.photos = photos
         vc.videoURL = nil // 此处省略视频
         
+        vc.updateNoteFinished = { noteID in 
+            let query = LCQuery(className: kNoteTable)
+            query.get(noteID) { res in
+                if case let .success(object: note) = res {
+                    self.note = note
+                    self.showNote(true)
+                }
+            }
+        }
+        
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true)
     }

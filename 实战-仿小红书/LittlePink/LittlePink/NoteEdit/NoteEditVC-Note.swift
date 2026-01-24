@@ -183,6 +183,7 @@ extension NoteEditVC {
             
             noteGroup.notify(queue: .main) {
 //                print("笔记内容全部存储结束")
+                self.updateNoteFinished?(note.objectId!.stringValue!)
                 self.showTextHUD("更新笔记成功", false)
             }
             

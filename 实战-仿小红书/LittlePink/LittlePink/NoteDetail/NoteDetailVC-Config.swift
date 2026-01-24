@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import ImageSlideshow
 
 extension NoteDetailVC {
     
@@ -13,6 +14,7 @@ extension NoteDetailVC {
         self.imageSlideshow.zoomEnabled = true
         self.imageSlideshow.circular = false
         self.imageSlideshow.contentScaleMode = .scaleAspectFill
+        self.imageSlideshow.activityIndicator = DefaultActivityIndicator()
         
         let pageControl = UIPageControl()
         pageControl.pageIndicatorTintColor = .systemGray

@@ -12,7 +12,7 @@ import FaveButton
 
 class NoteDetailVC: UIViewController {
 
-    let note: LCObject
+    var note: LCObject
     var isLikeFromWaterfallCell = false
     var delNoteFinished: (() -> ())?
     

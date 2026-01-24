@@ -17,6 +17,7 @@ class NoteEditVC: UIViewController {
     var postDraftNoteFinished: (() -> ())?
     
     var note: LCObject?
+    var updateNoteFinished: ((String) -> ())?
 
     var photos: [UIImage] = []
     

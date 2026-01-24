@@ -24,10 +24,13 @@ extension NoteDetailVC {
         self.showLike()
     }
     
-    private func showNote() {
-        let authorAvatarURL = self.author?.getImageURL(from: kAvatarCol, .avatar)
-        self.authorAvatarBtn.kf.setImage(with: authorAvatarURL, for: .normal)
-        self.authorNickNameBtn.setTitle(self.author?.getExactStringVal(kNickNameCol), for: .normal)
+    func showNote(_ isUpdateNote: Bool = false) {
+        
+        if !isUpdateNote {
+            let authorAvatarURL = self.author?.getImageURL(from: kAvatarCol, .avatar)
+            self.authorAvatarBtn.kf.setImage(with: authorAvatarURL, for: .normal)
+            self.authorNickNameBtn.setTitle(self.author?.getExactStringVal(kNickNameCol), for: .normal)
+        }
         
         let coverPhotoHeight = CGFloat(note.getExactDoubleVal(kCoverPhotoRatioCol)) * screenRect.width
         self.imageSlideShowHeight.constant = coverPhotoHeight
