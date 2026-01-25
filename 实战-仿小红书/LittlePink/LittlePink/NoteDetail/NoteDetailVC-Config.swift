@@ -7,10 +7,13 @@
 
 import Foundation
 import ImageSlideshow
+import GrowingTextView
 
 extension NoteDetailVC {
     
     func config() {
+        hideKeyboardWithTappedAround()
+        
         // imageSlideshow
         self.imageSlideshow.zoomEnabled = true
         self.imageSlideshow.circular = false
@@ -25,6 +28,7 @@ extension NoteDetailVC {
         
         // textView
         self.textView.textContainerInset = UIEdgeInsets(top: 11.5, left: 16, bottom: 11.5, right: 16)
+        self.textView.delegate = self
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(keyboardWillChangeFrame),
@@ -35,17 +39,31 @@ extension NoteDetailVC {
     
 }
 
+extension NoteDetailVC: GrowingTextViewDelegate {
+    
+    func textViewDidChangeHeight(_ textView: GrowingTextView, height: CGFloat) {
+        UIView.animate(withDuration: 0.2) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+}
+
 extension NoteDetailVC {
     
     @objc private func keyboardWillChangeFrame(_ notification: Notification) {
         if let endFrame = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            let keyboardH = endFrame.height
-            
+            let keyboardH = screenRect.height - endFrame.origin.y
+
             if keyboardH > 0 {
                 
             } else {
-                
+                self.textViewBarView.isHidden = true
             }
+            
+            self.textViewBarBottomConstraint.constant = keyboardH
+            
+            self.view.layoutIfNeeded()
         }
     }
     

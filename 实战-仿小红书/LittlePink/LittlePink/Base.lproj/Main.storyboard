@@ -544,6 +544,9 @@
                                                                     <real key="value" value="18"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="comment:" destination="I5p-1X-Jhl" eventType="touchUpInside" id="42B-rN-Pfe"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                 </stackView>
@@ -609,6 +612,9 @@
                                                         <real key="value" value="18"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="comment:" destination="I5p-1X-Jhl" eventType="touchUpInside" id="92U-AI-wtu"/>
+                                                </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="KO7-Gm-dFz">
                                                 <rect key="frame" x="161" y="0.0" width="137.33333333333337" height="36"/>
@@ -686,6 +692,9 @@
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="22"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="comment:" destination="I5p-1X-Jhl" eventType="touchUpInside" id="TA3-CZ-exv"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -701,8 +710,8 @@
                                     <constraint firstItem="WEB-yI-Wx8" firstAttribute="centerY" secondItem="byn-QM-wks" secondAttribute="centerY" id="yHf-Hf-9Lh"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OGX-Yt-G1V">
-                                <rect key="frame" x="0.0" y="717" width="393" height="56"/>
+                            <view hidden="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OGX-Yt-G1V">
+                                <rect key="frame" x="0.0" y="796" width="393" height="56"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vt6-Yp-fuq" customClass="GrowingTextView" customModule="GrowingTextView">
                                         <rect key="frame" x="16" y="8" width="291" height="40"/>
@@ -765,7 +774,7 @@
                             <constraint firstItem="OGX-Yt-G1V" firstAttribute="leading" secondItem="c7i-gf-chJ" secondAttribute="leading" id="Ly3-vL-OzF"/>
                             <constraint firstItem="c7i-gf-chJ" firstAttribute="trailing" secondItem="fXg-SF-URt" secondAttribute="trailing" id="Mcl-LL-Qvo"/>
                             <constraint firstItem="fXg-SF-URt" firstAttribute="top" secondItem="r7b-XN-ZEa" secondAttribute="bottom" id="Nzo-dJ-LBR"/>
-                            <constraint firstItem="c7i-gf-chJ" firstAttribute="bottom" secondItem="OGX-Yt-G1V" secondAttribute="bottom" constant="400" id="P5v-mJ-6Qq"/>
+                            <constraint firstAttribute="bottom" secondItem="OGX-Yt-G1V" secondAttribute="bottom" id="P5v-mJ-6Qq"/>
                             <constraint firstItem="c7i-gf-chJ" firstAttribute="trailing" secondItem="OGX-Yt-G1V" secondAttribute="trailing" id="cpF-0s-a6O"/>
                             <constraint firstItem="c7i-gf-chJ" firstAttribute="trailing" secondItem="byn-QM-wks" secondAttribute="trailing" id="db8-56-n5n"/>
                             <constraint firstItem="fXg-SF-URt" firstAttribute="leading" secondItem="c7i-gf-chJ" secondAttribute="leading" id="eeD-M5-BVo"/>
@@ -2091,8 +2100,8 @@
         <image name="cart.fill" catalog="system" width="128" height="102"/>
         <image name="chevron.left" catalog="system" width="97" height="128"/>
         <image name="chevron.right" catalog="system" width="97" height="128"/>
-        <image name="heart" catalog="system" width="128" height="107"/>
         <image name="heart" width="128" height="128"/>
+        <image name="heart" catalog="system" width="128" height="107"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="message.fill" catalog="system" width="128" height="114"/>
         <image name="number.circle.fill" catalog="system" width="128" height="123"/>

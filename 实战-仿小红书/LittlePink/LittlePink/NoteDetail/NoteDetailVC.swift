@@ -141,4 +141,11 @@ class NoteDetailVC: UIViewController {
         self.fav()
     }
     
+    @IBAction func comment(_ sender: Any) {
+        if let user = LCApplication.default.currentUser {
+            self.textView.becomeFirstResponder()
+            self.textViewBarView.isHidden = false
+        }
+    }
+    
 }
