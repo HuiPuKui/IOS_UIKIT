@@ -35,6 +35,16 @@ extension NoteDetailVC {
         )
     }
     
+    func adjustTableHeaderViewHeight() {
+        let height = self.tableHeaderView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height
+        var frame = self.tableHeaderView.frame
+        
+        if frame.height != height {
+            frame.size.height = height
+            self.tableHeaderView.frame = frame
+        }
+    }
+    
 }
 
 extension NoteDetailVC: GrowingTextViewDelegate {

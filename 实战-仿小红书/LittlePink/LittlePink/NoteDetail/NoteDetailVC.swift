@@ -124,13 +124,9 @@ class NoteDetailVC: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
-        let height = self.tableHeaderView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height
-        var frame = self.tableHeaderView.frame
+        super.viewDidLayoutSubviews()
         
-        if frame.height != height {
-            frame.size.height = height
-            self.tableHeaderView.frame = frame
-        }
+        self.adjustTableHeaderViewHeight()
     }
 
     @IBAction func back(_ sender: Any) {
@@ -150,10 +146,11 @@ class NoteDetailVC: UIViewController {
     }
     
     @IBAction func comment(_ sender: Any) {
-        if let user = LCApplication.default.currentUser {
-            self.textView.becomeFirstResponder()
-            self.textViewBarView.isHidden = false
-        }
+        self.comment()
+    }
+    
+    @IBAction func postComment(_ sender: Any) {
+        
     }
     
 }

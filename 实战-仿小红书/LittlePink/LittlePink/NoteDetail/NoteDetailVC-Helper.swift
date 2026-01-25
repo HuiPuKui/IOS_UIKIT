@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import LeanCloud
 
 extension NoteDetailVC {
     
@@ -17,6 +18,15 @@ extension NoteDetailVC {
         alert.addAction(action1)
         alert.addAction(action2)
         self.present(alert, animated: true)
+    }
+    
+    func comment() {
+        if let _ = LCApplication.default.currentUser {
+            self.textView.becomeFirstResponder()
+            self.textViewBarView.isHidden = false
+        } else {
+            showTextHUD("请先登录哦")
+        }
     }
     
 }
