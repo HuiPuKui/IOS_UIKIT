@@ -9,6 +9,7 @@ import UIKit
 import ImageSlideshow
 import LeanCloud
 import FaveButton
+import GrowingTextView
 
 class NoteDetailVC: UIViewController {
 
@@ -40,6 +41,10 @@ class NoteDetailVC: UIViewController {
     @IBOutlet weak var favBtn: FaveButton!
     @IBOutlet weak var favCountLabel: UILabel!
     @IBOutlet weak var commentCountBtn: UIButton!
+    
+    @IBOutlet weak var textViewBarView: UIView!
+    @IBOutlet weak var textView: GrowingTextView!
+    @IBOutlet weak var textViewBarBottomConstraint: NSLayoutConstraint!
     
     var likeCount = 0 {
         didSet {

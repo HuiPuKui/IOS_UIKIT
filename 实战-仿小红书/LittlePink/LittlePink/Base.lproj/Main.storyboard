@@ -701,6 +701,59 @@
                                     <constraint firstItem="WEB-yI-Wx8" firstAttribute="centerY" secondItem="byn-QM-wks" secondAttribute="centerY" id="yHf-Hf-9Lh"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OGX-Yt-G1V">
+                                <rect key="frame" x="0.0" y="717" width="393" height="56"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vt6-Yp-fuq" customClass="GrowingTextView" customModule="GrowingTextView">
+                                        <rect key="frame" x="16" y="8" width="291" height="40"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
+                                                <integer key="value" value="200"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="minHeight">
+                                                <real key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="maxHeight">
+                                                <real key="value" value="90"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="精彩评论将会优先展示哦"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jTb-hp-0Ik">
+                                        <rect key="frame" x="315" y="8" width="62" height="40"/>
+                                        <color key="backgroundColor" name="main"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="grq-h7-yFr"/>
+                                        </constraints>
+                                        <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="发送">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="jTb-hp-0Ik" secondAttribute="trailing" constant="16" id="8pg-TJ-DKK"/>
+                                    <constraint firstItem="jTb-hp-0Ik" firstAttribute="centerY" secondItem="OGX-Yt-G1V" secondAttribute="centerY" id="DIY-6Z-tyx"/>
+                                    <constraint firstItem="vt6-Yp-fuq" firstAttribute="leading" secondItem="OGX-Yt-G1V" secondAttribute="leading" constant="16" id="DLl-l6-oUl"/>
+                                    <constraint firstItem="jTb-hp-0Ik" firstAttribute="leading" secondItem="vt6-Yp-fuq" secondAttribute="trailing" constant="8" id="JDU-ZF-NQB"/>
+                                    <constraint firstAttribute="bottom" secondItem="vt6-Yp-fuq" secondAttribute="bottom" constant="8" id="M2N-0z-FF1"/>
+                                    <constraint firstItem="vt6-Yp-fuq" firstAttribute="top" secondItem="OGX-Yt-G1V" secondAttribute="top" constant="8" id="Wi3-RO-TOg"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="c7i-gf-chJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -709,8 +762,11 @@
                             <constraint firstItem="byn-QM-wks" firstAttribute="leading" secondItem="c7i-gf-chJ" secondAttribute="leading" id="FSn-i9-MMj"/>
                             <constraint firstItem="r7b-XN-ZEa" firstAttribute="top" secondItem="c7i-gf-chJ" secondAttribute="top" id="IOv-tF-rZs"/>
                             <constraint firstItem="r7b-XN-ZEa" firstAttribute="leading" secondItem="c7i-gf-chJ" secondAttribute="leading" id="L5P-xw-iNJ"/>
+                            <constraint firstItem="OGX-Yt-G1V" firstAttribute="leading" secondItem="c7i-gf-chJ" secondAttribute="leading" id="Ly3-vL-OzF"/>
                             <constraint firstItem="c7i-gf-chJ" firstAttribute="trailing" secondItem="fXg-SF-URt" secondAttribute="trailing" id="Mcl-LL-Qvo"/>
                             <constraint firstItem="fXg-SF-URt" firstAttribute="top" secondItem="r7b-XN-ZEa" secondAttribute="bottom" id="Nzo-dJ-LBR"/>
+                            <constraint firstItem="c7i-gf-chJ" firstAttribute="bottom" secondItem="OGX-Yt-G1V" secondAttribute="bottom" constant="400" id="P5v-mJ-6Qq"/>
+                            <constraint firstItem="c7i-gf-chJ" firstAttribute="trailing" secondItem="OGX-Yt-G1V" secondAttribute="trailing" id="cpF-0s-a6O"/>
                             <constraint firstItem="c7i-gf-chJ" firstAttribute="trailing" secondItem="byn-QM-wks" secondAttribute="trailing" id="db8-56-n5n"/>
                             <constraint firstItem="fXg-SF-URt" firstAttribute="leading" secondItem="c7i-gf-chJ" secondAttribute="leading" id="eeD-M5-BVo"/>
                             <constraint firstItem="byn-QM-wks" firstAttribute="bottom" secondItem="c7i-gf-chJ" secondAttribute="bottom" id="jmy-4X-G1j"/>
@@ -736,6 +792,9 @@
                         <outlet property="tableHeaderView" destination="FLT-ve-YXQ" id="dqu-gD-dxf"/>
                         <outlet property="tableView" destination="fXg-SF-URt" id="JZq-rr-13W"/>
                         <outlet property="textLabel" destination="wJF-Kk-tVV" id="k50-hw-XON"/>
+                        <outlet property="textView" destination="vt6-Yp-fuq" id="Dpv-9Z-39p"/>
+                        <outlet property="textViewBarBottomConstraint" destination="P5v-mJ-6Qq" id="NkC-cB-Jo7"/>
+                        <outlet property="textViewBarView" destination="OGX-Yt-G1V" id="vRT-dW-eJS"/>
                         <outlet property="titleLabel" destination="udM-AM-TO4" id="WOL-xH-poQ"/>
                     </connections>
                 </viewController>
