@@ -12,8 +12,6 @@ import GrowingTextView
 extension NoteDetailVC {
     
     func config() {
-        hideKeyboardWithTappedAround()
-        
         // imageSlideshow
         self.imageSlideshow.zoomEnabled = true
         self.imageSlideshow.circular = false
@@ -56,8 +54,9 @@ extension NoteDetailVC {
             let keyboardH = screenRect.height - endFrame.origin.y
 
             if keyboardH > 0 {
-                
+                self.view.insertSubview(self.overlayView, belowSubview: self.textViewBarView)
             } else {
+                self.overlayView.removeFromSuperview()
                 self.textViewBarView.isHidden = true
             }
             

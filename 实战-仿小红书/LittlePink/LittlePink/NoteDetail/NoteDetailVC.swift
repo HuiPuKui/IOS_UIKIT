@@ -46,6 +46,14 @@ class NoteDetailVC: UIViewController {
     @IBOutlet weak var textView: GrowingTextView!
     @IBOutlet weak var textViewBarBottomConstraint: NSLayoutConstraint!
     
+    lazy var overlayView: UIView = {
+        let overlayView = UIView(frame: self.view.frame)
+        overlayView.backgroundColor = UIColor(white: 0, alpha: 0.1)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dissmissKeyboard))
+        overlayView.addGestureRecognizer(tap)
+        return overlayView
+    }()
+    
     var likeCount = 0 {
         didSet {
             self.likeCountLabel.text = self.likeCount == 0 ? "点赞" : self.likeCount.formattedStr
