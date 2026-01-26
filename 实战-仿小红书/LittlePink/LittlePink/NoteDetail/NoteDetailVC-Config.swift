@@ -38,6 +38,11 @@ extension NoteDetailVC {
             UINib(nibName: "CommentView", bundle: nil),
             forHeaderFooterViewReuseIdentifier: kCommentViewID
         )
+        
+        if #available(iOS 15.0, *) {
+            // 解决 tableHeaderView 和第一个 section header 之间的白条问题
+            self.tableView.sectionHeaderTopPadding = 0
+        }
     }
     
     func adjustTableHeaderViewHeight() {
