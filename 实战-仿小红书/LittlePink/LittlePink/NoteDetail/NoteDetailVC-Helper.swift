@@ -29,4 +29,9 @@ extension NoteDetailVC {
         }
     }
     
+    func hideAndResetTextView() {
+        self.textView.resignFirstResponder()
+        self.textView.text = ""
+    }
+    
 }

@@ -169,6 +169,10 @@ extension UITextField {
         self.unwrappedText.isBlank ? "" : unwrappedText
     }
     
+    var isBlank: Bool {
+        self.unwrappedText.isBlank
+    }
+    
 }
 
 extension UITextView {
@@ -179,6 +183,10 @@ extension UITextView {
     
     var exactText: String {
         self.unwrappedText.isBlank ? "" : unwrappedText
+    }
+    
+    var isBlank: Bool {
+        self.unwrappedText.isBlank
     }
     
 }

@@ -27,6 +27,7 @@ let kPhotoFooterID = "PhotoFooterID"
 let kSubChannelCellID = "SubChannelCellID"
 let kPOICellID = "POICellID"
 let kDraftNoteWaterfallCellID = "DraftNoteWaterfallCellID"
+let kCommentViewID = "CommentViewID"
 
 // MARK: - 资源文件相关
 let mainColor = UIColor(named: "main")!
@@ -114,8 +115,9 @@ let kUpdatedAtCol = "updatedAt"
 
 // 表
 let kNoteTable = "Note"
-let kUserLikeTable = "userLike"
-let kUserFavTable = "userFav"
+let kUserLikeTable = "UserLike"
+let kUserFavTable = "UserFav"
+let kCommentTable = "Comment"
 
 // User 表
 let kNickNameCol = "nickName"

@@ -33,6 +33,11 @@ extension NoteDetailVC {
             name: UIResponder.keyboardWillChangeFrameNotification,
             object: nil
         )
+        
+        self.tableView.register(
+            UINib(nibName: "CommentView", bundle: nil),
+            forHeaderFooterViewReuseIdentifier: kCommentViewID
+        )
     }
     
     func adjustTableHeaderViewHeight() {

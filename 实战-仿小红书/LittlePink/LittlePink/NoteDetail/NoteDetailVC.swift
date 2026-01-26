@@ -150,7 +150,26 @@ class NoteDetailVC: UIViewController {
     }
     
     @IBAction func postComment(_ sender: Any) {
-        
+        if !self.textView.isBlank {
+            let user = LCApplication.default.currentUser!
+            
+            do {
+                let comment = LCObject(className: kCommentTable)
+                try comment.set(kTextCol, value: self.textView.unwrappedText)
+                try comment.set(kUserCol, value: user)
+                try comment.set(kNoteCol, value: self.note)
+                
+                comment.save { res in
+                    if case .success = res {
+                        self.showTextHUD("评论已发布")
+                    }
+                }
+            } catch {
+                print("给 Comment 表的字段赋值失败: \(error)")
+            }
+            
+            self.hideAndResetTextView()
+        }
     }
     
 }
