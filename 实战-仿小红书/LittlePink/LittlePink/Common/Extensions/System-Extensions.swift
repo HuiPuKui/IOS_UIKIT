@@ -46,6 +46,22 @@ extension String {
         return String((0..<length).map { _ in letters.randomElement()! })
     }
     
+    func spliceAttrStr(_ dateStr: String) -> NSAttributedString {
+        let attrText = self.toAttrStr()
+        let attrDate = " \(dateStr)".toAttrStr(12, .secondaryLabel)
+        
+        attrText.append(attrDate)
+        return attrText
+    }
+    
+    func toAttrStr(_ fontSize: CGFloat = 14, _ color: UIColor = .label) -> NSMutableAttributedString {
+        let attr: [NSAttributedString.Key: Any] = [
+            .font: UIFont.systemFont(ofSize: fontSize),
+            .foregroundColor: color
+        ]
+        return NSMutableAttributedString(string: self, attributes: attr)
+    }
+    
 }
 
 extension NSRegularExpression {

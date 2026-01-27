@@ -90,16 +90,22 @@
                 <constraint firstAttribute="bottom" secondItem="mwl-Dy-R6Z" secondAttribute="bottom" id="VHD-x6-pON"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="authorLabel" destination="fO0-Q9-5K3" id="jJ2-ZU-YMh"/>
+                <outlet property="avatarImageView" destination="ci9-j6-csf" id="V5N-DE-Aja"/>
+                <outlet property="commentTextLabel" destination="bAU-ed-tQf" id="g5F-Qd-Axu"/>
+                <outlet property="nickNameLabel" destination="yYT-vT-vB7" id="PsP-Cd-gg8"/>
+            </connections>
             <point key="canvasLocation" x="24.427480916030532" y="-192.95774647887325"/>
         </view>
     </objects>
     <resources>
         <image name="avatarPH2" width="500" height="500"/>
         <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="secondarySystemBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
