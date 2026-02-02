@@ -37,7 +37,7 @@
                                     <rect key="frame" x="46" y="0.0" width="374" height="71"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="hwu-Zi-oua">
-                                            <rect key="frame" x="0.0" y="0.0" width="81.666666666666671" height="15.666666666666666"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="36.666666666666664" height="15.666666666666666"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lebus" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yYT-vT-vB7">
                                                     <rect key="frame" x="0.0" y="0.0" width="36.666666666666664" height="15.666666666666666"/>
@@ -45,8 +45,8 @@
                                                     <color key="textColor" systemColor="secondaryLabelColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="作者" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fO0-Q9-5K3">
-                                                    <rect key="frame" x="41.666666666666671" y="0.0" width="40" height="15.666666666666666"/>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="作者" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fO0-Q9-5K3">
+                                                    <rect key="frame" x="0.0" y="0.0" width="40" height="15.666666666666666"/>
                                                     <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="lmf-2r-oDA"/>

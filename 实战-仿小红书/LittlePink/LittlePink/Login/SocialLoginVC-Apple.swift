@@ -56,7 +56,9 @@ extension SocialLoginVC: ASAuthorizationControllerDelegate {
 //                    assert(user.objectId != nil)
                     self.configAfterLogin(user, name, email)
                 case .failure(error: let error):
-                    self.showTextHUD("登录失败", in: self.parent!.view, error.reason)
+                    DispatchQueue.main.async {
+                        self.showTextHUD("登录失败", in: self.parent!.view, error.reason)
+                    }
                 }
             }
             
