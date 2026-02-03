@@ -103,6 +103,7 @@ let kAuthCodeRegEx = "^\\d{6}$"
 
 // 云端
 let kNotesOffset = 10
+let kCommentsOffset = 10
 
 // MARK: - LeanCloud
 // 配置相关

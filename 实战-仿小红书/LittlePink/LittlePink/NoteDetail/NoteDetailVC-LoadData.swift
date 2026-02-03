@@ -15,13 +15,18 @@ extension NoteDetailVC {
         
         let query = LCQuery(className: kCommentTable)
         query.whereKey(kNoteCol, .equalTo(self.note))
-        query.whereKey("\(kUserCol).\(kNickNameCol)", .selected)
+//        query.whereKey("\(kUserCol).\(kNickNameCol)", .selected)
         query.whereKey(kUserCol, .included)
+        query.whereKey(kCreatedAtCol, .descending)
+        query.limit = kCommentsOffset
         
         query.find { res in
             self.hideLoadHUD()
             if case let .success(objects: comments) = res {
-
+                self.comments = comments
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
             }
         }
     }
