@@ -222,6 +222,23 @@ extension UIView {
     
 }
 
+extension UIAlertAction {
+    
+    func setTitleColor(_ color: UIColor) {
+        self.setValue(color, forKey: "titleTextColor")
+    }
+    
+    var titleTextColor: UIColor? {
+        get {
+            self.value(forKey: "titleTextColor") as? UIColor
+        }
+        set {
+            self.setValue(newValue, forKey: "titleTextColor")
+        }
+    }
+    
+}
+
 extension UIViewController {
     
     // MARK: - 展示加载框或提示框
