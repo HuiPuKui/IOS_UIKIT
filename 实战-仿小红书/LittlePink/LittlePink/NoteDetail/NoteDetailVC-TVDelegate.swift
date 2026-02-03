@@ -35,20 +35,32 @@ extension NoteDetailVC {
     @objc private func commentTapped(_ tap: UITapGestureRecognizer) {
         if let user = LCApplication.default.currentUser {
             
-            if let section = tap.view?.tag,
-               let commentAuthor = self.comments[section].get(kUserCol) as? LCUser,
+            guard let section = tap.view?.tag else { return }
+            let comment = self.comments[section]
+            
+            if let commentAuthor = comment.get(kUserCol) as? LCUser,
                commentAuthor == user {
                 
-                let alert = UIAlertController(title: nil, message: "你的评论: ", preferredStyle: .actionSheet)
+                let commentText = comment.getExactStringVal(kTextCol)
+                
+                let alert = UIAlertController(
+                    title: nil,
+                    message: "你的评论: \(commentText)",
+                    preferredStyle: .actionSheet
+                )
+                
                 let replyAction = UIAlertAction(title: "回复", style: .default) { _ in
                     // 回复
                 }
+                
                 let copyAction = UIAlertAction(title: "复制", style: .default) { _ in
-                    
+                    UIPasteboard.general.string = commentText
                 }
+                
                 let deleteAction = UIAlertAction(title: "删除", style: .destructive) { _ in
-                    
+                    self.delComment(comment, section)
                 }
+                
                 let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
                 
                 alert.addAction(replyAction)
@@ -61,6 +73,7 @@ extension NoteDetailVC {
             } else {
                 // 回复
             }
+            
         } else {
             self.showTextHUD("请先登录哦")
         }
