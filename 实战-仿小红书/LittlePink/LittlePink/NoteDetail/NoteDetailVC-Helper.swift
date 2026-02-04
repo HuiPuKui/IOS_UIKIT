@@ -22,11 +22,20 @@ extension NoteDetailVC {
     
     func comment() {
         if let _ = LCApplication.default.currentUser {
-            self.textView.becomeFirstResponder()
-            self.textViewBarView.isHidden = false
+            self.showTextView()
         } else {
             showTextHUD("请先登录哦")
         }
+    }
+    
+    func showTextView(_ isReply: Bool = false, _ textViewPH: String = kNoteCommentPH) {
+        // reset
+        self.isReply = isReply
+        self.textView.placeholder = textViewPH
+        
+        // UI
+        self.textView.becomeFirstResponder()
+        self.textViewBarView.isHidden = false
     }
     
     func hideAndResetTextView() {

@@ -67,6 +67,7 @@ let kMaxCameraZoomFactor = 5.0
 // 笔记
 let kMaxNoteTitleCount = 20
 let kMaxNoteTextCount = 1000
+let kNoteCommentPH = "精彩评论将被优先展示哦"
 
 // 话题
 let kAllSubChannels = [

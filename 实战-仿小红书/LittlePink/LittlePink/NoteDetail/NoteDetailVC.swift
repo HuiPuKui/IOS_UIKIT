@@ -19,6 +19,8 @@ class NoteDetailVC: UIViewController {
     
     var comments: [LCObject] = []
     
+    var isReply = false
+    
     @IBOutlet weak var authorAvatarBtn: UIButton!
     @IBOutlet weak var authorNickNameBtn: UIButton!
     @IBOutlet weak var followBtn: UIButton!

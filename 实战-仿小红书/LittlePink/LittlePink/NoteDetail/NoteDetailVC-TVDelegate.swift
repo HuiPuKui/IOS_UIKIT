@@ -37,9 +37,10 @@ extension NoteDetailVC {
             
             guard let section = tap.view?.tag else { return }
             let comment = self.comments[section]
+            guard let commentAuthor = comment.get(kUserCol) as? LCUser else { return }
+            let commentAuthorNickName = commentAuthor.getExactStringVal(kNickNameCol)
             
-            if let commentAuthor = comment.get(kUserCol) as? LCUser,
-               commentAuthor == user {
+            if commentAuthor == user {
                 
                 let commentText = comment.getExactStringVal(kTextCol)
                 
@@ -50,7 +51,7 @@ extension NoteDetailVC {
                 )
                 
                 let replyAction = UIAlertAction(title: "回复", style: .default) { _ in
-                    // 回复
+                    self.prepareForReply(commentAuthorNickName)
                 }
                 
                 let copyAction = UIAlertAction(title: "复制", style: .default) { _ in
@@ -72,11 +73,20 @@ extension NoteDetailVC {
                 
             } else {
                 // 回复
+                self.prepareForReply(commentAuthorNickName)
             }
             
         } else {
             self.showTextHUD("请先登录哦")
         }
+    }
+    
+}
+
+extension NoteDetailVC {
+    
+    private func prepareForReply(_ commentAuthorNickName: String) {
+        self.showTextView(true, "回复 \(commentAuthorNickName)")
     }
     
 }
