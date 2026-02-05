@@ -29,6 +29,7 @@ let kPOICellID = "POICellID"
 let kDraftNoteWaterfallCellID = "DraftNoteWaterfallCellID"
 let kCommentViewID = "CommentViewID"
 let kReplyCellID = "ReplyCellID"
+let kCommentSectionFooterViewID = "CommentSectionFooterViewID"
 
 // MARK: - 资源文件相关
 let mainColor = UIColor(named: "main")!
@@ -121,6 +122,7 @@ let kNoteTable = "Note"
 let kUserLikeTable = "UserLike"
 let kUserFavTable = "UserFav"
 let kCommentTable = "Comment"
+let kReplyTable = "ReplyTable"
 
 // User 表
 let kNickNameCol = "nickName"
@@ -148,6 +150,9 @@ let kHasEditCol = "hasEdit"
 // UserLike 表
 let kUserCol = "user"
 let kNoteCol = "note"
+
+// Reply 表
+let kCommentCol = "comment"
 
 // MARK: - 全局函数
 func largeIcon(_ iconName: String, with color: UIColor = .label) -> UIImage {

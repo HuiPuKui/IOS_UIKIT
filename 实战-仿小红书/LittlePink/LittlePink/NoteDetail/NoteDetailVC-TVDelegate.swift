@@ -28,6 +28,11 @@ extension NoteDetailVC: UITableViewDelegate {
         return commentView
     }
     
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let separatorLine = tableView.dequeueReusableHeaderFooterView(withIdentifier: kCommentSectionFooterViewID)
+        return separatorLine
+    }
+    
 }
 
 extension NoteDetailVC {
@@ -51,7 +56,7 @@ extension NoteDetailVC {
                 )
                 
                 let replyAction = UIAlertAction(title: "回复", style: .default) { _ in
-                    self.prepareForReply(commentAuthorNickName)
+                    self.prepareForReply(commentAuthorNickName, section)
                 }
                 
                 let copyAction = UIAlertAction(title: "复制", style: .default) { _ in
@@ -73,7 +78,7 @@ extension NoteDetailVC {
                 
             } else {
                 // 回复
-                self.prepareForReply(commentAuthorNickName)
+                self.prepareForReply(commentAuthorNickName, section)
             }
             
         } else {
@@ -85,8 +90,9 @@ extension NoteDetailVC {
 
 extension NoteDetailVC {
     
-    private func prepareForReply(_ commentAuthorNickName: String) {
+    private func prepareForReply(_ commentAuthorNickName: String, _ section: Int) {
         self.showTextView(true, "回复 \(commentAuthorNickName)")
+        self.commentSection = section
     }
     
 }

@@ -39,6 +39,11 @@ extension NoteDetailVC {
             forHeaderFooterViewReuseIdentifier: kCommentViewID
         )
         
+        self.tableView.register(
+            CommentSectionFooterView.self,
+            forHeaderFooterViewReuseIdentifier: kCommentSectionFooterViewID
+        )
+        
         if #available(iOS 15.0, *) {
             // 解决 tableHeaderView 和第一个 section header 之间的白条问题
             self.tableView.sectionHeaderTopPadding = 0
