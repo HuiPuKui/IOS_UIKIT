@@ -576,7 +576,7 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReplyCellID" id="MfN-aB-YOl">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReplyCellID" id="MfN-aB-YOl" customClass="ReplyCell" customModule="LittlePink" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="489" width="393" height="80.666664123535156"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MfN-aB-YOl" id="Ofo-Fe-8dh">
@@ -649,6 +649,13 @@
                                                 <constraint firstAttribute="trailing" secondItem="AKf-eP-yZ8" secondAttribute="trailing" constant="16" id="qHU-Jt-ha7"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="authorLabel" destination="DAG-J7-QXn" id="WCb-uW-agE"/>
+                                            <outlet property="avatarImageView" destination="riU-7q-ien" id="HcL-KT-Z3W"/>
+                                            <outlet property="nickNameLabel" destination="2OR-kK-Zue" id="zas-YZ-Hdz"/>
+                                            <outlet property="replyTextLabel" destination="2Cr-FD-4bu" id="eHg-rn-gdx"/>
+                                            <outlet property="showAllReplyBtn" destination="Feg-az-rxQ" id="81g-P5-T5Z"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
