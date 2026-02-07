@@ -41,6 +41,7 @@ extension NoteDetailVC {
                 userLike.save { _ in }
                 
                 try? self.note.increase(kLikeCountCol)
+                self.note.save { _ in }
             } else {
                 let query = LCQuery(className: kUserLikeTable)
                 query.whereKey(kUserCol, .equalTo(user))

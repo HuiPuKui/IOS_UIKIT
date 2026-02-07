@@ -602,7 +602,7 @@
                                                             <rect key="frame" x="31" y="0.0" width="284" height="64.666666666666671"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="a1x-I1-jXK">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="71" height="15.666666666666666"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="26" height="15.666666666666666"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="小刘" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2OR-kK-Zue">
                                                                             <rect key="frame" x="0.0" y="0.0" width="26" height="15.666666666666666"/>
@@ -610,8 +610,8 @@
                                                                             <color key="textColor" systemColor="secondaryLabelColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="作者" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAG-J7-QXn">
-                                                                            <rect key="frame" x="31" y="0.0" width="40" height="15.666666666666666"/>
+                                                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="作者" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAG-J7-QXn">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="40" height="15.666666666666666"/>
                                                                             <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="40" id="K7I-RV-4ln"/>
