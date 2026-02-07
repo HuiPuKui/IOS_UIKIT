@@ -33,6 +33,50 @@ extension NoteDetailVC: UITableViewDelegate {
         return separatorLine
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let user = LCApplication.default.currentUser {
+            let reply = self.replies[indexPath.section].replies[indexPath.row]
+            guard let replyAuthor = reply.get(kUserCol) as? LCUser else { return }
+            
+            if user == replyAuthor {
+                let replyText = reply.getExactStringVal(kTextCol)
+                
+                let alert = UIAlertController(
+                    title: nil,
+                    message: "你的回复: \(replyText)",
+                    preferredStyle: .actionSheet
+                )
+                
+                let subReplyAction = UIAlertAction(title: "回复", style: .default) { _ in
+                    
+                }
+                
+                let copyAction = UIAlertAction(title: "复制", style: .default) { _ in
+                    UIPasteboard.general.string = replyText
+                }
+                
+                let deleteAction = UIAlertAction(title: "删除", style: .destructive) { _ in
+                    
+                }
+                
+                let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+                
+                alert.addAction(subReplyAction)
+                alert.addAction(copyAction)
+                alert.addAction(deleteAction)
+                alert.addAction(cancelAction)
+                
+                self.present(alert, animated: true)
+            } else {
+                
+            }
+            
+            
+        } else {
+            self.showTextHUD("请先登录哦")
+        }
+    }
+    
 }
 
 extension NoteDetailVC {
@@ -45,7 +89,7 @@ extension NoteDetailVC {
             guard let commentAuthor = comment.get(kUserCol) as? LCUser else { return }
             let commentAuthorNickName = commentAuthor.getExactStringVal(kNickNameCol)
             
-            if commentAuthor == user {
+            if user == commentAuthor {
                 
                 let commentText = comment.getExactStringVal(kTextCol)
                 
