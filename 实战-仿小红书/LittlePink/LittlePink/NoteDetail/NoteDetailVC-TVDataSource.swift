@@ -38,7 +38,7 @@ extension NoteDetailVC: UITableViewDataSource {
         
         let replyCount = self.replies[indexPath.section].replies.count
         
-        if replyCount > 1 {
+        if replyCount > 1, !self.replies[indexPath.section].isExpanded {
             cell.showAllReplyBtn.isHidden = false
             cell.showAllReplyBtn.setTitle("展开 \(replyCount - 1) 条回复", for: .normal)
             cell.showAllReplyBtn.tag = indexPath.section
