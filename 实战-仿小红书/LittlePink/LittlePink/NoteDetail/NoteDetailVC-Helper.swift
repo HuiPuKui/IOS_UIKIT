@@ -10,7 +10,7 @@ import LeanCloud
 
 extension NoteDetailVC {
     
-    func showDelAction(from name: String, confirmHandler: ((UIAlertAction) -> ())?) {
+    func showDelAlert(for name: String, confirmHandler: ((UIAlertAction) -> ())?) {
         let alert = UIAlertController(title: "提示", message: "确认删除此\(name)", preferredStyle: .alert)
         let action1 = UIAlertAction(title: "取消", style: .cancel)
         let action2 = UIAlertAction(title: "确认", style: .default, handler: confirmHandler) 
@@ -41,6 +41,15 @@ extension NoteDetailVC {
     func hideAndResetTextView() {
         self.textView.resignFirstResponder()
         self.textView.text = ""
+    }
+    
+    func updateCommentCount(by offset: Int) {
+        // 云端数据
+        try? self.note.increase(kCommentCountCol, by: offset)
+        self.note.save { _ in }
+        
+        // UI
+        self.commentCount += offset
     }
     
 }

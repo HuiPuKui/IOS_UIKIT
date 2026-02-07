@@ -56,7 +56,7 @@ extension NoteDetailVC: UITableViewDelegate {
                 }
                 
                 let deleteAction = UIAlertAction(title: "删除", style: .destructive) { _ in
-                    
+                    self.delReply(reply, indexPath)
                 }
                 
                 let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)

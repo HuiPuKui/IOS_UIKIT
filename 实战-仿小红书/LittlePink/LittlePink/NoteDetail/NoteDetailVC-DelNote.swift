@@ -11,7 +11,7 @@ import LeanCloud
 extension NoteDetailVC {
     
     func delNote() {
-        self.showDelAction(from: "笔记") { _ in
+        self.showDelAlert(for: "笔记") { _ in
             // 数据
             self.delLCNote()
             

@@ -22,8 +22,7 @@ extension NoteDetailVC {
             
             comment.save { _ in }
             
-            try? self.note.increase(kCommentCountCol)
-            self.note.save { _ in }
+            self.updateCommentCount(by: 1)
             
             // 内存数据
             self.comments.insert(comment, at: 0)
@@ -32,9 +31,6 @@ extension NoteDetailVC {
             self.tableView.performBatchUpdates {
                 self.tableView.insertSections(IndexSet(integer: 0), with: .automatic)
             }
-            
-            self.commentCount += 1
-            
         } catch {
             print("给 Comment 表的字段赋值失败: \(error)")
         }

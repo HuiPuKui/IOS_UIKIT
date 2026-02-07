@@ -23,8 +23,7 @@ extension NoteDetailVC {
             
             reply.save { _ in }
             
-            try self.note.increase(kCommentCountCol)
-            self.note.save { _ in }
+            self.updateCommentCount(by: 1)
             
             // 内存数据
             self.replies[self.commentSection].replies.append(reply)
@@ -38,8 +37,6 @@ extension NoteDetailVC {
                     with: .automatic
                 )
             }
-            self.commentCount += 1
-            
         } catch {
             print("给 Reply 表的字段赋值失败: \(error)")
         }
