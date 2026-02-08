@@ -38,7 +38,9 @@ extension NoteDetailVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let user = LCApplication.default.currentUser {
             let reply = self.replies[indexPath.section].replies[indexPath.row]
+            
             guard let replyAuthor = reply.get(kUserCol) as? LCUser else { return }
+            let replyAuthorNickName = replyAuthor.getExactStringVal(kNickNameCol)
             
             if user == replyAuthor {
                 let replyText = reply.getExactStringVal(kTextCol)
@@ -50,7 +52,7 @@ extension NoteDetailVC: UITableViewDelegate {
                 )
                 
                 let subReplyAction = UIAlertAction(title: "回复", style: .default) { _ in
-                    
+                    self.prepareForReply(replyAuthorNickName, indexPath.section, replyAuthor)
                 }
                 
                 let copyAction = UIAlertAction(title: "复制", style: .default) { _ in
@@ -70,10 +72,8 @@ extension NoteDetailVC: UITableViewDelegate {
                 
                 self.present(alert, animated: true)
             } else {
-                
+                self.prepareForReply(replyAuthorNickName, indexPath.section, replyAuthor)
             }
-            
-            
         } else {
             self.showTextHUD("请先登录哦")
         }
@@ -130,15 +130,6 @@ extension NoteDetailVC {
         } else {
             self.showTextHUD("请先登录哦")
         }
-    }
-    
-}
-
-extension NoteDetailVC {
-    
-    private func prepareForReply(_ commentAuthorNickName: String, _ section: Int) {
-        self.showTextView(true, "回复 \(commentAuthorNickName)")
-        self.commentSection = section
     }
     
 }

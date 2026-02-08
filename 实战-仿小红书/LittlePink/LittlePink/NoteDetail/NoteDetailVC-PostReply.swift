@@ -21,14 +21,16 @@ extension NoteDetailVC {
             try reply.set(kUserCol, value: user)
             try reply.set(kCommentCol, value: self.comments[self.commentSection])
             
+            if let replyToUser = self.replyToUser {
+                try reply.set(kReplyToUserCol, value: replyToUser)
+            }
+            
             reply.save { _ in }
             
             self.updateCommentCount(by: 1)
             
             // 内存数据
             self.replies[self.commentSection].replies.append(reply)
-            
-            print(self.replies)
             
             // UI
             self.tableView.performBatchUpdates {

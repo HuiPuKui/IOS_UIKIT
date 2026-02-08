@@ -23,6 +23,7 @@ class NoteDetailVC: UIViewController {
     var commentSection = 0
     
     var replies: [ExpandableReplies] = []
+    var replyToUser: LCUser?
     
     @IBOutlet weak var authorAvatarBtn: UIButton!
     @IBOutlet weak var authorNickNameBtn: UIButton!
