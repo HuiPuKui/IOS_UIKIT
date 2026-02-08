@@ -38,6 +38,7 @@ extension NoteDetailVC {
             let query = LCQuery(className: kReplyTable)
             query.whereKey(kCommentCol, .equalTo(comment))
             query.whereKey(kUserCol, .included)
+            query.whereKey(kReplyToUserCol, .included)
             query.whereKey(kCreatedAtCol, .ascending)
             
             query.find { res in

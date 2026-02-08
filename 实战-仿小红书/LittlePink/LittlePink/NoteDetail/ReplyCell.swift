@@ -26,11 +26,22 @@ class ReplyCell: UITableViewCell {
                 self.nickNameLabel.text = user.getExactStringVal(kNickNameCol)
             }
             
-            let replyText = reply.getExactStringVal(kTextCol)
             let createdAt = reply.createdAt?.value
             let dateText = createdAt == nil ? "刚刚" : createdAt!.formattedDate
+            let replyText = reply.getExactStringVal(kTextCol).spliceAttrStr(dateText)
             
-            self.replyTextLabel.attributedText = replyText.spliceAttrStr(dateText)
+            if let replyToUser = reply.get(kReplyToUserCol) as? LCUser {
+                let replyToText = "回复 ".toAttrStr()
+                let nickName = replyToUser.getExactStringVal(kNickNameCol).toAttrStr(14, .secondaryLabel)
+                let colon = ": ".toAttrStr()
+                
+                replyToText.append(nickName)
+                replyToText.append(colon)
+                
+                replyText.insert(replyToText, at: 0)
+            }
+            
+            self.replyTextLabel.attributedText = replyText
         }
     }
 
