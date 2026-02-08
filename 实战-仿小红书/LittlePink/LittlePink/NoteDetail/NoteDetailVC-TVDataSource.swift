@@ -34,6 +34,8 @@ extension NoteDetailVC: UITableViewDataSource {
            let noteAuthor = self.author,
            replyAuthor == noteAuthor {
             cell.authorLabel.isHidden = false
+        } else {
+            cell.authorLabel.isHidden = true
         }
         
         let replyCount = self.replies[indexPath.section].replies.count

@@ -19,6 +19,8 @@ extension NoteDetailVC: UITableViewDelegate {
            let noteAuthor = self.author,
            commentAuthor == noteAuthor {
             commentView.authorLabel.isHidden = false
+        } else {
+            commentView.authorLabel.isHidden = true
         }
         
         let commentTap = UITapGestureRecognizer(target: self, action: #selector(commentTapped))
