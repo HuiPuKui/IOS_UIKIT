@@ -560,7 +560,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="185"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="185" id="KRh-9G-Ss6"/>
+                                                <constraint firstAttribute="height" priority="750" constant="185" id="KRh-9G-Ss6"/>
                                             </constraints>
                                         </view>
                                     </subviews>
