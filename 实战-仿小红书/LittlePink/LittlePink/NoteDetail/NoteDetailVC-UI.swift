@@ -64,7 +64,7 @@ extension NoteDetailVC {
         self.channelBtn.setTitle(noteSubChannel.isEmpty ? noteChannel : noteSubChannel, for: .normal)
         
         if let updatedAt = self.note.updatedAt?.value {
-            let hasEdit = note.getExactBoolVal(kHasEditCol)
+            let hasEdit = note.getExactBoolValDefaultF(kHasEditCol)
             self.dateLabel.text = "\(hasEdit ? "编辑于 " : "")\(updatedAt.formattedDate)"
         }
         

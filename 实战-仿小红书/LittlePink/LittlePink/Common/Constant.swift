@@ -155,6 +155,9 @@ let kNoteCol = "note"
 let kCommentCol = "comment"
 let kReplyToUserCol = "replyToUser"
 
+// Comment 表
+let kHasReplyCol = "hasReply"
+
 // MARK: - 全局函数
 func largeIcon(_ iconName: String, with color: UIColor = .label) -> UIImage {
     let config = UIImage.SymbolConfiguration(scale: .large)

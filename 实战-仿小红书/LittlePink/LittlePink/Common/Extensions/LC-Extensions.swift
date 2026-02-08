@@ -57,8 +57,12 @@ extension LCObject {
         return self.get(col)?.doubleValue ?? 1
     }
     
-    func getExactBoolVal(_ col: String) -> Bool {
+    func getExactBoolValDefaultF(_ col: String) -> Bool {
         return self.get(col)?.boolValue ?? false
+    }
+    
+    func getExactBoolValDefaultT(_ col: String) -> Bool {
+        return self.get(col)?.boolValue ?? true
     }
     
     enum imageType {

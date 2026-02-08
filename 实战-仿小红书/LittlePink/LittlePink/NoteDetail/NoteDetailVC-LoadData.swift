@@ -34,20 +34,28 @@ extension NoteDetailVC {
         let group = DispatchGroup()
         
         for (index, comment) in self.comments.enumerated() {
-            group.enter()
-            let query = LCQuery(className: kReplyTable)
-            query.whereKey(kCommentCol, .equalTo(comment))
-            query.whereKey(kUserCol, .included)
-            query.whereKey(kReplyToUserCol, .included)
-            query.whereKey(kCreatedAtCol, .ascending)
-            
-            query.find { res in
-                if case let .success(objects: replies) = res {
-                    repliesDic[index] = replies
-                } else {
-                    repliesDic[index] = []
+            if comment.getExactBoolValDefaultT(kHasEditCol) {
+                group.enter()
+                let query = LCQuery(className: kReplyTable)
+                query.whereKey(kCommentCol, .equalTo(comment))
+                query.whereKey(kUserCol, .included)
+                query.whereKey(kReplyToUserCol, .included)
+                query.whereKey(kCreatedAtCol, .ascending)
+                
+                query.find { res in
+                    if case let .success(objects: replies) = res {
+                        if replies.isEmpty {
+                            try? comment.set(kHasReplyCol, value: false)
+                            comment.save { _ in }
+                        }
+                        repliesDic[index] = replies
+                    } else {
+                        repliesDic[index] = []
+                    }
+                    group.leave()
                 }
-                group.leave()
+            } else {
+                repliesDic[index] = []
             }
         }
         
