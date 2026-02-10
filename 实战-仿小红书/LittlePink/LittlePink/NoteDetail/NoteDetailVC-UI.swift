@@ -22,7 +22,6 @@ extension NoteDetailVC {
         
         self.showNote()
         self.showLike()
-        self.getComments()
     }
     
     func showNote(_ isUpdateNote: Bool = false) {

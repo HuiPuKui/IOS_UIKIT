@@ -129,6 +129,8 @@ class NoteDetailVC: UIViewController {
 //        self.imageSlideShowHeight.constant = (imageSize.height / imageSize.width) * screenRect.width
         
         self.setUI()
+        self.getCommentsAndReplies()
+        self.getFav()
     }
     
     override func viewDidLayoutSubviews() {

@@ -10,7 +10,7 @@ import LeanCloud
 
 extension NoteDetailVC {
     
-    func getComments() {
+    func getCommentsAndReplies() {
         self.showLoadHUD()
         
         let query = LCQuery(className: kCommentTable)
@@ -63,6 +63,21 @@ extension NoteDetailVC {
             self.replies = repliesDic.sorted { $0.key < $1.key }.map { ExpandableReplies(replies: $0.value) }
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+            }
+        }
+    }
+    
+    func getFav() {
+        if let user = LCApplication.default.currentUser {
+            let query = LCQuery(className: kUserFavTable)
+            query.whereKey(kUserCol, .equalTo(user))
+            query.whereKey(kNoteCol, .equalTo(self.note))
+            query.getFirst() { res in
+                if case .success = res {
+                    DispatchQueue.main.async {
+                        self.favBtn.setSelected(selected: true, animated: false)
+                    }
+                }
             }
         }
     }
