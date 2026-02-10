@@ -19,9 +19,9 @@ extension NoteDetailVC: UITableViewDataSource {
         
         if replyCount > 1 && !self.replies[section].isExpanded {
             return 1
+        } else {   
+            return replyCount
         }
-        
-        return replyCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

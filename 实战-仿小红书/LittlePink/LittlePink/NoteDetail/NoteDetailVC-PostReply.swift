@@ -42,10 +42,26 @@ extension NoteDetailVC {
             self.replies[self.commentSection].replies.append(reply)
             
             // UI
-            self.tableView.performBatchUpdates {
-                self.tableView.insertRows(
-                    at: [IndexPath(row: self.replies[self.commentSection].replies.count - 1,section: self.commentSection)],
-                    with: .automatic
+            if self.replies[self.commentSection].isExpanded {
+                self.tableView.performBatchUpdates {
+                    self.tableView.insertRows(
+                        at: [
+                            IndexPath(
+                                row: self.replies[self.commentSection].replies.count - 1,
+                                section: self.commentSection
+                            )
+                        ],
+                        with: .automatic
+                    )
+                }
+            } else {
+                let cell = self.tableView.cellForRow(
+                    at: IndexPath(row: 0, section: self.commentSection)
+                ) as! ReplyCell
+                
+                cell.showAllReplyBtn.setTitle(
+                    "展示 \(self.replies[self.commentSection].replies.count - 1) 条回复",
+                    for: .normal
                 )
             }
         } catch {
