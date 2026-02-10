@@ -899,3 +899,9 @@ if let cancelButton = self.searchBar.value(forKey: "cancelButton") as? UIButton 
  ## 26-笔记评论的回复
 
  ## 27-笔记详情页的优化及bug处理
+
+ ## 28-个人页面
+
+ **多层 UIScrollView 嵌套滚动解决方案:** `https://juejin.cn/post/6844903776130695175`
+
+ **GitHub - Jiar/SegementSlide- Multi-tier UIScrollView nested scrolling solution. 😋😋😋:** `https://github.com/Jiar/SegementSlide`
