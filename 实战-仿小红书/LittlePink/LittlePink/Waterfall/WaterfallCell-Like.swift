@@ -26,7 +26,6 @@ extension WaterfallCell {
                 userLike.save { _ in }
                 
                 try? note.increase(kLikeCountCol)
-                note.save { _ in }
             } else {
                 let query = LCQuery(className: kUserLikeTable)
                 query.whereKey(kUserCol, .equalTo(user))

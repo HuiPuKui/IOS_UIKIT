@@ -40,7 +40,6 @@ extension NoteDetailVC {
                 userFav.save { _ in }
                 
                 try? self.note.increase(kFavCountCol)
-                self.note.save { _ in }
             } else {
                 let query = LCQuery(className: kUserFavTable)
                 query.whereKey(kUserCol, .equalTo(user))

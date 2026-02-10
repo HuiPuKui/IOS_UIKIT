@@ -8,6 +8,7 @@
 import Foundation
 import ImageSlideshow
 import GrowingTextView
+import LeanCloud
 
 extension NoteDetailVC {
     
@@ -23,6 +24,11 @@ extension NoteDetailVC {
         pageControl.currentPageIndicatorTintColor = mainColor
         
         self.imageSlideshow.pageIndicator = pageControl
+        
+        if LCApplication.default.currentUser == nil {
+            self.likeBtn.setToNormal()
+            self.favBtn.setToNormal()
+        }
         
         // textView
         self.textView.textContainerInset = UIEdgeInsets(top: 11.5, left: 16, bottom: 11.5, right: 16)
