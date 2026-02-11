@@ -1637,33 +1637,8 @@
                     <view key="view" contentMode="scaleToFill" id="09W-e5-ka4">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0lc-4A-CnF">
-                                <rect key="frame" x="87.666666666666686" y="407" width="218" height="38"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="个人页面(点击退出登录)"/>
-                                <connections>
-                                    <action selector="logoutTest:" destination="Jw9-Au-Hdi" eventType="touchUpInside" id="RiN-dR-TdK"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ELx-jh-9B5">
-                                <rect key="frame" x="159" y="340" width="75" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="本地草稿"/>
-                                <connections>
-                                    <action selector="showDraftNotes:" destination="Jw9-Au-Hdi" eventType="touchUpInside" id="Hfi-lf-0fO"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Ltr-c3-lUf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="0lc-4A-CnF" firstAttribute="centerX" secondItem="09W-e5-ka4" secondAttribute="centerX" id="FQF-09-NP6"/>
-                            <constraint firstItem="0lc-4A-CnF" firstAttribute="centerY" secondItem="09W-e5-ka4" secondAttribute="centerY" id="xlO-HL-WBj"/>
-                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5FL-2w-2AH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

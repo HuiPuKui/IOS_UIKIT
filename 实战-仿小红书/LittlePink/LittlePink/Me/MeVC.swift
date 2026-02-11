@@ -7,30 +7,50 @@
 
 import UIKit
 import LeanCloud
+import SegementSlide
 
-
-class MeVC: UIViewController {
+class MeVC: SegementSlideDefaultViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // 去掉返回按钮文字
         self.navigationItem.backButtonDisplayMode = .minimal
+        
+        self.defaultSelectedIndex = 0
+        self.reloadData()
+    }
+    
+    override func segementSlideHeaderView() -> UIView? {
+        let headerView = UIView()
+        headerView.translatesAutoresizingMaskIntoConstraints = false
+        headerView.backgroundColor = mainColor
+        headerView.heightAnchor.constraint(equalToConstant: self.view.bounds.height / 4).isActive = true
+        return headerView
+    }
+    
+    override var titlesInSwitcher: [String] {
+        return ["笔记", "收藏", "赞过"]
+    }
+    
+    override func segementSlideContentViewController(at index: Int) -> (any SegementSlideContentScrollViewDelegate)? {
+        let vc = self.storyboard!.instantiateViewController(identifier: kWaterfallVCID) as! WaterfallVC
+        return vc
     }
 
-    @IBAction func logoutTest(_ sender: Any) {
-        LCUser.logOut()
-        
-        let loginVC = self.storyboard!.instantiateViewController(identifier: kLoginVCID)
-        
-        loginAndMeParentVC.removeChildren()
-        loginAndMeParentVC.add(child: loginVC)
-    }
-
-    @IBAction func showDraftNotes(_ sender: Any) {
-        let navi = self.storyboard!.instantiateViewController(identifier: kDraftNotesNaviID)
-        navi.modalPresentationStyle = .fullScreen
-        self.present(navi, animated: true)
-    }
+//    @IBAction func logoutTest(_ sender: Any) {
+//        LCUser.logOut()
+//        
+//        let loginVC = self.storyboard!.instantiateViewController(identifier: kLoginVCID)
+//        
+//        loginAndMeParentVC.removeChildren()
+//        loginAndMeParentVC.add(child: loginVC)
+//    }
+//
+//    @IBAction func showDraftNotes(_ sender: Any) {
+//        let navi = self.storyboard!.instantiateViewController(identifier: kDraftNotesNaviID)
+//        navi.modalPresentationStyle = .fullScreen
+//        self.present(navi, animated: true)
+//    }
     
 }
