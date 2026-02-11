@@ -16,6 +16,7 @@ class MeVC: SegementSlideDefaultViewController {
 
         // 去掉返回按钮文字
         self.navigationItem.backButtonDisplayMode = .minimal
+        self.setUI()
         
         self.defaultSelectedIndex = 0
         self.reloadData()
@@ -31,6 +32,14 @@ class MeVC: SegementSlideDefaultViewController {
     
     override var titlesInSwitcher: [String] {
         return ["笔记", "收藏", "赞过"]
+    }
+    
+    override var switcherConfig: SegementSlideDefaultSwitcherConfig {
+        var config = super.switcherConfig
+        config.type = .tab
+        config.selectedTitleColor = .label
+        config.indicatorColor = mainColor
+        return config
     }
     
     override func segementSlideContentViewController(at index: Int) -> (any SegementSlideContentScrollViewDelegate)? {
