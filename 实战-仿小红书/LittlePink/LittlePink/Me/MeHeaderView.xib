@@ -208,6 +208,7 @@
             </constraints>
             <connections>
                 <outlet property="editOrFollowBtn" destination="27H-79-RlI" id="zgB-kq-EJN"/>
+                <outlet property="rootStackView" destination="Kod-To-SPj" id="ZlD-lM-BYL"/>
                 <outlet property="settingOrChatBtn" destination="7jN-nH-mey" id="AWn-iH-0rb"/>
             </connections>
             <point key="canvasLocation" x="114.50381679389312" y="185.56338028169014"/>

@@ -8,7 +8,7 @@
 import UIKit
 
 class MeHeaderView: UIView {
-
+    @IBOutlet weak var rootStackView: UIStackView!
     @IBOutlet weak var editOrFollowBtn: UIButton!
     @IBOutlet weak var settingOrChatBtn: UIButton!
     
