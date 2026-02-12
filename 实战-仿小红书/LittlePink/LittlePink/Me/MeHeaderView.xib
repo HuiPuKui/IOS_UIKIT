@@ -16,8 +16,8 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Kod-To-SPj">
-                    <rect key="frame" x="16" y="58.999999999999986" width="361" height="209.66666666666663"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Kod-To-SPj">
+                    <rect key="frame" x="16" y="74.999999999999986" width="361" height="215.66666666666663"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="YHN-h4-MdT">
                             <rect key="frame" x="0.0" y="0.0" width="361" height="29.666666666666668"/>
@@ -43,7 +43,7 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="pTA-fY-fTG">
-                            <rect key="frame" x="0.0" y="39.666666666666671" width="361" height="170"/>
+                            <rect key="frame" x="0.0" y="45.666666666666686" width="361" height="170"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="HzQ-kS-uKt">
                                     <rect key="frame" x="0.0" y="0.0" width="361" height="80"/>
@@ -123,7 +123,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关注" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bD9-og-QV1">
-                                                            <rect key="frame" x="0.0" y="23" width="28" height="17"/>
+                                                            <rect key="frame" x="0.0" y="23.000000000000028" width="28" height="17"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" systemColor="secondaryLabelColor"/>
                                                             <nil key="highlightedColor"/>
@@ -140,7 +140,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="粉丝" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yv8-Jq-5O3">
-                                                            <rect key="frame" x="0.0" y="23" width="28" height="17"/>
+                                                            <rect key="frame" x="0.0" y="23.000000000000028" width="28" height="17"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" systemColor="secondaryLabelColor"/>
                                                             <nil key="highlightedColor"/>
@@ -157,7 +157,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="获赞与收藏" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rP0-zA-YE4">
-                                                            <rect key="frame" x="0.0" y="23" width="69.666666666666671" height="17"/>
+                                                            <rect key="frame" x="0.0" y="23.000000000000028" width="69.666666666666671" height="17"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" systemColor="secondaryLabelColor"/>
                                                             <nil key="highlightedColor"/>
@@ -170,7 +170,7 @@
                                             <rect key="frame" x="221.33333333333337" y="0.0" width="139.66666666666663" height="40"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="27H-79-RlI">
-                                                    <rect key="frame" x="0.0" y="7" width="84" height="26"/>
+                                                    <rect key="frame" x="0.0" y="7.0000000000000284" width="84" height="26"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <inset key="contentEdgeInsets" minX="16" minY="5" maxX="16" maxY="5"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -179,7 +179,7 @@
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7jN-nH-mey">
-                                                    <rect key="frame" x="103.99999999999997" y="7" width="35.666666666666657" height="26"/>
+                                                    <rect key="frame" x="103.99999999999997" y="7.0000000000000284" width="35.666666666666657" height="26"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="tintColor" systemColor="labelColor"/>
                                                     <inset key="contentEdgeInsets" minX="10" minY="4" maxX="10" maxY="4"/>
@@ -203,7 +203,7 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Kod-To-SPj" secondAttribute="trailing" constant="16" id="RH1-LK-YjB"/>
-                <constraint firstItem="Kod-To-SPj" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="UXz-wy-lxR"/>
+                <constraint firstItem="Kod-To-SPj" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="UXz-wy-lxR"/>
                 <constraint firstItem="Kod-To-SPj" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="qib-bU-xFW"/>
             </constraints>
             <connections>

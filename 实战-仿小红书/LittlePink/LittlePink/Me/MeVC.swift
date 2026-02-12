@@ -22,6 +22,8 @@ class MeVC: SegementSlideDefaultViewController {
         self.reloadData()
     }
     
+    override var bouncesType: BouncesType { .child }
+    
     override func segementSlideHeaderView() -> UIView? {
         let headerView = Bundle.loadView(fromNib: "MeHeaderView", with: MeHeaderView.self)
         headerView.translatesAutoresizingMaskIntoConstraints = false
