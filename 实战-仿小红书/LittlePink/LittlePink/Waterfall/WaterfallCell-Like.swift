@@ -12,7 +12,10 @@ extension WaterfallCell {
     @objc func likeBtnTappedWhenLogin() {
         
         if self.likeCount != self.currentLikedCount {
-            guard let note = self.note else { return }
+            guard
+                let note = self.note,
+                let authorObjectId = (note.get(kAuthorCol) as? LCUser)?.objectId?.stringValue
+            else { return }
             
             let user = LCApplication.default.currentUser!
             
@@ -26,6 +29,8 @@ extension WaterfallCell {
                 userLike.save { _ in }
                 
                 try? note.increase(kLikeCountCol)
+                
+                LCObject.userInfo(where: authorObjectId, increase: kLikeCountCol)
             } else {
                 let query = LCQuery(className: kUserLikeTable)
                 query.whereKey(kUserCol, .equalTo(user))
@@ -38,6 +43,8 @@ extension WaterfallCell {
                 
                 try? note.set(kLikeCountCol, value: self.likeCount)
                 note.save { _ in }
+                
+                LCObject.userInfo(where: authorObjectId, decrease: kLikeCountCol, to: self.likeCount)
             }
         }
     }

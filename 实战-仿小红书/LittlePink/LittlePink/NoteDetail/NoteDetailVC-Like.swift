@@ -29,6 +29,7 @@ extension NoteDetailVC {
     @objc private func likeBtnTappedWhenLogin() {
         if self.likeCount != self.currentLikeCount {
             let user = LCApplication.default.currentUser!
+            let authorObjectId = self.author?.objectId?.stringValue ?? ""
             
             let offset = self.isLike ? 1 : -1
             self.currentLikeCount += offset
@@ -41,6 +42,8 @@ extension NoteDetailVC {
                 userLike.save { _ in }
                 
                 try? self.note.increase(kLikeCountCol)
+                
+                LCObject.userInfo(where: authorObjectId, increase: kLikeCountCol)
             } else {
                 let query = LCQuery(className: kUserLikeTable)
                 query.whereKey(kUserCol, .equalTo(user))
@@ -53,6 +56,8 @@ extension NoteDetailVC {
                 
                 try? self.note.set(kLikeCountCol, value: self.likeCount)
                 self.note.save { _ in }
+                
+                LCObject.userInfo(where: authorObjectId, decrease: kLikeCountCol, to: self.likeCount)
             }
         }
     }

@@ -28,6 +28,7 @@ extension NoteDetailVC {
     @objc private func favBtnTappedWhenLogin() {
         if self.favCount != self.currentFavCount {
             let user = LCApplication.default.currentUser!
+            let authorObjectId = self.author?.objectId?.stringValue ?? ""
             
             let offset = self.isFav ? 1 : -1
             self.currentFavCount += offset
@@ -40,6 +41,8 @@ extension NoteDetailVC {
                 userFav.save { _ in }
                 
                 try? self.note.increase(kFavCountCol)
+                
+                LCObject.userInfo(where: authorObjectId, increase: kFavCountCol)
             } else {
                 let query = LCQuery(className: kUserFavTable)
                 query.whereKey(kUserCol, .equalTo(user))
@@ -52,6 +55,8 @@ extension NoteDetailVC {
                 
                 try? self.note.set(kFavCountCol, value: self.favCount)
                 self.note.save { _ in }
+                
+                LCObject.userInfo(where: authorObjectId, decrease: kFavCountCol, to: self.favCount)
             }
         }
     }

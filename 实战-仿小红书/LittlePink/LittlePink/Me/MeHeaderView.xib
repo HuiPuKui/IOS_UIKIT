@@ -72,7 +72,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="♀" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3L-mE-UbZ">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="♀︎" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3L-mE-UbZ">
                                                             <rect key="frame" x="117.66666666666666" y="0.0" width="23" height="27.666666666666668"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                             <color key="textColor" name="main"/>
@@ -207,9 +207,17 @@
                 <constraint firstItem="Kod-To-SPj" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="qib-bU-xFW"/>
             </constraints>
             <connections>
+                <outlet property="avatarImageView" destination="b28-xd-gQb" id="bOy-kQ-7Lb"/>
+                <outlet property="backOrSlideBtn" destination="DkC-AD-KZj" id="VGP-88-fjo"/>
                 <outlet property="editOrFollowBtn" destination="27H-79-RlI" id="zgB-kq-EJN"/>
+                <outlet property="genderLabel" destination="J3L-mE-UbZ" id="KCT-ia-ycD"/>
+                <outlet property="idLabel" destination="LfQ-AC-HLN" id="UwT-Ee-WIU"/>
+                <outlet property="introLabel" destination="Gmp-4L-7UN" id="OzM-md-EnA"/>
+                <outlet property="likedAndFavedLabel" destination="gMT-vR-RlV" id="cSL-vK-kYG"/>
+                <outlet property="nickNameLabel" destination="Ms4-ML-Tmg" id="ZCq-ZZ-BBe"/>
                 <outlet property="rootStackView" destination="Kod-To-SPj" id="ZlD-lM-BYL"/>
                 <outlet property="settingOrChatBtn" destination="7jN-nH-mey" id="AWn-iH-0rb"/>
+                <outlet property="shareBtn" destination="BAv-cL-vIr" id="s2g-25-9gU"/>
             </connections>
             <point key="canvasLocation" x="114.50381679389312" y="185.56338028169014"/>
         </view>
@@ -226,7 +234,7 @@
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
