@@ -26,6 +26,7 @@ class MeVC: SegementSlideDefaultViewController {
     
     override func segementSlideHeaderView() -> UIView? {
         let headerView = Bundle.loadView(fromNib: "MeHeaderView", with: MeHeaderView.self)
+        headerView.user = LCApplication.default.currentUser!
         headerView.translatesAutoresizingMaskIntoConstraints = false
         headerView.heightAnchor.constraint(equalToConstant: headerView.rootStackView.frame.height + 16).isActive = true
         return headerView

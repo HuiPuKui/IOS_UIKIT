@@ -91,6 +91,7 @@ extension LCObject {
         query.getFirst { res in
             if case let .success(object: userInfo) = res {
                 try? userInfo.increase(col)
+                userInfo.save { _ in }
             }
         }
     }

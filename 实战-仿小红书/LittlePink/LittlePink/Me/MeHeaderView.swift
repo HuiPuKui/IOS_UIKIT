@@ -44,7 +44,20 @@ class MeHeaderView: UIView {
             
             let intro = self.user.getExactStringVal(kIntroCol)
             self.introLabel.text = intro.isEmpty ? "填写个人简介更容易获得关注哦,点击此处填写" : intro
+            
+            guard let userObjectId = self.user.objectId?.stringValue else { return }
+            let query = LCQuery(className: kUserInfoTable)
+            query.whereKey(kUserObjectIdCol, .equalTo(userObjectId))
+            query.getFirst { res in
+                if case let .success(object: userInfo) = res {
+                    let likeCount = userInfo.getExactIntVal(kLikeCountCol)
+                    let favCount = userInfo.getExactIntVal(kFavCountCol)
+                    DispatchQueue.main.async {
+                        self.likedAndFavedLabel.text = "\(likeCount + favCount)"
+                    }
+                }
+            }
         }
     }
-
+    
 }
