@@ -12,7 +12,7 @@ extension UIViewController {
     
     func configAfterLogin(_ user: LCUser, _ nickName: String, _ email: String = "") {
         if let _ = user.get(kNickNameCol) {
-            self.dismissAndShowMeVC()
+            self.dismissAndShowMeVC(user)
         } else {
             let group = DispatchGroup()
             
@@ -50,16 +50,18 @@ extension UIViewController {
             }
             
             group.notify(queue: .main) {
-                self.dismissAndShowMeVC()
+                self.dismissAndShowMeVC(user)
             }
         }
     }
     
-    func dismissAndShowMeVC() {
+    func dismissAndShowMeVC(_ user: LCUser) {
         self.hideLoadHUD()
         DispatchQueue.main.async {
             let mainSB = UIStoryboard(name: "Main", bundle: nil)
-            let meVC = mainSB.instantiateViewController(identifier: kMeVCID)
+            let meVC = mainSB.instantiateViewController(identifier: kMeVCID) { coder in
+                return MeVC(coder: coder, user: user)
+            }
             
             loginAndMeParentVC.removeChildren()
             loginAndMeParentVC.add(child: meVC)

@@ -43,6 +43,7 @@ class WaterfallCell: UICollectionViewCell {
             self.avatarImageView.kf.setImage(with: avatarURL)
             
             self.titleLabel.text = note.getExactStringVal(kTitleCol)
+            self.nickNameLabel.text = author.getExactStringVal(kNickNameCol)
             self.likeCount = note.getExactIntVal(kLikeCountCol)
             self.currentLikedCount = self.likeCount
             self.likeBtn.setTitle("\(note.getExactIntVal(kLikeCountCol))", for: .normal)

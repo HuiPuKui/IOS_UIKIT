@@ -7,6 +7,10 @@
 
 import UIKit
 
+// MARK: 测试手机号/验证码
+// 13664163451
+// 515082
+
 // MARK: storyboardID
 let kFollowVCID = "FollowVCID"
 let kDiscoveryVCID = "DiscoveryVCID"
