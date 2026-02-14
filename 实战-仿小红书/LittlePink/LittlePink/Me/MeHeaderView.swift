@@ -12,7 +12,7 @@ import Kingfisher
 class MeHeaderView: UIView {
     @IBOutlet weak var rootStackView: UIStackView!
     
-    @IBOutlet weak var backOrSlideBtn: UIButton!
+    @IBOutlet weak var backOrDrawerBtn: UIButton!
     @IBOutlet weak var shareBtn: UIButton!
     
     @IBOutlet weak var avatarImageView: UIImageView!

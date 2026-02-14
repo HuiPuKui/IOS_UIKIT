@@ -387,6 +387,9 @@
                                                                 <real key="value" value="16"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="goToAuthorMeVC:" destination="I5p-1X-Jhl" eventType="touchUpInside" id="Qmx-co-EBb"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Odz-Sv-KUz">
                                                         <rect key="frame" x="79.666666666666671" y="0.0" width="56.000000000000014" height="32"/>
@@ -395,6 +398,9 @@
                                                         <state key="normal" title="作者昵称">
                                                             <color key="titleColor" systemColor="labelColor"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="goToAuthorMeVC:" destination="I5p-1X-Jhl" eventType="touchUpInside" id="Tfs-r1-BHY"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>

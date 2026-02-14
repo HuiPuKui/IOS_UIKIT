@@ -13,9 +13,10 @@ extension NoteDetailVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let commentView = tableView.dequeueReusableHeaderFooterView(withIdentifier: kCommentViewID) as! CommentView
         let comment = self.comments[section]
+        let commentAuthor = comment.get(kUserCol) as? LCUser
         commentView.comment = comment
         
-        if let commentAuthor = comment.get(kUserCol) as? LCUser,
+        if let commentAuthor = commentAuthor,
            let noteAuthor = self.author,
            commentAuthor == noteAuthor {
             commentView.authorLabel.isHidden = false
@@ -26,6 +27,10 @@ extension NoteDetailVC: UITableViewDelegate {
         let commentTap = UITapGestureRecognizer(target: self, action: #selector(commentTapped))
         commentView.tag = section
         commentView.addGestureRecognizer(commentTap)
+        
+        let avatarTap = UIPassableTapGestureRecognizer(target: self, action: #selector(goToMeVC))
+        avatarTap.passObj = commentAuthor
+        commentView.avatarImageView.addGestureRecognizer(avatarTap)
         
         return commentView
     }

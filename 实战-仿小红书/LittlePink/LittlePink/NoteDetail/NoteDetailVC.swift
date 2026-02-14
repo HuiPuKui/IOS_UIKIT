@@ -143,6 +143,10 @@ class NoteDetailVC: UIViewController {
         self.dismiss(animated: true)
     }
     
+    @IBAction func goToAuthorMeVC(_ sender: Any) {
+        self.noteToMeVC(self.author)
+    }
+    
     @IBAction func shareOrMore(_ sender: Any) {
         self.shareOrMore()
     }

@@ -211,7 +211,7 @@
             </constraints>
             <connections>
                 <outlet property="avatarImageView" destination="b28-xd-gQb" id="bOy-kQ-7Lb"/>
-                <outlet property="backOrSlideBtn" destination="DkC-AD-KZj" id="VGP-88-fjo"/>
+                <outlet property="backOrDrawerBtn" destination="DkC-AD-KZj" id="Hyp-of-aQs"/>
                 <outlet property="editOrFollowBtn" destination="27H-79-RlI" id="zgB-kq-EJN"/>
                 <outlet property="genderLabel" destination="J3L-mE-UbZ" id="KCT-ia-ycD"/>
                 <outlet property="idLabel" destination="LfQ-AC-HLN" id="UwT-Ee-WIU"/>
