@@ -27,16 +27,25 @@ extension NoteDetailVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: kReplyCellID, for: indexPath) as! ReplyCell
         let reply = self.replies[indexPath.section].replies[indexPath.row]
+        let replyAuthor = reply.get(kUserCol) as? LCUser
         
         cell.reply = reply
         
-        if let replyAuthor = reply.get(kUserCol) as? LCUser,
+        if let replyAuthor = replyAuthor,
            let noteAuthor = self.author,
            replyAuthor == noteAuthor {
             cell.authorLabel.isHidden = false
         } else {
             cell.authorLabel.isHidden = true
         }
+        
+        let avatarTap = UIPassableTapGestureRecognizer(target: self, action: #selector(goToMeVC))
+        avatarTap.passObj = replyAuthor
+        cell.avatarImageView.addGestureRecognizer(avatarTap)
+        
+        let nickNameTap = UIPassableTapGestureRecognizer(target: self, action: #selector(goToMeVC))
+        nickNameTap.passObj = replyAuthor
+        cell.nickNameLabel.addGestureRecognizer(nickNameTap)
         
         let replyCount = self.replies[indexPath.section].replies.count
         
