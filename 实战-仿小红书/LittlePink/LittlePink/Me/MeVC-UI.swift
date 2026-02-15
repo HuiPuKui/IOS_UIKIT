@@ -25,6 +25,9 @@ extension MeVC {
         )
         statusBarOverlayView.backgroundColor = .systemBackground
         self.view.addSubview(statusBarOverlayView)
+        
+        self.defaultSelectedIndex = 0
+        self.reloadData()
     }
     
 }

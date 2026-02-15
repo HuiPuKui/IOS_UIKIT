@@ -14,6 +14,7 @@ class MeVC: SegementSlideDefaultViewController {
     var user: LCUser
     
     var isFromNote: Bool = false
+    var isMySelf: Bool = false
     
     init?(coder: NSCoder, user: LCUser) {
         self.user = user
@@ -27,29 +28,14 @@ class MeVC: SegementSlideDefaultViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // 去掉返回按钮文字
-        self.navigationItem.backButtonDisplayMode = .minimal
+        self.config()
         self.setUI()
-        
-        self.defaultSelectedIndex = 0
-        self.reloadData()
     }
     
     override var bouncesType: BouncesType { .child }
     
     override func segementSlideHeaderView() -> UIView? {
-        let headerView = Bundle.loadView(fromNib: "MeHeaderView", with: MeHeaderView.self)
-        
-        headerView.translatesAutoresizingMaskIntoConstraints = false
-        headerView.heightAnchor.constraint(equalToConstant: headerView.rootStackView.frame.height + 16).isActive = true
-        
-        headerView.user = self.user
-        if self.isFromNote {
-            headerView.backOrDrawerBtn.setImage(largeIcon("chevron.left"), for: .normal)
-        }
-        headerView.backOrDrawerBtn.addTarget(self, action: #selector(backOrDrawer), for: .touchUpInside)
-        
-        return headerView
+        return setHeaderView()
     }
     
     override var titlesInSwitcher: [String] {

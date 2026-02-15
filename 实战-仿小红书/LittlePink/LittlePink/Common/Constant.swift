@@ -174,6 +174,12 @@ func largeIcon(_ iconName: String, with color: UIColor = .label) -> UIImage {
     return icon.withTintColor(color)
 }
 
+func fontIcon(_ iconName: String, fontSize: CGFloat, with color: UIColor = .label) -> UIImage {
+    let config = UIImage.SymbolConfiguration(font: .systemFont(ofSize: fontSize))
+    let icon = UIImage(systemName: iconName, withConfiguration: config)!
+    return icon.withTintColor(color)
+}
+
 func showGlobalTextHUD(_ title: String) {
     let window = UIApplication.shared.windows.last!
     let hud = MBProgressHUD.showAdded(to: window, animated: true)
