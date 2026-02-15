@@ -44,6 +44,7 @@ let imagePH = UIImage(named: "imagePH")!
 // MARK: - UserDefaults 的 Key
 let kNameFromAppleID = "nameFromAppleID"
 let kEmailFromAppleID = "emailFromAppleID"
+let kDraftNoteCount = "draftNodeCount"
 
 // MARK: - CoreData
 let appDelegate = UIApplication.shared.delegate as! AppDelegate

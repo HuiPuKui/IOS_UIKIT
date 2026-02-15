@@ -376,3 +376,15 @@ extension FileManager {
     }
     
 }
+
+extension UserDefaults {
+    
+    static func increase(_ key: String, by value: Int = 1) {
+        self.standard.set(self.standard.integer(forKey: key) + value, forKey: key)
+    }
+    
+    static func decrease(_ key: String, by value: Int = 1) {
+        self.standard.set(self.standard.integer(forKey: key) - value, forKey: key)
+    }
+    
+}

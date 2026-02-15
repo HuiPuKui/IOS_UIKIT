@@ -65,6 +65,8 @@ extension WaterfallVC {
             
             self.draftNotes.remove(at: index)
             
+            UserDefaults.decrease(kDraftNoteCount)
+            
             // UI
             DispatchQueue.main.async {
                 self.collectionView.reloadData()

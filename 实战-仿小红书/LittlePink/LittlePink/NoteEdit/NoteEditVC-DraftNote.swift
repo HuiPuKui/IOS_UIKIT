@@ -22,6 +22,8 @@ extension NoteEditVC {
             draftNote.isVideo = self.isVideo
             self.handleOthers(draftNote)
             
+            UserDefaults.increase(kDraftNoteCount)
+            
             DispatchQueue.main.async {
                 self.showTextHUD("保存草稿成功", false)
             }
