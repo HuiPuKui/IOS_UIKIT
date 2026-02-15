@@ -23,7 +23,12 @@ extension MeVC {
         headerView.backOrDrawerBtn.addTarget(self, action: #selector(backOrDrawer), for: .touchUpInside)
         
         if self.isMySelf {
-            
+            headerView.introLabel.addGestureRecognizer(
+                UITapGestureRecognizer(
+                    target: self,
+                    action: #selector(editIntro)
+                )
+            )
         } else {
             if self.user.getExactStringVal(kIntroCol).isEmpty {
                 headerView.introLabel.isHidden = true
@@ -43,6 +48,18 @@ extension MeVC {
                 for: .normal
             )
         }
+        
+        headerView.editOrFollowBtn.addTarget(
+            self,
+            action: #selector(editOrFollow),
+            for: .touchUpInside
+        )
+        
+        headerView.settingOrChatBtn.addTarget(
+            self,
+            action: #selector(settingOrChat),
+            for: .touchUpInside
+        )
         
         return headerView
     }

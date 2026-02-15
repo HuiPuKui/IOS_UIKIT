@@ -276,6 +276,10 @@ extension UIViewController {
         hud.hide(animated: true, afterDelay: 2)
     }
     
+    func showLoginHUD() {
+        self.showTextHUD("请先登录哦")
+    }
+    
     // 用于在本 vc 调用，让他显示到别的 vc （如父 vc） 里去
     func showTextHUD(_ title: String, in view: UIView, _ subTitle: String? = nil) {
         let hud = MBProgressHUD.showAdded(to: view, animated: true)

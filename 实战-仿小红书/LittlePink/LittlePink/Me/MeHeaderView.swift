@@ -60,8 +60,4 @@ class MeHeaderView: UIView {
         }
     }
     
-    @IBAction func logoutTest(_ sender: Any) {
-        LCUser.logOut()
-    }
-    
 }

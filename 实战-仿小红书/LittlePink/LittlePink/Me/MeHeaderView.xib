@@ -189,9 +189,6 @@
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                                         </preferredSymbolConfiguration>
                                                     </state>
-                                                    <connections>
-                                                        <action selector="logoutTest:" destination="iN0-l3-epB" eventType="touchUpInside" id="joX-KT-5gk"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </stackView>

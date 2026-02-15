@@ -21,7 +21,7 @@ extension NoteDetailVC {
             )
             perform(#selector(favBtnTappedWhenLogin), with: nil, afterDelay: 1)
         } else {
-            self.showTextHUD("请先登录哦")
+            self.showLoginHUD()
         }
     }
     

@@ -22,7 +22,7 @@ extension NoteDetailVC {
             )
             perform(#selector(likeBtnTappedWhenLogin), with: nil, afterDelay: 1)
         } else {
-            self.showTextHUD("请先登录哦")
+            self.showLoginHUD()
         }
     }
     

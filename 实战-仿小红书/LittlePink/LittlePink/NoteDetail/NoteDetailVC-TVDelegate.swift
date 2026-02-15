@@ -84,7 +84,7 @@ extension NoteDetailVC: UITableViewDelegate {
                 self.prepareForReply(replyAuthorNickName, indexPath.section, replyAuthor)
             }
         } else {
-            self.showTextHUD("请先登录哦")
+            self.showLoginHUD()
         }
     }
     
@@ -137,7 +137,7 @@ extension NoteDetailVC {
             }
             
         } else {
-            self.showTextHUD("请先登录哦")
+            self.showLoginHUD()
         }
     }
     

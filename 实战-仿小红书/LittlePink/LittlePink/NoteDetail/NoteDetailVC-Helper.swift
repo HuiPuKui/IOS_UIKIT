@@ -14,7 +14,7 @@ extension NoteDetailVC {
         if let _ = LCApplication.default.currentUser {
             self.showTextView()
         } else {
-            showTextHUD("请先登录哦")
+            self.showLoginHUD()
         }
     }
     
