@@ -37,6 +37,11 @@ extension WaterfallVC {
         if self.isMyDraft {
             self.navigationItem.title = "本地草稿"
         }
+        
+        self.collectionView.register(
+            UINib(nibName: "MyDraftNoteWaterfallCell", bundle: nil),
+            forCellWithReuseIdentifier: kMyDraftNoteWaterfallCellID
+        )
     }
     
 }

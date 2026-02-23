@@ -19,7 +19,9 @@ extension WaterfallVC {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        if self.isMyDraft {
+        if self.hasDraft {
+            return self.notes.count + 1
+        } else if self.isMyDraft {
             return self.draftNotes.count
         } else {
             return self.notes.count
@@ -27,8 +29,10 @@ extension WaterfallVC {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
- 
-        if self.isMyDraft {
+        if self.hasDraft, indexPath.item == 0 {
+            let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: kMyDraftNoteWaterfallCellID, for: indexPath)
+            return cell
+        } else if self.isMyDraft {
             let cell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: kDraftNoteWaterfallCellID,
                 for: indexPath
@@ -42,10 +46,10 @@ extension WaterfallVC {
                 withReuseIdentifier: kWaterfallCellID,
                 for: indexPath
             ) as! WaterfallCell
-            cell.note = self.notes[indexPath.item]
+            let offset = self.hasDraft ? 1 : 0
+            cell.note = self.notes[indexPath.item - offset]
             return cell
         }
-        
     }
 
 }
