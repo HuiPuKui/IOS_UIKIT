@@ -10,7 +10,7 @@ import Foundation
 extension WaterfallVC {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if self.isMyDraft {
+        if self.isDraft {
             let drateNote = self.draftNotes[indexPath.item]
             
             if

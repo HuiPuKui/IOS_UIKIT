@@ -25,7 +25,7 @@ extension WaterfallVC {
         )
         layout.itemRenderDirection = .shortestFirst
         
-//        if isMyDraft {
+//        if isDraft {
 //            layout.sectionInset = UIEdgeInsets(
 //                top: 44,
 //                left: kWaterfallPadding,
@@ -34,7 +34,7 @@ extension WaterfallVC {
 //            )
 //        }
         
-        if self.isMyDraft {
+        if self.isDraft {
             self.navigationItem.title = "本地草稿"
         }
         
