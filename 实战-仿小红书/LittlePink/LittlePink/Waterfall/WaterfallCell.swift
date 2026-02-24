@@ -17,6 +17,8 @@ class WaterfallCell: UICollectionViewCell {
     @IBOutlet weak var nickNameLabel: UILabel!
     @IBOutlet weak var likeBtn: UIButton!
     
+    var isMyselfLike: Bool = false
+    
     var likeCount = 0 {
         didSet {
             self.likeBtn.setTitle(self.likeCount.formattedStr, for: .normal)
@@ -49,14 +51,20 @@ class WaterfallCell: UICollectionViewCell {
             self.likeBtn.setTitle("\(note.getExactIntVal(kLikeCountCol))", for: .normal)
             
             // 判断是否已点赞
-            if let user = LCApplication.default.currentUser {
-                let query = LCQuery(className: kUserLikeTable)
-                query.whereKey(kUserCol, .equalTo(user))
-                query.whereKey(kNoteCol, .equalTo(note))
-                query.getFirst { res in
-                    if case .success = res {
-                        DispatchQueue.main.async {
-                            self.likeBtn.isSelected = true
+            if self.isMyselfLike {
+                DispatchQueue.main.async {
+                    self.likeBtn.isSelected = true
+                }
+            } else {
+                if let user = LCApplication.default.currentUser {
+                    let query = LCQuery(className: kUserLikeTable)
+                    query.whereKey(kUserCol, .equalTo(user))
+                    query.whereKey(kNoteCol, .equalTo(note))
+                    query.getFirst { res in
+                        if case .success = res {
+                            DispatchQueue.main.async {
+                                self.likeBtn.isSelected = true
+                            }
                         }
                     }
                 }

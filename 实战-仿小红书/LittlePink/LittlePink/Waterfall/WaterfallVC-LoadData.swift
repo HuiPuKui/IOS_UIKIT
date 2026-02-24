@@ -95,7 +95,15 @@ extension WaterfallVC {
     }
     
     @objc func getMyFavNotes() {
-        let query = LCQuery(className: kUserFavTable)
+        self.getFavOrLike(kUserFavTable)
+    }
+    
+    @objc func getMyLikeNotes() {
+        self.getFavOrLike(kUserLikeTable)
+    }
+    
+    private func getFavOrLike(_ className: String) {
+        let query = LCQuery(className: className)
         
         query.whereKey(kUserCol, .equalTo(self.user!))
         query.whereKey(kNoteCol, .selected)
@@ -105,8 +113,8 @@ extension WaterfallVC {
         query.limit = kNotesOffset
         
         query.find { result in
-            if case let .success(objects: userFavs) = result {
-                self.notes = userFavs.compactMap {
+            if case let .success(objects: userFavOrLikes) = result {
+                self.notes = userFavOrLikes.compactMap {
                     return $0.get(kNoteCol) as? LCObject
                 }
                 DispatchQueue.main.async {

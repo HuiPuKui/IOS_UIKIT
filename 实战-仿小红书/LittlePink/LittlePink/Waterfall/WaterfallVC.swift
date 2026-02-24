@@ -30,6 +30,7 @@ class WaterfallVC: UICollectionViewController, SegementSlideContentScrollViewDel
     var user: LCUser?
     var isMyNote: Bool = false
     var isMyFav: Bool = false
+    var isMyselfLike: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +43,7 @@ class WaterfallVC: UICollectionViewController, SegementSlideContentScrollViewDel
             } else if self.isMyFav {
                 self.header.setRefreshingTarget(self, refreshingAction: #selector(getMyFavNotes))
             } else {
-                
+                self.header.setRefreshingTarget(self, refreshingAction: #selector(getMyLikeNotes))
             }
             
             self.header.beginRefreshing()
