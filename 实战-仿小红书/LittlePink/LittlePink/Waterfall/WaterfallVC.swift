@@ -38,9 +38,9 @@ class WaterfallVC: UICollectionViewController, SegementSlideContentScrollViewDel
         
         if let _ = self.user {
             if self.isMyNote {
-                self.header.setRefreshingTarget(self, refreshingAction: #selector(getMyNote))
+                self.header.setRefreshingTarget(self, refreshingAction: #selector(getMyNotes))
             } else if self.isMyFav {
-                
+                self.header.setRefreshingTarget(self, refreshingAction: #selector(getMyFavNotes))
             } else {
                 
             }

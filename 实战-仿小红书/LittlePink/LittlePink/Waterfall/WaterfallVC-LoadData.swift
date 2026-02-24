@@ -61,14 +61,18 @@ extension WaterfallVC {
         query.find { result in
             if case let .success(objects: notes) = result {
                 self.notes = notes
-                self.collectionView.reloadData()
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
             }
             
-            self.header.endRefreshing()
+            DispatchQueue.main.async {
+                self.header.endRefreshing()
+            }
         }
     }
     
-    @objc func getMyNote() {
+    @objc func getMyNotes() {
         let query = LCQuery(className: kNoteTable)
         
         query.whereKey(kAuthorCol, .equalTo(self.user!))
@@ -79,10 +83,40 @@ extension WaterfallVC {
         query.find { result in
             if case let .success(objects: notes) = result {
                 self.notes = notes
-                self.collectionView.reloadData()
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
             }
             
-            self.header.endRefreshing()
+            DispatchQueue.main.async {
+                self.header.endRefreshing()
+            }
+        }
+    }
+    
+    @objc func getMyFavNotes() {
+        let query = LCQuery(className: kUserFavTable)
+        
+        query.whereKey(kUserCol, .equalTo(self.user!))
+        query.whereKey(kNoteCol, .selected)
+        query.whereKey(kNoteCol, .included)
+        query.whereKey("\(kNoteCol).\(kAuthorCol)", .included)
+        query.whereKey(kUpdatedAtCol, .descending)
+        query.limit = kNotesOffset
+        
+        query.find { result in
+            if case let .success(objects: userFavs) = result {
+                self.notes = userFavs.compactMap {
+                    return $0.get(kNoteCol) as? LCObject
+                }
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+            }
+            
+            DispatchQueue.main.async {
+                self.header.endRefreshing()
+            }
         }
     }
     
