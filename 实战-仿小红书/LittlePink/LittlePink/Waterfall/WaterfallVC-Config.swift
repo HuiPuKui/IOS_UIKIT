@@ -55,6 +55,7 @@ extension WaterfallVC {
             UINib(nibName: "MyDraftNoteWaterfallCell", bundle: nil),
             forCellWithReuseIdentifier: kMyDraftNoteWaterfallCellID
         )
+        self.collectionView.mj_header = self.header
     }
     
 }

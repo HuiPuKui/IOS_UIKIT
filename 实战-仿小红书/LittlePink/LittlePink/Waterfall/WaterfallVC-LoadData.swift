@@ -50,7 +50,7 @@ extension WaterfallVC {
         }
     }
     
-    func getNotes() {
+    @objc func getNotes() {
         let query = LCQuery(className: kNoteTable)
         
         query.whereKey(kChannelCol, .equalTo(self.channel))
@@ -63,13 +63,15 @@ extension WaterfallVC {
                 self.notes = notes
                 self.collectionView.reloadData()
             }
+            
+            self.header.endRefreshing()
         }
     }
     
-    func getMyNote(_ user: LCUser) {
+    @objc func getMyNote() {
         let query = LCQuery(className: kNoteTable)
         
-        query.whereKey(kAuthorCol, .equalTo(user))
+        query.whereKey(kAuthorCol, .equalTo(self.user!))
         query.whereKey(kAuthorCol, .included)
         query.whereKey(kUpdatedAtCol, .descending)
         query.limit = kNotesOffset
@@ -79,6 +81,8 @@ extension WaterfallVC {
                 self.notes = notes
                 self.collectionView.reloadData()
             }
+            
+            self.header.endRefreshing()
         }
     }
     

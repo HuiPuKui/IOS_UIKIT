@@ -14,6 +14,7 @@ import SegementSlide
 class WaterfallVC: UICollectionViewController, SegementSlideContentScrollViewDelegate {
     
     var channel = ""
+    lazy var header = MJRefreshNormalHeader()
     
     @objc var scrollView: UIScrollView { return self.collectionView }
     
@@ -35,18 +36,21 @@ class WaterfallVC: UICollectionViewController, SegementSlideContentScrollViewDel
 
         self.config()
         
-        if let user = self.user {
+        if let _ = self.user {
             if self.isMyNote {
-                self.getMyNote(user)
+                self.header.setRefreshingTarget(self, refreshingAction: #selector(getMyNote))
             } else if self.isMyFav {
                 
             } else {
                 
             }
+            
+            self.header.beginRefreshing()
         } else if self.isDraft {
             getDraftNotes()
         } else {
-            getNotes()
+            self.header.setRefreshingTarget(self, refreshingAction: #selector(getNotes))
+            self.header.beginRefreshing()
         }
     }
 
