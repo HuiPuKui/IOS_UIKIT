@@ -905,3 +905,7 @@ if let cancelButton = self.searchBar.value(forKey: "cancelButton") as? UIButton 
  **多层 UIScrollView 嵌套滚动解决方案:** `https://juejin.cn/post/6844903776130695175`
 
  **GitHub - Jiar/SegementSlide- Multi-tier UIScrollView nested scrolling solution. 😋😋😋:** `https://github.com/Jiar/SegementSlide`
+
+ ## 29-编辑资料
+
+ **GitHub - skywinder/ActionSheetPicker-3.0- Quickly reproduce the dropdown UIPickerView / ActionSheet functionality on iOS.:** `https://github.com/skywinder/ActionSheetPicker-3.0`
