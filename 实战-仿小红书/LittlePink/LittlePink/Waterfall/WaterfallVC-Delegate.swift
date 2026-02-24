@@ -55,7 +55,7 @@ extension WaterfallVC {
                 return NoteDetailVC(coder: coder, note: self.notes[item])
             }
             
-            if let cell = collectionView.cellForItem(at: IndexPath(item: item, section: 0)) as? WaterfallCell {
+            if let cell = collectionView.cellForItem(at: indexPath) as? WaterfallCell {
                 detailVC.isLikeFromWaterfallCell = cell.isLike
             }
             
