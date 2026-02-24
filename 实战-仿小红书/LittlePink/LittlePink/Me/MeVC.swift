@@ -57,6 +57,9 @@ class MeVC: SegementSlideDefaultViewController {
         
         let vc = self.storyboard!.instantiateViewController(identifier: kWaterfallVCID) as! WaterfallVC
         vc.isMyDraft = isMyDraft
+        vc.user = self.user
+        vc.isMyNote = index == 0
+        vc.isMyFav = index == 1
         return vc
     }
 

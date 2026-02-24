@@ -66,4 +66,20 @@ extension WaterfallVC {
         }
     }
     
+    func getMyNote(_ user: LCUser) {
+        let query = LCQuery(className: kNoteTable)
+        
+        query.whereKey(kAuthorCol, .equalTo(user))
+        query.whereKey(kAuthorCol, .included)
+        query.whereKey(kUpdatedAtCol, .descending)
+        query.limit = kNotesOffset
+        
+        query.find { result in
+            if case let .success(objects: notes) = result {
+                self.notes = notes
+                self.collectionView.reloadData()
+            }
+        }
+    }
+    
 }

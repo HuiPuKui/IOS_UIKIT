@@ -25,14 +25,29 @@ class WaterfallVC: UICollectionViewController, SegementSlideContentScrollViewDel
     var notes: [LCObject] = []
     
     var isMyDraft: Bool = false
+    
+    var user: LCUser?
+    var isMyNote: Bool = false
+    var isMyFav: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.config()
         
-        self.getNotes()
-        self.getDraftNotes()
+        if let user = self.user {
+            if self.isMyNote {
+                self.getMyNote(user)
+            } else if self.isMyFav {
+                
+            } else {
+                
+            }
+        } else if self.isDraft {
+            getDraftNotes()
+        } else {
+            getNotes()
+        }
     }
 
     @IBAction func dismissDraftNotesVC(_ sender: Any) {
