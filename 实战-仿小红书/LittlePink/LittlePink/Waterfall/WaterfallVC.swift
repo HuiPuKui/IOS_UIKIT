@@ -31,6 +31,8 @@ class WaterfallVC: UICollectionViewController, SegementSlideContentScrollViewDel
     var isMyNote: Bool = false
     var isMyFav: Bool = false
     var isMyselfLike: Bool = false
+    var isFromMeVC = false
+    var fromMeVCUser: LCUser?
 
     override func viewDidLoad() {
         super.viewDidLoad()

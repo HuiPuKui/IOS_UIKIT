@@ -12,12 +12,19 @@ extension NoteDetailVC {
     
     func noteToMeVC(_ user: LCUser?) {
         guard let user = user else { return }
-        let meVC = self.storyboard!.instantiateViewController(identifier: kMeVCID) { coder in
-            return MeVC(coder: coder, user: user)
+        
+        if self.isFromMeVC,
+           let fromMeVCUser = self.fromMeVCUser,
+           fromMeVCUser == user {
+            self.dismiss(animated: true)
+        } else {
+            let meVC = self.storyboard!.instantiateViewController(identifier: kMeVCID) { coder in
+                return MeVC(coder: coder, user: user)
+            }
+            meVC.isFromNote = true
+            meVC.modalPresentationStyle = .fullScreen
+            self.present(meVC, animated: true)
         }
-        meVC.isFromNote = true
-        meVC.modalPresentationStyle = .fullScreen
-        self.present(meVC, animated: true)
     }
     
     @objc func goToMeVC(_ tap: UIPassableTapGestureRecognizer) {

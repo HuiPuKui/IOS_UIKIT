@@ -61,6 +61,8 @@ class MeVC: SegementSlideDefaultViewController {
         vc.isMyNote = index == 0
         vc.isMyFav = index == 1
         vc.isMyselfLike = (self.isMySelf && index == 2)
+        vc.isFromMeVC = true
+        vc.fromMeVCUser = self.user
         return vc
     }
 

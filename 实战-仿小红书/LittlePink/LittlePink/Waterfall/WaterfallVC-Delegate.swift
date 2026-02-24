@@ -10,7 +10,12 @@ import Foundation
 extension WaterfallVC {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if self.isDraft {
+        if self.isMyDraft, indexPath.item == 0 {
+            let navi = self.storyboard!.instantiateViewController(identifier: kDraftNotesNaviID) as! UINavigationController
+            navi.modalPresentationStyle = .fullScreen
+            ((navi.topViewController) as! WaterfallVC).isDraft = true
+            self.present(navi, animated: true)
+        } else if self.isDraft {
             let drateNote = self.draftNotes[indexPath.item]
             
             if
@@ -42,21 +47,26 @@ extension WaterfallVC {
                
         } else {
             
+            let offset = self.isMyDraft ? 1 : 0
+            let item = indexPath.item - offset
+            
             // 依赖注入(Dependency Injection)
             let detailVC = self.storyboard!.instantiateViewController(identifier: kNoteDetailVCID) { coder in
-                return NoteDetailVC(coder: coder, note: self.notes[indexPath.item])
+                return NoteDetailVC(coder: coder, note: self.notes[item])
             }
             
-            if let cell = collectionView.cellForItem(at: indexPath) as? WaterfallCell {
+            if let cell = collectionView.cellForItem(at: IndexPath(item: item, section: 0)) as? WaterfallCell {
                 detailVC.isLikeFromWaterfallCell = cell.isLike
             }
             
             detailVC.delNoteFinished = {
-                self.notes.remove(at: indexPath.item)
+                self.notes.remove(at: item)
                 collectionView.performBatchUpdates {
                     collectionView.deleteItems(at: [indexPath])
                 }
             }
+            detailVC.isFromMeVC = self.isFromMeVC
+            detailVC.fromMeVCUser = self.user
             
             detailVC.modalPresentationStyle = .fullScreen
             self.present(detailVC, animated: true)
