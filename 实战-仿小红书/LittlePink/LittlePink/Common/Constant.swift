@@ -24,6 +24,7 @@ let kMeVCID = "MeVCID"
 let kDraftNotesNaviID = "DraftNotesNaviID"
 let kNoteDetailVCID = "NoteDetailVCID"
 let kIntroVCID = "IntroVCID"
+let kEditProfileNavID = "EditProfileNavID"
 
 // MARK: Cell相关ID
 let kWaterfallCellID = "WaterfallCellID"

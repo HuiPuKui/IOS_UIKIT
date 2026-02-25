@@ -12,7 +12,9 @@ extension MeVC {
     
     @objc func editOrFollow() {
         if self.isMySelf {
-            
+            let navi = self.storyboard!.instantiateViewController(identifier: kEditProfileNavID) as! UINavigationController
+            navi.modalPresentationStyle = .fullScreen
+            self.present(navi, animated: true)
         } else {
             if let _ = LCApplication.default.currentUser {
                 print("关注和取消关注功能")
