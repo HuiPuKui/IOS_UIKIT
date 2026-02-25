@@ -17,7 +17,7 @@ extension MeVC {
             self.present(navi, animated: true)
         } else {
             if let _ = LCApplication.default.currentUser {
-                print("关注和取消关注功能")
+                self.showTextHUD("关注和取消关注功能")
             } else {
                 self.showLoginHUD()
             }

@@ -15,7 +15,7 @@ extension MeVC {
             
         } else {
             if let _ = LCApplication.default.currentUser {
-                print("私信功能")
+                self.showTextHUD("私信功能")
             } else {
                 self.showLoginHUD()
             }
