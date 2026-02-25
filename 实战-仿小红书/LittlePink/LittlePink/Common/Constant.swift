@@ -23,6 +23,7 @@ let kLoginVCID = "LoginVCID"
 let kMeVCID = "MeVCID"
 let kDraftNotesNaviID = "DraftNotesNaviID"
 let kNoteDetailVCID = "NoteDetailVCID"
+let kIntroVCID = "IntroVCID"
 
 // MARK: Cell相关ID
 let kWaterfallCellID = "WaterfallCellID"
@@ -75,6 +76,10 @@ let kMaxCameraZoomFactor = 5.0
 let kMaxNoteTitleCount = 20
 let kMaxNoteTextCount = 1000
 let kNoteCommentPH = "精彩评论将被优先展示哦"
+
+// 用户
+let kMaxIntroCount = 100
+let kIntroPH = "填写个人简介更容易获得关注哦,点击此处填写"
 
 // 话题
 let kAllSubChannels = [

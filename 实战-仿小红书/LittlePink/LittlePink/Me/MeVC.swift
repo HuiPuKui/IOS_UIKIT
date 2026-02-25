@@ -12,6 +12,8 @@ import SegementSlide
 class MeVC: SegementSlideDefaultViewController {
     
     var user: LCUser
+    lazy var meHeaderView = Bundle.loadView(fromNib: "MeHeaderView", with: MeHeaderView.self)
+    
     
     var isFromNote: Bool = false
     var isMySelf: Bool = false

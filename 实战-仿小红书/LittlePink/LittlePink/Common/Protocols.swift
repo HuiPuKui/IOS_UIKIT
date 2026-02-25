@@ -24,3 +24,11 @@ protocol POIVCDelegate {
     func updatePOIName(_ poiName: String)
     
 }
+
+protocol IntroVCDelegate {
+    
+    /// 用户从个人简介页面返回个人页面传值用
+    /// - Parameter intro: 传回来的 intro
+    func updateIntro(_ intro: String)
+    
+}

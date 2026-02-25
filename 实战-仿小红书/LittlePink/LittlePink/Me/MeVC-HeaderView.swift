@@ -11,19 +11,17 @@ import LeanCloud
 extension MeVC {
     
     func setHeaderView() -> UIView {
-        let headerView = Bundle.loadView(fromNib: "MeHeaderView", with: MeHeaderView.self)
+        self.meHeaderView.translatesAutoresizingMaskIntoConstraints = false
+        self.meHeaderView.heightAnchor.constraint(equalToConstant: self.meHeaderView.rootStackView.frame.height + 26).isActive = true
         
-        headerView.translatesAutoresizingMaskIntoConstraints = false
-        headerView.heightAnchor.constraint(equalToConstant: headerView.rootStackView.frame.height + 26).isActive = true
-        
-        headerView.user = self.user
+        self.meHeaderView.user = self.user
         if self.isFromNote {
-            headerView.backOrDrawerBtn.setImage(largeIcon("chevron.left"), for: .normal)
+            self.meHeaderView.backOrDrawerBtn.setImage(largeIcon("chevron.left"), for: .normal)
         }
-        headerView.backOrDrawerBtn.addTarget(self, action: #selector(backOrDrawer), for: .touchUpInside)
+        self.meHeaderView.backOrDrawerBtn.addTarget(self, action: #selector(backOrDrawer), for: .touchUpInside)
         
         if self.isMySelf {
-            headerView.introLabel.addGestureRecognizer(
+            self.meHeaderView.introLabel.addGestureRecognizer(
                 UITapGestureRecognizer(
                     target: self,
                     action: #selector(editIntro)
@@ -31,37 +29,37 @@ extension MeVC {
             )
         } else {
             if self.user.getExactStringVal(kIntroCol).isEmpty {
-                headerView.introLabel.isHidden = true
+                self.meHeaderView.introLabel.isHidden = true
             }
             
             if let _ = LCApplication.default.currentUser {
                 // 若已登录需要判断是否已经关注此人 -- 略
-                headerView.editOrFollowBtn.setTitle("关注", for: .normal)
-                headerView.editOrFollowBtn.backgroundColor = mainColor
+                self.meHeaderView.editOrFollowBtn.setTitle("关注", for: .normal)
+                self.meHeaderView.editOrFollowBtn.backgroundColor = mainColor
             } else {
-                headerView.editOrFollowBtn.setTitle("关注", for: .normal)
-                headerView.editOrFollowBtn.backgroundColor = mainColor
+                self.meHeaderView.editOrFollowBtn.setTitle("关注", for: .normal)
+                self.meHeaderView.editOrFollowBtn.backgroundColor = mainColor
             }
             
-            headerView.settingOrChatBtn.setImage(
+            self.meHeaderView.settingOrChatBtn.setImage(
                 fontIcon("ellipsis.bubble", fontSize: 13),
                 for: .normal
             )
         }
         
-        headerView.editOrFollowBtn.addTarget(
+        self.meHeaderView.editOrFollowBtn.addTarget(
             self,
             action: #selector(editOrFollow),
             for: .touchUpInside
         )
         
-        headerView.settingOrChatBtn.addTarget(
+        self.meHeaderView.settingOrChatBtn.addTarget(
             self,
             action: #selector(settingOrChat),
             for: .touchUpInside
         )
         
-        return headerView
+        return self.meHeaderView
     }
     
 }
