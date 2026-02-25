@@ -17,7 +17,7 @@ extension EditProfileTableVC {
         case 0:
             var config = PHPickerConfiguration()
             config.filter = .images
-            config.selectionLimit = 3
+            config.selectionLimit = 1
             
             let vc = PHPickerViewController(configuration: config)
             vc.delegate = self
