@@ -25,6 +25,8 @@ extension EditProfileTableVC {
             self.present(vc, animated: true)
         case 1:
             self.showTextHUD("修改昵称，和修改简介一样")
+        case 2:
+            
         default:
             break
         }
