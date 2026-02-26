@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ActionSheetPicker-3.0.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Alamofire-Alamofire.xcscheme</key>
 		<dict>
 			<key>isShown</key>

@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import LeanCloud
 
 class EditProfileTableVC: UITableViewController {
 
+    var user: LCUser!
+    
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var nickNameLabel: UILabel!
     @IBOutlet weak var genderLabel: UILabel!
@@ -20,6 +23,13 @@ class EditProfileTableVC: UITableViewController {
             DispatchQueue.main.async {
                 self.avatarImageView.image = self.avatar
             }
+        }
+    }
+    
+    var gender: Bool? {
+        didSet {
+            guard let gender = self.gender else { return }
+            self.genderLabel.text = gender ? "男" : "女"
         }
     }
     

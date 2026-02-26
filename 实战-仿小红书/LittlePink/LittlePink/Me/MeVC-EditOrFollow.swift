@@ -14,6 +14,8 @@ extension MeVC {
         if self.isMySelf {
             let navi = self.storyboard!.instantiateViewController(identifier: kEditProfileNavID) as! UINavigationController
             navi.modalPresentationStyle = .fullScreen
+            let editProfileTableVC = navi.topViewController as! EditProfileTableVC
+            editProfileTableVC.user = self.user
             self.present(navi, animated: true)
         } else {
             if let _ = LCApplication.default.currentUser {
