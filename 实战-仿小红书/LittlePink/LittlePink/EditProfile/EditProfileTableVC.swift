@@ -15,6 +15,14 @@ class EditProfileTableVC: UITableViewController {
     @IBOutlet weak var birthLabel: UILabel!
     @IBOutlet weak var introLabel: UILabel!
     
+    var avatar: UIImage? {
+        didSet {
+            DispatchQueue.main.async {
+                self.avatarImageView.image = self.avatar
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
