@@ -29,14 +29,10 @@ extension EditProfileTableVC {
         case 1:
             self.showTextHUD("修改昵称，和修改简介一样")
         case 2:
-            var initialSelection = self.user.getExactBoolValDefaultF(kGenderCol) ? 0 : 1
-            if let gender = self.gender {
-                initialSelection = gender ? 0 : 1
-            }
             let acp = ActionSheetStringPicker(
                 title: nil,
                 rows: ["男", "女"],
-                initialSelection: initialSelection,
+                initialSelection: self.gender ? 0 : 1,
                 doneBlock: { (_, index, _) in
                     self.gender = index == 0
                 },
@@ -85,9 +81,22 @@ extension EditProfileTableVC {
             datePicker?.maximumDate = Date()
             
             datePicker?.show()
+        case 4:
+            let vc = self.storyboard!.instantiateViewController(identifier: kIntroVCID) as! IntroVC
+            vc.intro = self.user.getExactStringVal(kIntroCol)
+            vc.delegate = self
+            self.present(vc, animated: true)
         default:
             break
         }
+    }
+    
+}
+
+extension EditProfileTableVC: IntroVCDelegate {
+    
+    func updateIntro(_ intro: String) {
+        self.intro = intro
     }
     
 }

@@ -26,9 +26,8 @@ class EditProfileTableVC: UITableViewController {
         }
     }
     
-    var gender: Bool? {
+    var gender = false {
         didSet {
-            guard let gender = self.gender else { return }
             self.genderLabel.text = gender ? "男" : "女"
         }
     }
@@ -39,9 +38,16 @@ class EditProfileTableVC: UITableViewController {
         }
     }
     
+    var intro: String? {
+        didSet {
+            self.introLabel.text = self.intro
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.setUI()
 //        // 手写自定义软键盘
 //        self.textField.inputView = self.genderPickerView
 //        self.tableView.addSubview(self.textField)
