@@ -33,6 +33,12 @@ class EditProfileTableVC: UITableViewController {
         }
     }
     
+    var birth: Date? {
+        didSet {
+            self.birthLabel.text = birth?.format(with: "yyyy-MM-dd")
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

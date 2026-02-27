@@ -8,6 +8,7 @@
 import Foundation
 import PhotosUI
 import ActionSheetPicker_3_0
+import DateToolsSwift
 
 extension EditProfileTableVC {
     
@@ -44,6 +45,46 @@ extension EditProfileTableVC {
             )
                 
             acp?.show()
+        case 3:
+            var selectedDate = Date().subtract(TimeChunk(
+                seconds: 0,
+                minutes: 0,
+                hours: 0,
+                days: 0,
+                weeks: 0,
+                months: 0,
+                years: 20
+            ))
+            
+            if let birth = self.birth {
+                selectedDate = birth
+            } else if let birth = user.get(kBirthCol)?.dateValue {
+                selectedDate = birth
+            }
+            
+            let datePicker = ActionSheetDatePicker(
+                title: nil,
+                datePickerMode: .date,
+                selectedDate: selectedDate,
+                doneBlock: { (_, date, _) in
+                    self.birth = date as? Date
+                },
+                cancel: { _ in },
+                origin: cell
+            )
+            
+            datePicker?.minimumDate = Date().subtract(TimeChunk(
+                seconds: 0,
+                minutes: 0,
+                hours: 0,
+                days: 0,
+                weeks: 0,
+                months: 0,
+                years: 40
+            ))
+            datePicker?.maximumDate = Date()
+            
+            datePicker?.show()
         default:
             break
         }
