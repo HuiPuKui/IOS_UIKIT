@@ -54,9 +54,7 @@ extension EditProfileTableVC {
             
             if let birth = self.birth {
                 selectedDate = birth
-            } else if let birth = user.get(kBirthCol)?.dateValue {
-                selectedDate = birth
-            }
+            } 
             
             let datePicker = ActionSheetDatePicker(
                 title: nil,
@@ -83,7 +81,7 @@ extension EditProfileTableVC {
             datePicker?.show()
         case 4:
             let vc = self.storyboard!.instantiateViewController(identifier: kIntroVCID) as! IntroVC
-            vc.intro = self.user.getExactStringVal(kIntroCol)
+            vc.intro = self.intro
             vc.delegate = self
             self.present(vc, animated: true)
         default:

@@ -34,13 +34,17 @@ class EditProfileTableVC: UITableViewController {
     
     var birth: Date? {
         didSet {
-            self.birthLabel.text = birth?.format(with: "yyyy-MM-dd")
+            if let birth = self.birth {
+                self.birthLabel.text = birth.format(with: "yyyy-MM-dd")
+            } else {
+                self.birthLabel.text = "未填写"
+            }
         }
     }
     
-    var intro: String? {
+    var intro = "" {
         didSet {
-            self.introLabel.text = self.intro
+            self.introLabel.text = self.intro.isEmpty ? "未填写" : self.intro
         }
     }
     

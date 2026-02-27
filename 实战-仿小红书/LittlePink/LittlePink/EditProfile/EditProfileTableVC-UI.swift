@@ -14,6 +14,8 @@ extension EditProfileTableVC {
         self.avatarImageView.kf.setImage(with: self.user.getImageURL(from: kAvatarCol, .avatar))
         self.nickNameLabel.text = self.user.getExactStringVal(kNickNameCol)
         self.gender = self.user.getExactBoolValDefaultF(kGenderCol)
+        self.birth = self.user.get(kBirthCol)?.dateValue
+        self.intro = self.user.getExactStringVal(kIntroCol)
     }
     
 }
