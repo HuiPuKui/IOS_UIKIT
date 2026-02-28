@@ -16,6 +16,7 @@ extension MeVC {
             navi.modalPresentationStyle = .fullScreen
             let editProfileTableVC = navi.topViewController as! EditProfileTableVC
             editProfileTableVC.user = self.user
+            editProfileTableVC.delegate = self
             self.present(navi, animated: true)
         } else {
             if let _ = LCApplication.default.currentUser {

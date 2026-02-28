@@ -11,6 +11,7 @@ import LeanCloud
 class EditProfileTableVC: UITableViewController {
 
     var user: LCUser!
+    var delegate: EditProfileTableVCDelegate?
     
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var nickNameLabel: UILabel!
@@ -23,6 +24,12 @@ class EditProfileTableVC: UITableViewController {
             DispatchQueue.main.async {
                 self.avatarImageView.image = self.avatar
             }
+        }
+    }
+    
+    var nickName = "" {
+        didSet {
+            self.nickNameLabel.text = self.nickName
         }
     }
     
@@ -58,7 +65,8 @@ class EditProfileTableVC: UITableViewController {
     }
 
     @IBAction func back(_ sender: Any) {
-        
+        self.delegate?.updateUser(self.avatar, self.nickName, self.gender, self.birth, self.intro)
+        self.dismiss(animated: true)
     }
     
 //    lazy var textField: UITextField = {

@@ -27,7 +27,7 @@ extension EditProfileTableVC {
             
             self.present(vc, animated: true)
         case 1:
-            self.showTextHUD("修改昵称，和修改简介一样")
+            self.showTextHUD("修改昵称，和修改简介一样，这里需做一些限制")
         case 2:
             let acp = ActionSheetStringPicker(
                 title: nil,
