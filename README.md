@@ -909,3 +909,9 @@ if let cancelButton = self.searchBar.value(forKey: "cancelButton") as? UIButton 
  ## 29-编辑资料
 
  **GitHub - skywinder/ActionSheetPicker-3.0- Quickly reproduce the dropdown UIPickerView / ActionSheet functionality on iOS.:** `https://github.com/skywinder/ActionSheetPicker-3.0`
+
+ ## 30-个人设置
+
+ **iOS-Swift5.1-用代码动态实现页面跳转（performSegue）的用法:** `https://juejin.cn/post/6844903928979521543`
+
+ 
