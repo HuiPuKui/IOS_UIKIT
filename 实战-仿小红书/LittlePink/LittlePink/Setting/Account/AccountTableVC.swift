@@ -11,6 +11,9 @@ import LeanCloud
 class AccountTableVC: UITableViewController {
     
     var user: LCUser!
+    var phoneNum: String? {
+        return self.user.mobilePhoneNumber?.value
+    }
 
     @IBOutlet weak var phoneNumLabel: UILabel!
     @IBOutlet weak var passwordLabel: UILabel!
@@ -19,7 +22,9 @@ class AccountTableVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        if let phoneNum = self.phoneNum {
+            self.phoneNumLabel.text = phoneNum
+        }
     }
 
 }
