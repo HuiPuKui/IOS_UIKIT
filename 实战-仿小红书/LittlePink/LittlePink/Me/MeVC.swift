@@ -67,20 +67,5 @@ class MeVC: SegementSlideDefaultViewController {
         vc.fromMeVCUser = self.user
         return vc
     }
-
-//    @IBAction func logoutTest(_ sender: Any) {
-//        LCUser.logOut()
-//        
-//        let loginVC = self.storyboard!.instantiateViewController(identifier: kLoginVCID)
-//        
-//        loginAndMeParentVC.removeChildren()
-//        loginAndMeParentVC.add(child: loginVC)
-//    }
-//
-//    @IBAction func showDraftNotes(_ sender: Any) {
-//        let navi = self.storyboard!.instantiateViewController(identifier: kDraftNotesNaviID)
-//        navi.modalPresentationStyle = .fullScreen
-//        self.present(navi, animated: true)
-//    }
     
 }
