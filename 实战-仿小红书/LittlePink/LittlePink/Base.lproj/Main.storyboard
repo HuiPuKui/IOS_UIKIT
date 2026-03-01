@@ -2514,6 +2514,9 @@
                                                 <constraint firstItem="hIx-Jq-DWH" firstAttribute="leading" secondItem="PDC-n0-o7h" secondAttribute="leadingMargin" id="dfU-09-Qrm"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="tza-r0-tit" kind="presentation" id="EaP-1S-slY"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="DmG-EG-tW0">
                                         <rect key="frame" x="20" y="143.33333587646484" width="353" height="44.666667938232422"/>
@@ -2634,6 +2637,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bFQ-o6-dy1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4969" y="4418"/>
+        </scene>
+        <!--Notification TableVC-->
+        <scene sceneID="gct-ru-PtZ">
+            <objects>
+                <tableViewController id="tza-r0-tit" customClass="NotificationTableVC" customModule="LittlePink" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="NJX-IC-eN0">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <sections>
+                            <tableViewSection id="y0T-3O-45l">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="de4-ap-aOt">
+                                        <rect key="frame" x="20" y="18" width="353" height="44.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="de4-ap-aOt" id="CoO-b5-5Yw">
+                                            <rect key="frame" x="0.0" y="0.0" width="353" height="44.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="L4b-PA-Hcc">
+                                                    <rect key="frame" x="20" y="7" width="313" height="31"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="接受消息通知" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rtQ-tx-zOk">
+                                                            <rect key="frame" x="0.0" y="0.0" width="89.333333333333329" height="31"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BRt-QC-hdl">
+                                                            <rect key="frame" x="264" y="0.0" width="51" height="31"/>
+                                                            <color key="onTintColor" name="main"/>
+                                                        </switch>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="L4b-PA-Hcc" firstAttribute="leading" secondItem="CoO-b5-5Yw" secondAttribute="leadingMargin" id="4H9-c8-X7A"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="L4b-PA-Hcc" secondAttribute="trailing" id="QWC-vj-r30"/>
+                                                <constraint firstItem="L4b-PA-Hcc" firstAttribute="centerY" secondItem="CoO-b5-5Yw" secondAttribute="centerY" id="wX2-Qg-KE1"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="tza-r0-tit" id="c0T-EI-Jqn"/>
+                            <outlet property="delegate" destination="tza-r0-tit" id="mpX-8q-odg"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dmy-DY-L2W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5895" y="4751"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
