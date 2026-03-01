@@ -82,6 +82,7 @@ let kNoteCommentPH = "精彩评论将被优先展示哦"
 // 用户
 let kMaxIntroCount = 100
 let kIntroPH = "填写个人简介更容易获得关注哦,点击此处填写"
+let kNoCachePH = "无缓存"
 
 // 话题
 let kAllSubChannels = [

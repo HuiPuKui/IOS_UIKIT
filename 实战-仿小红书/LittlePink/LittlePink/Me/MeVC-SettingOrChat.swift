@@ -12,7 +12,8 @@ extension MeVC {
     
     @objc func settingOrChat() {
         if self.isMySelf {
-            
+            let settingTableVC = self.storyboard!.instantiateViewController(identifier: kSettingTableVCID)
+            self.present(settingTableVC, animated: true)
         } else {
             if let _ = LCApplication.default.currentUser {
                 self.showTextHUD("私信功能")
