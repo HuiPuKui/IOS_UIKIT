@@ -1954,7 +1954,11 @@
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入手机号码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ImP-27-ve6">
                                                 <rect key="frame" x="0.0" y="0.0" width="313" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="tel"/>
+                                                <connections>
+                                                    <action selector="TFEditChanged:" destination="7rf-tx-gAb" eventType="editingChanged" id="Zhq-0c-esd"/>
+                                                    <outlet property="delegate" destination="7rf-tx-gAb" id="YSq-x1-wWi"/>
+                                                </connections>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e8f-P2-VIO">
                                                 <rect key="frame" x="0.0" y="42" width="313" height="1"/>
@@ -1974,7 +1978,11 @@
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U1I-0h-0F1">
                                                 <rect key="frame" x="0.0" y="0.0" width="313" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
+                                                <connections>
+                                                    <action selector="TFEditChanged:" destination="7rf-tx-gAb" eventType="editingChanged" id="ze5-k1-Dtx"/>
+                                                    <outlet property="delegate" destination="7rf-tx-gAb" id="bMm-5r-Dwr"/>
+                                                </connections>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vLG-pW-xvq">
                                                 <rect key="frame" x="0.0" y="42" width="313" height="1"/>
@@ -2012,6 +2020,9 @@
                                         <real key="value" value="22"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="login:" destination="7rf-tx-gAb" eventType="touchUpInside" id="w3X-bp-9fZ"/>
+                                </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PCH-sv-Q8C">
                                 <rect key="frame" x="16" y="690" width="361" height="88"/>
@@ -2046,6 +2057,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2Z8-Rr-xye"/>
+                    <connections>
+                        <outlet property="loginBtn" destination="5cs-B2-yCn" id="ZZH-bM-v92"/>
+                        <outlet property="passwordTF" destination="U1I-0h-0F1" id="2ae-UT-jIq"/>
+                        <outlet property="phoneNumTF" destination="ImP-27-ve6" id="r9z-jn-3pU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5A1-9G-JGL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -3022,7 +3038,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="7VS-kc-E0Y"/>
+        <segue reference="W1h-jF-ZiI"/>
         <segue reference="hrb-Ud-hV7"/>
     </inferredMetricsTieBreakers>
     <resources>
