@@ -116,6 +116,7 @@ let kAppScheme = "LittlePink"
 // 正则表达式
 let kPhoneRegEx = "^1\\d{10}$"
 let kAuthCodeRegEx = "^\\d{6}$"
+let kPasswordRegEx = "^[0-9a-zA-Z]{6,16}$"
 
 // 云端
 let kNotesOffset = 10
@@ -146,6 +147,7 @@ let kGenderCol = "gender"
 let kIntroCol = "intro"
 let kIDCol = "id"
 let kBirthCol = "birth"
+let kIsSetPasswordCol = "isSetPassword"
 
 //Note表
 let kCoverPhotoCol = "coverPhoto"

@@ -14,6 +14,9 @@ class AccountTableVC: UITableViewController {
     var phoneNum: String? {
         return self.user.mobilePhoneNumber?.value
     }
+    var isSetPassword: Bool? {
+        return self.user.get(kIsSetPasswordCol)?.boolValue
+    }
 
     @IBOutlet weak var phoneNumLabel: UILabel!
     @IBOutlet weak var passwordLabel: UILabel!
@@ -23,7 +26,22 @@ class AccountTableVC: UITableViewController {
         super.viewDidLoad()
 
         if let phoneNum = self.phoneNum {
-            self.phoneNumLabel.text = phoneNum
+            self.phoneNumLabel.setToLight(phoneNum)
+        }
+        
+        if let _ = self.isSetPassword {
+            self.passwordLabel.setToLight("已设置")
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let passwordTableVC = segue.destination as? PasswordTableVC {
+            passwordTableVC.user = self.user
+            if self.isSetPassword == nil {
+                passwordTableVC.setPasswordFinished = {
+                    self.passwordLabel.setToLight("已设置")
+                }
+            }
         }
     }
 

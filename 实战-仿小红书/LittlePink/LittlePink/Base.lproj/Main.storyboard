@@ -2877,12 +2877,15 @@
                             <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4fe-WD-jLM">
+                                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4fe-WD-jLM">
                                     <rect key="frame" x="331" y="5" width="46" height="34"/>
                                     <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                     <state key="normal" title="完成">
                                         <color key="titleColor" name="main"/>
+                                    </state>
+                                    <state key="disabled">
+                                        <color key="titleColor" systemColor="secondaryLabelColor"/>
                                     </state>
                                     <connections>
                                         <action selector="done:" destination="BO4-fy-wN3" eventType="touchUpInside" id="c54-KZ-5cq"/>
@@ -2898,7 +2901,7 @@
                         <sections>
                             <tableViewSection footerTitle="6-16位密码，数字或字母" id="ex3-aC-TAW">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="SfC-Zx-N6y">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="SfC-Zx-N6y">
                                         <rect key="frame" x="20" y="62" width="353" height="44.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SfC-Zx-N6y" id="atr-Ii-ATh">
@@ -2908,7 +2911,7 @@
                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入新的密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JyC-hX-z7k">
                                                     <rect key="frame" x="20" y="13.333333333333336" width="313" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                                                     <connections>
                                                         <action selector="TFEditChanged:" destination="BO4-fy-wN3" eventType="editingChanged" id="rd7-0j-lsI"/>
                                                         <outlet property="delegate" destination="BO4-fy-wN3" id="yaH-YA-NLg"/>
@@ -2922,7 +2925,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="kmx-yl-UId">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="kmx-yl-UId">
                                         <rect key="frame" x="20" y="106.66666793823242" width="353" height="44.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kmx-yl-UId" id="1l0-nM-Iyg">
@@ -2932,7 +2935,7 @@
                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="再次输入密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dfL-LB-9ne">
                                                     <rect key="frame" x="20" y="13.333333333333336" width="313" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                                                     <connections>
                                                         <action selector="TFEditChanged:" destination="BO4-fy-wN3" eventType="editingChanged" id="uZl-R1-jsf"/>
                                                         <outlet property="delegate" destination="BO4-fy-wN3" id="1Qc-1v-Ru7"/>
@@ -2955,9 +2958,9 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="confirmPasswordTF" destination="dfL-LB-9ne" id="6R1-JB-Cn5"/>
                         <outlet property="doneBtn" destination="4fe-WD-jLM" id="ad2-wV-Tw1"/>
-                        <outlet property="newPasswordTF" destination="dfL-LB-9ne" id="sHw-aK-Bkn"/>
-                        <outlet property="passwordTF" destination="JyC-hX-z7k" id="hBe-6R-F7Y"/>
+                        <outlet property="passwordTF" destination="JyC-hX-z7k" id="CXO-lS-YiB"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6jE-5q-Dsq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -3032,8 +3035,8 @@
         <image name="cart.fill" catalog="system" width="128" height="102"/>
         <image name="chevron.left" catalog="system" width="97" height="128"/>
         <image name="chevron.right" catalog="system" width="97" height="128"/>
-        <image name="heart" catalog="system" width="128" height="107"/>
         <image name="heart" width="128" height="128"/>
+        <image name="heart" catalog="system" width="128" height="107"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="message.fill" catalog="system" width="128" height="114"/>
         <image name="number.circle.fill" catalog="system" width="128" height="123"/>
