@@ -17,6 +17,12 @@ extension AccountTableVC {
         if section == 0 {
             if row == 0 {
                 self.showTextHUD("绑定，解绑，换绑手机号")
+            } else if row == 1 {
+                if let _ = self.phoneNum {
+                    self.performSegue(withIdentifier: "showPasswordTableVC", sender: nil)
+                } else {
+                    self.showTextHUD("需先绑定手机号哦")
+                }
             }
         }
     }

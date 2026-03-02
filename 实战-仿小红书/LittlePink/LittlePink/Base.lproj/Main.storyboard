@@ -2859,6 +2859,7 @@
                         <outlet property="appleIDLabel" destination="gUD-oh-5Kz" id="1hO-ro-CYs"/>
                         <outlet property="passwordLabel" destination="tXS-IO-eKp" id="anj-Y6-JhM"/>
                         <outlet property="phoneNumLabel" destination="yi1-EB-s6p" id="Mgp-Ju-MPe"/>
+                        <segue destination="BO4-fy-wN3" kind="presentation" identifier="showPasswordTableVC" id="0LQ-Xv-CcO"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eou-zc-XCv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2870,7 +2871,7 @@
             <objects>
                 <tableViewController id="BO4-fy-wN3" customClass="PasswordTableVC" customModule="LittlePink" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="GoU-jA-nJ8">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="LOi-4N-gWX">
                             <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
@@ -3031,8 +3032,8 @@
         <image name="cart.fill" catalog="system" width="128" height="102"/>
         <image name="chevron.left" catalog="system" width="97" height="128"/>
         <image name="chevron.right" catalog="system" width="97" height="128"/>
-        <image name="heart" width="128" height="128"/>
         <image name="heart" catalog="system" width="128" height="107"/>
+        <image name="heart" width="128" height="128"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="message.fill" catalog="system" width="128" height="114"/>
         <image name="number.circle.fill" catalog="system" width="128" height="123"/>
