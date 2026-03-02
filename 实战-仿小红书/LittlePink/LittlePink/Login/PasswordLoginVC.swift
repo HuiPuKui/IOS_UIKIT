@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LeanCloud
 
 class PasswordLoginVC: UIViewController {
 
@@ -51,7 +52,20 @@ class PasswordLoginVC: UIViewController {
     }
     
     @IBAction func login(_ sender: UIButton) {
+        self.view.endEditing(true)
         
+        self.showLoadHUD()
+        LCUser.logIn(mobilePhoneNumber: self.phoneNumStr, password: self.passwordStr) { result in
+            switch result {
+            case .success(object: let user):
+                self.dismissAndShowMeVC(user)
+            case .failure(error: let error):
+                self.hideLoadHUD()
+                DispatchQueue.main.async {
+                    self.showTextHUD("登录失败", true, error.reason)
+                }
+            }
+        }
     }
 
 }
