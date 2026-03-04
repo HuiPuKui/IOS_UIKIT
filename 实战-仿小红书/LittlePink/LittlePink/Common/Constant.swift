@@ -49,6 +49,7 @@ let imagePH = UIImage(named: "imagePH")!
 let kNameFromAppleID = "nameFromAppleID"
 let kEmailFromAppleID = "emailFromAppleID"
 let kDraftNoteCount = "draftNodeCount"
+let kUserInterfaceStyle = "userInterfaceStyle"
 
 // MARK: - CoreData
 let appDelegate = UIApplication.shared.delegate as! AppDelegate

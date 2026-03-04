@@ -32,6 +32,13 @@ class AccountTableVC: UITableViewController {
         if let _ = self.isSetPassword {
             self.passwordLabel.setToLight("已设置")
         }
+        
+        if let authData = self.user.authData?.value {
+            let keys = authData.keys
+            if keys.contains("lc_apple") {
+                self.appleIDLabel.setToLight(self.user.getExactStringVal(kNickNameCol))
+            }
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

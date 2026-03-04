@@ -24,6 +24,19 @@ extension AccountTableVC {
                     self.showTextHUD("需先绑定手机号哦")
                 }
             }
+        } else if section == 1 {
+            switch row {
+            case 0:
+                self.showTextHUD("绑定或解绑微信账号")
+            case 1:
+                self.showTextHUD("绑定或解绑微博账号")
+            case 2:
+                self.showTextHUD("绑定或解绑QQ账号")
+            case 3:
+                self.showTextHUD("绑定或解绑Apple账号")
+            default:
+                break
+            }
         }
     }
     
