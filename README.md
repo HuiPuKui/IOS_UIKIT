@@ -914,4 +914,8 @@ if let cancelButton = self.searchBar.value(forKey: "cancelButton") as? UIButton 
 
  **iOS-Swift5.1-用代码动态实现页面跳转（performSegue）的用法:** `https://juejin.cn/post/6844903928979521543`
 
- 
+ ## 31-推送
+
+ **UIAlertController 教程：讓你輕鬆在 UIViewController 以外的地方呈現警告:** `https://www.appcoda.com.tw/uialertcontroller/`
+
+ **Generating a Remote Notification | Apple Developer Documentation:** `https://developer.apple.com/documentation/usernotifications/generating-a-remote-notification`
