@@ -15,18 +15,15 @@ class NotificationTableVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        UNUserNotificationCenter.current().getNotificationSettings { settings in
-            switch settings.authorizationStatus {
-            case .notDetermined:
-                self.setSwitch(false)
-                self.isNotDetermined = true
-            case .denied:
-                self.setSwitch(false)
-            default:
-                self.setSwitch(true)
-            }
-        }
+        
+        self.setUI()
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(willEnterForeground),
+            name: UIApplication.willEnterForegroundNotification,
+            object: nil
+        )
     }
 
     @IBAction func toggleAllowNotification(_ sender: UISwitch) {
@@ -48,10 +45,28 @@ class NotificationTableVC: UITableViewController {
 
 extension NotificationTableVC {
     
+    private func setUI() {
+        UNUserNotificationCenter.current().getNotificationSettings { settings in
+            switch settings.authorizationStatus {
+            case .notDetermined:
+                self.setSwitch(false)
+                self.isNotDetermined = true
+            case .denied:
+                self.setSwitch(false)
+            default:
+                self.setSwitch(true)
+            }
+        }
+    }
+    
     private func setSwitch(_ on: Bool) {
         DispatchQueue.main.async {
             self.toggleAllowNotificationSwitch.setOn(on, animated: true)
         }
+    }
+    
+    @objc func willEnterForeground() {
+        self.setUI()
     }
     
 }
