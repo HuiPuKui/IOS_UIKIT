@@ -149,6 +149,7 @@ let kIntroCol = "intro"
 let kIDCol = "id"
 let kBirthCol = "birth"
 let kIsSetPasswordCol = "isSetPassword"
+let kNoteCountCol = "noteCount"
 
 //Note表
 let kCoverPhotoCol = "coverPhoto"

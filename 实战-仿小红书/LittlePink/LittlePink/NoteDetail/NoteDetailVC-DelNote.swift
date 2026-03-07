@@ -25,6 +25,13 @@ extension NoteDetailVC {
     private func delLCNote() {
         self.note.delete { res in
             if case .success = res {
+                // 用户表的 noteCount 减 1
+                try? self.author?.set(
+                    kNoteCountCol,
+                    value: self.author!.getExactIntVal(kNoteCountCol) - 1
+                )
+                self.author?.save { _ in }
+                
                 DispatchQueue.main.async {
                     self.showTextHUD("笔记已删除")
                 }

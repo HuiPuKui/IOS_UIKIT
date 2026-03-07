@@ -76,7 +76,8 @@ extension NoteEditVC {
             try note.set(kCommentCountCol, value: 0)
             
             // 笔记的作者
-            try note.set(kAuthorCol, value: LCApplication.default.currentUser)
+            let author = LCApplication.default.currentUser!
+            try note.set(kAuthorCol, value: author)
             
             noteGroup.enter()
             note.save { res in
@@ -86,6 +87,44 @@ extension NoteEditVC {
             
             noteGroup.notify(queue: .main) {
 //                print("笔记内容全部存储结束")
+                UNUserNotificationCenter.current().requestAuthorization(
+                    options: [.alert, .sound, .badge]
+                ) { (granted, error) in
+                    if let error = error {
+                        print("请求通知授权出错: \(error)")
+                    }
+                }
+                
+                let noteCount = author.getExactIntVal(kNoteCountCol)
+                if noteCount != 0 {
+                    UNUserNotificationCenter.current().getNotificationSettings { settings in
+                        switch settings.authorizationStatus {
+                        case .denied:
+                            DispatchQueue.main.async {
+                                let alert = UIAlertController(
+                                    title: #""小粉书"想给您发送通知"#,
+                                    message: "收到评论后第一时间就知道哦～",
+                                    preferredStyle: .alert
+                                )
+                                
+                                let notAllowAction = UIAlertAction(title: "不允许", style: .cancel)
+                                let allowAction = UIAlertAction(title: "允许", style: .default) { _ in
+                                    UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+                                }
+                                
+                                alert.addAction(notAllowAction)
+                                alert.addAction(allowAction)
+                                self.view.window?.rootViewController?.present(alert, animated: true)
+                            }
+                        default:
+                            break
+                        }
+                    }
+                }
+                
+                // 用户表的 noteCount 增 1
+                try? author.increase(kNoteCountCol)
+                author.save { _ in }
                 self.showTextHUD("发布笔记成功", false)
             }
             

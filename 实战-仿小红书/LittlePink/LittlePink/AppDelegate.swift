@@ -92,12 +92,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate {
     
     private func config() {
+        // UI
+        UINavigationBar.appearance().tintColor = .label
+        
         // 高德
         AMapServices.shared().enableHTTPS = true
         AMapServices.shared().apiKey = kAMapApiKey
-        
-        // UI
-        UINavigationBar.appearance().tintColor = .label
         
         // 初始化 LeanCloud
         LCApplication.logLevel = .off
@@ -110,6 +110,8 @@ extension AppDelegate {
         } catch {
             print(error)
         }
+        
+        UIApplication.shared.registerForRemoteNotifications()
     }
     
 }
