@@ -109,7 +109,7 @@ extension NoteEditVC {
                                 
                                 let notAllowAction = UIAlertAction(title: "不允许", style: .cancel)
                                 let allowAction = UIAlertAction(title: "允许", style: .default) { _ in
-                                    UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+                                    jumpToSetting()
                                 }
                                 
                                 alert.addAction(notAllowAction)

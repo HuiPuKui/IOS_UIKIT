@@ -3015,6 +3015,9 @@
                                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BRt-QC-hdl">
                                                             <rect key="frame" x="264" y="0.0" width="51" height="31"/>
                                                             <color key="onTintColor" name="main"/>
+                                                            <connections>
+                                                                <action selector="toggleAllowNotification:" destination="tza-r0-tit" eventType="valueChanged" id="oSX-Ok-3YH"/>
+                                                            </connections>
                                                         </switch>
                                                     </subviews>
                                                 </stackView>
@@ -3034,6 +3037,9 @@
                             <outlet property="delegate" destination="tza-r0-tit" id="mpX-8q-odg"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="toggleAllowNotificationSwitch" destination="BRt-QC-hdl" id="PQM-Bf-ef0"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dmy-DY-L2W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -3151,8 +3157,8 @@
         <image name="cart.fill" catalog="system" width="128" height="102"/>
         <image name="chevron.left" catalog="system" width="97" height="128"/>
         <image name="chevron.right" catalog="system" width="97" height="128"/>
-        <image name="heart" catalog="system" width="128" height="107"/>
         <image name="heart" width="128" height="128"/>
+        <image name="heart" catalog="system" width="128" height="107"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="message.fill" catalog="system" width="128" height="114"/>
         <image name="number.circle.fill" catalog="system" width="128" height="123"/>
