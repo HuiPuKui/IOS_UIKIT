@@ -28,6 +28,8 @@ class NoteDetailVC: UIViewController {
     var isFromMeVC = false
     var fromMeVCUser: LCUser?
     
+    var isFromPush = false
+    
     @IBOutlet weak var authorAvatarBtn: UIButton!
     @IBOutlet weak var authorNickNameBtn: UIButton!
     @IBOutlet weak var followBtn: UIButton!
