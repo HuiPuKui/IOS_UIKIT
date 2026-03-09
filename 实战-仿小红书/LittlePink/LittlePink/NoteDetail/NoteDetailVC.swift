@@ -32,6 +32,8 @@ class NoteDetailVC: UIViewController {
     var delegate: NoteDetailVCDelegate?
     var cellItem: Int?
     
+    var noteHeroID: String?
+    
     @IBOutlet weak var authorAvatarBtn: UIButton!
     @IBOutlet weak var authorNickNameBtn: UIButton!
     @IBOutlet weak var followBtn: UIButton!

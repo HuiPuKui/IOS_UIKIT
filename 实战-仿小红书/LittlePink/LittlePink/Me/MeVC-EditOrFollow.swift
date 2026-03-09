@@ -7,6 +7,7 @@
 
 import Foundation
 import LeanCloud
+import Hero
 
 extension MeVC {
     
@@ -14,6 +15,10 @@ extension MeVC {
         if self.isMySelf {
             let navi = self.storyboard!.instantiateViewController(identifier: kEditProfileNavID) as! UINavigationController
             navi.modalPresentationStyle = .fullScreen
+            navi.heroModalAnimationType = .selectBy(
+                presenting: .push(direction: .left),
+                dismissing: .pull(direction: .right)
+            )
             let editProfileTableVC = navi.topViewController as! EditProfileTableVC
             editProfileTableVC.user = self.user
             editProfileTableVC.delegate = self

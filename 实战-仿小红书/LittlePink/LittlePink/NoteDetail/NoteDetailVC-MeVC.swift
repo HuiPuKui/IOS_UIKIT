@@ -7,6 +7,7 @@
 
 import Foundation
 import LeanCloud
+import Hero
 
 extension NoteDetailVC {
     
@@ -23,6 +24,10 @@ extension NoteDetailVC {
             }
             meVC.isFromNote = true
             meVC.modalPresentationStyle = .fullScreen
+            meVC.heroModalAnimationType = .selectBy(
+                presenting: .push(direction: .left),
+                dismissing: .pull(direction: .right)
+            )
             self.present(meVC, animated: true)
         }
     }

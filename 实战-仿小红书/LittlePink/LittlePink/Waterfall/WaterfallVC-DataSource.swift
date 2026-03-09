@@ -49,6 +49,8 @@ extension WaterfallVC {
             cell.isMyselfLike = self.isMyselfLike
             let offset = self.isMyDraft ? 1 : 0
             cell.note = self.notes[indexPath.item - offset]
+            
+            cell.hero.id = "noteHeroID\(indexPath.item)"
             return cell
         }
     }
