@@ -46,3 +46,14 @@ protocol EditProfileTableVCDelegate {
     func updateUser(_ avatar: UIImage?, _ nickName: String, _ gender: Bool, _ birth: Date?, _ intro: String)
     
 }
+
+protocol NoteDetailVCDelegate {
+    
+    /// 更新点赞按钮状态
+    ///
+    /// - Parameters:
+    ///   - isLike: 是否已点赞
+    ///   - likeCount: 点赞数量
+    func updateLikedBtn(cellItem: Int, isLike: Bool, likeCount: Int)
+    
+}

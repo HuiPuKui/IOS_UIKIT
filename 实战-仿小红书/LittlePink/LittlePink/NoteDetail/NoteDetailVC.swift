@@ -29,6 +29,8 @@ class NoteDetailVC: UIViewController {
     var fromMeVCUser: LCUser?
     
     var isFromPush = false
+    var delegate: NoteDetailVCDelegate?
+    var cellItem: Int?
     
     @IBOutlet weak var authorAvatarBtn: UIButton!
     @IBOutlet weak var authorNickNameBtn: UIButton!
@@ -145,6 +147,9 @@ class NoteDetailVC: UIViewController {
     }
 
     @IBAction func back(_ sender: Any) {
+        if let cellItem = self.cellItem {
+            self.delegate?.updateLikedBtn(cellItem: cellItem, isLike: self.isLike, likeCount: self.likeCount)
+        }
         self.dismiss(animated: true)
     }
     

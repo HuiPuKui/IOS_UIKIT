@@ -67,10 +67,24 @@ extension WaterfallVC {
             }
             detailVC.isFromMeVC = self.isFromMeVC
             detailVC.fromMeVCUser = self.user
+            detailVC.cellItem = indexPath.item
+            detailVC.delegate = self
             
             detailVC.modalPresentationStyle = .fullScreen
             self.present(detailVC, animated: true)
             
+        }
+    }
+    
+}
+
+extension WaterfallVC: NoteDetailVCDelegate {
+    
+    func updateLikedBtn(cellItem: Int, isLike: Bool, likeCount: Int) {
+        if let cell = self.collectionView.cellForItem(at: IndexPath(item: cellItem, section: 0)) as? WaterfallCell {
+            cell.likeBtn.isSelected = isLike
+            cell.likeCount = likeCount
+            cell.currentLikedCount = likeCount
         }
     }
     
