@@ -919,3 +919,13 @@ if let cancelButton = self.searchBar.value(forKey: "cancelButton") as? UIButton 
  **UIAlertController 教程：讓你輕鬆在 UIViewController 以外的地方呈現警告:** `https://www.appcoda.com.tw/uialertcontroller/`
 
  **Generating a Remote Notification | Apple Developer Documentation:** `https://developer.apple.com/documentation/usernotifications/generating-a-remote-notification`
+
+ ## 32-转场动画
+
+ **GitHub - HeroTransitions/Hero- Elegant transition library for iOS & tvOS:** `https://github.com/HeroTransitions/Hero`
+
+ ## 33-内测
+
+ **蒲公英-免费的苹果ios应用app内测分发托管|android安卓app内测分发托管:** `https://www.pgyer.com/`
+
+ **分发您的 App 进行 Beta 测试和发布 - 简体中文文档 - Apple Developer:** `https://developer.apple.com/cn/documentation/xcode/distributing_your_app_for_beta_testing_and_releases/`
