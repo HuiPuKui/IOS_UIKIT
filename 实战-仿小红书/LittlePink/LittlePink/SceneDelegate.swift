@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LeanCloud
 
 var kStatusBarH: CGFloat = 0
 
@@ -39,6 +40,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneDidBecomeActive(_ scene: UIScene) {
         // Called when the scene has moved from an inactive state to an active state.
         // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
+        LCApplication.default.currentInstallation.badge = 0
+        LCApplication.default.currentInstallation.save { _ in }
+        
+        UIApplication.shared.applicationIconBadgeNumber = 0
     }
 
     func sceneWillResignActive(_ scene: UIScene) {
