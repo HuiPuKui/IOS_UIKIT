@@ -62,4 +62,11 @@ extension NoteDetailVC {
         self.commentCount += offset
     }
     
+    func backToCell() {
+        if let cellItem = self.cellItem {
+            self.delegate?.updateLikedBtn(cellItem: cellItem, isLike: self.isLike, likeCount: self.likeCount)
+        }
+        self.dismiss(animated: true)
+    }
+    
 }

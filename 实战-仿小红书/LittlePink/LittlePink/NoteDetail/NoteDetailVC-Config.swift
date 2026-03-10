@@ -111,7 +111,7 @@ extension NoteDetailVC {
             
             switch pan.state {
             case .began:
-                self.dismiss(animated: true)
+                self.backToCell()
             case .changed:
                 Hero.shared.update(progress)
                 
@@ -119,12 +119,25 @@ extension NoteDetailVC {
                     x: translationX + self.view.center.x,
                     y: pan.translation(in: pan.view).y + self.view.center.y
                 )
-                Hero.shared.apply(modifiers: [
-                    .position(position)
-                ], to: self.view)
+                Hero.shared.apply(modifiers: [.position(position)], to: self.view)
             default:
                 // 进度 + 速度 判断
                 if progress + pan.velocity(in: pan.view).x / self.view.bounds.width > 0.5 {
+                    Hero.shared.finish()
+                } else {
+                    Hero.shared.cancel()
+                }
+            }
+        } else if translationX < 0 {
+            let progress = -(translationX / screenRect.width)
+            
+            switch pan.state {
+            case .began:
+                self.noteToMeVC(self.author)
+            case .changed:
+                Hero.shared.update(progress)
+            default:
+                if progress > 0.2 {
                     Hero.shared.finish()
                 } else {
                     Hero.shared.cancel()
