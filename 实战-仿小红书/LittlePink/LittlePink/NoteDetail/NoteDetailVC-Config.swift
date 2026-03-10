@@ -9,6 +9,7 @@ import Foundation
 import ImageSlideshow
 import GrowingTextView
 import LeanCloud
+import Hero
 
 extension NoteDetailVC {
     
@@ -56,6 +57,9 @@ extension NoteDetailVC {
         }
         
         self.view.hero.id = self.noteHeroID
+        
+        let pan = UIPanGestureRecognizer(target: self, action: #selector(slide))
+        self.view.addGestureRecognizer(pan)
     }
     
     func adjustTableHeaderViewHeight() {
@@ -96,6 +100,36 @@ extension NoteDetailVC {
             self.textViewBarBottomConstraint.constant = keyboardH
             
             self.view.layoutIfNeeded()
+        }
+    }
+    
+    @objc private func slide(pan: UIPanGestureRecognizer) {
+        let translationX = pan.translation(in: pan.view).x
+        
+        if translationX > 0 {
+            let progress = translationX / (screenRect.width / 3)
+            
+            switch pan.state {
+            case .began:
+                self.dismiss(animated: true)
+            case .changed:
+                Hero.shared.update(progress)
+                
+                let position = CGPoint(
+                    x: translationX + self.view.center.x,
+                    y: pan.translation(in: pan.view).y + self.view.center.y
+                )
+                Hero.shared.apply(modifiers: [
+                    .position(position)
+                ], to: self.view)
+            default:
+                // 进度 + 速度 判断
+                if progress + pan.velocity(in: pan.view).x / self.view.bounds.width > 0.5 {
+                    Hero.shared.finish()
+                } else {
+                    Hero.shared.cancel()
+                }
+            }
         }
     }
     
