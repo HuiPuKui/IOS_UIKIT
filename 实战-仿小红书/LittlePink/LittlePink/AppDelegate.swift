@@ -102,14 +102,13 @@ extension AppDelegate {
         // 初始化 LeanCloud
         LCApplication.logLevel = .off
         do {
-            let environment: LCApplication.Environment = [.pushDevelopment]
-            let configuration = LCApplication.Configuration(environment: environment)
+//            let environment: LCApplication.Environment = [.pushDevelopment]
+//            let configuration = LCApplication.Configuration(environment: environment)
             
             try LCApplication.default.set(
                 id: kLCAppID,
                 key: kLCAppKey,
-                serverURL: kLCServerURL,
-                configuration: configuration
+                serverURL: kLCServerURL
             )
         } catch {
             print(error)
